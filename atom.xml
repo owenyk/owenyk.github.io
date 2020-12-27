@@ -227,6 +227,74 @@
   </entry>
   
   <entry>
+    <title>Ventoy+WePE2.1做启动盘</title>
+    <link href="https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/"/>
+    <id>https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/</id>
+    <published>2020-06-21T04:05:32.000Z</published>
+    <updated>2020-12-27T09:05:11.570Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、Dell的BIOS设置&quot;&gt;&lt;a href=&quot;#一、Dell的BIOS设置&quot; class=&quot;headerlink&quot; title=&quot;一、Dell的BIOS设置&quot;&gt;&lt;/a&gt;一、Dell的BIOS设置&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://owenyk.github.io/categories/Windows/"/>
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    
+    <category term="启动盘" scheme="https://owenyk.github.io/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/"/>
+    
+    <category term="系统" scheme="https://owenyk.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Windows" scheme="https://owenyk.github.io/tags/Windows/"/>
+    
+    <category term="Ventoy" scheme="https://owenyk.github.io/tags/Ventoy/"/>
+    
+    <category term="WePE" scheme="https://owenyk.github.io/tags/WePE/"/>
+    
+    <category term="Fedora" scheme="https://owenyk.github.io/tags/Fedora/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian10备份与恢复mariaDB数据库</title>
+    <link href="https://owenyk.github.io/2019/12/29/Debian10%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8DmariaDB%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://owenyk.github.io/2019/12/29/Debian10%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8DmariaDB%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <published>2019-12-29T12:05:32.000Z</published>
+    <updated>2020-12-27T09:09:35.209Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、利用mysqldump备份与恢复命令：&quot;&gt;&lt;a href=&quot;#一、利用mysqldump备份与恢复命令：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="程序语言" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    
+    <category term="MySQL" scheme="https://owenyk.github.io/tags/MySQL/"/>
+    
+    <category term="备份" scheme="https://owenyk.github.io/tags/%E5%A4%87%E4%BB%BD/"/>
+    
+    <category term="Debian" scheme="https://owenyk.github.io/tags/Debian/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python用request下载金庸小说</title>
     <link href="https://owenyk.github.io/2019/12/12/Python%E7%94%A8request%E4%B8%8B%E8%BD%BD%E9%87%91%E5%BA%B8%E5%B0%8F%E8%AF%B4/"/>
     <id>https://owenyk.github.io/2019/12/12/Python%E7%94%A8request%E4%B8%8B%E8%BD%BD%E9%87%91%E5%BA%B8%E5%B0%8F%E8%AF%B4/</id>
