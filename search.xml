@@ -68,9 +68,15 @@ n/2,  &\text{如果:} n\neq 0 \\
     \hline 77&57&37\\
     \hline 6&1&8\\
     \hline
-\end{array}</script><h2 id="8、流程图"><a href="#8、流程图" class="headerlink" title="8、流程图"></a>8、流程图</h2><p><strong>需安装插件：<code>flowchart</code></strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-filter-flowchart --save </span><br></pre></td></tr></table></figure><br>在根目录：_config.yml加入<code>flowchart</code>支持:<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">flowchart:</span><br><span class="line">  # raphael:   # optional, the source url of raphael.js</span><br><span class="line">  # flowchart: # optional, the source url of flowchart.js</span><br><span class="line">  options: # options used for <span class="code">`drawSVG`</span></span><br></pre></td></tr></table></figure><br>1、官方例子：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">st=&gt;start: Start|past:&gt;http://www.google.com[blank]</span><br><span class="line">e=&gt;end: End:&gt;http://www.google.com</span><br><span class="line">op1=&gt;operation: My Operation|past</span><br><span class="line">op2=&gt;operation: Stuff|current</span><br><span class="line">sub1=&gt;subroutine: My Subroutine|invalid</span><br><span class="line">cond=&gt;condition: Yes</span><br><span class="line">or No?|approved:&gt;http://www.google.com</span><br><span class="line">c2=&gt;condition: Good idea|rejected</span><br><span class="line">io=&gt;inputoutput: catch something...|request</span><br><span class="line"></span><br><span class="line">st-&gt;op1(right)-&gt;cond</span><br><span class="line">cond(yes, right)-&gt;c2</span><br><span class="line">cond(no)-&gt;sub1(left)-&gt;op1</span><br><span class="line">c2(yes)-&gt;io-&gt;e</span><br><span class="line">c2(no)-&gt;op2-&gt;e</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: Start|past:&gt;http:&#x2F;&#x2F;www.google.com[blank]</span><br><span class="line">e&#x3D;&gt;end: End:&gt;http:&#x2F;&#x2F;www.google.com</span><br><span class="line">op1&#x3D;&gt;operation: My Operation|past</span><br><span class="line">op2&#x3D;&gt;operation: Stuff|current</span><br><span class="line">sub1&#x3D;&gt;subroutine: My Subroutine|invalid</span><br><span class="line">cond&#x3D;&gt;condition: Yes</span><br><span class="line">or No?|approved:&gt;http:&#x2F;&#x2F;www.google.com</span><br><span class="line">c2&#x3D;&gt;condition: Good idea|rejected</span><br><span class="line">io&#x3D;&gt;inputoutput: catch something...|request</span><br><span class="line"></span><br><span class="line">st-&gt;op1(right)-&gt;cond</span><br><span class="line">cond(yes, right)-&gt;c2</span><br><span class="line">cond(no)-&gt;sub1(left)-&gt;op1</span><br><span class="line">c2(yes)-&gt;io-&gt;e</span><br><span class="line">c2(no)-&gt;op2-&gt;e</span><br></pre></td></tr></table></figure></p>
+\end{array}</script><h2 id="8、流程图"><a href="#8、流程图" class="headerlink" title="8、流程图"></a>8、流程图</h2><p><strong>需安装插件：<code>flowchart</code></strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-filter-flowchart --save </span><br></pre></td></tr></table></figure><br>在根目录：_config.yml加入<code>flowchart</code>支持:<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">flowchart:</span><br><span class="line">  # raphael:   # optional, the source url of raphael.js</span><br><span class="line">  # flowchart: # optional, the source url of flowchart.js</span><br><span class="line">  options: # options used for <span class="code">`drawSVG`</span></span><br></pre></td></tr></table></figure><br>1、官方例子：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">st=&gt;start: Start|past:&gt;http://www.google.com[blank]</span><br><span class="line">e=&gt;end: End:&gt;http://www.google.com</span><br><span class="line">op1=&gt;operation: My Operation|past</span><br><span class="line">op2=&gt;operation: Stuff|current</span><br><span class="line">sub1=&gt;subroutine: My Subroutine|invalid</span><br><span class="line">cond=&gt;condition: Yes</span><br><span class="line">or No?|approved:&gt;http://www.google.com</span><br><span class="line">c2=&gt;condition: Good idea|rejected</span><br><span class="line">io=&gt;inputoutput: catch something...|request</span><br><span class="line"></span><br><span class="line">st-&gt;op1(right)-&gt;cond</span><br><span class="line">cond(yes, right)-&gt;c2</span><br><span class="line">cond(no)-&gt;sub1(left)-&gt;op1</span><br><span class="line">c2(yes)-&gt;io-&gt;e</span><br><span class="line">c2(no)-&gt;op2-&gt;e</span><br></pre></td></tr></table></figure></p>
+<div id="flowchart-0" class="flow-chart"></div>
+
+
 <p>2、演示<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">st=&gt;start: 开始节点</span><br><span class="line">in=&gt;inputoutput: 输入i</span><br><span class="line">e=&gt;end: 结束节点</span><br><span class="line">cond=&gt;condition: i被2整除</span><br><span class="line">out1=&gt;inputoutput: 输出i是奇数</span><br><span class="line">out2=&gt;inputoutput: 输出i是偶数</span><br><span class="line">st(right)-&gt;in-&gt;cond</span><br><span class="line">cond(yes,right)-&gt;out2-&gt;e</span><br><span class="line">cond(no)-&gt;out1-&gt;e</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: 开始节点</span><br><span class="line">in&#x3D;&gt;inputoutput: 输入i</span><br><span class="line">e&#x3D;&gt;end: 结束节点</span><br><span class="line">op1&#x3D;&gt;operation: xx</span><br><span class="line">op2&#x3D;&gt;operation: xx</span><br><span class="line">cond&#x3D;&gt;condition: i被2整除</span><br><span class="line">sub&#x3D;&gt;subroutine: xx</span><br><span class="line">out1&#x3D;&gt;inputoutput: 输出i是奇数</span><br><span class="line">out2&#x3D;&gt;inputoutput: 输出i是偶数</span><br><span class="line">st-&gt;in-&gt;cond</span><br><span class="line">cond(yes,right)-&gt;out2-&gt;e</span><br><span class="line">cond(no)-&gt;out1-&gt;e</span><br></pre></td></tr></table></figure>
+<div id="flowchart-1" class="flow-chart"></div>
+
+
+
 <h2 id="9、其他一些符号"><a href="#9、其他一些符号" class="headerlink" title="9、其他一些符号"></a>9、其他一些符号</h2><p>1、虚数<br>$\imath$,$\jmath$<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\imath$</span><br><span class="line">$\jmath$</span><br></pre></td></tr></table></figure><br>2、其他组合<br>$2H_2O\stackrel {\mathrm {点燃}}{==}2H_2 + O_2$</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$2H<span class="emphasis">_2O\stackrel &#123;\mathrm &#123;点燃&#125;&#125;&#123;=&#125;H_</span>2 + O<span class="emphasis">_2$</span></span><br></pre></td></tr></table></figure>
 <p>希腊字母</p>
@@ -232,7 +238,32 @@ n/2,  &\text{如果:} n\neq 0 \\
 </tbody>
 </table>
 </div>
-<p>参考：①<a href="https://www.cnblogs.com/Lo3prs/p/14021997.html">https://www.cnblogs.com/Lo3prs/p/14021997.html</a><br>②<a href="https://www.jianshu.com/p/e74eb43960a1">https://www.jianshu.com/p/e74eb43960a1</a><br>③<a href="https://github.com/bubkoo/hexo-filter-flowchart">https://github.com/bubkoo/hexo-filter-flowchart</a></p>
+<p>参考：①<a href="https://www.cnblogs.com/Lo3prs/p/14021997.html">https://www.cnblogs.com/Lo3prs/p/14021997.html</a><br>②<a href="https://www.jianshu.com/p/e74eb43960a1">https://www.jianshu.com/p/e74eb43960a1</a><br>③<a href="https://github.com/bubkoo/hexo-filter-flowchart">https://github.com/bubkoo/hexo-filter-flowchart</a><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|request
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">st=>start: 开始节点
+in=>inputoutput: 输入i
+e=>end: 结束节点
+op1=>operation: xx
+op2=>operation: xx
+cond=>condition: i被2整除
+sub=>subroutine: xx
+out1=>inputoutput: 输出i是奇数
+out2=>inputoutput: 输出i是偶数
+st->in->cond
+cond(yes,right)->out2->e
+cond(no)->out1->e</textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script></p>
 ]]></content>
       <categories>
         <category>程序语言</category>
