@@ -311,8 +311,7 @@ cond(no)->out1->e</textarea><textarea id="flowchart-1-options" style="display: n
       <categories>
         <category>程序语言</category>
         <category>Markdown</category>
-        <category>latex</category>
-        <category>mathjax</category>
+        <category>Latex</category>
       </categories>
       <tags>
         <tag>math</tag>
@@ -420,7 +419,7 @@ cond(no)->out1->e</textarea><textarea id="flowchart-1-options" style="display: n
         <tag>asp</tag>
         <tag>MSSQL</tag>
         <tag>数据库</tag>
-        <tag>JavaScript</tag>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>

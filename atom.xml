@@ -6,7 +6,7 @@
   <link href="https://owenyk.github.io/atom.xml" rel="self"/>
   
   <link href="https://owenyk.github.io/"/>
-  <updated>2020-12-28T03:13:58.584Z</updated>
+  <updated>2020-12-28T03:44:10.477Z</updated>
   <id>https://owenyk.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://owenyk.github.io/2020/12/26/Markdown%E4%B8%80%E4%BA%9B%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%94%A8%E6%B3%95/"/>
     <id>https://owenyk.github.io/2020/12/26/Markdown%E4%B8%80%E4%BA%9B%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%94%A8%E6%B3%95/</id>
     <published>2020-12-26T12:05:32.000Z</published>
-    <updated>2020-12-28T03:13:58.584Z</updated>
+    <updated>2020-12-28T03:44:10.477Z</updated>
     
     
     <summary type="html">Markdown一些latex数学符号写法和常见希腊字母的写法</summary>
@@ -30,11 +30,9 @@
     
     <category term="程序语言" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/"/>
     
-    <category term="Markdown" scheme="https://owenyk.github.io/categories/Markdown/"/>
+    <category term="Markdown" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Markdown/"/>
     
-    <category term="latex" scheme="https://owenyk.github.io/categories/latex/"/>
-    
-    <category term="mathjax" scheme="https://owenyk.github.io/categories/mathjax/"/>
+    <category term="Latex" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Latex/"/>
     
     
     <category term="math" scheme="https://owenyk.github.io/tags/math/"/>
@@ -52,7 +50,7 @@
     <link href="https://owenyk.github.io/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/"/>
     <id>https://owenyk.github.io/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/</id>
     <published>2020-12-25T12:05:32.000Z</published>
-    <updated>2020-12-28T03:13:42.897Z</updated>
+    <updated>2020-12-28T03:31:47.550Z</updated>
     
     
     <summary type="html">关于最小二乘法的算术推导详细过程</summary>
@@ -61,11 +59,11 @@
     
     <category term="程序语言" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/"/>
     
-    <category term="Markdown" scheme="https://owenyk.github.io/categories/Markdown/"/>
+    <category term="Markdown" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Markdown/"/>
     
     <category term="学科教育" scheme="https://owenyk.github.io/categories/%E5%AD%A6%E7%A7%91%E6%95%99%E8%82%B2/"/>
     
-    <category term="math" scheme="https://owenyk.github.io/categories/math/"/>
+    <category term="math" scheme="https://owenyk.github.io/categories/%E5%AD%A6%E7%A7%91%E6%95%99%E8%82%B2/math/"/>
     
     
     <category term="math" scheme="https://owenyk.github.io/tags/math/"/>
@@ -185,7 +183,7 @@
     <link href="https://owenyk.github.io/2020/11/05/asp%E6%93%8D%E4%BD%9Cmssql%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     <id>https://owenyk.github.io/2020/11/05/asp%E6%93%8D%E4%BD%9Cmssql%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
     <published>2020-11-05T02:48:36.000Z</published>
-    <updated>2020-12-28T03:20:54.555Z</updated>
+    <updated>2020-12-28T03:42:44.887Z</updated>
     
     
     <summary type="html">Asp操作MSSQL数据库，包括查询和Ajax的原生js处理</summary>
@@ -196,7 +194,7 @@
     
     <category term="ASP" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/ASP/"/>
     
-    <category term="JavaScript" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/ASP/JavaScript/"/>
+    <category term="JavaScript" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/JavaScript/"/>
     
     
     <category term="ajax" scheme="https://owenyk.github.io/tags/ajax/"/>
@@ -207,7 +205,7 @@
     
     <category term="数据库" scheme="https://owenyk.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-    <category term="JavaScript" scheme="https://owenyk.github.io/tags/JavaScript/"/>
+    <category term="javascript" scheme="https://owenyk.github.io/tags/javascript/"/>
     
   </entry>
   
