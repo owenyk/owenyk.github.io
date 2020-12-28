@@ -104,18 +104,16 @@
     <link href="https://owenyk.github.io/2020/11/05/aria2%E9%85%8D%E7%BD%AE/"/>
     <id>https://owenyk.github.io/2020/11/05/aria2%E9%85%8D%E7%BD%AE/</id>
     <published>2020-11-05T06:39:32.000Z</published>
-    <updated>2020-12-27T00:21:49.683Z</updated>
+    <updated>2020-12-28T03:51:07.100Z</updated>
     
     
     <summary type="html">Aria2安装后的配置文件(aria2.conf)内容</summary>
     
     
     
-    <category term="soft" scheme="https://owenyk.github.io/categories/soft/"/>
-    
-    <category term="aria2" scheme="https://owenyk.github.io/categories/soft/aria2/"/>
-    
     <category term="一些常用软件" scheme="https://owenyk.github.io/categories/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Aria2" scheme="https://owenyk.github.io/categories/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/Aria2/"/>
     
     
     <category term="aria2" scheme="https://owenyk.github.io/tags/aria2/"/>
@@ -127,18 +125,16 @@
     <link href="https://owenyk.github.io/2020/11/05/sublime-text3%E5%AE%89%E8%A3%85%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
     <id>https://owenyk.github.io/2020/11/05/sublime-text3%E5%AE%89%E8%A3%85%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</id>
     <published>2020-11-05T03:11:42.000Z</published>
-    <updated>2020-12-27T00:30:57.988Z</updated>
+    <updated>2020-12-28T03:49:25.569Z</updated>
     
     
     <summary type="html">Sublime Text3安装及一些常用插件安装配置,以及让IIS支持PHP的配置</summary>
     
     
     
-    <category term="soft" scheme="https://owenyk.github.io/categories/soft/"/>
-    
-    <category term="Sublime Text3" scheme="https://owenyk.github.io/categories/soft/Sublime-Text3/"/>
-    
     <category term="一些常用软件" scheme="https://owenyk.github.io/categories/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Sublime Text3" scheme="https://owenyk.github.io/categories/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/Sublime-Text3/"/>
     
     
     <category term="MSSQL" scheme="https://owenyk.github.io/tags/MSSQL/"/>
@@ -237,7 +233,7 @@
     <link href="https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/"/>
     <id>https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/</id>
     <published>2020-06-21T04:05:32.000Z</published>
-    <updated>2020-12-27T09:36:12.543Z</updated>
+    <updated>2020-12-28T03:50:19.390Z</updated>
     
     
     <summary type="html">Ventoy+WePE2.1做启动盘的一些操作记录</summary>
@@ -247,6 +243,12 @@
     <category term="Windows" scheme="https://owenyk.github.io/categories/Windows/"/>
     
     <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="一些常用软件" scheme="https://owenyk.github.io/categories/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Ventoy" scheme="https://owenyk.github.io/categories/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/Ventoy/"/>
+    
+    <category term="WePE" scheme="https://owenyk.github.io/categories/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/WePE/"/>
     
     
     <category term="启动盘" scheme="https://owenyk.github.io/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/"/>
