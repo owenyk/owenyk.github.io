@@ -78,7 +78,7 @@
 <p>(2)高级运算</p>
 <p>1、平均数运算，符号：\overline{算式}，如：$\overline{xyz}$<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\overline&#123;xyz&#125;$</span><br></pre></td></tr></table></figure><br>2、开二次方运算，符号：\sqrt，如：$\sqrt x$<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\sqrt x$</span><br></pre></td></tr></table></figure><br>开多次方运算，符号：\sqrt[开方数]{被开方数}，如：$\sqrt[3]{x+y}$<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\sqrt[3]&#123;x+y&#125;$</span><br></pre></td></tr></table></figure><br>3、对数运算，符号：\log，如：$\log_2 x$<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\log<span class="emphasis">_2\ x$</span></span><br></pre></td></tr></table></figure><br>4、求和运算，符号：\sum，如：<br>$\sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)$</p>
 <p>或者，符号：\displaystyle \sum，如：<br>$\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)$</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\sum^&#123;x \to \infty&#125;<span class="emphasis">_&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</span></span><br><span class="line"><span class="emphasis">$\displaystyle \sum^&#123;x \to \infty&#125;_</span>&#123;y \to 0&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;$</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\sum^n<span class="emphasis">_&#123;i=1&#125;(x_</span>i-\bar x)(y<span class="emphasis">_i-\bar y)$</span></span><br><span class="line"><span class="emphasis">$\displaystyle \sum^n_</span>&#123;i=1&#125;(x<span class="emphasis">_i-\bar x)(y_</span>i-\bar y)$</span><br></pre></td></tr></table></figure>
 <p>5、微分运算，符号：\partial，如：$\frac{\partial x}{\partial y}$<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\frac&#123;\partial x&#125;&#123;\partial y&#125;$</span><br></pre></td></tr></table></figure><br>6、积分运算，符号：\int，如：$\int^\infty_{0}{xdx}$<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\int^&#123;\infty&#125;<span class="emphasis">_&#123;0&#125;&#123;xdx&#125;$</span></span><br></pre></td></tr></table></figure><br>7、矩阵表示，符号：\begin{matrix} \end{matrix}，如：</p>
 <script type="math/tex; mode=display">
 \left [
@@ -332,7 +332,7 @@ cond(no)->out1->e</textarea><textarea id="flowchart-1-options" style="display: n
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>python</tag>
         <tag>重命名</tag>
       </tags>
   </entry>
@@ -345,7 +345,7 @@ cond(no)->out1->e</textarea><textarea id="flowchart-1-options" style="display: n
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>python</tag>
         <tag>request</tag>
         <tag>BeautifulSoup</tag>
       </tags>
@@ -434,7 +434,7 @@ cond(no)->out1->e</textarea><textarea id="flowchart-1-options" style="display: n
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>python</tag>
         <tag>pdf</tag>
       </tags>
   </entry>
@@ -534,8 +534,8 @@ b=\frac {\displaystyle \sum^n_{i=1}(x_iy_i-n·\bar x\bar y)}{\displaystyle \sum^
       </categories>
       <tags>
         <tag>math</tag>
+        <tag>latex</tag>
         <tag>statistics</tag>
-        <tag>Latex</tag>
         <tag>Mathjax</tag>
       </tags>
   </entry>
@@ -549,7 +549,7 @@ b=\frac {\displaystyle \sum^n_{i=1}(x_iy_i-n·\bar x\bar y)}{\displaystyle \sum^
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>python</tag>
         <tag>OCR</tag>
         <tag>文字识别</tag>
       </tags>
@@ -564,7 +564,7 @@ b=\frac {\displaystyle \sum^n_{i=1}(x_iy_i-n·\bar x\bar y)}{\displaystyle \sum^
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>python</tag>
         <tag>OCR</tag>
         <tag>文字识别</tag>
       </tags>
