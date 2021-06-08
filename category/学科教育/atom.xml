@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://owenyk.github.io</id>
+    <title>K&#39;s Life • Posts by &#34;学科教育&#34; category</title>
+    <link href="https://owenyk.github.io" />
+    <updated>2020-12-25T12:05:32.000Z</updated>
+    <category term="webdav" />
+    <category term="MySQL" />
+    <category term="备份" />
+    <category term="Debian" />
+    <category term="math" />
+    <category term="mathjax" />
+    <category term="latex" />
+    <category term="flowchart" />
+    <category term="python" />
+    <category term="重命名" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
+    <category term="aria2" />
+    <category term="ajax" />
+    <category term="asp" />
+    <category term="MSSQL" />
+    <category term="数据库" />
+    <category term="javascript" />
+    <category term="pdf" />
+    <category term="access" />
+    <category term="PHP" />
+    <category term="Sublime text3" />
+    <category term="IIS" />
+    <category term="statistics" />
+    <category term="OCR" />
+    <category term="文字识别" />
+    <entry>
+        <id>https://owenyk.github.io/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/</id>
+        <title>最小二乘法的算术推导</title>
+        <link rel="alternate" href="https://owenyk.github.io/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/"/>
+        <content type="html">&lt;p&gt;&lt;img src=&#34;\pic\2020\12\最小二乘法的算术推导.png&#34; alt=&#34;最小二乘法的算术推导&#34;&gt;&lt;/p&gt;
+&lt;p&gt;$\hat y=a+bx$&lt;/p&gt;
+&lt;p&gt;$\begin{aligned} Q&amp;amp;=\displaystyle \sum^n_{i=1}{(y_i-\hat y)^2}\\\&lt;br&gt;&amp;amp;={(y_1-\hat y_1)^2}+{(y_2-\hat y_2)^2}+ \cdots +{(y_n-\hat y_n)^2} \end{aligned}$&lt;/p&gt;
+&lt;p&gt;其中$\hat y$为回归方程，求$Q$最小时回归方程的系数a，b取值。&lt;/p&gt;
+&lt;h2 id=&#34;具体推导如下：&#34;&gt;&lt;a href=&#34;#具体推导如下：&#34; class=&#34;headerlink&#34; title=&#34;具体推导如下：&#34;&gt;&lt;/a&gt;具体推导如下：&lt;/h2&gt;&lt;h2 id=&#34;一、预备公式&#34;&gt;&lt;a href=&#34;#一、预备公式&#34; class=&#34;headerlink&#34; title=&#34;一、预备公式&#34;&gt;&lt;/a&gt;&lt;strong&gt;一、预备公式&lt;/strong&gt;&lt;/h2&gt;&lt;h3 id=&#34;1-gt&#34;&gt;&lt;a href=&#34;#1-gt&#34; class=&#34;headerlink&#34; title=&#34;1&amp;gt;&#34;&gt;&lt;/a&gt;1&amp;gt;&lt;/h3&gt;&lt;p&gt;$\displaystyle \sum^n_{i=1}{(x_i-{\bar x})^2}=\displaystyle \sum^n_{i=1}{x_i^2-n{\bar x}^2}$,&lt;/p&gt;
+&lt;p&gt;其中:$\bar x=\frac {x_1+x_2+\cdots +x_n}{n}$&lt;/p&gt;
+&lt;h5 id=&#34;推导&#34;&gt;&lt;a href=&#34;#推导&#34; class=&#34;headerlink&#34; title=&#34;推导:&#34;&gt;&lt;/a&gt;&lt;strong&gt;推导:&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;$\begin{aligned} 左边&amp;amp;={(x_1-\bar x_1)^2}+{(x_2-\bar x_2)^2}+ \cdots +{(x_n-\bar x_n)^2}\\\&lt;br&gt;&amp;amp;=x_1^2+x_2^2+ \cdots +x_n^2-2\bar x·(x_1+x_2+ \cdots +x_n)+n\bar x^2\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}{x_i^2}-2\bar x·n·\bar x + n·\bar x^2\\\&lt;br&gt;&amp;amp;=\displaystyle\sum^n_{i=1}{x_i^2-n\bar x^2}=右边 \end{aligned}$&lt;/p&gt;
+&lt;h3 id=&#34;2-gt&#34;&gt;&lt;a href=&#34;#2-gt&#34; class=&#34;headerlink&#34; title=&#34;2&amp;gt;&#34;&gt;&lt;/a&gt;2&amp;gt;&lt;/h3&gt;&lt;p&gt;$\displaystyle\sum^n_{i=1}{(x_i-\bar x)}{(y_i-\bar y)}=\displaystyle \sum^n_{i=1}{x_i}{y_i}-n\bar x\bar y$，&lt;/p&gt;
+&lt;p&gt;其中:$\bar x=\frac {x_1+x_2+\cdots+x_n}{n},\bar y=\frac{y_1+y_2+\cdots + y_n}{n}$&lt;/p&gt;
+&lt;h5 id=&#34;推导：&#34;&gt;&lt;a href=&#34;#推导：&#34; class=&#34;headerlink&#34; title=&#34;推导：&#34;&gt;&lt;/a&gt;&lt;strong&gt;推导：&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;$\begin{aligned} 左边&amp;amp;={(x_1-\bar x_1)}{(y_1-\bar y_1)}+{(x_2-\bar x_2)}{(y_2-\bar y_2)}+ \cdots +{(x_n-\bar x_n)}{(y_n-\bar y_n)}\\\&lt;br&gt;&amp;amp;=(x_1y_1+x_2y_2+\cdots+x_n·y_n)+n\bar x·\bar y-(y_1+y_2+\cdots+y_n)·\bar x-(x_1+x_2+\cdots+x_n)·\bar y\\\&lt;br&gt;&amp;amp;=\displaystyle\sum^ n_{i=1}{x_i}{y_i}+n\bar x·\bar y-n\bar y·\bar x-n\bar x\bar y\\\&lt;br&gt;&amp;amp;=\displaystyle\sum^n_{i=1}{x_i}{y_i}-n\bar x\bar y=右边 \end{aligned}$&lt;/p&gt;
+&lt;h2 id=&#34;二、推导过程&#34;&gt;&lt;a href=&#34;#二、推导过程&#34; class=&#34;headerlink&#34; title=&#34;二、推导过程&#34;&gt;&lt;/a&gt;&lt;strong&gt;二、推导过程&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;$\begin{aligned} Q &amp;amp;=\displaystyle \sum^n_{i=1}{(y_i-\hat y)^2}\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}{[y_i-(a+bx_i)]}^2\\\&lt;br&gt;&amp;amp;=(y_1^2+y_2^2+ \cdots +y_n^2)+na^2+b^2(x_1^2 + x_2^2 + \cdots +x_n^2)+2a·b·(x_1+x_2+\cdots+x_n)-2a·(y_1+y_2+\cdots +y_n)-2b(x_1·y_1+x_2·y_2+\cdots +x_n·y_n)\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}y_i^2+na^2+b^2·\displaystyle \sum^n_{i=1}x_i^2+2ab·n·\bar x-2a·n·\bar y-2b·\displaystyle \sum^n_{i=1}x_iy_i\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}y_i^2-2b\displaystyle \sum^n_{i=1}x_iy_i+b^2·\displaystyle \sum^n_{i=1}x_i^2+na^2-n·2a·(\bar y-b\bar x)\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}y_i^2-2b\displaystyle \sum^n_{i=1}x_iy_i+b^2·\displaystyle \sum^n_{i=1}x_i^2+n[a-(\bar y-b\bar x)]^2-n[(\bar y-b\bar x)]^2\\\&lt;br&gt;&amp;amp;=n[(\bar y-b\bar x)]^2-n\bar y^2+2n·b·\bar x·\bar y-n·b^2·\bar x^2+b^2·\displaystyle \sum^n_{i=1}x_i^2-2b·\displaystyle \sum^n_{i=1}x_iy_i+\displaystyle \sum^n_{i=1}y_i^2\\\&lt;br&gt;&amp;amp;=n[(\bar y-b\bar x)]^2+b^2(\displaystyle \sum^n_{i=1}x_i^2-n·\bar x^2)+\displaystyle \sum^n_{i=1}y_i^2-n·\bar y^2-2b·(\displaystyle \sum^n_{i=1}x_iy_i-n·\bar x·\bar y)\\\&lt;br&gt;&amp;amp;=n[a-(\bar y-b\bar x)]^2+b^2{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}-2b·\displaystyle \sum^n_{i=1}{(x_i-\bar x)(y_i-\bar y)}+\displaystyle \sum^n_{i=1}y_i^2-n·\bar y^2\\\&lt;br&gt;&amp;amp;=n[a-(\bar y-b\bar x)]^2+{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}·\left [b^2-2b·\frac {\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\displaystyle \sum^n_{i=1}{(x_i-\bar x)^2}}\right ] +\displaystyle \sum^n_{i=1}y_i-n·\bar y^2\\\&lt;br&gt;&amp;amp;=n[a-(\bar y-b\bar x)]^2+{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}·\left [b-\frac {\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\displaystyle \sum^n_{i=1}{(x_i-\bar x)^2}}\right ]^2-\frac {\left [{\displaystyle \sum^n_{i=1}}(x_i-{\bar x})(y_i-\bar y)\right ]^2}{\displaystyle \sum^n_{i=1}{(x_i-\bar x)^2}}+ \displaystyle \sum^n_{i=1}y_i-n·\bar y^2 \end{aligned}$&lt;br&gt;因为：&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;\displaystyle \sum^n_{i=1}(x_i-\bar x)^2&lt;/script&gt;&lt;p&gt;和&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;\frac {[\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)]^2}{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}&lt;/script&gt;&lt;p&gt;及&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;\displaystyle \sum^n_{i=1}y_i-n·\bar y^2&lt;/script&gt;&lt;p&gt;为常数。&lt;/p&gt;
+&lt;p&gt;所以:&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;Q_{min}=
+\begin{cases}
+a-(\bar y-b\bar x)=0\\\
+b-\frac {\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}=0
+\end{cases}
+\Longrightarrow \begin{cases} a=\bar y-b\bar x\\\
+b=\frac {\displaystyle \sum^n_{i=1}(x_iy_i-n·\bar x\bar y)}{\displaystyle \sum^n_{i=1}x_i^2-n·\bar x^2}
+\end{cases}&lt;/script&gt;</content>
+        <category term="math" />
+        <category term="mathjax" />
+        <category term="latex" />
+        <category term="statistics" />
+        <updated>2020-12-25T12:05:32.000Z</updated>
+    </entry>
+</feed>
