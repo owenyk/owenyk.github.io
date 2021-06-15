@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>K&#39;s Life • Posts by &#34;math&#34; tag</title>
+        <link>https://owenyk.github.io</link>
+        <description>日常的一些记录，留作备忘！</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 26 Dec 2020 20:05:32 +0800</pubDate>
+        <lastBuildDate>Sat, 26 Dec 2020 20:05:32 +0800</lastBuildDate>
+        <category>webdav</category>
+        <category>MySQL</category>
+        <category>备份</category>
+        <category>Debian</category>
+        <category>math</category>
+        <category>mathjax</category>
+        <category>latex</category>
+        <category>flowchart</category>
+        <category>python</category>
+        <category>重命名</category>
+        <category>request</category>
+        <category>BeautifulSoup</category>
+        <category>启动盘</category>
+        <category>系统</category>
+        <category>Windows</category>
+        <category>Ventoy</category>
+        <category>WePE</category>
+        <category>Fedora</category>
+        <category>aria2</category>
+        <category>ajax</category>
+        <category>asp</category>
+        <category>MSSQL</category>
+        <category>数据库</category>
+        <category>javascript</category>
+        <category>pdf</category>
+        <category>access</category>
+        <category>PHP</category>
+        <category>Sublime text3</category>
+        <category>IIS</category>
+        <category>Hexo</category>
+        <category>statistics</category>
+        <category>OCR</category>
+        <category>文字识别</category>
+        <item>
+            <guid isPermalink="true">https://owenyk.github.io/2020/12/26/Markdown%E4%B8%80%E4%BA%9B%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%94%A8%E6%B3%95/</guid>
+            <title>Markdown写一些latex符号和符号用法</title>
+            <link>https://owenyk.github.io/2020/12/26/Markdown%E4%B8%80%E4%BA%9B%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%94%A8%E6%B3%95/</link>
+            <category>math</category>
+            <category>mathjax</category>
+            <category>latex</category>
+            <category>flowchart</category>
+            <pubDate>Sat, 26 Dec 2020 20:05:32 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;1、上下标&#34;&gt;&lt;a href=&#34;#1、上下标&#34; class=&#34;headerlink&#34; title=&#34;1、上下标&#34;&gt;&lt;/a&gt;1、上下标&lt;/h2&gt;&lt;p&gt;1、上标符号，符号：^，如：$x^4$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x^4$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2、下标符号，符号：_，如：$x_1$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x&lt;span class=&#34;hljs-emphasis&#34;&gt;_1$&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;3、组合符号，符号：{}，如：${16}_{8}O{2+}_{2}$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$&amp;#123;16&amp;#125;&lt;span class=&#34;hljs-emphasis&#34;&gt;_&amp;#123;8&amp;#125;O&amp;#123;2+&amp;#125;_&lt;/span&gt;&amp;#123;2&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;2、其他上面带符号类型&#34;&gt;&lt;a href=&#34;#2、其他上面带符号类型&#34; class=&#34;headerlink&#34; title=&#34;2、其他上面带符号类型&#34;&gt;&lt;/a&gt;2、其他上面带符号类型&lt;/h2&gt;&lt;p&gt;1、$\mathring{a}$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\mathring&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2、$\bar{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\bar&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3、$\acute{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\acute&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;$\check{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\check&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4、$\grave{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\grave&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;5、$\breve{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\breve&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;6、$\dot{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\dot&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;7、$\tilde{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\tilde&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;8、向量&lt;br&gt;$\vec{a}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\vec&amp;#123;a&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;9、上箭头&lt;br&gt;$\uparrow$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\uparrow$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3、省略号：&#34;&gt;&lt;a href=&#34;#3、省略号：&#34; class=&#34;headerlink&#34; title=&#34;3、省略号：&#34;&gt;&lt;/a&gt;3、省略号：&lt;/h2&gt;&lt;p&gt;1、横向&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\cdots$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;$\cdots$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\dots$ &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;$\dots$&lt;br&gt;（纵向位置稍低，一般用于有下标的序列）&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$ \dots \cdots$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;${x_1,\dots,x_n}$和${x_1,\cdots,x_n}$ (对比)&lt;/p&gt;
+&lt;p&gt;2、竖向&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\vdots$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;$\vdots$&lt;/p&gt;
+&lt;p&gt;3、斜向：&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\ddots$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;$\ddots$&lt;/p&gt;
+&lt;p&gt;4、分数：&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\frac&amp;#123;x+y&amp;#125;&amp;#123;y+z&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;$\frac{x+y}{y+z}$&lt;/p&gt;
+&lt;p&gt;或者&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$&amp;#123;x+y&amp;#125;\over&amp;#123;y+z&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;${x+y}\over{y+z}$&lt;/p&gt;
+&lt;h2 id=&#34;3、汉字、字体与格式&#34;&gt;&lt;a href=&#34;#3、汉字、字体与格式&#34; class=&#34;headerlink&#34; title=&#34;3、汉字、字体与格式&#34;&gt;&lt;/a&gt;&lt;strong&gt;3、汉字、字体与格式&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;1、字体控制，符号：\\displaystyle，&lt;br&gt;如：$\displaystyle \frac{x+y}{y+z}$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\displaystyle \frac&amp;#123;x+y&amp;#125;&amp;#123;y+z&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;【注意和上面分数区别】&lt;/p&gt;
+&lt;p&gt;2、下划线符号，符号：\\underline，如：$\underline{x+y}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\underline&amp;#123;x+y&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3、上大括号，符号：\\overbrace{算式}，&lt;br&gt;如：$\overbrace {a+b+c+d}^{2.0}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\overbrace &amp;#123;a+b+c+d&amp;#125;^&amp;#123;2.0&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4、下大括号，符号：\\underbrace {算式}，如：&lt;/p&gt;
+&lt;p&gt;$a+\underbrace{b+c}_{1.0}+d$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$a+\underbrace&amp;#123;b+c&amp;#125;&lt;span class=&#34;hljs-emphasis&#34;&gt;_&amp;#123;1.0&amp;#125;+d$&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;5、上位符号，符号：\stacrel{上位符号}{基位符号},如：&lt;br&gt;$\vec {x}\stackrel {\mathrm {def}}{=}{x_1,\dots,x_n}$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\vec &amp;#123;x&amp;#125;\stackrel &amp;#123;\mathrm &amp;#123;def&amp;#125;&amp;#125;&amp;#123;=&amp;#125;&amp;#123;x&lt;span class=&#34;hljs-emphasis&#34;&gt;_1,\dots,x_&lt;/span&gt;n&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;6、标签，符号\tag{数字}，如：&lt;/p&gt;
+&lt;p&gt;$x + y = 1 \tag {1.2}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x + y = 1 \tag &amp;#123;1.2&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4、数学运算&#34;&gt;&lt;a href=&#34;#4、数学运算&#34; class=&#34;headerlink&#34; title=&#34;4、数学运算&#34;&gt;&lt;/a&gt;4、数学运算&lt;/h2&gt;&lt;h3 id=&#34;1-四则运算&#34;&gt;&lt;a href=&#34;#1-四则运算&#34; class=&#34;headerlink&#34; title=&#34;(1)四则运算&#34;&gt;&lt;/a&gt;(1)四则运算&lt;/h3&gt;&lt;p&gt;1.加法运算，符号：+，$x+y=z$ &lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2.加减运算，符号：\pm，$x \pm y=z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \pm y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;3.减加运算，符号：\mp，$x \mp y=z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \mp y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4.乘法运算，符号：\times，$x \times y=z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \times y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;5.点乘运算，符号：\cdot，$x \cdot y=z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \cdot y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;6.星乘运算，符号：\ast，$x \ast y=z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \ast y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;7.除法运算，符号：\div，$x \div y=z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \div y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;8.斜除运算，符号：/，$x / y=z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x / y=z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;9.分式表示，符号：\frac{分子}{分母}，如：$\frac{x+y}{y+z}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\frac&amp;#123;x+y&amp;#125;&amp;#123;y+z&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;分式表示，符号：{分子} \voer {分母}，如：${x+y} \over {y+z}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$&amp;#123;x+y&amp;#125; \over &amp;#123;y+z&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;10.绝对值表示，符号：||，如：$|x+y|$&lt;/p&gt;
+&lt;p&gt;(2)高级运算&lt;/p&gt;
+&lt;p&gt;1、平均数运算，符号：\overline{算式}，如：$\overline{xyz}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\overline&amp;#123;xyz&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;2、开二次方运算，符号：\sqrt，如：$\sqrt x$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\sqrt x$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;开多次方运算，符号：\sqrt[开方数]{被开方数}，如：$\sqrt[3]{x+y}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\sqrt[3]&amp;#123;x+y&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;3、对数运算，符号：\log，如：$\log_2 x$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\log&lt;span class=&#34;hljs-emphasis&#34;&gt;_2\ x$&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;4、求和运算，符号：\sum，如：&lt;br&gt;$\sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)$&lt;/p&gt;
+&lt;p&gt;或者，符号：\displaystyle \sum，如：&lt;br&gt;$\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\sum^n&lt;span class=&#34;hljs-emphasis&#34;&gt;_&amp;#123;i=1&amp;#125;(x_&lt;/span&gt;i-\bar x)(y&lt;span class=&#34;hljs-emphasis&#34;&gt;_i-\bar y)$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-emphasis&#34;&gt;$\displaystyle \sum^n_&lt;/span&gt;&amp;#123;i=1&amp;#125;(x&lt;span class=&#34;hljs-emphasis&#34;&gt;_i-\bar x)(y_&lt;/span&gt;i-\bar y)$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;5、微分运算，符号：\partial，如：$\frac{\partial x}{\partial y}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\frac&amp;#123;\partial x&amp;#125;&amp;#123;\partial y&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;6、积分运算，符号：\int，如：$\int^\infty_{0}{xdx}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\int^&amp;#123;\infty&amp;#125;&lt;span class=&#34;hljs-emphasis&#34;&gt;_&amp;#123;0&amp;#125;&amp;#123;xdx&amp;#125;$&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;7、矩阵表示，符号：\begin{matrix} \end{matrix}，如：&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;
+\left [
+\begin{matrix}
+a &amp; b &amp; c &amp; d  \\
+e &amp; f &amp; g &amp; h  \\
+i &amp; j &amp; k &amp; l  \\
+m &amp; n &amp; o &amp; p
+\end{matrix}
+\right ]
+\tag{1}&lt;/script&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$&lt;br&gt;\left [&lt;br&gt;\begin&amp;#123;matrix&amp;#125;&lt;br&gt;a &amp;amp; b &amp;amp; c &amp;amp; d  \\&lt;br&gt;e &amp;amp; f &amp;amp; g &amp;amp; h  \\&lt;br&gt;i &amp;amp; j &amp;amp; k &amp;amp; l  \\&lt;br&gt;m &amp;amp; n &amp;amp; o &amp;amp; p&lt;br&gt;\end&amp;#123;matrix&amp;#125;&lt;br&gt;\right ]&lt;br&gt;\tag&amp;#123;2&amp;#125;&lt;br&gt;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;5、逻辑运算与集合运算&#34;&gt;&lt;a href=&#34;#5、逻辑运算与集合运算&#34; class=&#34;headerlink&#34; title=&#34;5、逻辑运算与集合运算&#34;&gt;&lt;/a&gt;5、逻辑运算与集合运算&lt;/h2&gt;&lt;p&gt;(1)逻辑运算&lt;br&gt;1、大于等于运算，符号：\geq，如：$x+y \geq z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \geq z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;2、小于等于运算，符号：\leq，如：$x+y \leq z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \leq z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;3、不等于运算，符号：\neq，如：$x+y \neq z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \neq z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;4、不大于等于运算，符号：\ngeq，如：$x+y \ngeq z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \ngeq z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;或者，符号：\not\geq，如：$x+y \not\geq z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \not\geq z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;6、不小于等于运算，符号：\nleq，如：$x+y \nleq z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \nleq z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;或者，符号：\not\leq，如：$x+y \not\leq z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \not\leq z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;7、约等于运算，符号：\approx，如：$x+y \approx z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \approx z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;8、恒定等于运算，符号：\equiv，如：$x+y \equiv z$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x+y \equiv z$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;(2)集合运算&lt;br&gt;1、属于运算，符号：\in，如：$x \in y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \in y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;2、不属于运算，符号：\notin，如：$x \notin y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \notin y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;3、不属于运算，符号：\not\in，如：$x \not\in y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \not\in y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;4、子集运算，符号：\subset，如：$x \subset y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \subset y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;5、非子集运算，符号：\not\subset，如：$x \not\subset y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \not\subset y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;6、真子集运算，符号：\subseteq，如：$x \subseteq y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \subseteq y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;7、非真子集运算，符号：\subsetneq，如：$x \subsetneq y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \subsetneq y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;8、并集运算，符号：\cup，如：$x \cup y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \cup y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;9、交集运算，符号：\cap，如：$x \cap y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \cap y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;10、差集运算，符号：\setminus，如：$x \setminus y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \setminus y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;11、同或运算，符号：\bigodot，如：$x \bigodot y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \bigodot y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;12、同与运算，符号：\bigotimes，如：$x \bigotimes y$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$x \bigotimes y$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;13、实数集合，符号：\mathbb{R}，如：$\mathbb{R}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;\mathbb&amp;#123;R&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;14、自然数集合，符号：\mathbb{Z}，如：$\mathbb{Z}$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;\mathbb&amp;#123;Z&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;15、空集，符号：\emptyset，如：$\emptyset$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\emptyset$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;6、方程组：&#34;&gt;&lt;a href=&#34;#6、方程组：&#34; class=&#34;headerlink&#34; title=&#34;6、方程组：&#34;&gt;&lt;/a&gt;6、方程组：&lt;/h2&gt;&lt;p&gt;1、一般方程组&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\begin&amp;#123;cases&amp;#125;&lt;br&gt;a&lt;span class=&#34;hljs-emphasis&#34;&gt;_1x+b_&lt;/span&gt;1y+c&lt;span class=&#34;hljs-emphasis&#34;&gt;_1z=d_&lt;/span&gt;1\\\&lt;br&gt;a&lt;span class=&#34;hljs-emphasis&#34;&gt;_2x+b_&lt;/span&gt;2y+c&lt;span class=&#34;hljs-emphasis&#34;&gt;_2z=d_&lt;/span&gt;2\\\&lt;br&gt;a&lt;span class=&#34;hljs-emphasis&#34;&gt;_3x+b_&lt;/span&gt;3y+c&lt;span class=&#34;hljs-emphasis&#34;&gt;_3z=d_&lt;/span&gt;3&lt;br&gt;\end&amp;#123;cases&amp;#125;$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;
+\begin{cases}
+a_1x+b_1y+c_1z=d_1\\\
+a_2x+b_2y+c_2z=d_2\\\
+a_3x+b_3y+c_3z=d_3
+\end{cases}&lt;/script&gt;&lt;p&gt;2、带表达式形式&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$$&lt;br&gt;f(n) =&lt;br&gt;\begin&amp;#123;cases&amp;#125;&lt;br&gt;n/2,  &amp;amp;\text&amp;#123;如果:&amp;#125; n\neq 0 \\&lt;br&gt;3n+1, &amp;amp;\text&amp;#123;如果:&amp;#125; n \geq 2 \\&lt;br&gt;2n\over5(n-1), &amp;amp;\text&amp;#123;如果:&amp;#125; \text&amp;#123;-&amp;#125;\infty &amp;lt; n &amp;lt; 2&lt;br&gt;\end&amp;#123;cases&amp;#125;&lt;br&gt;$$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;
+f(n) =
+\begin{cases}
+n/2,  &amp;\text{如果:} n\neq 0 \\
+3n+1, &amp;\text{如果:} n \geq 2 \\
+2n\over5(n-1), &amp;\text{如果:} \text{-}\infty &lt; n &lt; 2
+\end{cases}&lt;/script&gt;&lt;h2 id=&#34;7、表格&#34;&gt;&lt;a href=&#34;#7、表格&#34; class=&#34;headerlink&#34; title=&#34;7、表格&#34;&gt;&lt;/a&gt;7、表格&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$$&lt;br&gt;\begin&amp;#123;array&amp;#125;&amp;#123;|c|l|r|&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;	\toprule&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;	\hline 2&amp;amp;9&amp;amp;4\\\&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;	%\midrule&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;	\hline 7&amp;amp;5&amp;amp;3\\\&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;	\hline 6&amp;amp;1&amp;amp;8\\\&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;	\hline&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;\end&amp;#123;array&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-code&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;
+\begin{array}{|c|l|r|}
+    \hline 772&amp;779&amp;477\\
+    \hline 77&amp;57&amp;37\\
+    \hline 6&amp;1&amp;8\\
+    \hline
+\end{array}&lt;/script&gt;&lt;h2 id=&#34;8、流程图&#34;&gt;&lt;a href=&#34;#8、流程图&#34; class=&#34;headerlink&#34; title=&#34;8、流程图&#34;&gt;&lt;/a&gt;8、流程图&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;需安装插件：&lt;code&gt;flowchart&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs nodejs&#34;&gt;npm i hexo-filter-flowchart --save &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;在根目录：_config.yml加入&lt;code&gt;flowchart&lt;/code&gt;支持:&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;flowchart:&lt;br&gt;  # raphael:   # optional, the source url of raphael.js&lt;br&gt;  # flowchart: # optional, the source url of flowchart.js&lt;br&gt;  options: # options used for &lt;span class=&#34;hljs-code&#34;&gt;`drawSVG`&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;1、官方例子：&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;st=&amp;gt;start: Start|past:&amp;gt;http://www.google.com[blank]&lt;br&gt;e=&amp;gt;end: End:&amp;gt;http://www.google.com&lt;br&gt;op1=&amp;gt;operation: My Operation|past&lt;br&gt;op2=&amp;gt;operation: Stuff|current&lt;br&gt;sub1=&amp;gt;subroutine: My Subroutine|invalid&lt;br&gt;cond=&amp;gt;condition: Yes&lt;br&gt;or No?|approved:&amp;gt;http://www.google.com&lt;br&gt;c2=&amp;gt;condition: Good idea|rejected&lt;br&gt;io=&amp;gt;inputoutput: catch something...|request&lt;br&gt;&lt;br&gt;st-&amp;gt;op1(right)-&amp;gt;cond&lt;br&gt;cond(yes, right)-&amp;gt;c2&lt;br&gt;cond(no)-&amp;gt;sub1(left)-&amp;gt;op1&lt;br&gt;c2(yes)-&amp;gt;io-&amp;gt;e&lt;br&gt;c2(no)-&amp;gt;op2-&amp;gt;e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;div id=&#34;flowchart-0&#34; class=&#34;flow-chart&#34;&gt;&lt;/div&gt;
+
+
+&lt;p&gt;2、演示&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;st=&amp;gt;start: 开始节点&lt;br&gt;in=&amp;gt;inputoutput: 输入i&lt;br&gt;e=&amp;gt;end: 结束节点&lt;br&gt;cond=&amp;gt;condition: i被2整除&lt;br&gt;out1=&amp;gt;inputoutput: 输出i是奇数&lt;br&gt;out2=&amp;gt;inputoutput: 输出i是偶数&lt;br&gt;st(right)-&amp;gt;in-&amp;gt;cond&lt;br&gt;cond(yes,right)-&amp;gt;out2-&amp;gt;e&lt;br&gt;cond(no)-&amp;gt;out1-&amp;gt;e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;div id=&#34;flowchart-1&#34; class=&#34;flow-chart&#34;&gt;&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;9、其他一些符号&#34;&gt;&lt;a href=&#34;#9、其他一些符号&#34; class=&#34;headerlink&#34; title=&#34;9、其他一些符号&#34;&gt;&lt;/a&gt;9、其他一些符号&lt;/h2&gt;&lt;p&gt;1、虚数&lt;br&gt;$\imath$,$\jmath$&lt;br&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$\imath$&lt;br&gt;$\jmath$&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2、其他组合&lt;br&gt;$2H_2O\stackrel {\mathrm {点燃}}{==}2H_2 + O_2$&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs markdown&#34;&gt;$2H&lt;span class=&#34;hljs-emphasis&#34;&gt;_2O\stackrel &amp;#123;\mathrm &amp;#123;点燃&amp;#125;&amp;#125;&amp;#123;=&amp;#125;H_&lt;/span&gt;2 + O&lt;span class=&#34;hljs-emphasis&#34;&gt;_2$&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;希腊字母&lt;/p&gt;
+&lt;div class=&#34;table-container&#34;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字母&lt;/th&gt;
+&lt;th&gt;实现&lt;/th&gt;
+&lt;th&gt;字母&lt;/th&gt;
+&lt;th&gt;实现&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;α&lt;/td&gt;
+&lt;td&gt;\alhpa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;β&lt;/td&gt;
+&lt;td&gt;\beta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Γ&lt;/td&gt;
+&lt;td&gt;\Gamma&lt;/td&gt;
+&lt;td&gt;γ&lt;/td&gt;
+&lt;td&gt;\gamma&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Δ&lt;/td&gt;
+&lt;td&gt;\Delta&lt;/td&gt;
+&lt;td&gt;δ&lt;/td&gt;
+&lt;td&gt;\delta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;ϵ&lt;/td&gt;
+&lt;td&gt;\epsilon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z&lt;/td&gt;
+&lt;td&gt;Z&lt;/td&gt;
+&lt;td&gt;ζ&lt;/td&gt;
+&lt;td&gt;\zeta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;η&lt;/td&gt;
+&lt;td&gt;\eta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Θ&lt;/td&gt;
+&lt;td&gt;\Theta&lt;/td&gt;
+&lt;td&gt;θ&lt;/td&gt;
+&lt;td&gt;\theta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;ι&lt;/td&gt;
+&lt;td&gt;\iota&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;K&lt;/td&gt;
+&lt;td&gt;K&lt;/td&gt;
+&lt;td&gt;κ&lt;/td&gt;
+&lt;td&gt;\kappa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Λ&lt;/td&gt;
+&lt;td&gt;\Lambda&lt;/td&gt;
+&lt;td&gt;λ&lt;/td&gt;
+&lt;td&gt;\lambda&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td&gt;μ&lt;/td&gt;
+&lt;td&gt;\mu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;ν&lt;/td&gt;
+&lt;td&gt;\nu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ξ&lt;/td&gt;
+&lt;td&gt;\Xi&lt;/td&gt;
+&lt;td&gt;ξ&lt;/td&gt;
+&lt;td&gt;\xi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;ο&lt;/td&gt;
+&lt;td&gt;\omicron&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Π&lt;/td&gt;
+&lt;td&gt;\Pi&lt;/td&gt;
+&lt;td&gt;π&lt;/td&gt;
+&lt;td&gt;\pi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P&lt;/td&gt;
+&lt;td&gt;P&lt;/td&gt;
+&lt;td&gt;ρ&lt;/td&gt;
+&lt;td&gt;\rho&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Σ&lt;/td&gt;
+&lt;td&gt;\Sigma&lt;/td&gt;
+&lt;td&gt;σ&lt;/td&gt;
+&lt;td&gt;\sigma&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;T&lt;/td&gt;
+&lt;td&gt;T&lt;/td&gt;
+&lt;td&gt;τ&lt;/td&gt;
+&lt;td&gt;\tau&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Υ&lt;/td&gt;
+&lt;td&gt;\Upsilon&lt;/td&gt;
+&lt;td&gt;υ&lt;/td&gt;
+&lt;td&gt;\upsilon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Φ&lt;/td&gt;
+&lt;td&gt;\Phi&lt;/td&gt;
+&lt;td&gt;ϕ&lt;/td&gt;
+&lt;td&gt;\phi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;χ&lt;/td&gt;
+&lt;td&gt;\chi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ψ&lt;/td&gt;
+&lt;td&gt;\Psi&lt;/td&gt;
+&lt;td&gt;ψ&lt;/td&gt;
+&lt;td&gt;\psi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ω&lt;/td&gt;
+&lt;td&gt;\v&lt;/td&gt;
+&lt;td&gt;ω&lt;/td&gt;
+&lt;td&gt;\omega&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;参考：&lt;br&gt;①&lt;a href=&#34;https://www.cnblogs.com/Lo3prs/p/14021997.html&#34;&gt;MarkDown数学公式&lt;/a&gt;&lt;br&gt;②&lt;a href=&#34;https://www.jianshu.com/p/e74eb43960a1&#34;&gt;Markdown数学公式语法&lt;/a&gt;&lt;br&gt;③&lt;a href=&#34;https://github.com/bubkoo/hexo-filter-flowchart&#34;&gt;flowchart项目&lt;/a&gt;&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js&#34;&gt;&lt;/script&gt;&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js&#34;&gt;&lt;/script&gt;&lt;textarea id=&#34;flowchart-0-code&#34; style=&#34;display: none&#34;&gt;st=&gt;start: Start|past:&gt;http://www.google.com[blank]
+e=&gt;end: End:&gt;http://www.google.com
+op1=&gt;operation: My Operation|past
+op2=&gt;operation: Stuff|current
+sub1=&gt;subroutine: My Subroutine|invalid
+cond=&gt;condition: Yes
+or No?|approved:&gt;http://www.google.com
+c2=&gt;condition: Good idea|rejected
+io=&gt;inputoutput: catch something...|request
+
+st-&gt;op1(right)-&gt;cond
+cond(yes, right)-&gt;c2
+cond(no)-&gt;sub1(left)-&gt;op1
+c2(yes)-&gt;io-&gt;e
+c2(no)-&gt;op2-&gt;e&lt;/textarea&gt;&lt;textarea id=&#34;flowchart-0-options&#34; style=&#34;display: none&#34;&gt;{&#34;scale&#34;:1,&#34;line-width&#34;:2,&#34;line-length&#34;:50,&#34;text-margin&#34;:10,&#34;font-size&#34;:12}&lt;/textarea&gt;&lt;script&gt;  var code = document.getElementById(&#34;flowchart-0-code&#34;).value;  var options = JSON.parse(decodeURIComponent(document.getElementById(&#34;flowchart-0-options&#34;).value));  var diagram = flowchart.parse(code);  diagram.drawSVG(&#34;flowchart-0&#34;, options);&lt;/script&gt;&lt;textarea id=&#34;flowchart-1-code&#34; style=&#34;display: none&#34;&gt;st=&gt;start: 开始节点
+in=&gt;inputoutput: 输入i
+e=&gt;end: 结束节点
+op1=&gt;operation: xx
+op2=&gt;operation: xx
+cond=&gt;condition: i被2整除
+sub=&gt;subroutine: xx
+out1=&gt;inputoutput: 输出i是奇数
+out2=&gt;inputoutput: 输出i是偶数
+st-&gt;in-&gt;cond
+cond(yes,right)-&gt;out2-&gt;e
+cond(no)-&gt;out1-&gt;e&lt;/textarea&gt;&lt;textarea id=&#34;flowchart-1-options&#34; style=&#34;display: none&#34;&gt;{&#34;scale&#34;:1,&#34;line-width&#34;:2,&#34;line-length&#34;:50,&#34;text-margin&#34;:10,&#34;font-size&#34;:12}&lt;/textarea&gt;&lt;script&gt;  var code = document.getElementById(&#34;flowchart-1-code&#34;).value;  var options = JSON.parse(decodeURIComponent(document.getElementById(&#34;flowchart-1-options&#34;).value));  var diagram = flowchart.parse(code);  diagram.drawSVG(&#34;flowchart-1&#34;, options);&lt;/script&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://owenyk.github.io/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/</guid>
+            <title>最小二乘法的算术推导</title>
+            <link>https://owenyk.github.io/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/</link>
+            <category>math</category>
+            <category>mathjax</category>
+            <category>latex</category>
+            <category>statistics</category>
+            <pubDate>Fri, 25 Dec 2020 20:05:32 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;\pic\2020\12\最小二乘法的算术推导.png&#34; alt=&#34;最小二乘法的算术推导&#34;&gt;&lt;/p&gt;
+&lt;p&gt;$\hat y=a+bx$&lt;/p&gt;
+&lt;p&gt;$\begin{aligned} Q&amp;amp;=\displaystyle \sum^n_{i=1}{(y_i-\hat y)^2}\\\&lt;br&gt;&amp;amp;={(y_1-\hat y_1)^2}+{(y_2-\hat y_2)^2}+ \cdots +{(y_n-\hat y_n)^2} \end{aligned}$&lt;/p&gt;
+&lt;p&gt;其中$\hat y$为回归方程，求$Q$最小时回归方程的系数a，b取值。&lt;/p&gt;
+&lt;h2 id=&#34;具体推导如下：&#34;&gt;&lt;a href=&#34;#具体推导如下：&#34; class=&#34;headerlink&#34; title=&#34;具体推导如下：&#34;&gt;&lt;/a&gt;具体推导如下：&lt;/h2&gt;&lt;h2 id=&#34;一、预备公式&#34;&gt;&lt;a href=&#34;#一、预备公式&#34; class=&#34;headerlink&#34; title=&#34;一、预备公式&#34;&gt;&lt;/a&gt;&lt;strong&gt;一、预备公式&lt;/strong&gt;&lt;/h2&gt;&lt;h3 id=&#34;1-gt&#34;&gt;&lt;a href=&#34;#1-gt&#34; class=&#34;headerlink&#34; title=&#34;1&amp;gt;&#34;&gt;&lt;/a&gt;1&amp;gt;&lt;/h3&gt;&lt;p&gt;$\displaystyle \sum^n_{i=1}{(x_i-{\bar x})^2}=\displaystyle \sum^n_{i=1}{x_i^2-n{\bar x}^2}$,&lt;/p&gt;
+&lt;p&gt;其中:$\bar x=\frac {x_1+x_2+\cdots +x_n}{n}$&lt;/p&gt;
+&lt;h5 id=&#34;推导&#34;&gt;&lt;a href=&#34;#推导&#34; class=&#34;headerlink&#34; title=&#34;推导:&#34;&gt;&lt;/a&gt;&lt;strong&gt;推导:&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;$\begin{aligned} 左边&amp;amp;={(x_1-\bar x_1)^2}+{(x_2-\bar x_2)^2}+ \cdots +{(x_n-\bar x_n)^2}\\\&lt;br&gt;&amp;amp;=x_1^2+x_2^2+ \cdots +x_n^2-2\bar x·(x_1+x_2+ \cdots +x_n)+n\bar x^2\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}{x_i^2}-2\bar x·n·\bar x + n·\bar x^2\\\&lt;br&gt;&amp;amp;=\displaystyle\sum^n_{i=1}{x_i^2-n\bar x^2}=右边 \end{aligned}$&lt;/p&gt;
+&lt;h3 id=&#34;2-gt&#34;&gt;&lt;a href=&#34;#2-gt&#34; class=&#34;headerlink&#34; title=&#34;2&amp;gt;&#34;&gt;&lt;/a&gt;2&amp;gt;&lt;/h3&gt;&lt;p&gt;$\displaystyle\sum^n_{i=1}{(x_i-\bar x)}{(y_i-\bar y)}=\displaystyle \sum^n_{i=1}{x_i}{y_i}-n\bar x\bar y$，&lt;/p&gt;
+&lt;p&gt;其中:$\bar x=\frac {x_1+x_2+\cdots+x_n}{n},\bar y=\frac{y_1+y_2+\cdots + y_n}{n}$&lt;/p&gt;
+&lt;h5 id=&#34;推导：&#34;&gt;&lt;a href=&#34;#推导：&#34; class=&#34;headerlink&#34; title=&#34;推导：&#34;&gt;&lt;/a&gt;&lt;strong&gt;推导：&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;$\begin{aligned} 左边&amp;amp;={(x_1-\bar x_1)}{(y_1-\bar y_1)}+{(x_2-\bar x_2)}{(y_2-\bar y_2)}+ \cdots +{(x_n-\bar x_n)}{(y_n-\bar y_n)}\\\&lt;br&gt;&amp;amp;=(x_1y_1+x_2y_2+\cdots+x_n·y_n)+n\bar x·\bar y-(y_1+y_2+\cdots+y_n)·\bar x-(x_1+x_2+\cdots+x_n)·\bar y\\\&lt;br&gt;&amp;amp;=\displaystyle\sum^ n_{i=1}{x_i}{y_i}+n\bar x·\bar y-n\bar y·\bar x-n\bar x\bar y\\\&lt;br&gt;&amp;amp;=\displaystyle\sum^n_{i=1}{x_i}{y_i}-n\bar x\bar y=右边 \end{aligned}$&lt;/p&gt;
+&lt;h2 id=&#34;二、推导过程&#34;&gt;&lt;a href=&#34;#二、推导过程&#34; class=&#34;headerlink&#34; title=&#34;二、推导过程&#34;&gt;&lt;/a&gt;&lt;strong&gt;二、推导过程&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;$\begin{aligned} Q &amp;amp;=\displaystyle \sum^n_{i=1}{(y_i-\hat y)^2}\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}{[y_i-(a+bx_i)]}^2\\\&lt;br&gt;&amp;amp;=(y_1^2+y_2^2+ \cdots +y_n^2)+na^2+b^2(x_1^2 + x_2^2 + \cdots +x_n^2)+2a·b·(x_1+x_2+\cdots+x_n)-2a·(y_1+y_2+\cdots +y_n)-2b(x_1·y_1+x_2·y_2+\cdots +x_n·y_n)\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}y_i^2+na^2+b^2·\displaystyle \sum^n_{i=1}x_i^2+2ab·n·\bar x-2a·n·\bar y-2b·\displaystyle \sum^n_{i=1}x_iy_i\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}y_i^2-2b\displaystyle \sum^n_{i=1}x_iy_i+b^2·\displaystyle \sum^n_{i=1}x_i^2+na^2-n·2a·(\bar y-b\bar x)\\\&lt;br&gt;&amp;amp;=\displaystyle \sum^n_{i=1}y_i^2-2b\displaystyle \sum^n_{i=1}x_iy_i+b^2·\displaystyle \sum^n_{i=1}x_i^2+n[a-(\bar y-b\bar x)]^2-n[(\bar y-b\bar x)]^2\\\&lt;br&gt;&amp;amp;=n[(\bar y-b\bar x)]^2-n\bar y^2+2n·b·\bar x·\bar y-n·b^2·\bar x^2+b^2·\displaystyle \sum^n_{i=1}x_i^2-2b·\displaystyle \sum^n_{i=1}x_iy_i+\displaystyle \sum^n_{i=1}y_i^2\\\&lt;br&gt;&amp;amp;=n[(\bar y-b\bar x)]^2+b^2(\displaystyle \sum^n_{i=1}x_i^2-n·\bar x^2)+\displaystyle \sum^n_{i=1}y_i^2-n·\bar y^2-2b·(\displaystyle \sum^n_{i=1}x_iy_i-n·\bar x·\bar y)\\\&lt;br&gt;&amp;amp;=n[a-(\bar y-b\bar x)]^2+b^2{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}-2b·\displaystyle \sum^n_{i=1}{(x_i-\bar x)(y_i-\bar y)}+\displaystyle \sum^n_{i=1}y_i^2-n·\bar y^2\\\&lt;br&gt;&amp;amp;=n[a-(\bar y-b\bar x)]^2+{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}·\left [b^2-2b·\frac {\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\displaystyle \sum^n_{i=1}{(x_i-\bar x)^2}}\right ] +\displaystyle \sum^n_{i=1}y_i-n·\bar y^2\\\&lt;br&gt;&amp;amp;=n[a-(\bar y-b\bar x)]^2+{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}·\left [b-\frac {\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\displaystyle \sum^n_{i=1}{(x_i-\bar x)^2}}\right ]^2-\frac {\left [{\displaystyle \sum^n_{i=1}}(x_i-{\bar x})(y_i-\bar y)\right ]^2}{\displaystyle \sum^n_{i=1}{(x_i-\bar x)^2}}+ \displaystyle \sum^n_{i=1}y_i-n·\bar y^2 \end{aligned}$&lt;br&gt;因为：&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;\displaystyle \sum^n_{i=1}(x_i-\bar x)^2&lt;/script&gt;&lt;p&gt;和&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;\frac {[\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)]^2}{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}&lt;/script&gt;&lt;p&gt;及&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;\displaystyle \sum^n_{i=1}y_i-n·\bar y^2&lt;/script&gt;&lt;p&gt;为常数。&lt;/p&gt;
+&lt;p&gt;所以:&lt;/p&gt;
+&lt;script type=&#34;math/tex; mode=display&#34;&gt;Q_{min}=
+\begin{cases}
+a-(\bar y-b\bar x)=0\\\
+b-\frac {\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\displaystyle \sum^n_{i=1}(x_i-\bar x)^2}=0
+\end{cases}
+\Longrightarrow \begin{cases} a=\bar y-b\bar x\\\
+b=\frac {\displaystyle \sum^n_{i=1}(x_iy_i-n·\bar x\bar y)}{\displaystyle \sum^n_{i=1}x_i^2-n·\bar x^2}
+\end{cases}&lt;/script&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

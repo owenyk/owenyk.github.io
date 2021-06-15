@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://owenyk.github.io</id>
+    <title>K&#39;s Life • Posts by &#34;windows&#34; tag</title>
+    <link href="https://owenyk.github.io" />
+    <updated>2020-06-21T04:05:32.000Z</updated>
+    <category term="webdav" />
+    <category term="MySQL" />
+    <category term="备份" />
+    <category term="Debian" />
+    <category term="math" />
+    <category term="mathjax" />
+    <category term="latex" />
+    <category term="flowchart" />
+    <category term="python" />
+    <category term="重命名" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
+    <category term="aria2" />
+    <category term="ajax" />
+    <category term="asp" />
+    <category term="MSSQL" />
+    <category term="数据库" />
+    <category term="javascript" />
+    <category term="pdf" />
+    <category term="access" />
+    <category term="PHP" />
+    <category term="Sublime text3" />
+    <category term="IIS" />
+    <category term="Hexo" />
+    <category term="statistics" />
+    <category term="OCR" />
+    <category term="文字识别" />
+    <entry>
+        <id>https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/</id>
+        <title>Ventoy+WePE2.1做启动盘</title>
+        <link rel="alternate" href="https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/"/>
+        <content type="html">&lt;h2 id=&#34;一、Dell的BIOS设置&#34;&gt;&lt;a href=&#34;#一、Dell的BIOS设置&#34; class=&#34;headerlink&#34; title=&#34;一、Dell的BIOS设置&#34;&gt;&lt;/a&gt;一、Dell的BIOS设置&lt;/h2&gt;&lt;h3 id=&#34;1、电脑开机，按F2，进入BIOS&#34;&gt;&lt;a href=&#34;#1、电脑开机，按F2，进入BIOS&#34; class=&#34;headerlink&#34; title=&#34;1、电脑开机，按F2，进入BIOS&#34;&gt;&lt;/a&gt;1、电脑开机，按&lt;code&gt;F2&lt;/code&gt;，进入BIOS&lt;/h3&gt;&lt;h3 id=&#34;2、选择Secure-Boot-Enable-关闭Disabled&#34;&gt;&lt;a href=&#34;#2、选择Secure-Boot-Enable-关闭Disabled&#34; class=&#34;headerlink&#34; title=&#34;2、选择Secure Boot Enable,关闭Disabled&#34;&gt;&lt;/a&gt;2、选择&lt;code&gt;Secure Boot Enable&lt;/code&gt;,关闭&lt;code&gt;Disabled&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8vuVrHb8AisLyeLjAqBKCK.KnVU6UfCNMUduYVQJeHQjvn50E9SjkLYWSNSustEtTA!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0211501698&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;Secure Boot Enable&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3、设置硬盘模式为AHCI&#34;&gt;&lt;a href=&#34;#3、设置硬盘模式为AHCI&#34; class=&#34;headerlink&#34; title=&#34;3、设置硬盘模式为AHCI&#34;&gt;&lt;/a&gt;3、设置硬盘模式为&lt;code&gt;AHCI&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8q5JqDJRaxmMPCYpJGjoHhzrp1PF*hWQcACMqjIqqq4CJZsQ1YNOYGjleztVzYBOwQ!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=049455234&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;SATA Operation&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4、修改BIOS引导顺序&#34;&gt;&lt;a href=&#34;#4、修改BIOS引导顺序&#34; class=&#34;headerlink&#34; title=&#34;4、修改BIOS引导顺序&#34;&gt;&lt;/a&gt;4、修改&lt;code&gt;BIOS&lt;/code&gt;引导顺序&lt;/h3&gt;&lt;p&gt; &lt;code&gt;Boot List Option&lt;/code&gt;选择UEFI，&lt;code&gt;Boot Sequence&lt;/code&gt;添加装好Ventoy的U盘。&lt;/p&gt;
+&lt;p&gt; &lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8nqhZkU.rjx9uX.D7RSoD*5WpPyVTQh1nAkrb6WKgkwm27KbfvTmrDBtQJBunq92VQ!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=074209938&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;Boot List Option&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二、Ventoy装系统&#34;&gt;&lt;a href=&#34;#二、Ventoy装系统&#34; class=&#34;headerlink&#34; title=&#34;二、Ventoy装系统&#34;&gt;&lt;/a&gt;二、Ventoy装系统&lt;/h2&gt;&lt;h3 id=&#34;1、开机按F12-进入引导界面&#34;&gt;&lt;a href=&#34;#1、开机按F12-进入引导界面&#34; class=&#34;headerlink&#34; title=&#34;1、开机按F12,进入引导界面&#34;&gt;&lt;/a&gt;1、开机按&lt;code&gt;F12&lt;/code&gt;,进入引导界面&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gvcZJhdaXo7zzl*y.Rj2nv5NeOj.dnnWZt8cGlXP0OWXuQUnNr*RCB5R59FKOOlkw!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0206014546&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;Boot List&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2、安装win10&#34;&gt;&lt;a href=&#34;#2、安装win10&#34; class=&#34;headerlink&#34; title=&#34;2、安装win10&#34;&gt;&lt;/a&gt;2、安装win10&lt;/h3&gt;&lt;h4 id=&#34;1-gt-进入Ventoy界面，选择win10系统ISO文件-安装win10&#34;&gt;&lt;a href=&#34;#1-gt-进入Ventoy界面，选择win10系统ISO文件-安装win10&#34; class=&#34;headerlink&#34; title=&#34;1&amp;gt; 进入Ventoy界面，选择win10系统ISO文件,安装win10&#34;&gt;&lt;/a&gt;1&amp;gt; 进入Ventoy界面，选择win10系统ISO文件,安装win10&lt;/h4&gt;&lt;p&gt;win10系统ISO文件下载方法：&lt;/p&gt;
+&lt;p&gt;进入&lt;a href=&#34;https://www.microsoft.com/zh-cn/software-download/windows10ISO&#34;&gt;win10系统ISO地址&lt;/a&gt;,&lt;code&gt;开启浏览器调试&lt;/code&gt;，&lt;code&gt;刷新&lt;/code&gt;，即可出现ISO文件选择下载界面,关掉调试，选择需要的ISO文件下载即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;\pic\2020\12\win10系统ISO.png&#34; alt=&#34;win10系统ISO&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gghMFD.tJ2tFrmHjBiRaQixkRHd4DdL8rgOaqb*W8Om82l.7KfJs6Rstr.wE*fj4g!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0222155314&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;win10系统ISO文件&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-gt-32或者64系统选择&#34;&gt;&lt;a href=&#34;#2-gt-32或者64系统选择&#34; class=&#34;headerlink&#34; title=&#34;2&amp;gt; 32或者64系统选择&#34;&gt;&lt;/a&gt;2&amp;gt; 32或者64系统选择&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hNUrg6v9JUKjsrt4gJjaw1gvhMu0DySB5pdnXJvw8PQjxHmk*vmlELNhN6SFrAxWw!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0224711266&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;32或者64系统&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-gt-加载程序&#34;&gt;&lt;a href=&#34;#3-gt-加载程序&#34; class=&#34;headerlink&#34; title=&#34;3&amp;gt; 加载程序&#34;&gt;&lt;/a&gt;3&amp;gt; 加载程序&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gbIeAwdhyU6kdd6.uqbu6RUDdQ4xytu0*ShBZ6AMHuRRurBX9X6gSpdmwjlr8ZVEA!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0265058578&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;32或者64系统&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4-gt-程序安装&#34;&gt;&lt;a href=&#34;#4-gt-程序安装&#34; class=&#34;headerlink&#34; title=&#34;4&amp;gt; 程序安装&#34;&gt;&lt;/a&gt;4&amp;gt; 程序安装&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hL.UVWAhiaikAhsH52KJQxnmIdrsoRryicUXXXOn*kVxzm8LREqUU5gswEhw4p*kA!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0130022610&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;32或者64系统&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3、安装win7&#34;&gt;&lt;a href=&#34;#3、安装win7&#34; class=&#34;headerlink&#34; title=&#34;3、安装win7&#34;&gt;&lt;/a&gt;3、安装win7&lt;/h3&gt;&lt;p&gt;【注意：32位启动不支持UEFI】&lt;/p&gt;
+&lt;h4 id=&#34;1-gt-需配合wepe安装微pe地址，&#34;&gt;&lt;a href=&#34;#1-gt-需配合wepe安装微pe地址，&#34; class=&#34;headerlink&#34; title=&#34;1&amp;gt; 需配合wepe安装微pe地址，&#34;&gt;&lt;/a&gt;1&amp;gt; 需配合wepe安装&lt;a href=&#34;http://www.wepe.com.cn/download.html&#34;&gt;微pe地址&lt;/a&gt;，&lt;/h4&gt;&lt;h4 id=&#34;2-gt-将工具箱制作成IOS镜像制作方法地址&#34;&gt;&lt;a href=&#34;#2-gt-将工具箱制作成IOS镜像制作方法地址&#34; class=&#34;headerlink&#34; title=&#34;2&amp;gt; 将工具箱制作成IOS镜像制作方法地址&#34;&gt;&lt;/a&gt;2&amp;gt; 将工具箱制作成IOS镜像&lt;a href=&#34;http://www.wepe.com.cn/ubook/installwepe.html&#34;&gt;制作方法地址&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;【在下面制作中注意选择右下角&lt;code&gt;**光盘**&lt;/code&gt;图标】&lt;br&gt;&lt;img src=&#34;http://www.wepe.com.cn/ubook/assets/img/PE2.d658a63d.png&#34; alt=&#34;Wepe工具箱安装到U盘&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-gt-放进装好Ventoy的U盘，选择Wepe-64-v2-1-iso-根据前面安装工具箱版本不一样名称也会不一样&#34;&gt;&lt;a href=&#34;#3-gt-放进装好Ventoy的U盘，选择Wepe-64-v2-1-iso-根据前面安装工具箱版本不一样名称也会不一样&#34; class=&#34;headerlink&#34; title=&#34;3&amp;gt; 放进装好Ventoy的U盘，选择Wepe_64_v2.1.iso(根据前面安装工具箱版本不一样名称也会不一样)&#34;&gt;&lt;/a&gt;3&amp;gt; 放进装好&lt;code&gt;Ventoy&lt;/code&gt;的U盘，选择&lt;code&gt;Wepe_64_v2.1.iso&lt;/code&gt;(根据前面安装工具箱版本不一样名称也会不一样)&lt;/h4&gt;&lt;h4 id=&#34;4-gt-进入桌面，选择DiskGenius格式需要安装的影片盘符，退出&#34;&gt;&lt;a href=&#34;#4-gt-进入桌面，选择DiskGenius格式需要安装的影片盘符，退出&#34; class=&#34;headerlink&#34; title=&#34;4&amp;gt; 进入桌面，选择DiskGenius格式需要安装的影片盘符，退出&#34;&gt;&lt;/a&gt;4&amp;gt; 进入桌面，选择&lt;code&gt;DiskGenius&lt;/code&gt;格式需要安装的影片盘符，退出&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8m.SS64jkSwYiDNdIh5PYDv3lDI0H9nyONLgFhaNyPFii7Z.D5FRjvN15Ko3DUd3cw!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0224512754&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;Wepe界面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8jAzlgT5ednp7ZHcGhpK23B0xRSz3Lb1RyDzjDYF*9gHFL.u1kl5v2.JqVuTrsGHYQ!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0268258098&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;DiskGenius&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;5-gt-选择WinNTSetp安装器进行安装&#34;&gt;&lt;a href=&#34;#5-gt-选择WinNTSetp安装器进行安装&#34; class=&#34;headerlink&#34; title=&#34;5&amp;gt; 选择WinNTSetp安装器进行安装&#34;&gt;&lt;/a&gt;5&amp;gt; 选择&lt;code&gt;WinNTSetp&lt;/code&gt;安装器进行安装&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gO5ou.Xocae1wB*mnzfYeQO*Xc7VdY7oDlqmnm2Cw43eBTl5mklUdSxA4951FdtHw!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0215562530&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;WinNTSetp&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3、安装Fedora&#34;&gt;&lt;a href=&#34;#3、安装Fedora&#34; class=&#34;headerlink&#34; title=&#34;3、安装Fedora&#34;&gt;&lt;/a&gt;3、安装Fedora&lt;/h3&gt;&lt;h4 id=&#34;1-gt-下载Fedora&#34;&gt;&lt;a href=&#34;#1-gt-下载Fedora&#34; class=&#34;headerlink&#34; title=&#34;1&amp;gt;下载Fedora&#34;&gt;&lt;/a&gt;1&amp;gt;下载Fedora&lt;/h4&gt;&lt;p&gt; Fedora 的下载地址是:&lt;a href=&#34;https://getfedora.org/en/workstation/download/&#34;&gt;下载地址&lt;/a&gt;,&lt;code&gt;For x86_64:Fedora 33: x86_64 DVD ISO&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-gt-放进装好Ventoy的U盘，选择Fedora-Workstation-Live-x86-64-33-1-2-iso&#34;&gt;&lt;a href=&#34;#2-gt-放进装好Ventoy的U盘，选择Fedora-Workstation-Live-x86-64-33-1-2-iso&#34; class=&#34;headerlink&#34; title=&#34;2&amp;gt; 放进装好Ventoy的U盘，选择Fedora-Workstation-Live-x86_64-33-1.2.iso&#34;&gt;&lt;/a&gt;2&amp;gt; 放进装好&lt;code&gt;Ventoy&lt;/code&gt;的U盘，选择&lt;code&gt;Fedora-Workstation-Live-x86_64-33-1.2.iso&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;具体安装步骤方法参照&lt;a href=&#34;https://ywnz.com/linuxaz/6764.html&#34;&gt;云网牛站：Fedora 32系统安装&lt;/a&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;3-gt-安装完成后桌面展示：&#34;&gt;&lt;a href=&#34;#3-gt-安装完成后桌面展示：&#34; class=&#34;headerlink&#34; title=&#34;3&amp;gt;安装完成后桌面展示：&#34;&gt;&lt;/a&gt;3&amp;gt;安装完成后桌面展示：&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8sOUtS9YZ238uG9WnyfTD4Xmb1bhBW5XcMTzJLwyyKOyUmYgBtTfgb88hFhFA8xetg!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=078690962&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;Fedora桌面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hs6Yp5CdfbjTSeeJ7FKz0cfGmg.TZFC8NJGzFl3qiuUZycDyWXa4*LB3Q2dRr2*Dw!!/b&amp;amp;ek=1&amp;amp;kp=1&amp;amp;pt=0&amp;amp;bo=IAMrBCADKwQRECc!&amp;amp;tl=3&amp;amp;su=0223784754&amp;amp;tm=1609052400&amp;amp;sce=0-12-12&amp;amp;rf=2-9&#34; alt=&#34;Fedora一些程序&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="启动盘" />
+        <category term="系统" />
+        <category term="Windows" />
+        <category term="Ventoy" />
+        <category term="WePE" />
+        <category term="Fedora" />
+        <updated>2020-06-21T04:05:32.000Z</updated>
+    </entry>
+</feed>
