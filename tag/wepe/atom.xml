@@ -23,6 +23,8 @@
     <category term="WePE" />
     <category term="Fedora" />
     <category term="aria2" />
+    <category term="ffmpeg" />
+    <category term="youtube-dl" />
     <category term="ajax" />
     <category term="asp" />
     <category term="MSSQL" />
