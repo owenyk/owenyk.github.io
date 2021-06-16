@@ -14,14 +14,6 @@
     <category term="flowchart" />
     <category term="python" />
     <category term="重命名" />
-    <category term="request" />
-    <category term="BeautifulSoup" />
-    <category term="启动盘" />
-    <category term="系统" />
-    <category term="Windows" />
-    <category term="Ventoy" />
-    <category term="WePE" />
-    <category term="Fedora" />
     <category term="aria2" />
     <category term="ffmpeg" />
     <category term="youtube-dl" />
@@ -39,6 +31,14 @@
     <category term="statistics" />
     <category term="OCR" />
     <category term="文字识别" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
     <entry>
         <id>https://owenyk.github.io/2020/12/26/Markdown%E4%B8%80%E4%BA%9B%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%94%A8%E6%B3%95/</id>
         <title>Markdown写一些latex符号和符号用法</title>

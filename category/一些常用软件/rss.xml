@@ -17,14 +17,6 @@
         <category>flowchart</category>
         <category>python</category>
         <category>重命名</category>
-        <category>request</category>
-        <category>BeautifulSoup</category>
-        <category>启动盘</category>
-        <category>系统</category>
-        <category>Windows</category>
-        <category>Ventoy</category>
-        <category>WePE</category>
-        <category>Fedora</category>
         <category>aria2</category>
         <category>ffmpeg</category>
         <category>youtube-dl</category>
@@ -42,6 +34,14 @@
         <category>statistics</category>
         <category>OCR</category>
         <category>文字识别</category>
+        <category>request</category>
+        <category>BeautifulSoup</category>
+        <category>启动盘</category>
+        <category>系统</category>
+        <category>Windows</category>
+        <category>Ventoy</category>
+        <category>WePE</category>
+        <category>Fedora</category>
         <item>
             <guid isPermalink="true">https://owenyk.github.io/2020/11/05/aria2%E9%85%8D%E7%BD%AE/</guid>
             <title>Aria2配置</title>

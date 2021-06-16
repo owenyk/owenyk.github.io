@@ -17,14 +17,6 @@
         <category>flowchart</category>
         <category>python</category>
         <category>重命名</category>
-        <category>request</category>
-        <category>BeautifulSoup</category>
-        <category>启动盘</category>
-        <category>系统</category>
-        <category>Windows</category>
-        <category>Ventoy</category>
-        <category>WePE</category>
-        <category>Fedora</category>
         <category>aria2</category>
         <category>ffmpeg</category>
         <category>youtube-dl</category>
@@ -42,6 +34,14 @@
         <category>statistics</category>
         <category>OCR</category>
         <category>文字识别</category>
+        <category>request</category>
+        <category>BeautifulSoup</category>
+        <category>启动盘</category>
+        <category>系统</category>
+        <category>Windows</category>
+        <category>Ventoy</category>
+        <category>WePE</category>
+        <category>Fedora</category>
         <item>
             <guid isPermalink="true">https://owenyk.github.io/2020/12/19/%E5%9C%A8debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
             <title>在debian10上配置Hexo+Github做个人博客</title>

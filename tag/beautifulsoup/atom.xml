@@ -14,14 +14,6 @@
     <category term="flowchart" />
     <category term="python" />
     <category term="重命名" />
-    <category term="request" />
-    <category term="BeautifulSoup" />
-    <category term="启动盘" />
-    <category term="系统" />
-    <category term="Windows" />
-    <category term="Ventoy" />
-    <category term="WePE" />
-    <category term="Fedora" />
     <category term="aria2" />
     <category term="ffmpeg" />
     <category term="youtube-dl" />
@@ -39,6 +31,14 @@
     <category term="statistics" />
     <category term="OCR" />
     <category term="文字识别" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
     <entry>
         <id>https://owenyk.github.io/2019/12/12/Python%E7%94%A8request%E4%B8%8B%E8%BD%BD%E9%87%91%E5%BA%B8%E5%B0%8F%E8%AF%B4/</id>
         <title>Python用request下载金庸小说</title>

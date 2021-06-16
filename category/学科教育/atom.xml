@@ -14,14 +14,6 @@
     <category term="flowchart" />
     <category term="python" />
     <category term="重命名" />
-    <category term="request" />
-    <category term="BeautifulSoup" />
-    <category term="启动盘" />
-    <category term="系统" />
-    <category term="Windows" />
-    <category term="Ventoy" />
-    <category term="WePE" />
-    <category term="Fedora" />
     <category term="aria2" />
     <category term="ffmpeg" />
     <category term="youtube-dl" />
@@ -39,6 +31,14 @@
     <category term="statistics" />
     <category term="OCR" />
     <category term="文字识别" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
     <entry>
         <id>https://owenyk.github.io/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/</id>
         <title>最小二乘法的算术推导</title>

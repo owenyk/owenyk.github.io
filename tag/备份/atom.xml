@@ -14,14 +14,6 @@
     <category term="flowchart" />
     <category term="python" />
     <category term="重命名" />
-    <category term="request" />
-    <category term="BeautifulSoup" />
-    <category term="启动盘" />
-    <category term="系统" />
-    <category term="Windows" />
-    <category term="Ventoy" />
-    <category term="WePE" />
-    <category term="Fedora" />
     <category term="aria2" />
     <category term="ffmpeg" />
     <category term="youtube-dl" />
@@ -39,6 +31,14 @@
     <category term="statistics" />
     <category term="OCR" />
     <category term="文字识别" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
     <entry>
         <id>https://owenyk.github.io/2019/12/29/Debian10%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8DmariaDB%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
         <title>Debian10备份与恢复mariaDB数据库</title>
