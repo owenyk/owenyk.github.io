@@ -35,7 +35,7 @@
   
   
   <entry>
-    <title>Debian10系统systemclt服务管理方式下Nginx设置开机启动</title>
+    <title>Debian10系统systemctl服务管理方式下Nginx设置开机启动</title>
     <link href="/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/"/>
     <url>/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</url>
     
