@@ -11,12 +11,24 @@
         <category>MySQL</category>
         <category>备份</category>
         <category>Debian</category>
+        <category>Nginx</category>
+        <category>systemctl</category>
+        <category>启动服务</category>
+        <category>service</category>
         <category>math</category>
         <category>mathjax</category>
         <category>latex</category>
         <category>flowchart</category>
         <category>python</category>
         <category>重命名</category>
+        <category>request</category>
+        <category>BeautifulSoup</category>
+        <category>启动盘</category>
+        <category>系统</category>
+        <category>Windows</category>
+        <category>Ventoy</category>
+        <category>WePE</category>
+        <category>Fedora</category>
         <category>aria2</category>
         <category>ffmpeg</category>
         <category>youtube-dl</category>
@@ -34,14 +46,6 @@
         <category>statistics</category>
         <category>OCR</category>
         <category>文字识别</category>
-        <category>request</category>
-        <category>BeautifulSoup</category>
-        <category>启动盘</category>
-        <category>系统</category>
-        <category>Windows</category>
-        <category>Ventoy</category>
-        <category>WePE</category>
-        <category>Fedora</category>
         <item>
             <guid isPermalink="true">https://owenyk.github.io/2021/01/11/Youtube-dl%E8%B0%83%E7%94%A8aria2%E5%92%8Cffmpeg%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%90%88%E5%B9%B6%E8%A7%86%E9%A2%91/</guid>
             <title>youtube-dl调用aria2和ffmpeg下载合并视频</title>

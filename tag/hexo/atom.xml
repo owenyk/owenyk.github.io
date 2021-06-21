@@ -8,12 +8,24 @@
     <category term="MySQL" />
     <category term="备份" />
     <category term="Debian" />
+    <category term="Nginx" />
+    <category term="systemctl" />
+    <category term="启动服务" />
+    <category term="service" />
     <category term="math" />
     <category term="mathjax" />
     <category term="latex" />
     <category term="flowchart" />
     <category term="python" />
     <category term="重命名" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
     <category term="aria2" />
     <category term="ffmpeg" />
     <category term="youtube-dl" />
@@ -31,14 +43,6 @@
     <category term="statistics" />
     <category term="OCR" />
     <category term="文字识别" />
-    <category term="request" />
-    <category term="BeautifulSoup" />
-    <category term="启动盘" />
-    <category term="系统" />
-    <category term="Windows" />
-    <category term="Ventoy" />
-    <category term="WePE" />
-    <category term="Fedora" />
     <entry>
         <id>https://owenyk.github.io/2020/12/19/%E5%9C%A8debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
         <title>在debian10上配置Hexo+Github做个人博客</title>

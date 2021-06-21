@@ -8,12 +8,24 @@
     <category term="MySQL" />
     <category term="备份" />
     <category term="Debian" />
+    <category term="Nginx" />
+    <category term="systemctl" />
+    <category term="启动服务" />
+    <category term="service" />
     <category term="math" />
     <category term="mathjax" />
     <category term="latex" />
     <category term="flowchart" />
     <category term="python" />
     <category term="重命名" />
+    <category term="request" />
+    <category term="BeautifulSoup" />
+    <category term="启动盘" />
+    <category term="系统" />
+    <category term="Windows" />
+    <category term="Ventoy" />
+    <category term="WePE" />
+    <category term="Fedora" />
     <category term="aria2" />
     <category term="ffmpeg" />
     <category term="youtube-dl" />
@@ -31,14 +43,6 @@
     <category term="statistics" />
     <category term="OCR" />
     <category term="文字识别" />
-    <category term="request" />
-    <category term="BeautifulSoup" />
-    <category term="启动盘" />
-    <category term="系统" />
-    <category term="Windows" />
-    <category term="Ventoy" />
-    <category term="WePE" />
-    <category term="Fedora" />
     <entry>
         <id>https://owenyk.github.io/2020/11/05/%E8%85%BE%E8%AE%AF%E6%96%87%E5%AD%97%E6%89%B9%E9%87%8F%E8%AF%86%E5%88%AB/</id>
         <title>腾讯文字批量识别</title>

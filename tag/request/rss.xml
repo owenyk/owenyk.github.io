@@ -11,12 +11,24 @@
         <category>MySQL</category>
         <category>备份</category>
         <category>Debian</category>
+        <category>Nginx</category>
+        <category>systemctl</category>
+        <category>启动服务</category>
+        <category>service</category>
         <category>math</category>
         <category>mathjax</category>
         <category>latex</category>
         <category>flowchart</category>
         <category>python</category>
         <category>重命名</category>
+        <category>request</category>
+        <category>BeautifulSoup</category>
+        <category>启动盘</category>
+        <category>系统</category>
+        <category>Windows</category>
+        <category>Ventoy</category>
+        <category>WePE</category>
+        <category>Fedora</category>
         <category>aria2</category>
         <category>ffmpeg</category>
         <category>youtube-dl</category>
@@ -34,14 +46,6 @@
         <category>statistics</category>
         <category>OCR</category>
         <category>文字识别</category>
-        <category>request</category>
-        <category>BeautifulSoup</category>
-        <category>启动盘</category>
-        <category>系统</category>
-        <category>Windows</category>
-        <category>Ventoy</category>
-        <category>WePE</category>
-        <category>Fedora</category>
         <item>
             <guid isPermalink="true">https://owenyk.github.io/2019/12/12/Python%E7%94%A8request%E4%B8%8B%E8%BD%BD%E9%87%91%E5%BA%B8%E5%B0%8F%E8%AF%B4/</guid>
             <title>Python用request下载金庸小说</title>

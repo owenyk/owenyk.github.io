@@ -11,12 +11,24 @@
         <category>MySQL</category>
         <category>备份</category>
         <category>Debian</category>
+        <category>Nginx</category>
+        <category>systemctl</category>
+        <category>启动服务</category>
+        <category>service</category>
         <category>math</category>
         <category>mathjax</category>
         <category>latex</category>
         <category>flowchart</category>
         <category>python</category>
         <category>重命名</category>
+        <category>request</category>
+        <category>BeautifulSoup</category>
+        <category>启动盘</category>
+        <category>系统</category>
+        <category>Windows</category>
+        <category>Ventoy</category>
+        <category>WePE</category>
+        <category>Fedora</category>
         <category>aria2</category>
         <category>ffmpeg</category>
         <category>youtube-dl</category>
@@ -34,14 +46,6 @@
         <category>statistics</category>
         <category>OCR</category>
         <category>文字识别</category>
-        <category>request</category>
-        <category>BeautifulSoup</category>
-        <category>启动盘</category>
-        <category>系统</category>
-        <category>Windows</category>
-        <category>Ventoy</category>
-        <category>WePE</category>
-        <category>Fedora</category>
         <item>
             <guid isPermalink="true">https://owenyk.github.io/2020/11/05/sublime-text3%E5%AE%89%E8%A3%85%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
             <title>Sublime Text3安装及一些常用插件安装配置</title>
