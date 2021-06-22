@@ -5,6 +5,18 @@
     "home_page_url": "https://owenyk.github.io",
     "items": [
         {
+            "id": "https://owenyk.github.io/2021/06/22/systemctl%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8B%E8%AE%BE%E7%BD%AEaria2%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/",
+            "url": "https://owenyk.github.io/2021/06/22/systemctl%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8B%E8%AE%BE%E7%BD%AEaria2%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/",
+            "title": "systemctl管理方式下设置aria2开机启动",
+            "date_published": "2021-06-22T02:05:32.000Z",
+            "content_html": "<h1 id=\"1、aria2开机启动文件配置—aria2-service\"><a href=\"#1、aria2开机启动文件配置—aria2-service\" class=\"headerlink\" title=\"1、aria2开机启动文件配置—aria2.service\"></a>1、aria2开机启动文件配置—<code>aria2.service</code></h1><p>命令：<br><figure class=\"highlight bash\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs bash\">k@yk-pc:~$ sudo nano /usr/lib/systemd/system/aria2.service<br></code></pre></div></td></tr></table></figure><br>输入以下内容：<br><figure class=\"highlight bash\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br><span class=\"line\">9</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs bash\">[Unit]<br>Description=Aria2 Service<br>After=network.target<br><br>[Service]<br>ExecStart=/usr/bin/aria2c --conf-path=/etc/aria2/aria2.conf<br><br>[Install]<br>WantedBy=default.target<br></code></pre></div></td></tr></table></figure><br>写入<code>ctrl+o</code>，保存 <code>Enter</code>，退出<code>ctrl+x</code><br>拷贝到<code>/etc/systemd/user</code> 目录下<br>命令：<br><figure class=\"highlight bash\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs bash\">k@yk-pc:~$ sudo cp /usr/lib/systemd/system/aria2.service /etc/systemd/system<br></code></pre></div></td></tr></table></figure></p>\n<h1 id=\"2-设置开机启动\"><a href=\"#2-设置开机启动\" class=\"headerlink\" title=\"2.设置开机启动\"></a>2.设置开机启动</h1><p>命令：<br><figure class=\"highlight bash\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs bash\">yk@yk-pc:/usr/lib/systemd/system$ systemctl <span class=\"hljs-built_in\">enable</span> aria2.service<br></code></pre></div></td></tr></table></figure><br>提示<code>Created symlink /etc/systemd/system/default.target.wants/aria2.service → /etc/systemd/system/aria2.service.</code>设置成功</p>\n<p><a href=\"https://github.com/P3TERX/aria2.conf\">一键安装及配置开源项目：</a></p>\n",
+            "tags": [
+                "systemctl",
+                "启动服务",
+                "aria2"
+            ]
+        },
+        {
             "id": "https://owenyk.github.io/2021/06/21/Linux%E7%B3%BB%E7%BB%9Fservice%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/",
             "url": "https://owenyk.github.io/2021/06/21/Linux%E7%B3%BB%E7%BB%9Fservice%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/",
             "title": "Linux系统service服务管理方式下Nginx设置开机启动",

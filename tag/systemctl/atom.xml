@@ -3,7 +3,7 @@
     <id>https://owenyk.github.io</id>
     <title>K&#39;s Life • Posts by &#34;systemctl&#34; tag</title>
     <link href="https://owenyk.github.io" />
-    <updated>2021-06-20T12:05:32.000Z</updated>
+    <updated>2021-06-22T02:05:32.000Z</updated>
     <category term="webdav" />
     <category term="MySQL" />
     <category term="备份" />
@@ -43,6 +43,19 @@
     <category term="statistics" />
     <category term="OCR" />
     <category term="文字识别" />
+    <entry>
+        <id>https://owenyk.github.io/2021/06/22/systemctl%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8B%E8%AE%BE%E7%BD%AEaria2%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</id>
+        <title>systemctl管理方式下设置aria2开机启动</title>
+        <link rel="alternate" href="https://owenyk.github.io/2021/06/22/systemctl%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8B%E8%AE%BE%E7%BD%AEaria2%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/"/>
+        <content type="html">&lt;h1 id=&#34;1、aria2开机启动文件配置—aria2-service&#34;&gt;&lt;a href=&#34;#1、aria2开机启动文件配置—aria2-service&#34; class=&#34;headerlink&#34; title=&#34;1、aria2开机启动文件配置—aria2.service&#34;&gt;&lt;/a&gt;1、aria2开机启动文件配置—&lt;code&gt;aria2.service&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;命令：&lt;br&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;k@yk-pc:~$ sudo nano /usr/lib/systemd/system/aria2.service&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;输入以下内容：&lt;br&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;[Unit]&lt;br&gt;Description=Aria2 Service&lt;br&gt;After=network.target&lt;br&gt;&lt;br&gt;[Service]&lt;br&gt;ExecStart=/usr/bin/aria2c --conf-path=/etc/aria2/aria2.conf&lt;br&gt;&lt;br&gt;[Install]&lt;br&gt;WantedBy=default.target&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;写入&lt;code&gt;ctrl+o&lt;/code&gt;，保存 &lt;code&gt;Enter&lt;/code&gt;，退出&lt;code&gt;ctrl+x&lt;/code&gt;&lt;br&gt;拷贝到&lt;code&gt;/etc/systemd/user&lt;/code&gt; 目录下&lt;br&gt;命令：&lt;br&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;k@yk-pc:~$ sudo cp /usr/lib/systemd/system/aria2.service /etc/systemd/system&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-设置开机启动&#34;&gt;&lt;a href=&#34;#2-设置开机启动&#34; class=&#34;headerlink&#34; title=&#34;2.设置开机启动&#34;&gt;&lt;/a&gt;2.设置开机启动&lt;/h1&gt;&lt;p&gt;命令：&lt;br&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;yk@yk-pc:/usr/lib/systemd/system$ systemctl &lt;span class=&#34;hljs-built_in&#34;&gt;enable&lt;/span&gt; aria2.service&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;提示&lt;code&gt;Created symlink /etc/systemd/system/default.target.wants/aria2.service → /etc/systemd/system/aria2.service.&lt;/code&gt;设置成功&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/P3TERX/aria2.conf&#34;&gt;一键安装及配置开源项目：&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="systemctl" />
+        <category term="启动服务" />
+        <category term="aria2" />
+        <updated>2021-06-22T02:05:32.000Z</updated>
+    </entry>
     <entry>
         <id>https://owenyk.github.io/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</id>
         <title>Debian10系统systemctl服务管理方式下Nginx设置开机启动</title>
