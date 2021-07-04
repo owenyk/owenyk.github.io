@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>K&#39;s Life • Posts by &#34;apt&#34; tag</title>
+        <link>https://owenyk.github.io</link>
+        <description>日常的一些记录，留作备忘！</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 01 Jul 2021 09:27:32 +0800</pubDate>
+        <lastBuildDate>Thu, 01 Jul 2021 09:27:32 +0800</lastBuildDate>
+        <category>webdav</category>
+        <category>MySQL</category>
+        <category>备份</category>
+        <category>Debian</category>
+        <category>Nginx</category>
+        <category>systemctl</category>
+        <category>启动服务</category>
+        <category>service</category>
+        <category>math</category>
+        <category>mathjax</category>
+        <category>latex</category>
+        <category>flowchart</category>
+        <category>python</category>
+        <category>重命名</category>
+        <category>request</category>
+        <category>BeautifulSoup</category>
+        <category>启动盘</category>
+        <category>系统</category>
+        <category>Windows</category>
+        <category>Ventoy</category>
+        <category>WePE</category>
+        <category>Fedora</category>
+        <category>aria2</category>
+        <category>ffmpeg</category>
+        <category>youtube-dl</category>
+        <category>ajax</category>
+        <category>asp</category>
+        <category>MSSQL</category>
+        <category>数据库</category>
+        <category>javascript</category>
+        <category>apt</category>
+        <category>问题解决</category>
+        <category>error</category>
+        <category>pdf</category>
+        <category>access</category>
+        <category>PHP</category>
+        <category>Sublime text3</category>
+        <category>IIS</category>
+        <category>公农历转换</category>
+        <category>Hexo</category>
+        <category>statistics</category>
+        <category>OCR</category>
+        <category>文字识别</category>
+        <item>
+            <guid isPermalink="true">https://owenyk.github.io/2021/07/01/dpkg%20error%20processing%20package%20xx%20(--configure)%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+            <title>apt升级提示dpkg error processing package libc-bin错误解决办法</title>
+            <link>https://owenyk.github.io/2021/07/01/dpkg%20error%20processing%20package%20xx%20(--configure)%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+            <category>apt</category>
+            <category>问题解决</category>
+            <category>error</category>
+            <pubDate>Thu, 01 Jul 2021 09:27:32 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;用&lt;code&gt;apt&lt;/code&gt;工具进行安装或卸载时提示“&lt;code&gt;dpkg: error processing package libc-bin (--configure)&lt;/code&gt;”错误。&lt;br&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;dpkg: error processing package libc-bin (--configure):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; installed libc-bin package post-installation script subprocess returned error &lt;span class=&#34;built_in&#34;&gt;exit&lt;/span&gt; status 134&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Errors were encountered &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; processing:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; libc-bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;E: Sub-process /usr/bin/dpkg returned an error code (1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;以下是解决办法  &lt;/p&gt;
+&lt;h1 id=&#34;1-登录root账户&#34;&gt;&lt;a href=&#34;#1-登录root账户&#34; class=&#34;headerlink&#34; title=&#34;1.登录root账户&#34;&gt;&lt;/a&gt;1.登录&lt;code&gt;root&lt;/code&gt;账户&lt;/h1&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;┌──(yk㉿yk-pc)-[~]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─$ sudo su                                         &lt;span class=&#34;comment&#34;&gt;# 切换到root用户&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;2-运行一下命令&#34;&gt;&lt;a href=&#34;#2-运行一下命令&#34; class=&#34;headerlink&#34; title=&#34;2.运行一下命令&#34;&gt;&lt;/a&gt;2.运行一下命令&lt;/h1&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# mv /var/lib/dpkg/info/ /var/lib/dpkg/info_old/   # 备份保存的各个软件包的配置文件列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# mkdir /var/lib/dpkg/info/                        # 新建保存的各个软件包的配置文件列表文件夹&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# apt update                                       # 重新获取软件包列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Hit:1 http://mirrors.neusoft.edu.cn/kali kali-rolling InRelease&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Reading package lists... Done&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Building dependency tree... Done&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Reading state information... Done&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20 packages can be upgraded. Run &lt;span class=&#34;string&#34;&gt;&amp;#x27;apt list --upgradable&amp;#x27;&lt;/span&gt; to see them.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# apt -f install                                   # 尝试修正系统依赖损坏处 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# 以下内容省略&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# ......&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# ......&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# ......&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# mv /var/lib/dpkg/info/* /var/lib/dpkg/info_old/  # 备份保存的各个软件包的配置文件列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# rm -rf /var/lib/dpkg/info                        # 删除各个软件包的配置文件列表文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# mv /var/lib/dpkg/info_old/ /var/lib/dpkg/info    # 重新恢复保存的各个软件包的配置文件列表文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;3-验证是否成功&#34;&gt;&lt;a href=&#34;#3-验证是否成功&#34; class=&#34;headerlink&#34; title=&#34;3.验证是否成功&#34;&gt;&lt;/a&gt;3.验证是否成功&lt;/h1&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# apt -f install                                    # 尝试修正系统依赖损坏处 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Reading package lists... Done&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Building dependency tree... Done&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Reading state information... Done&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0 upgraded, 0 newly installed, 0 to remove and 20 not upgraded.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;4-重新升级&#34;&gt;&lt;a href=&#34;#4-重新升级&#34; class=&#34;headerlink&#34; title=&#34;4.重新升级&#34;&gt;&lt;/a&gt;4.重新升级&lt;/h1&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]                         &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─$ apt upgrade                                        &lt;span class=&#34;comment&#34;&gt;# 重新获取软件包列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;┌──(root💀yk-pc)-[/home/yk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└─&lt;span class=&#34;comment&#34;&gt;# apt upgrade -y                                     # 更新软件包列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;5-参考资料&#34;&gt;&lt;a href=&#34;#5-参考资料&#34; class=&#34;headerlink&#34; title=&#34;5.参考资料&#34;&gt;&lt;/a&gt;5.参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/live41/p/14237280.html&#34;&gt;dpkg: error processing package xxx (—configure)的解决方法&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
