@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Ventoy+WePE2.1做启动盘的一些操作记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ventoy+WePE2.1做启动盘">
+<meta property="og:url" content="https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/index.html">
+<meta property="og:site_name" content="K&#39;s Life">
+<meta property="og:description" content="Ventoy+WePE2.1做启动盘的一些操作记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8vuVrHb8AisLyeLjAqBKCK.KnVU6UfCNMUduYVQJeHQjvn50E9SjkLYWSNSustEtTA!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0211501698&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8q5JqDJRaxmMPCYpJGjoHhzrp1PF*hWQcACMqjIqqq4CJZsQ1YNOYGjleztVzYBOwQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=049455234&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8nqhZkU.rjx9uX.D7RSoD*5WpPyVTQh1nAkrb6WKgkwm27KbfvTmrDBtQJBunq92VQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=074209938&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gvcZJhdaXo7zzl*y.Rj2nv5NeOj.dnnWZt8cGlXP0OWXuQUnNr*RCB5R59FKOOlkw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0206014546&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="https://owenyk.github.io/pic/2020/12/win10系统ISO.png">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gghMFD.tJ2tFrmHjBiRaQixkRHd4DdL8rgOaqb*W8Om82l.7KfJs6Rstr.wE*fj4g!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0222155314&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hNUrg6v9JUKjsrt4gJjaw1gvhMu0DySB5pdnXJvw8PQjxHmk*vmlELNhN6SFrAxWw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0224711266&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gbIeAwdhyU6kdd6.uqbu6RUDdQ4xytu0*ShBZ6AMHuRRurBX9X6gSpdmwjlr8ZVEA!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0265058578&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hL.UVWAhiaikAhsH52KJQxnmIdrsoRryicUXXXOn*kVxzm8LREqUU5gswEhw4p*kA!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0130022610&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://www.wepe.com.cn/ubook/assets/img/PE2.d658a63d.png">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8m.SS64jkSwYiDNdIh5PYDv3lDI0H9nyONLgFhaNyPFii7Z.D5FRjvN15Ko3DUd3cw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0224512754&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8jAzlgT5ednp7ZHcGhpK23B0xRSz3Lb1RyDzjDYF*9gHFL.u1kl5v2.JqVuTrsGHYQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0268258098&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gO5ou.Xocae1wB*mnzfYeQO*Xc7VdY7oDlqmnm2Cw43eBTl5mklUdSxA4951FdtHw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0215562530&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8sOUtS9YZ238uG9WnyfTD4Xmb1bhBW5XcMTzJLwyyKOyUmYgBtTfgb88hFhFA8xetg!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=078690962&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="og:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hs6Yp5CdfbjTSeeJ7FKz0cfGmg.TZFC8NJGzFl3qiuUZycDyWXa4*LB3Q2dRr2*Dw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0223784754&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+<meta property="article:published_time" content="2020-06-21T04:05:32.000Z">
+<meta property="article:modified_time" content="2021-12-05T01:47:43.259Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="启动盘">
+<meta property="article:tag" content="系统">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="Ventoy">
+<meta property="article:tag" content="WePE">
+<meta property="article:tag" content="Fedora">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8vuVrHb8AisLyeLjAqBKCK.KnVU6UfCNMUduYVQJeHQjvn50E9SjkLYWSNSustEtTA!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0211501698&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9">
+
+
+<link rel="canonical" href="https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/","path":"2020/06/21/Ventoy+WePE2.1做启动盘/","title":"Ventoy+WePE2.1做启动盘"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Ventoy+WePE2.1做启动盘 | K's Life</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">K's Life</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81Dell%E7%9A%84BIOS%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">一、Dell的BIOS设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%EF%BC%8C%E6%8C%89F2%EF%BC%8C%E8%BF%9B%E5%85%A5BIOS"><span class="nav-number">1.1.</span> <span class="nav-text">1、电脑开机，按F2，进入BIOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E9%80%89%E6%8B%A9Secure-Boot-Enable-%E5%85%B3%E9%97%ADDisabled"><span class="nav-number">1.2.</span> <span class="nav-text">2、选择Secure Boot Enable,关闭Disabled</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E6%A8%A1%E5%BC%8F%E4%B8%BAAHCI"><span class="nav-number">1.3.</span> <span class="nav-text">3、设置硬盘模式为AHCI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E4%BF%AE%E6%94%B9BIOS%E5%BC%95%E5%AF%BC%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.4.</span> <span class="nav-text">4、修改BIOS引导顺序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Ventoy%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">二、Ventoy装系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%BC%80%E6%9C%BA%E6%8C%89F12-%E8%BF%9B%E5%85%A5%E5%BC%95%E5%AF%BC%E7%95%8C%E9%9D%A2"><span class="nav-number">2.1.</span> <span class="nav-text">1、开机按F12,进入引导界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85win10"><span class="nav-number">2.2.</span> <span class="nav-text">2、安装win10</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gt-%E8%BF%9B%E5%85%A5Ventoy%E7%95%8C%E9%9D%A2%EF%BC%8C%E9%80%89%E6%8B%A9win10%E7%B3%BB%E7%BB%9FISO%E6%96%87%E4%BB%B6-%E5%AE%89%E8%A3%85win10"><span class="nav-number">2.2.1.</span> <span class="nav-text">1&gt; 进入Ventoy界面，选择win10系统ISO文件,安装win10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gt-32%E6%88%96%E8%80%8564%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9"><span class="nav-number">2.2.2.</span> <span class="nav-text">2&gt; 32或者64系统选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-gt-%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.2.3.</span> <span class="nav-text">3&gt; 加载程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-gt-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.4.</span> <span class="nav-text">4&gt; 程序安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%AE%89%E8%A3%85win7"><span class="nav-number">2.3.</span> <span class="nav-text">3、安装win7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gt-%E9%9C%80%E9%85%8D%E5%90%88wepe%E5%AE%89%E8%A3%85%E5%BE%AEpe%E5%9C%B0%E5%9D%80%EF%BC%8C"><span class="nav-number">2.3.1.</span> <span class="nav-text">1&gt; 需配合wepe安装微pe地址，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gt-%E5%B0%86%E5%B7%A5%E5%85%B7%E7%AE%B1%E5%88%B6%E4%BD%9C%E6%88%90IOS%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E6%96%B9%E6%B3%95%E5%9C%B0%E5%9D%80"><span class="nav-number">2.3.2.</span> <span class="nav-text">2&gt; 将工具箱制作成IOS镜像制作方法地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-gt-%E6%94%BE%E8%BF%9B%E8%A3%85%E5%A5%BDVentoy%E7%9A%84U%E7%9B%98%EF%BC%8C%E9%80%89%E6%8B%A9Wepe-64-v2-1-iso-%E6%A0%B9%E6%8D%AE%E5%89%8D%E9%9D%A2%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7%E7%AE%B1%E7%89%88%E6%9C%AC%E4%B8%8D%E4%B8%80%E6%A0%B7%E5%90%8D%E7%A7%B0%E4%B9%9F%E4%BC%9A%E4%B8%8D%E4%B8%80%E6%A0%B7"><span class="nav-number">2.3.3.</span> <span class="nav-text">3&gt; 放进装好Ventoy的U盘，选择Wepe_64_v2.1.iso(根据前面安装工具箱版本不一样名称也会不一样)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-gt-%E8%BF%9B%E5%85%A5%E6%A1%8C%E9%9D%A2%EF%BC%8C%E9%80%89%E6%8B%A9DiskGenius%E6%A0%BC%E5%BC%8F%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E5%BD%B1%E7%89%87%E7%9B%98%E7%AC%A6%EF%BC%8C%E9%80%80%E5%87%BA"><span class="nav-number">2.3.4.</span> <span class="nav-text">4&gt; 进入桌面，选择DiskGenius格式需要安装的影片盘符，退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-gt-%E9%80%89%E6%8B%A9WinNTSetp%E5%AE%89%E8%A3%85%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85"><span class="nav-number">2.3.5.</span> <span class="nav-text">5&gt; 选择WinNTSetp安装器进行安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%AE%89%E8%A3%85Fedora"><span class="nav-number">2.4.</span> <span class="nav-text">4、安装Fedora</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gt-%E4%B8%8B%E8%BD%BDFedora"><span class="nav-number">2.4.1.</span> <span class="nav-text">1&gt;下载Fedora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gt-%E6%94%BE%E8%BF%9B%E8%A3%85%E5%A5%BDVentoy%E7%9A%84U%E7%9B%98%EF%BC%8C%E9%80%89%E6%8B%A9Fedora-Workstation-Live-x86-64-33-1-2-iso"><span class="nav-number">2.4.2.</span> <span class="nav-text">2&gt; 放进装好Ventoy的U盘，选择Fedora-Workstation-Live-x86_64-33-1.2.iso</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-gt-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E6%A1%8C%E9%9D%A2%E5%B1%95%E7%A4%BA%EF%BC%9A"><span class="nav-number">2.4.3.</span> <span class="nav-text">3&gt;安装完成后桌面展示：</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description">日常的一些记录，留作备忘！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+
+
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+            <h7 class="widget-title">Tag Cloud</h7>
+            <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="260" height="260" id="resCanvas" style="width=100%">
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access/" rel="tag">Access</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache2/" rel="tag">Apache2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt/" rel="tag">Apt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt-key/" rel="tag">Apt-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aria2/" rel="tag">Aria2</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Asp/" rel="tag">Asp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Badblocks/" rel="tag">Badblocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connector/" rel="tag">Connector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/" rel="tag">C语言环境</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/" rel="tag">Debian</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian10/" rel="tag">Debian10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fedora/" rel="tag">Fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ffmpeg/" rel="tag">Ffmpeg</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flowchart/" rel="tag">Flowchart</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Genymotion/" rel="tag">Genymotion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gpg/" rel="tag">Gpg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grep/" rel="tag">Grep</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iconv/" rel="tag">Iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MariaDB/" rel="tag">MariaDB</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongosh/" rel="tag">Mongosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MsSQL/" rel="tag">MsSQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nvm/" rel="tag">Nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Request/" rel="tag">Request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Service/" rel="tag">Service</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smartmontools/" rel="tag">Smartmontools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smbshare/" rel="tag">Smbshare</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Statistics/" rel="tag">Statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText3/" rel="tag">SublimeText3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemctl/" rel="tag">Systemctl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TrackersList/" rel="tag">TrackersList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UCanAccess/" rel="tag">UCanAccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ventoy/" rel="tag">Ventoy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WePE/" rel="tag">WePE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdav/" rel="tag">Webdav</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows10/" rel="tag">Windows10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wine/" rel="tag">Wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xargs/" rel="tag">Xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-get/" rel="tag">You-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Youtube-dl/" rel="tag">Youtube-dl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gvfs/" rel="tag">gvfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iconv/" rel="tag">iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mdbtools/" rel="tag">mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odbc-mdbtools/" rel="tag">odbc-mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/" rel="tag">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unixODBC/" rel="tag">unixODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2/" rel="tag">公农历转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag">启动服务</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag">启动盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E4%BB%B6%E7%BC%BA%E5%A4%B1/" rel="tag">固件缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" rel="tag">备份和恢复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/" rel="tag">字体缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="tag">安卓模拟器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/" rel="tag">数据导出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" rel="tag">文字识别</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag">设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%91%BD%E5%90%8D/" rel="tag">重命名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" rel="tag">错误解决</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">问题解决</a><span class="tag-list-count">2</span></li></ul>
+                </canvas>
+            </div>
+        </div>
+      
+      
+
+      
+
+
+      </div>
+
+      
+       <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>-->
+        
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js
+            server="netease"
+            type="playlist"
+            id="641900597" 
+            mini="false"
+            fixed="false"
+            list-folded="true"
+            autoplay="false"
+            volume="0.8"
+            theme="#95DA99"
+            order="random"
+            loop="all"
+            preload="auto"
+            mutex="true">
+          </meting-js> 
+       
+
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="K's Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ventoy+WePE2.1做启动盘
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-06-21 12:05:32" itemprop="dateCreated datePublished" datetime="2020-06-21T12:05:32+08:00">2020-06-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-05 09:47:43" itemprop="dateModified" datetime="2021-12-05T09:47:43+08:00">2021-12-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件应用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Ventoy/" itemprop="url" rel="index"><span itemprop="name">Ventoy</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/WePE/" itemprop="url" rel="index"><span itemprop="name">WePE</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/" data-xid="/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/" class="post-meta-item leancloud_visitors" data-flag-title="Ventoy+WePE2.1做启动盘" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>730</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">Ventoy+WePE2.1做启动盘的一些操作记录</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、Dell的BIOS设置"><a href="#一、Dell的BIOS设置" class="headerlink" title="一、Dell的BIOS设置"></a>一、<code>Dell</code>的<code>BIOS</code>设置</h1><h2 id="1、电脑开机，按F2，进入BIOS"><a href="#1、电脑开机，按F2，进入BIOS" class="headerlink" title="1、电脑开机，按F2，进入BIOS"></a>1、电脑开机，按<code>F2</code>，进入BIOS</h2><h2 id="2、选择Secure-Boot-Enable-关闭Disabled"><a href="#2、选择Secure-Boot-Enable-关闭Disabled" class="headerlink" title="2、选择Secure Boot Enable,关闭Disabled"></a>2、选择<code>Secure Boot Enable</code>,关闭<code>Disabled</code></h2><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8vuVrHb8AisLyeLjAqBKCK.KnVU6UfCNMUduYVQJeHQjvn50E9SjkLYWSNSustEtTA!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0211501698&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="Secure Boot Enable"></p>
+<h2 id="3、设置硬盘模式为AHCI"><a href="#3、设置硬盘模式为AHCI" class="headerlink" title="3、设置硬盘模式为AHCI"></a>3、设置硬盘模式为<code>AHCI</code></h2><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8q5JqDJRaxmMPCYpJGjoHhzrp1PF*hWQcACMqjIqqq4CJZsQ1YNOYGjleztVzYBOwQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=049455234&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="SATA Operation"></p>
+<h2 id="4、修改BIOS引导顺序"><a href="#4、修改BIOS引导顺序" class="headerlink" title="4、修改BIOS引导顺序"></a>4、修改<code>BIOS</code>引导顺序</h2><p> <code>Boot List Option</code>选择UEFI，<code>Boot Sequence</code>添加装好Ventoy的U盘。</p>
+<p> <img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8nqhZkU.rjx9uX.D7RSoD*5WpPyVTQh1nAkrb6WKgkwm27KbfvTmrDBtQJBunq92VQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=074209938&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="Boot List Option"></p>
+<h1 id="二、Ventoy装系统"><a href="#二、Ventoy装系统" class="headerlink" title="二、Ventoy装系统"></a>二、Ventoy装系统</h1><h2 id="1、开机按F12-进入引导界面"><a href="#1、开机按F12-进入引导界面" class="headerlink" title="1、开机按F12,进入引导界面"></a>1、开机按<code>F12</code>,进入引导界面</h2><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gvcZJhdaXo7zzl*y.Rj2nv5NeOj.dnnWZt8cGlXP0OWXuQUnNr*RCB5R59FKOOlkw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0206014546&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="Boot List"></p>
+<h2 id="2、安装win10"><a href="#2、安装win10" class="headerlink" title="2、安装win10"></a>2、安装win10</h2><h3 id="1-gt-进入Ventoy界面，选择win10系统ISO文件-安装win10"><a href="#1-gt-进入Ventoy界面，选择win10系统ISO文件-安装win10" class="headerlink" title="1&gt; 进入Ventoy界面，选择win10系统ISO文件,安装win10"></a>1&gt; 进入Ventoy界面，选择win10系统ISO文件,安装win10</h3><p>win10系统ISO文件下载方法：</p>
+<p>进入<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows10ISO">win10系统ISO地址</a>,<code>开启浏览器调试</code>，<code>刷新</code>，即可出现ISO文件选择下载界面,关掉调试，选择需要的ISO文件下载即可。</p>
+<p><img src="\pic\2020\12\win10系统ISO.png" alt="win10系统ISO"></p>
+<p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gghMFD.tJ2tFrmHjBiRaQixkRHd4DdL8rgOaqb*W8Om82l.7KfJs6Rstr.wE*fj4g!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0222155314&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="win10系统ISO文件"></p>
+<h3 id="2-gt-32或者64系统选择"><a href="#2-gt-32或者64系统选择" class="headerlink" title="2&gt; 32或者64系统选择"></a>2&gt; 32或者64系统选择</h3><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hNUrg6v9JUKjsrt4gJjaw1gvhMu0DySB5pdnXJvw8PQjxHmk*vmlELNhN6SFrAxWw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0224711266&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="32或者64系统"></p>
+<h3 id="3-gt-加载程序"><a href="#3-gt-加载程序" class="headerlink" title="3&gt; 加载程序"></a>3&gt; 加载程序</h3><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gbIeAwdhyU6kdd6.uqbu6RUDdQ4xytu0*ShBZ6AMHuRRurBX9X6gSpdmwjlr8ZVEA!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0265058578&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="32或者64系统"></p>
+<h3 id="4-gt-程序安装"><a href="#4-gt-程序安装" class="headerlink" title="4&gt; 程序安装"></a>4&gt; 程序安装</h3><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hL.UVWAhiaikAhsH52KJQxnmIdrsoRryicUXXXOn*kVxzm8LREqUU5gswEhw4p*kA!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0130022610&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="32或者64系统"></p>
+<h2 id="3、安装win7"><a href="#3、安装win7" class="headerlink" title="3、安装win7"></a>3、安装win7</h2><p>【注意：32位启动不支持UEFI】</p>
+<h3 id="1-gt-需配合wepe安装微pe地址，"><a href="#1-gt-需配合wepe安装微pe地址，" class="headerlink" title="1&gt; 需配合wepe安装微pe地址，"></a>1&gt; 需配合wepe安装<a target="_blank" rel="noopener" href="http://www.wepe.com.cn/download.html">微pe地址</a>，</h3><h3 id="2-gt-将工具箱制作成IOS镜像制作方法地址"><a href="#2-gt-将工具箱制作成IOS镜像制作方法地址" class="headerlink" title="2&gt; 将工具箱制作成IOS镜像制作方法地址"></a>2&gt; 将工具箱制作成IOS镜像<a target="_blank" rel="noopener" href="http://www.wepe.com.cn/ubook/installwepe.html">制作方法地址</a></h3><p>【在下面制作中注意选择右下角<code>**光盘**</code>图标】<br><img src="http://www.wepe.com.cn/ubook/assets/img/PE2.d658a63d.png" alt="Wepe工具箱安装到U盘"></p>
+<h3 id="3-gt-放进装好Ventoy的U盘，选择Wepe-64-v2-1-iso-根据前面安装工具箱版本不一样名称也会不一样"><a href="#3-gt-放进装好Ventoy的U盘，选择Wepe-64-v2-1-iso-根据前面安装工具箱版本不一样名称也会不一样" class="headerlink" title="3&gt; 放进装好Ventoy的U盘，选择Wepe_64_v2.1.iso(根据前面安装工具箱版本不一样名称也会不一样)"></a>3&gt; 放进装好<code>Ventoy</code>的U盘，选择<code>Wepe_64_v2.1.iso</code>(根据前面安装工具箱版本不一样名称也会不一样)</h3><h3 id="4-gt-进入桌面，选择DiskGenius格式需要安装的影片盘符，退出"><a href="#4-gt-进入桌面，选择DiskGenius格式需要安装的影片盘符，退出" class="headerlink" title="4&gt; 进入桌面，选择DiskGenius格式需要安装的影片盘符，退出"></a>4&gt; 进入桌面，选择<code>DiskGenius</code>格式需要安装的影片盘符，退出</h3><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8m.SS64jkSwYiDNdIh5PYDv3lDI0H9nyONLgFhaNyPFii7Z.D5FRjvN15Ko3DUd3cw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0224512754&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="Wepe界面"></p>
+<p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8jAzlgT5ednp7ZHcGhpK23B0xRSz3Lb1RyDzjDYF*9gHFL.u1kl5v2.JqVuTrsGHYQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0268258098&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="DiskGenius"></p>
+<h3 id="5-gt-选择WinNTSetp安装器进行安装"><a href="#5-gt-选择WinNTSetp安装器进行安装" class="headerlink" title="5&gt; 选择WinNTSetp安装器进行安装"></a>5&gt; 选择<code>WinNTSetp</code>安装器进行安装</h3><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8gO5ou.Xocae1wB*mnzfYeQO*Xc7VdY7oDlqmnm2Cw43eBTl5mklUdSxA4951FdtHw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0215562530&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="WinNTSetp"></p>
+<h2 id="4、安装Fedora"><a href="#4、安装Fedora" class="headerlink" title="4、安装Fedora"></a>4、安装Fedora</h2><h3 id="1-gt-下载Fedora"><a href="#1-gt-下载Fedora" class="headerlink" title="1&gt;下载Fedora"></a>1&gt;下载Fedora</h3><p> Fedora 的下载地址是:<a target="_blank" rel="noopener" href="https://getfedora.org/en/workstation/download/">下载地址</a>,<code>For x86_64:Fedora 33: x86_64 DVD ISO</code></p>
+<h3 id="2-gt-放进装好Ventoy的U盘，选择Fedora-Workstation-Live-x86-64-33-1-2-iso"><a href="#2-gt-放进装好Ventoy的U盘，选择Fedora-Workstation-Live-x86-64-33-1-2-iso" class="headerlink" title="2&gt; 放进装好Ventoy的U盘，选择Fedora-Workstation-Live-x86_64-33-1.2.iso"></a>2&gt; 放进装好<code>Ventoy</code>的U盘，选择<code>Fedora-Workstation-Live-x86_64-33-1.2.iso</code></h3><p>具体安装步骤方法参照<a target="_blank" rel="noopener" href="https://ywnz.com/linuxaz/6764.html">云网牛站：Fedora 32系统安装</a>。</p>
+<h3 id="3-gt-安装完成后桌面展示："><a href="#3-gt-安装完成后桌面展示：" class="headerlink" title="3&gt;安装完成后桌面展示："></a>3&gt;安装完成后桌面展示：</h3><p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8sOUtS9YZ238uG9WnyfTD4Xmb1bhBW5XcMTzJLwyyKOyUmYgBtTfgb88hFhFA8xetg!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=078690962&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="Fedora桌面"></p>
+<p><img src="http://a1.qpic.cn/psc?/a96e2443-01e2-41c2-bab7-ebe84a7aa1d2/*PxJIR*kzvuHPyw9DCAb8hs6Yp5CdfbjTSeeJ7FKz0cfGmg.TZFC8NJGzFl3qiuUZycDyWXa4*LB3Q2dRr2*Dw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMrBCADKwQRECc!&amp;tl=3&amp;su=0223784754&amp;tm=1609052400&amp;sce=0-12-12&amp;rf=2-9" alt="Fedora一些程序"></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/" title="Ventoy+WePE2.1做启动盘">https://owenyk.github.io/2020/06/21/Ventoy+WePE2.1做启动盘/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag"># 启动盘</a>
+              <a href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag"># 系统</a>
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
+              <a href="/tags/Ventoy/" rel="tag"># Ventoy</a>
+              <a href="/tags/WePE/" rel="tag"># WePE</a>
+              <a href="/tags/Fedora/" rel="tag"># Fedora</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/12/29/Debian10%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8DMariaDB%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="Debian10备份与恢复MariaDB数据库">
+                  <i class="fa fa-chevron-left"></i> Debian10备份与恢复MariaDB数据库
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/11/05/Asp%E6%93%8D%E4%BD%9CMsSQL%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="next" title="Asp操作MsSQL数据库">
+                  Asp操作MsSQL数据库 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81MjMwNC8yODc4Mg=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">318k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; 
+var translateDelay = 0; 
+var cookieDomain = "https://kaisky.xyz/"; 
+var msgToTraditionalChinese = "繁体"; 
+var msgToSimplifiedChinese = "简体"; 
+var translateButtonId = "translateLink"; 
+translateInitilization();
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2020/06/21/Ventoy+WePE2.1%E5%81%9A%E5%90%AF%E5%8A%A8%E7%9B%98/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '32px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

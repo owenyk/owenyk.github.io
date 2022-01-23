@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Markdown一些latex数学符号写法和常见希腊字母的写法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown写一些latex符号和符号用法">
+<meta property="og:url" content="https://owenyk.github.io/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:site_name" content="K&#39;s Life">
+<meta property="og:description" content="Markdown一些latex数学符号写法和常见希腊字母的写法">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-26T12:05:32.000Z">
+<meta property="article:modified_time" content="2021-12-07T04:16:44.496Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="Math">
+<meta property="article:tag" content="Mathjax">
+<meta property="article:tag" content="Latex">
+<meta property="article:tag" content="Flowchart">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://owenyk.github.io/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://owenyk.github.io/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/","path":"2020/12/26/Markdown写一些latex符号和符号用法/","title":"Markdown写一些latex符号和符号用法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Markdown写一些latex符号和符号用法 | K's Life</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">K's Life</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">1、上下标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%85%B6%E4%BB%96%E4%B8%8A%E9%9D%A2%E5%B8%A6%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">2、其他上面带符号类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E7%9C%81%E7%95%A5%E5%8F%B7%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">3、省略号：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%B1%89%E5%AD%97%E3%80%81%E5%AD%97%E4%BD%93%E4%B8%8E%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">4、汉字、字体与格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="nav-number">5.</span> <span class="nav-text">5、数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97"><span class="nav-number">5.1.</span> <span class="nav-text">(1)四则运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E4%B8%8E%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97"><span class="nav-number">6.</span> <span class="nav-text">6、逻辑运算与集合运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-number">7.</span> <span class="nav-text">7、方程组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81%E8%A1%A8%E6%A0%BC"><span class="nav-number">8.</span> <span class="nav-text">8、表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9%E3%80%81%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">9.</span> <span class="nav-text">9、流程图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10%E3%80%81%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E7%AC%A6%E5%8F%B7"><span class="nav-number">10.</span> <span class="nav-text">10、其他一些符号</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description">日常的一些记录，留作备忘！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+
+
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+            <h7 class="widget-title">Tag Cloud</h7>
+            <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="260" height="260" id="resCanvas" style="width=100%">
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access/" rel="tag">Access</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache2/" rel="tag">Apache2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt/" rel="tag">Apt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt-key/" rel="tag">Apt-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aria2/" rel="tag">Aria2</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Asp/" rel="tag">Asp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Badblocks/" rel="tag">Badblocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connector/" rel="tag">Connector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/" rel="tag">C语言环境</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/" rel="tag">Debian</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian10/" rel="tag">Debian10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fedora/" rel="tag">Fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ffmpeg/" rel="tag">Ffmpeg</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flowchart/" rel="tag">Flowchart</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Genymotion/" rel="tag">Genymotion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gpg/" rel="tag">Gpg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grep/" rel="tag">Grep</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iconv/" rel="tag">Iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MariaDB/" rel="tag">MariaDB</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongosh/" rel="tag">Mongosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MsSQL/" rel="tag">MsSQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nvm/" rel="tag">Nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Request/" rel="tag">Request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Service/" rel="tag">Service</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smartmontools/" rel="tag">Smartmontools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smbshare/" rel="tag">Smbshare</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Statistics/" rel="tag">Statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText3/" rel="tag">SublimeText3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemctl/" rel="tag">Systemctl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TrackersList/" rel="tag">TrackersList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UCanAccess/" rel="tag">UCanAccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ventoy/" rel="tag">Ventoy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WePE/" rel="tag">WePE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdav/" rel="tag">Webdav</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows10/" rel="tag">Windows10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wine/" rel="tag">Wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xargs/" rel="tag">Xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-get/" rel="tag">You-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Youtube-dl/" rel="tag">Youtube-dl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gvfs/" rel="tag">gvfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iconv/" rel="tag">iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mdbtools/" rel="tag">mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odbc-mdbtools/" rel="tag">odbc-mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/" rel="tag">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unixODBC/" rel="tag">unixODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2/" rel="tag">公农历转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag">启动服务</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag">启动盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E4%BB%B6%E7%BC%BA%E5%A4%B1/" rel="tag">固件缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" rel="tag">备份和恢复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/" rel="tag">字体缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="tag">安卓模拟器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/" rel="tag">数据导出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" rel="tag">文字识别</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag">设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%91%BD%E5%90%8D/" rel="tag">重命名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" rel="tag">错误解决</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">问题解决</a><span class="tag-list-count">2</span></li></ul>
+                </canvas>
+            </div>
+        </div>
+      
+      
+
+      
+
+
+      </div>
+
+      
+       <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>-->
+        
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js
+            server="netease"
+            type="playlist"
+            id="641900597" 
+            mini="false"
+            fixed="false"
+            list-folded="true"
+            autoplay="false"
+            volume="0.8"
+            theme="#95DA99"
+            order="random"
+            loop="all"
+            preload="auto"
+            mutex="true">
+          </meting-js> 
+       
+
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owenyk.github.io/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="K's Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Markdown写一些latex符号和符号用法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-26 20:05:32" itemprop="dateCreated datePublished" datetime="2020-12-26T20:05:32+08:00">2020-12-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-07 12:16:44" itemprop="dateModified" datetime="2021-12-07T12:16:44+08:00">2021-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">程序语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Latex/" itemprop="url" rel="index"><span itemprop="name">Latex</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/" data-xid="/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="Markdown写一些latex符号和符号用法" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>16 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">Markdown一些latex数学符号写法和常见希腊字母的写法</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="1、上下标"><a href="#1、上下标" class="headerlink" title="1、上下标"></a>1、上下标</h2><p>1、上标符号，符号：^，如：$x^4$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x^4$</span><br></pre></td></tr></table></figure>
+<p>2、下标符号，符号：_，如：$x_1$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x<span class="emphasis">_1$</span></span><br></pre></td></tr></table></figure>
+<p>3、组合符号，符号：{}，如：${16}_{8}O{2+}_{2}$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;16&#125;<span class="emphasis">_&#123;8&#125;O&#123;2+&#125;_</span>&#123;2&#125;$</span><br></pre></td></tr></table></figure>
+<h2 id="2、其他上面带符号类型"><a href="#2、其他上面带符号类型" class="headerlink" title="2、其他上面带符号类型"></a>2、其他上面带符号类型</h2><p>1、$\mathring{a}$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\mathring&#123;a&#125;$</span><br></pre></td></tr></table></figure>
+<p>2、$\bar{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\bar&#123;a&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>3、$\acute{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\acute&#123;a&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>$\check{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\check&#123;a&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>4、$\grave{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\grave&#123;a&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>5、$\breve{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\breve&#123;a&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>6、$\dot{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\dot&#123;a&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>7、$\tilde{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\tilde&#123;a&#125;$</span><br></pre></td></tr></table></figure><br>8、向量<br>$\vec{a}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\vec&#123;a&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>9、上箭头<br>$\uparrow$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\uparrow$</span><br></pre></td></tr></table></figure></p>
+<h2 id="3、省略号："><a href="#3、省略号：" class="headerlink" title="3、省略号："></a>3、省略号：</h2><p>1、横向<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\cdots$</span><br></pre></td></tr></table></figure><br>$\cdots$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\dots$ </span><br></pre></td></tr></table></figure>
+<p>$\dots$<br>（纵向位置稍低，一般用于有下标的序列）<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ \dots \cdots$</span><br></pre></td></tr></table></figure><br>${x_1,\dots,x_n}$和${x_1,\cdots,x_n}$ (对比)</p>
+<p>2、竖向<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\vdots$</span><br></pre></td></tr></table></figure><br>$\vdots$</p>
+<p>3、斜向：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\ddots$</span><br></pre></td></tr></table></figure><br>$\ddots$</p>
+<p>4、分数：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\frac&#123;x+y&#125;&#123;y+z&#125;$</span><br></pre></td></tr></table></figure><br>$\frac{x+y}{y+z}$</p>
+<p>或者<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;x+y&#125;\over&#123;y+z&#125;$</span><br></pre></td></tr></table></figure><br>${x+y}\over{y+z}$</p>
+<h2 id="4、汉字、字体与格式"><a href="#4、汉字、字体与格式" class="headerlink" title="4、汉字、字体与格式"></a><strong>4、汉字、字体与格式</strong></h2><p>1、字体控制，符号：\\displaystyle，<br>如：$\displaystyle \frac{x+y}{y+z}$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\displaystyle \frac&#123;x+y&#125;&#123;y+z&#125;$</span><br></pre></td></tr></table></figure>
+<p>【注意和上面分数区别】</p>
+<p>2、下划线符号，符号：\\underline，如：$\underline{x+y}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\underline&#123;x+y&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>3、上大括号，符号：\\overbrace{算式}，<br>如：$\overbrace {a+b+c+d}^{2.0}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\overbrace &#123;a+b+c+d&#125;^&#123;2.0&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>4、下大括号，符号：\\underbrace {算式}，如：</p>
+<p>$a+\underbrace{b+c}_{1.0}+d$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a+\underbrace&#123;b+c&#125;<span class="emphasis">_&#123;1.0&#125;+d$</span></span><br></pre></td></tr></table></figure>
+<p>5、上位符号，符号：\stacrel{上位符号}{基位符号},如：<br>$\vec {x}\stackrel {\mathrm {def}}{=}{x_1,\dots,x_n}$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\vec &#123;x&#125;\stackrel &#123;\mathrm &#123;def&#125;&#125;&#123;=&#125;&#123;x<span class="emphasis">_1,\dots,x_</span>n&#125;$</span><br></pre></td></tr></table></figure>
+<p>6、标签，符号\tag{数字}，如：</p>
+<p>$x + y = 1 \tag {1.2}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x + y = 1 \tag &#123;1.2&#125;$</span><br></pre></td></tr></table></figure></p>
+<h2 id="5、数学运算"><a href="#5、数学运算" class="headerlink" title="5、数学运算"></a>5、数学运算</h2><h3 id="1-四则运算"><a href="#1-四则运算" class="headerlink" title="(1)四则运算"></a>(1)四则运算</h3><p>1.加法运算，符号：+，$x+y=z$ </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y=z$</span><br></pre></td></tr></table></figure>
+<p>2.加减运算，符号：\pm，$x \pm y=z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \pm y=z$</span><br></pre></td></tr></table></figure><br>3.减加运算，符号：\mp，$x \mp y=z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \mp y=z$</span><br></pre></td></tr></table></figure></p>
+<p>4.乘法运算，符号：\times，$x \times y=z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \times y=z$</span><br></pre></td></tr></table></figure></p>
+<p>5.点乘运算，符号：\cdot，$x \cdot y=z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \cdot y=z$</span><br></pre></td></tr></table></figure></p>
+<p>6.星乘运算，符号：\ast，$x \ast y=z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \ast y=z$</span><br></pre></td></tr></table></figure></p>
+<p>7.除法运算，符号：\div，$x \div y=z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \div y=z$</span><br></pre></td></tr></table></figure></p>
+<p>8.斜除运算，符号：/，$x / y=z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x / y=z$</span><br></pre></td></tr></table></figure></p>
+<p>9.分式表示，符号：\frac{分子}{分母}，如：$\frac{x+y}{y+z}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\frac&#123;x+y&#125;&#123;y+z&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>分式表示，符号：{分子} \voer {分母}，如：${x+y} \over {y+z}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;x+y&#125; \over &#123;y+z&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>10.绝对值表示，符号：||，如：$|x+y|$</p>
+<p>(2)高级运算</p>
+<p>1、平均数运算，符号：\overline{算式}，如：$\overline{xyz}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\overline&#123;xyz&#125;$</span><br></pre></td></tr></table></figure><br>2、开二次方运算，符号：\sqrt，如：$\sqrt x$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\sqrt x$</span><br></pre></td></tr></table></figure><br>开多次方运算，符号：\sqrt[开方数]{被开方数}，如：$\sqrt[3]{x+y}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\sqrt[3]&#123;x+y&#125;$</span><br></pre></td></tr></table></figure><br>3、对数运算，符号：\log，如：$\log_2 x$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\log<span class="emphasis">_2\ x$</span></span><br></pre></td></tr></table></figure><br>4、求和运算，符号：\sum，如：<br>$\sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)$</p>
+<p>或者，符号：\displaystyle \sum，如：<br>$\displaystyle \sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$\sum^n<span class="emphasis">_&#123;i=1&#125;(x_</span>i-\bar x)(y<span class="emphasis">_i-\bar y)$</span></span><br><span class="line"><span class="emphasis">$\displaystyle \sum^n_</span>&#123;i=1&#125;(x<span class="emphasis">_i-\bar x)(y_</span>i-\bar y)$</span><br></pre></td></tr></table></figure>
+<p>5、微分运算，符号：\partial，如：$\frac{\partial x}{\partial y}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\frac&#123;\partial x&#125;&#123;\partial y&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>6、积分运算，符号：\int，如：$\int^\infty_{0}{xdx}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\int^&#123;\infty&#125;<span class="emphasis">_&#123;0&#125;&#123;xdx&#125;$</span></span><br></pre></td></tr></table></figure></p>
+<p>7、矩阵表示，符号：\begin{matrix} \end{matrix}，如：</p>
+<script type="math/tex; mode=display">
+\left [
+\begin{matrix}
+a & b & c & d  \\
+e & f & g & h  \\
+i & j & k & l  \\
+m & n & o & p
+\end{matrix}
+\right ]
+\tag{1}</script><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">\left [</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">a &amp; b &amp; c &amp; d  \\</span><br><span class="line">e &amp; f &amp; g &amp; h  \\</span><br><span class="line">i &amp; j &amp; k &amp; l  \\</span><br><span class="line">m &amp; n &amp; o &amp; p</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right ]</span><br><span class="line">\tag&#123;2&#125;</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<h2 id="6、逻辑运算与集合运算"><a href="#6、逻辑运算与集合运算" class="headerlink" title="6、逻辑运算与集合运算"></a>6、逻辑运算与集合运算</h2><p>(1)逻辑运算<br>1、大于等于运算，符号：\geq，如：$x+y \geq z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \geq z$</span><br></pre></td></tr></table></figure><br>2、小于等于运算，符号：\leq，如：$x+y \leq z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \leq z$</span><br></pre></td></tr></table></figure><br>3、不等于运算，符号：\neq，如：$x+y \neq z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \neq z$</span><br></pre></td></tr></table></figure><br>4、不大于等于运算，符号：\ngeq，如：$x+y \ngeq z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \ngeq z$</span><br></pre></td></tr></table></figure><br>或者，符号：\not\geq，如：$x+y \not\geq z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \not\geq z$</span><br></pre></td></tr></table></figure><br>6、不小于等于运算，符号：\nleq，如：$x+y \nleq z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \nleq z$</span><br></pre></td></tr></table></figure><br>或者，符号：\not\leq，如：$x+y \not\leq z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \not\leq z$</span><br></pre></td></tr></table></figure><br>7、约等于运算，符号：\approx，如：$x+y \approx z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \approx z$</span><br></pre></td></tr></table></figure><br>8、恒定等于运算，符号：\equiv，如：$x+y \equiv z$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x+y \equiv z$</span><br></pre></td></tr></table></figure><br>(2)集合运算<br>1、属于运算，符号：\in，如：$x \in y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \in y$</span><br></pre></td></tr></table></figure><br>2、不属于运算，符号：\notin，如：$x \notin y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \notin y$</span><br></pre></td></tr></table></figure><br>3、不属于运算，符号：\not\in，如：$x \not\in y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \not\in y$</span><br></pre></td></tr></table></figure><br>4、子集运算，符号：\subset，如：$x \subset y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \subset y$</span><br></pre></td></tr></table></figure><br>5、非子集运算，符号：\not\subset，如：$x \not\subset y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \not\subset y$</span><br></pre></td></tr></table></figure><br>6、真子集运算，符号：\subseteq，如：$x \subseteq y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \subseteq y$</span><br></pre></td></tr></table></figure><br>7、非真子集运算，符号：\subsetneq，如：$x \subsetneq y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \subsetneq y$</span><br></pre></td></tr></table></figure><br>8、并集运算，符号：\cup，如：$x \cup y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \cup y$</span><br></pre></td></tr></table></figure><br>9、交集运算，符号：\cap，如：$x \cap y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \cap y$</span><br></pre></td></tr></table></figure><br>10、差集运算，符号：\setminus，如：$x \setminus y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \setminus y$</span><br></pre></td></tr></table></figure><br>11、同或运算，符号：\bigodot，如：$x \bigodot y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \bigodot y$</span><br></pre></td></tr></table></figure><br>12、同与运算，符号：\bigotimes，如：$x \bigotimes y$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$x \bigotimes y$</span><br></pre></td></tr></table></figure><br>13、实数集合，符号：\mathbb{R}，如：$\mathbb{R}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\mathbb&#123;R&#125;$</span><br></pre></td></tr></table></figure><br>14、自然数集合，符号：\mathbb{Z}，如：$\mathbb{Z}$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\mathbb&#123;Z&#125;$</span><br></pre></td></tr></table></figure><br>15、空集，符号：\emptyset，如：$\emptyset$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\emptyset$</span><br></pre></td></tr></table></figure></p>
+<h2 id="7、方程组"><a href="#7、方程组" class="headerlink" title="7、方程组"></a>7、方程组</h2><p>1、一般方程组<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\begin&#123;cases&#125;</span><br><span class="line">a<span class="emphasis">_1x+b_</span>1y+c<span class="emphasis">_1z=d_</span>1\\\</span><br><span class="line">a<span class="emphasis">_2x+b_</span>2y+c<span class="emphasis">_2z=d_</span>2\\\</span><br><span class="line">a<span class="emphasis">_3x+b_</span>3y+c<span class="emphasis">_3z=d_</span>3</span><br><span class="line">\end&#123;cases&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>$<br>\begin{cases}<br>a_1x+b_1y+c_1z=d_1\\\<br>a_2x+b_2y+c_2z=d_2\\\<br>a_3x+b_3y+c_3z=d_3<br>\end{cases}<br>$</p>
+<p>2、带表达式形式<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">f(n) =</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">n/2,  &amp;\text&#123;如果:&#125; n\neq 0 \\\\</span><br><span class="line">3n+1, &amp;\text&#123;如果:&#125; n \geq 2 \\\\</span><br><span class="line">2n\over5(n-1), &amp;\text&#123;如果:&#125; \text&#123;-&#125;\infty &lt; n &lt; 2</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$</span><br></pre></td></tr></table></figure></p>
+<p>$<br>f(n) =<br>\begin{cases}<br>n/2,  &amp;\text{如果:} n\neq 0 \\\\<br>3n+1, &amp;\text{如果:} n \geq 2 \\\\<br>2n\over5(n-1), &amp;\text{如果:} \text{-}\infty &lt; n &lt; 2<br>\end{cases}<br>$</p>
+<h2 id="8、表格"><a href="#8、表格" class="headerlink" title="8、表格"></a>8、表格</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">\begin&#123;array&#125;</span><br><span class="line">&#123;|c|l|r|&#125;</span><br><span class="line">\hline 782&amp;789&amp;123 \\\\</span><br><span class="line">\hline 67&amp;56&amp;37 \\\\</span><br><span class="line">\hline 6&amp;1&amp;8 \\\\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<p>$<br>\begin{array}<br>{|c|l|r|}<br>\hline 782&amp;789&amp;123 \\\\<br>\hline 67&amp;56&amp;37 \\\\<br>\hline 6&amp;1&amp;8 \\\\<br>\hline<br>\end{array}<br>$</p>
+<h2 id="9、流程图"><a href="#9、流程图" class="headerlink" title="9、流程图"></a>9、流程图</h2><p><strong>需安装插件：<code>flowchart</code></strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-filter-flowchart --save </span><br></pre></td></tr></table></figure><br>在根目录：_config.yml加入<code>flowchart</code>支持:<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flowchart:</span><br><span class="line">  # raphael:   # optional, the source url of raphael.js</span><br><span class="line">  # flowchart: # optional, the source url of flowchart.js</span><br><span class="line">  options: # options used for <span class="code">`drawSVG`</span></span><br></pre></td></tr></table></figure></p>
+<p>1、官方例子：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start|past:&gt;http://www.google.com[blank]</span><br><span class="line">e=&gt;end: End:&gt;http://www.google.com</span><br><span class="line">op1=&gt;operation: My Operation|past</span><br><span class="line">op2=&gt;operation: Stuff|current</span><br><span class="line">sub1=&gt;subroutine: My Subroutine|invalid</span><br><span class="line">cond=&gt;condition: Yes</span><br><span class="line">or No?|approved:&gt;http://www.google.com</span><br><span class="line">c2=&gt;condition: Good idea|rejected</span><br><span class="line">io=&gt;inputoutput: catch something...|request</span><br><span class="line"></span><br><span class="line">st-&gt;op1(right)-&gt;cond</span><br><span class="line">cond(yes, right)-&gt;c2</span><br><span class="line">cond(no)-&gt;sub1(left)-&gt;op1</span><br><span class="line">c2(yes)-&gt;io-&gt;e</span><br><span class="line">c2(no)-&gt;op2-&gt;e</span><br></pre></td></tr></table></figure></p>
+<div id="flowchart-0" class="flow-chart"></div>
+
+
+<p>2、演示<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始节点</span><br><span class="line">in=&gt;inputoutput: 输入i</span><br><span class="line">e=&gt;end: 结束节点</span><br><span class="line">cond=&gt;condition: i被2整除</span><br><span class="line">out1=&gt;inputoutput: 输出i是奇数</span><br><span class="line">out2=&gt;inputoutput: 输出i是偶数</span><br><span class="line">st(right)-&gt;in-&gt;cond</span><br><span class="line">cond(yes,right)-&gt;out2-&gt;e</span><br><span class="line">cond(no)-&gt;out1-&gt;e</span><br></pre></td></tr></table></figure></p>
+<div id="flowchart-1" class="flow-chart"></div>
+
+
+
+<h2 id="10、其他一些符号"><a href="#10、其他一些符号" class="headerlink" title="10、其他一些符号"></a>10、其他一些符号</h2><p>1、虚数<br>$\imath$,$\jmath$<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$\imath$</span><br><span class="line">$\jmath$</span><br></pre></td></tr></table></figure></p>
+<p>2、其他组合<br>$2H_2O\stackrel {\mathrm {点燃}}{==}2H_2 + O_2$</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$2H<span class="emphasis">_2O\stackrel &#123;\mathrm &#123;点燃&#125;&#125;&#123;=&#125;H_</span>2 + O<span class="emphasis">_2$</span></span><br></pre></td></tr></table></figure>
+<p>希腊字母</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字母</th>
+<th>实现</th>
+<th>字母</th>
+<th>实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>A</td>
+<td>α</td>
+<td>\alhpa</td>
+</tr>
+<tr>
+<td>B</td>
+<td>B</td>
+<td>β</td>
+<td>\beta</td>
+</tr>
+<tr>
+<td>Γ</td>
+<td>\Gamma</td>
+<td>γ</td>
+<td>\gamma</td>
+</tr>
+<tr>
+<td>Δ</td>
+<td>\Delta</td>
+<td>δ</td>
+<td>\delta</td>
+</tr>
+<tr>
+<td>E</td>
+<td>E</td>
+<td>ϵ</td>
+<td>\epsilon</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Z</td>
+<td>ζ</td>
+<td>\zeta</td>
+</tr>
+<tr>
+<td>H</td>
+<td>H</td>
+<td>η</td>
+<td>\eta</td>
+</tr>
+<tr>
+<td>Θ</td>
+<td>\Theta</td>
+<td>θ</td>
+<td>\theta</td>
+</tr>
+<tr>
+<td>I</td>
+<td>I</td>
+<td>ι</td>
+<td>\iota</td>
+</tr>
+<tr>
+<td>K</td>
+<td>K</td>
+<td>κ</td>
+<td>\kappa</td>
+</tr>
+<tr>
+<td>Λ</td>
+<td>\Lambda</td>
+<td>λ</td>
+<td>\lambda</td>
+</tr>
+<tr>
+<td>M</td>
+<td>M</td>
+<td>μ</td>
+<td>\mu</td>
+</tr>
+<tr>
+<td>N</td>
+<td>N</td>
+<td>ν</td>
+<td>\nu</td>
+</tr>
+<tr>
+<td>Ξ</td>
+<td>\Xi</td>
+<td>ξ</td>
+<td>\xi</td>
+</tr>
+<tr>
+<td>O</td>
+<td>O</td>
+<td>ο</td>
+<td>\omicron</td>
+</tr>
+<tr>
+<td>Π</td>
+<td>\Pi</td>
+<td>π</td>
+<td>\pi</td>
+</tr>
+<tr>
+<td>P</td>
+<td>P</td>
+<td>ρ</td>
+<td>\rho</td>
+</tr>
+<tr>
+<td>Σ</td>
+<td>\Sigma</td>
+<td>σ</td>
+<td>\sigma</td>
+</tr>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>τ</td>
+<td>\tau</td>
+</tr>
+<tr>
+<td>Υ</td>
+<td>\Upsilon</td>
+<td>υ</td>
+<td>\upsilon</td>
+</tr>
+<tr>
+<td>Φ</td>
+<td>\Phi</td>
+<td>ϕ</td>
+<td>\phi</td>
+</tr>
+<tr>
+<td>X</td>
+<td>X</td>
+<td>χ</td>
+<td>\chi</td>
+</tr>
+<tr>
+<td>Ψ</td>
+<td>\Psi</td>
+<td>ψ</td>
+<td>\psi</td>
+</tr>
+<tr>
+<td>Ω</td>
+<td>\v</td>
+<td>ω</td>
+<td>\omega</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>参考：<br>①<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Lo3prs/p/14021997.html">MarkDown数学公式</a><br>②<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e74eb43960a1">Markdown数学公式语法</a><br>③<a target="_blank" rel="noopener" href="https://github.com/bubkoo/hexo-filter-flowchart">flowchart项目</a><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|request
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">st=>start: 开始节点
+in=>inputoutput: 输入i
+e=>end: 结束节点
+op1=>operation: xx
+op2=>operation: xx
+cond=>condition: i被2整除
+sub=>subroutine: xx
+out1=>inputoutput: 输出i是奇数
+out2=>inputoutput: 输出i是偶数
+st->in->cond
+cond(yes,right)->out2->e
+cond(no)->out1->e</textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\12\25\最小二乘法的算术推导\" rel="bookmark">最小二乘法的算术推导</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://owenyk.github.io/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/" title="Markdown写一些latex符号和符号用法">https://owenyk.github.io/2020/12/26/Markdown写一些latex符号和符号用法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Math/" rel="tag"># Math</a>
+              <a href="/tags/Mathjax/" rel="tag"># Mathjax</a>
+              <a href="/tags/Latex/" rel="tag"># Latex</a>
+              <a href="/tags/Flowchart/" rel="tag"># Flowchart</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/12/25/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC/" rel="prev" title="最小二乘法的算术推导">
+                  <i class="fa fa-chevron-left"></i> 最小二乘法的算术推导
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/05/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E5%9B%A0gvfs%E4%B8%8D%E8%83%BD%E6%B5%8F%E8%A7%88%E7%BD%91%E7%BB%9C%E7%AD%89%E9%97%AE%E9%A2%98/" rel="next" title="文件管理器因gvfs不能浏览网络等问题">
+                  文件管理器因gvfs不能浏览网络等问题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81MjMwNC8yODc4Mg=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">318k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; 
+var translateDelay = 0; 
+var cookieDomain = "https://kaisky.xyz/"; 
+var msgToTraditionalChinese = "繁体"; 
+var msgToSimplifiedChinese = "简体"; 
+var translateButtonId = "translateLink"; 
+translateInitilization();
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2020/12/26/Markdown%E5%86%99%E4%B8%80%E4%BA%9Blatex%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '32px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

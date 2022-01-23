@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>K&#39;s Life</title>
+  <icon>https://owenyk.github.io/icon.png</icon>
+  
+  <link href="https://owenyk.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://owenyk.github.io/"/>
+  <updated>2022-01-24T02:01:27.817Z</updated>
+  <id>https://owenyk.github.io/</id>
+  
+  <author>
+    <name>Kai</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ffmpeg在debian系统下编译安装</title>
+    <link href="https://owenyk.github.io/2022/01/22/ffmpeg%E5%9C%A8debian%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    <id>https://owenyk.github.io/2022/01/22/ffmpeg%E5%9C%A8debian%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</id>
+    <published>2022-01-22T02:00:00.000Z</published>
+    <updated>2022-01-24T02:01:27.817Z</updated>
+    
+    
+    <summary type="html">ffmpeg在linux下编译安装</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Ffmpeg" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Ffmpeg/"/>
+    
+    <category term="软件安装" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="Ffmpeg" scheme="https://owenyk.github.io/tags/Ffmpeg/"/>
+    
+    <category term="字体缺失" scheme="https://owenyk.github.io/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/"/>
+    
+    <category term="iconv" scheme="https://owenyk.github.io/tags/iconv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给kali系统终端命令后面添加时间戳</title>
+    <link href="https://owenyk.github.io/2022/01/06/%E7%BB%99kali%E7%B3%BB%E7%BB%9F%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%90%8E%E6%B7%BB%E5%8A%A0%E6%97%B6%E9%97%B4%E6%88%B3/"/>
+    <id>https://owenyk.github.io/2022/01/06/%E7%BB%99kali%E7%B3%BB%E7%BB%9F%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%90%8E%E6%B7%BB%E5%8A%A0%E6%97%B6%E9%97%B4%E6%88%B3/</id>
+    <published>2022-01-06T02:25:50.000Z</published>
+    <updated>2022-01-06T07:10:24.813Z</updated>
+    
+    
+    <summary type="html">给kali系统终端命令后面添加时间戳的方法记录</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    
+    <category term="zsh" scheme="https://owenyk.github.io/tags/zsh/"/>
+    
+    <category term="kali" scheme="https://owenyk.github.io/tags/kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>you-get的安装和使用</title>
+    <link href="https://owenyk.github.io/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>https://owenyk.github.io/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</id>
+    <published>2022-01-03T04:25:50.000Z</published>
+    <updated>2022-01-04T12:13:56.597Z</updated>
+    
+    
+    <summary type="html">you-get的安装和使用方法</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
+    
+    <category term="you-get" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/you-get/"/>
+    
+    
+    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
+    
+    <category term="You-get" scheme="https://owenyk.github.io/tags/You-get/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zsh配置和使用</title>
+    <link href="https://owenyk.github.io/2022/01/03/zsh%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+    <id>https://owenyk.github.io/2022/01/03/zsh%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</id>
+    <published>2022-01-03T02:25:50.000Z</published>
+    <updated>2022-01-06T08:36:36.692Z</updated>
+    
+    
+    <summary type="html">zsh配置和使用</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    
+    <category term="zsh" scheme="https://owenyk.github.io/tags/zsh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>debian11安装wine</title>
+    <link href="https://owenyk.github.io/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/"/>
+    <id>https://owenyk.github.io/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/</id>
+    <published>2022-01-02T04:25:50.000Z</published>
+    <updated>2022-01-04T12:35:11.897Z</updated>
+    
+    
+    <summary type="html">debian11安装wine</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="Wine" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Wine/"/>
+    
+    
+    <category term="Wine" scheme="https://owenyk.github.io/tags/Wine/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian更新源时出现签名无法进行验证</title>
+    <link href="https://owenyk.github.io/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/"/>
+    <id>https://owenyk.github.io/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/</id>
+    <published>2022-01-01T03:25:50.000Z</published>
+    <updated>2022-01-04T12:14:25.619Z</updated>
+    
+    
+    <summary type="html">Debian更新源时出现签名无法进行验证(GPG error)的解决办法</summary>
+    
+    
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Debian" scheme="https://owenyk.github.io/tags/Debian/"/>
+    
+    <category term="错误解决" scheme="https://owenyk.github.io/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/"/>
+    
+    <category term="Gpg" scheme="https://owenyk.github.io/tags/Gpg/"/>
+    
+    <category term="Apt-key" scheme="https://owenyk.github.io/tags/Apt-key/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tar进行文件备份和恢复操作</title>
+    <link href="https://owenyk.github.io/2021/12/30/tar%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D%E6%93%8D%E4%BD%9C/"/>
+    <id>https://owenyk.github.io/2021/12/30/tar%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-12-30T02:39:32.000Z</published>
+    <updated>2021-12-31T09:01:49.448Z</updated>
+    
+    
+    <summary type="html">测试tar进行文件备份和恢复操作的方法</summary>
+    
+    
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="备份和恢复" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/"/>
+    
+    
+    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
+    
+    <category term="备份和恢复" scheme="https://owenyk.github.io/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/"/>
+    
+    <category term="tar" scheme="https://owenyk.github.io/tags/tar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python3中import pandas后提示错误</title>
+    <link href="https://owenyk.github.io/2021/12/21/Python3%E4%B8%ADimport%20pandas%E5%90%8E%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF/"/>
+    <id>https://owenyk.github.io/2021/12/21/Python3%E4%B8%ADimport%20pandas%E5%90%8E%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF/</id>
+    <published>2021-12-21T04:39:32.000Z</published>
+    <updated>2021-12-30T06:03:45.146Z</updated>
+    
+    
+    <summary type="html">在Debian11下ODBC方案用Python3操作ACCESS的方法</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
+    
+    
+    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
+    
+    <category term="问题解决" scheme="https://owenyk.github.io/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian11用Python和ODBC操作ACCESS</title>
+    <link href="https://owenyk.github.io/2021/12/21/Debian11%E7%94%A8Python3%E5%92%8CODBC%E6%93%8D%E4%BD%9CACCESS/"/>
+    <id>https://owenyk.github.io/2021/12/21/Debian11%E7%94%A8Python3%E5%92%8CODBC%E6%93%8D%E4%BD%9CACCESS/</id>
+    <published>2021-12-21T02:39:32.000Z</published>
+    <updated>2021-12-31T09:09:23.491Z</updated>
+    
+    
+    <summary type="html">在Debian11下用Python和ODBC方案操作ACCESS的方法</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="Access" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Access/"/>
+    
+    <category term="odbc-mdbtools" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/odbc-mdbtools/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
+    
+    <category term="mdbtools" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/mdbtools/"/>
+    
+    <category term="unixODBC" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/unixODBC/"/>
+    
+    
+    <category term="Access" scheme="https://owenyk.github.io/tags/Access/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
+    
+    <category term="odbc-mdbtools" scheme="https://owenyk.github.io/tags/odbc-mdbtools/"/>
+    
+    <category term="mdbtools" scheme="https://owenyk.github.io/tags/mdbtools/"/>
+    
+    <category term="unixODBC" scheme="https://owenyk.github.io/tags/unixODBC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian11系统MySQL Connector/ODBC下载及安装</title>
+    <link href="https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
+    <id>https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/</id>
+    <published>2021-12-21T02:39:32.000Z</published>
+    <updated>2021-12-31T11:20:31.658Z</updated>
+    
+    
+    <summary type="html">在Debian11下ODBC方案用Python3操作ACCESS的方法</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="ODBC" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/ODBC/"/>
+    
+    <category term="MySQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
+    
+    
+    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
+    
+    <category term="ODBC" scheme="https://owenyk.github.io/tags/ODBC/"/>
+    
+    <category term="Connector" scheme="https://owenyk.github.io/tags/Connector/"/>
+    
+    <category term="Mysql" scheme="https://owenyk.github.io/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian11用Python3和JDBC操作ACCESS</title>
+    <link href="https://owenyk.github.io/2021/12/20/Debian11%E7%94%A8Python3%E5%92%8CJDBC%E6%93%8D%E4%BD%9CACCESS/"/>
+    <id>https://owenyk.github.io/2021/12/20/Debian11%E7%94%A8Python3%E5%92%8CJDBC%E6%93%8D%E4%BD%9CACCESS/</id>
+    <published>2021-12-20T02:39:32.000Z</published>
+    <updated>2021-12-31T11:19:40.456Z</updated>
+    
+    
+    <summary type="html">在Debian11下JDBC方案用Python3操作ACCESS的方法</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="Access" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Access/"/>
+    
+    <category term="UCanAccess" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/UCanAccess/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
+    
+    
+    <category term="Access" scheme="https://owenyk.github.io/tags/Access/"/>
+    
+    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
+    
+    <category term="UCanAccess" scheme="https://owenyk.github.io/tags/UCanAccess/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian系统安装Docker</title>
+    <link href="https://owenyk.github.io/2021/12/18/Debian11%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85Docker/"/>
+    <id>https://owenyk.github.io/2021/12/18/Debian11%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85Docker/</id>
+    <published>2021-12-18T02:39:32.000Z</published>
+    <updated>2021-12-18T08:24:16.859Z</updated>
+    
+    
+    <summary type="html">Debian11系统安装Docker,在docker上安装微信和docker-compose安装TIM-QQ记录</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="docker-compose" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/docker-compose/"/>
+    
+    <category term="docker" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/docker/"/>
+    
+    
+    <category term="Docker" scheme="https://owenyk.github.io/tags/Docker/"/>
+    
+    <category term="Docker-compose" scheme="https://owenyk.github.io/tags/Docker-compose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Debian11上安装clash</title>
+    <link href="https://owenyk.github.io/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/"/>
+    <id>https://owenyk.github.io/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-12-15T03:05:32.000Z</published>
+    <updated>2021-12-31T11:17:32.873Z</updated>
+    
+    
+    <summary type="html">在Debian11上安装clash的记录</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="Clash" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Clash/"/>
+    
+    
+    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
+    
+    <category term="Clash" scheme="https://owenyk.github.io/tags/Clash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Debian11上安装go环境</title>
+    <link href="https://owenyk.github.io/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85go%E7%8E%AF%E5%A2%83/"/>
+    <id>https://owenyk.github.io/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85go%E7%8E%AF%E5%A2%83/</id>
+    <published>2021-12-15T02:05:32.000Z</published>
+    <updated>2021-12-16T03:04:10.499Z</updated>
+    
+    
+    <summary type="html">在Debian11上安装go环境的记录</summary>
+    
+    
+    
+    <category term="程序语言" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="Go" scheme="https://owenyk.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/Go/"/>
+    
+    
+    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
+    
+    <category term="Go" scheme="https://owenyk.github.io/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>申请免费的MongoDB云数据库</title>
+    <link href="https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <published>2021-12-08T00:51:12.000Z</published>
+    <updated>2021-12-14T06:39:35.381Z</updated>
+    
+    
+    <summary type="html">申请免费的MongoDB云数据库的一些记录</summary>
+    
+    
+    
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MongoDB" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/"/>
+    
+    
+    <category term="数据库" scheme="https://owenyk.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
+    
+    <category term="Mongosh" scheme="https://owenyk.github.io/tags/Mongosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Windows10上配置Hexo+Github做个人博客</title>
+    <link href="https://owenyk.github.io/2021/12/03/%E5%9C%A8Windows10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://owenyk.github.io/2021/12/03/%E5%9C%A8Windows10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
+    <published>2021-12-03T02:20:58.000Z</published>
+    <updated>2022-01-22T02:32:15.334Z</updated>
+    
+    
+    <summary type="html">在Windows10上配置Hexo+Github做个人博客</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="Windows" scheme="https://owenyk.github.io/categories/Windows/"/>
+    
+    <category term="Hexo" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Hexo/"/>
+    
+    <category term="Next主题" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Next%E4%B8%BB%E9%A2%98/"/>
+    
+    
+    <category term="Windows10" scheme="https://owenyk.github.io/tags/Windows10/"/>
+    
+    <category term="Hexo" scheme="https://owenyk.github.io/tags/Hexo/"/>
+    
+    <category term="Next" scheme="https://owenyk.github.io/tags/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Access数据导出到MySQL</title>
+    <link href="https://owenyk.github.io/2021/12/01/Access%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%88%B0MySQL/"/>
+    <id>https://owenyk.github.io/2021/12/01/Access%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%88%B0MySQL/</id>
+    <published>2021-12-01T02:48:36.000Z</published>
+    <updated>2021-12-31T09:02:40.834Z</updated>
+    
+    
+    <summary type="html">Access数据导出到MySQL操作记录</summary>
+    
+    
+    
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="Access" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Access/"/>
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="MySQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
+    
+    
+    <category term="数据导出" scheme="https://owenyk.github.io/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/"/>
+    
+    <category term="Access" scheme="https://owenyk.github.io/tags/Access/"/>
+    
+    <category term="数据库" scheme="https://owenyk.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="MySQL" scheme="https://owenyk.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian11编译安装PHP8.1.0版</title>
+    <link href="https://owenyk.github.io/2021/11/28/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85PHP8.1.0%E7%89%88/"/>
+    <id>https://owenyk.github.io/2021/11/28/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85PHP8.1.0%E7%89%88/</id>
+    <published>2021-11-28T02:48:36.000Z</published>
+    <updated>2021-12-31T11:20:02.713Z</updated>
+    
+    
+    <summary type="html">记录下Debian11编译安装PHP8.1.0版，配合Nginx使用</summary>
+    
+    
+    
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="Update" scheme="https://owenyk.github.io/categories/Linux/Update/"/>
+    
+    <category term="MariaDB" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MariaDB/"/>
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="MySQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
+    
+    <category term="Debian" scheme="https://owenyk.github.io/categories/Debian/"/>
+    
+    <category term="Checkinstall" scheme="https://owenyk.github.io/categories/Debian/Checkinstall/"/>
+    
+    <category term="Auto-apt" scheme="https://owenyk.github.io/categories/Debian/Auto-apt/"/>
+    
+    
+    <category term="Nginx" scheme="https://owenyk.github.io/tags/Nginx/"/>
+    
+    <category term="MariaDB" scheme="https://owenyk.github.io/tags/MariaDB/"/>
+    
+    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
+    
+    <category term="PHP" scheme="https://owenyk.github.io/tags/PHP/"/>
+    
+    <category term="更新" scheme="https://owenyk.github.io/tags/%E6%9B%B4%E6%96%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux检测磁盘坏道</title>
+    <link href="https://owenyk.github.io/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/"/>
+    <id>https://owenyk.github.io/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/</id>
+    <published>2021-11-26T03:16:58.000Z</published>
+    <updated>2021-12-30T06:02:46.068Z</updated>
+    
+    
+    <summary type="html">在Debian11上Linux检测磁盘坏道记录</summary>
+    
+    
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="badblocks" scheme="https://owenyk.github.io/categories/Linux/badblocks/"/>
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="smartmontools" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/smartmontools/"/>
+    
+    
+    <category term="Badblocks" scheme="https://owenyk.github.io/tags/Badblocks/"/>
+    
+    <category term="Smartmontools" scheme="https://owenyk.github.io/tags/Smartmontools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian中允许免输入密码使用超级用户运行命令</title>
+    <link href="https://owenyk.github.io/2021/11/22/Debian%E4%B8%AD%E5%85%81%E8%AE%B8%E5%85%8D%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4/"/>
+    <id>https://owenyk.github.io/2021/11/22/Debian%E4%B8%AD%E5%85%81%E8%AE%B8%E5%85%8D%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4/</id>
+    <published>2021-11-22T03:16:58.000Z</published>
+    <updated>2021-11-30T02:38:37.194Z</updated>
+    
+    
+    <summary type="html">Debian中sudo命令免输入密码</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="sudo" scheme="https://owenyk.github.io/categories/Linux/sudo/"/>
+    
+    
+    <category term="设置" scheme="https://owenyk.github.io/tags/%E8%AE%BE%E7%BD%AE/"/>
+    
+  </entry>
+  
+</feed>

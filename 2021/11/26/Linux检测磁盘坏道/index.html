@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="在Debian11上Linux检测磁盘坏道记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux检测磁盘坏道">
+<meta property="og:url" content="https://owenyk.github.io/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/index.html">
+<meta property="og:site_name" content="K&#39;s Life">
+<meta property="og:description" content="在Debian11上Linux检测磁盘坏道记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-26T03:16:58.000Z">
+<meta property="article:modified_time" content="2021-12-30T06:02:46.068Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="Badblocks">
+<meta property="article:tag" content="Smartmontools">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://owenyk.github.io/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://owenyk.github.io/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/","path":"2021/11/26/Linux检测磁盘坏道/","title":"Linux检测磁盘坏道"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux检测磁盘坏道 | K's Life</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">K's Life</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8badblocks%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">一、使用badblocks命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">实例：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%88%97%E5%87%BA%E7%A3%81%E7%9B%98%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、列出磁盘信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%B0%86%E6%A3%80%E6%B5%8B%E5%9D%8F%E9%81%93%E4%BF%A1%E6%81%AF%E4%BF%9D%E5%AD%98%E5%88%B0%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、将检测坏道信息保存到文件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E4%BF%AE%E5%A4%8D%EF%BC%88%E5%BE%85%E9%AA%8C%E8%AF%81%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、修复（待验证）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8smartmontools%E5%B7%A5%E5%85%B7%E6%89%AB%E6%8F%8F%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">二、使用smartmontools工具扫描：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">1、安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">2、使用方法</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description">日常的一些记录，留作备忘！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+
+
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+            <h7 class="widget-title">Tag Cloud</h7>
+            <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="260" height="260" id="resCanvas" style="width=100%">
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access/" rel="tag">Access</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache2/" rel="tag">Apache2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt/" rel="tag">Apt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt-key/" rel="tag">Apt-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aria2/" rel="tag">Aria2</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Asp/" rel="tag">Asp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Badblocks/" rel="tag">Badblocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connector/" rel="tag">Connector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/" rel="tag">C语言环境</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/" rel="tag">Debian</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian10/" rel="tag">Debian10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fedora/" rel="tag">Fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ffmpeg/" rel="tag">Ffmpeg</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flowchart/" rel="tag">Flowchart</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Genymotion/" rel="tag">Genymotion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gpg/" rel="tag">Gpg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grep/" rel="tag">Grep</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iconv/" rel="tag">Iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MariaDB/" rel="tag">MariaDB</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongosh/" rel="tag">Mongosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MsSQL/" rel="tag">MsSQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nvm/" rel="tag">Nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Request/" rel="tag">Request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Service/" rel="tag">Service</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smartmontools/" rel="tag">Smartmontools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smbshare/" rel="tag">Smbshare</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Statistics/" rel="tag">Statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText3/" rel="tag">SublimeText3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemctl/" rel="tag">Systemctl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TrackersList/" rel="tag">TrackersList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UCanAccess/" rel="tag">UCanAccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ventoy/" rel="tag">Ventoy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WePE/" rel="tag">WePE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdav/" rel="tag">Webdav</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows10/" rel="tag">Windows10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wine/" rel="tag">Wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xargs/" rel="tag">Xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-get/" rel="tag">You-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Youtube-dl/" rel="tag">Youtube-dl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gvfs/" rel="tag">gvfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iconv/" rel="tag">iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mdbtools/" rel="tag">mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odbc-mdbtools/" rel="tag">odbc-mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/" rel="tag">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unixODBC/" rel="tag">unixODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2/" rel="tag">公农历转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag">启动服务</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag">启动盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E4%BB%B6%E7%BC%BA%E5%A4%B1/" rel="tag">固件缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" rel="tag">备份和恢复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/" rel="tag">字体缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="tag">安卓模拟器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/" rel="tag">数据导出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" rel="tag">文字识别</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag">设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%91%BD%E5%90%8D/" rel="tag">重命名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" rel="tag">错误解决</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">问题解决</a><span class="tag-list-count">2</span></li></ul>
+                </canvas>
+            </div>
+        </div>
+      
+      
+
+      
+
+
+      </div>
+
+      
+       <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>-->
+        
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js
+            server="netease"
+            type="playlist"
+            id="641900597" 
+            mini="false"
+            fixed="false"
+            list-folded="true"
+            autoplay="false"
+            volume="0.8"
+            theme="#95DA99"
+            order="random"
+            loop="all"
+            preload="auto"
+            mutex="true">
+          </meting-js> 
+       
+
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owenyk.github.io/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="K's Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux检测磁盘坏道
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-26 11:16:58" itemprop="dateCreated datePublished" datetime="2021-11-26T11:16:58+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-30 14:02:46" itemprop="dateModified" datetime="2021-12-30T14:02:46+08:00">2021-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件应用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/badblocks/" itemprop="url" rel="index"><span itemprop="name">badblocks</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/smartmontools/" itemprop="url" rel="index"><span itemprop="name">smartmontools</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/" data-xid="/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/" class="post-meta-item leancloud_visitors" data-flag-title="Linux检测磁盘坏道" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>16k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>34 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">在Debian11上Linux检测磁盘坏道记录</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、使用badblocks命令"><a href="#一、使用badblocks命令" class="headerlink" title="一、使用badblocks命令"></a>一、使用<code>badblocks</code>命令</h1><p>语法 </p>
+<pre><code>badblocks [-svw][-b &lt;区块大小&gt;][-o &lt;输出文件&gt;][磁盘装置][磁盘区块数][启始区块]  
+</code></pre><p>参数说明：</p>
+<pre><code>-b&lt;区块大小&gt; 指定磁盘的区块大小，单位为字节。  
+-o&lt;输出文件&gt; 将检查的结果写入指定的输出文件。  
+-s 在检查时显示进度。  
+-v 执行时显示详细的信息。  
+-w 在检查时，执行写入测试。  
+[磁盘装置] 指定要检查的磁盘装置。  
+[磁盘区块数] 指定磁盘装置的区块总数。  
+[启始区块] 指定要从哪个区块开始检查。  
+</code></pre><p>参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-badblocks.html">Linux badblocks命令</a>  </p>
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><h3 id="1、列出磁盘信息"><a href="#1、列出磁盘信息" class="headerlink" title="1、列出磁盘信息"></a>1、列出磁盘信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~$ sudo fdisk -l</span><br><span class="line">Disk /dev/sda: 931.51 GiB, 1000204886016 bytes, 1953525168 sectors</span><br><span class="line">Disk model: nal USB 3.0     </span><br><span class="line">Units: sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 4096 bytes</span><br><span class="line">I/O size (minimum/optimal): 4096 bytes / 4096 bytes</span><br><span class="line">Disklabel <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x627a0fc4</span><br><span class="line">Device     Boot      Start        End    Sectors   Size Id Type</span><br><span class="line">/dev/sda1  *          2048   41840639   41838592    20G 83 Linux</span><br><span class="line">/dev/sda2         41842686 1953523711 1911681026 911.6G  f W95 Ext<span class="string">&#x27;d (LBA)</span></span><br><span class="line"><span class="string">/dev/sda5        222707712  419434495  196726784  93.8G  7 HPFS/NTFS/exFAT</span></span><br><span class="line"><span class="string">/dev/sda6        419436544  838868991  419432448   200G  7 HPFS/NTFS/exFAT</span></span><br><span class="line"><span class="string">/dev/sda7        838871040 1187000319  348129280   166G  7 HPFS/NTFS/exFAT</span></span><br><span class="line"><span class="string">/dev/sda8       1187002368 1396715519  209713152   100G  7 HPFS/NTFS/exFAT</span></span><br><span class="line"><span class="string">/dev/sda9       1396717568 1953523711  556806144 265.5G  7 HPFS/NTFS/exFAT</span></span><br><span class="line"><span class="string">/dev/sda10        41842688   56438783   14596096     7G 83 Linux</span></span><br><span class="line"><span class="string">/dev/sda11        56440832   58439679    1998848   976M 82 Linux swap / Solaris                                                                               /dev/sda12        58441728   61046783    2605056   1.2G 83 Linux</span></span><br><span class="line"><span class="string">/dev/sda13        61048832  222693375  161644544  77.1G 83 Linux</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、将检测坏道信息保存到文件："><a href="#2、将检测坏道信息保存到文件：" class="headerlink" title="2、将检测坏道信息保存到文件："></a>2、将检测坏道信息保存到文件：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~$ sudo badblocks -v /dev/sda8 &gt; /tmp/badsectors.txt <span class="comment"># sudo badblocks -s -v /dev/sda8 -o badsectors.txt </span></span><br><span class="line">Checking blocks 0 to 104856575</span><br><span class="line">Checking <span class="keyword">for</span> ba  blocks (read-only <span class="built_in">test</span>): <span class="keyword">done</span>                                Pass completed, 0 bad blocks found. (0/0/0 errors)</span><br></pre></td></tr></table></figure>
+<h3 id="3、修复（待验证）"><a href="#3、修复（待验证）" class="headerlink" title="3、修复（待验证）"></a>3、修复（待验证）</h3><p>(1)先用dd尽量备份坏块<br><code>dd if=/dev/sdb bs=4096 skip=扫描出的磁盘区块坏道 of=/tmp/15435904.dat count=1</code><br>(2)对这些坏块进行重写(注意! -w写测试会覆盖数据)<br><code>badblocks -w -f /dev/sdb 坏道结束编号 坏道起始编号</code><br>(3)如果前面的操作有成功的备份<code>/tmp/15435904.dat</code>, 就把它写回:<br><code>dd if=/tmp/15435904.dat of=/dev/sdb seek=15435904 bs=4096 count=1</code>  </p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.51cto.com/1153604556/1643695">linux下利用badblocks程序在线修复坏道</a>  </p>
+<p>也可以提示操作系统不要使用损坏区块存储<br><code># e2fsck -l /tmp/badsectors.txt  /dev/sdb</code></p>
+<p><strong>备注: 执行e2fsck命令前，需要先挂载设备</strong>  </p>
+<h1 id="二、使用smartmontools工具扫描："><a href="#二、使用smartmontools工具扫描：" class="headerlink" title="二、使用smartmontools工具扫描："></a>二、使用<code>smartmontools</code>工具扫描：</h1><h2 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~$ sudo apt update</span><br><span class="line">命中:1 http://packages.microsoft.com/repos/code stable InRelease</span><br><span class="line">...</span><br><span class="line">命中:12 https://mirror.serverion.com/mariadb/repo/10.6/debian bullseye InRelease</span><br><span class="line">已下载 39.4 kB，耗时 7秒 (5,607 B/s)                                           </span><br><span class="line">正在读取软件包列表... 完成</span><br><span class="line">正在分析软件包的依赖关系树... 完成</span><br><span class="line">正在读取状态信息... 完成                 </span><br><span class="line">所有软件包均为最新。</span><br><span class="line">user@user-pc:~$ sudo apt install smartmontools</span><br><span class="line">正在读取软件包列表... 完成</span><br><span class="line">正在分析软件包的依赖关系树... 完成</span><br><span class="line">正在读取状态信息... 完成                 </span><br><span class="line">建议安装：</span><br><span class="line">  gsmartcontrol smart-notifier mailx | mailutils</span><br><span class="line">下列【新】软件包将被安装：</span><br><span class="line">  smartmontools</span><br><span class="line">升级了 0 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 0 个软件包未被升级。</span><br><span class="line">需要下载 565 kB 的归档。</span><br><span class="line">解压缩后会消耗 2,168 kB 的额外空间。</span><br><span class="line">获取:1 http://mirrors.tuna.tsinghua.edu.cn/debian bullseye/main amd64 smartmontools amd64 7.2-1 [565 kB]</span><br><span class="line">已下载 565 kB，耗时 0秒 (1,212 kB/s)  </span><br><span class="line">正在选中未选择的软件包 smartmontools。</span><br><span class="line">(正在读取数据库 ... 系统当前共安装有 172754 个文件和目录。)</span><br><span class="line">准备解压 .../smartmontools_7.2-1_amd64.deb  ...</span><br><span class="line">正在解压 smartmontools (7.2-1) ...</span><br><span class="line">正在设置 smartmontools (7.2-1) ...</span><br><span class="line">Created symlink /etc/systemd/system/smartd.service → /lib/systemd/system/smartmo</span><br><span class="line">ntools.service.</span><br><span class="line">Created symlink /etc/systemd/system/multi-user.target.wants/smartmontools.servic</span><br><span class="line">e → /lib/systemd/system/smartmontools.service.</span><br><span class="line">正在处理用于 man-db (2.9.4-2) 的触发器 ...</span><br></pre></td></tr></table></figure>
+<h2 id="2、使用方法"><a href="#2、使用方法" class="headerlink" title="2、使用方法"></a>2、使用方法</h2><p>检测路径根据<code>$ sudo fdisk -l</code>列出的对应。<br>（1）检测磁盘某部分<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~$ sudo smartctl -H /dev/sda8 -x</span><br><span class="line">smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-9-amd64] (<span class="built_in">local</span> build)</span><br><span class="line">Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org</span><br><span class="line"></span><br><span class="line">=== START OF INFORMATION SECTION ===</span><br><span class="line">Vendor:               TO Exter</span><br><span class="line">Product:              nal USB 3.0</span><br><span class="line">Revision:             0104</span><br><span class="line">Compliance:           SPC-4</span><br><span class="line">User Capacity:        1,000,204,886,016 bytes [1.00 TB]</span><br><span class="line">Logical block size:   512 bytes</span><br><span class="line">Physical block size:  4096 bytes</span><br><span class="line">LU is fully provisioned</span><br><span class="line">Logical Unit id:      0x3020150331000810</span><br><span class="line">Serial number:        2015033100081</span><br><span class="line">Device <span class="built_in">type</span>:          disk</span><br><span class="line">Local Time is:        Fri Nov 26 09:43:16 2021 CST</span><br><span class="line">SMART support is:     Available - device has SMART capability.</span><br><span class="line">SMART support is:     Enabled</span><br><span class="line">Temperature Warning:  Disabled or Not Supported</span><br><span class="line">Read Cache is:        Enabled</span><br><span class="line">Writeback Cache is:   Enabled</span><br><span class="line"></span><br><span class="line">=== START OF READ SMART DATA SECTION ===</span><br><span class="line">SMART Health Status: OK</span><br><span class="line">Current Drive Temperature:     0 C</span><br><span class="line">Drive Trip Temperature:        0 C</span><br><span class="line"></span><br><span class="line">Error Counter logging not supported</span><br><span class="line"></span><br><span class="line">No Self-tests have been logged</span><br><span class="line"></span><br><span class="line">Device does not support Background scan results logging</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>（2）检测挂载的某个磁盘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~$ sudo smartctl -H /dev/sda -x</span><br><span class="line">smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-9-amd64] (<span class="built_in">local</span> build)</span><br><span class="line">Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org</span><br><span class="line"></span><br><span class="line">=== START OF INFORMATION SECTION ===</span><br><span class="line">Model Family:     Western Digital Blue</span><br><span class="line">Device Model:     WDC WD10EZEX-08M2NA0</span><br><span class="line">Serial Number:    WD-WCC3F5NUNC7S</span><br><span class="line">LU WWN Device Id: 5 0014ee 20bf6d4ff</span><br><span class="line">Firmware Version: 01.01A01</span><br><span class="line">User Capacity:    1,000,204,886,016 bytes [1.00 TB]</span><br><span class="line">Sector Sizes:     512 bytes logical, 4096 bytes physical</span><br><span class="line">Rotation Rate:    7200 rpm</span><br><span class="line">Device is:        In smartctl database [<span class="keyword">for</span> details use: -P show]</span><br><span class="line">ATA Version is:   ACS-2, ACS-3 T13/2161-D revision 3b</span><br><span class="line">SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)</span><br><span class="line">Local Time is:    Fri Nov 26 09:44:39 2021 CST</span><br><span class="line">SMART support is: Available - device has SMART capability.</span><br><span class="line">SMART support is: Enabled</span><br><span class="line">AAM feature is:   Unavailable</span><br><span class="line">APM feature is:   Unavailable</span><br><span class="line">Rd look-ahead is: Enabled</span><br><span class="line">Write cache is:   Enabled</span><br><span class="line">DSN feature is:   Unavailable</span><br><span class="line">ATA Security is:  Disabled, NOT FROZEN [SEC1]</span><br><span class="line">Wt Cache Reorder: Unknown</span><br><span class="line"></span><br><span class="line">=== START OF READ SMART DATA SECTION ===</span><br><span class="line">SMART Status not supported: Incomplete response, ATA output registers missing</span><br><span class="line">SMART overall-health self-assessment <span class="built_in">test</span> result: PASSED</span><br><span class="line">Warning: This result is based on an Attribute check.</span><br><span class="line">user@user-pc:~$ sudo smartctl -H /dev/sda -a</span><br><span class="line">smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-9-amd64] (<span class="built_in">local</span> build)</span><br><span class="line">Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org</span><br><span class="line"></span><br><span class="line">=== START OF INFORMATION SECTION ===</span><br><span class="line">Model Family:     Western Digital Blue</span><br><span class="line">Device Model:     WDC WD10EZEX-08M2NA0</span><br><span class="line">Serial Number:    WD-WCC3F5NUNC7S</span><br><span class="line">LU WWN Device Id: 5 0014ee 20bf6d4ff</span><br><span class="line">Firmware Version: 01.01A01</span><br><span class="line">User Capacity:    1,000,204,886,016 bytes [1.00 TB]</span><br><span class="line">Sector Sizes:     512 bytes logical, 4096 bytes physical</span><br><span class="line">Rotation Rate:    7200 rpm</span><br><span class="line">Device is:        In smartctl database [<span class="keyword">for</span> details use: -P show]</span><br><span class="line">ATA Version is:   ACS-2, ACS-3 T13/2161-D revision 3b</span><br><span class="line">SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)</span><br><span class="line">Local Time is:    Fri Nov 26 12:25:59 2021 CST</span><br><span class="line">SMART support is: Available - device has SMART capability.</span><br><span class="line">SMART support is: Enabled</span><br><span class="line"></span><br><span class="line">=== START OF READ SMART DATA SECTION ===</span><br><span class="line">SMART Status not supported: Incomplete response, ATA output registers missing</span><br><span class="line">SMART overall-health self-assessment <span class="built_in">test</span> result: PASSED</span><br><span class="line">Warning: This result is based on an Attribute check.</span><br><span class="line"></span><br><span class="line">General SMART Values:</span><br><span class="line">Offline data collection status:  (0x82)	Offline data collection activity</span><br><span class="line">					was completed without error.</span><br><span class="line">					Auto Offline Data Collection: Enabled.</span><br><span class="line">Self-test execution status:      (   0)	The previous self-test routine completed</span><br><span class="line">					without error or no self-test has ever </span><br><span class="line">					been run.</span><br><span class="line">Total time to complete Offline </span><br><span class="line">data collection: 		(11580) seconds.</span><br><span class="line">Offline data collection</span><br><span class="line">capabilities: 			 (0x7b) SMART execute Offline immediate.</span><br><span class="line">					Auto Offline data collection on/off support.</span><br><span class="line">					Suspend Offline collection upon new</span><br><span class="line">					<span class="built_in">command</span>.</span><br><span class="line">					Offline surface scan supported.</span><br><span class="line">					Self-test supported.</span><br><span class="line">					Conveyance Self-test supported.</span><br><span class="line">					Selective Self-test supported.</span><br><span class="line">SMART capabilities:            (0x0003)	Saves SMART data before entering</span><br><span class="line">					power-saving mode.</span><br><span class="line">					Supports SMART auto save timer.</span><br><span class="line">Error logging capability:        (0x01)	Error logging supported.</span><br><span class="line">					General Purpose Logging supported.</span><br><span class="line">Short self-test routine </span><br><span class="line">recommended polling time: 	 (   2) minutes.</span><br><span class="line">Extended self-test routine</span><br><span class="line">recommended polling time: 	 ( 120) minutes.</span><br><span class="line">Conveyance self-test routine</span><br><span class="line">recommended polling time: 	 (   5) minutes.</span><br><span class="line">SCT capabilities: 	       (0x3035)	SCT Status supported.</span><br><span class="line">					SCT Feature Control supported.</span><br><span class="line">					SCT Data Table supported.</span><br><span class="line"></span><br><span class="line">SMART Attributes Data Structure revision number: 16</span><br><span class="line">Vendor Specific SMART Attributes with Thresholds:</span><br><span class="line">ID<span class="comment"># ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE</span></span><br><span class="line">  1 Raw_Read_Error_Rate     0x002f   200   200   051    Pre-fail  Always       -       0</span><br><span class="line">  3 Spin_Up_Time            0x0027   173   165   021    Pre-fail  Always       -       2308</span><br><span class="line">  4 Start_Stop_Count        0x0032   094   094   000    Old_age   Always       -       6265</span><br><span class="line">  5 Reallocated_Sector_Ct   0x0033   200   200   140    Pre-fail  Always       -       0</span><br><span class="line">  7 Seek_Error_Rate         0x002e   200   200   000    Old_age   Always       -       0</span><br><span class="line">  9 Power_On_Hours          0x0032   095   095   000    Old_age   Always       -       4052</span><br><span class="line"> 10 Spin_Retry_Count        0x0032   100   100   000    Old_age   Always       -       0</span><br><span class="line"> 11 Calibration_Retry_Count 0x0032   100   100   000    Old_age   Always       -       0</span><br><span class="line"> 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       857</span><br><span class="line">192 Power-Off_Retract_Count 0x0032   200   200   000    Old_age   Always       -       106</span><br><span class="line">193 Load_Cycle_Count        0x0032   198   198   000    Old_age   Always       -       6159</span><br><span class="line">194 Temperature_Celsius     0x0022   106   085   000    Old_age   Always       -       37</span><br><span class="line">196 Reallocated_Event_Count 0x0032   200   200   000    Old_age   Always       -       0</span><br><span class="line">197 Current_Pending_Sector  0x0032   200   200   000    Old_age   Always       -       0</span><br><span class="line">198 Offline_Uncorrectable   0x0030   200   200   000    Old_age   Offline      -       0</span><br><span class="line">199 UDMA_CRC_Error_Count    0x0032   200   200   000    Old_age   Always       -       0</span><br><span class="line">200 Multi_Zone_Error_Rate   0x0008   200   200   000    Old_age   Offline      -       0</span><br><span class="line"></span><br><span class="line">SMART Error Log Version: 1</span><br><span class="line">No Errors Logged</span><br><span class="line"></span><br><span class="line">SMART Self-test <span class="built_in">log</span> structure revision number 1</span><br><span class="line">No self-tests have been logged.  [To run self-tests, use: smartctl -t]</span><br><span class="line"></span><br><span class="line">SMART Selective self-test <span class="built_in">log</span> data structure revision number 1</span><br><span class="line"> SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS</span><br><span class="line">    1        0        0  Not_testing</span><br><span class="line">    2        0        0  Not_testing</span><br><span class="line">    3        0        0  Not_testing</span><br><span class="line">    4        0        0  Not_testing</span><br><span class="line">    5        0        0  Not_testing</span><br><span class="line">Selective self-test flags (0x0):</span><br><span class="line">  After scanning selected spans, <span class="keyword">do</span> NOT read-scan remainder of disk.</span><br><span class="line">If Selective self-test is pending on power-up, resume after 0 minute delay.</span><br></pre></td></tr></table></figure><br>（3）检测挂载的另一个磁盘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~$ sudo smartctl -H /dev/sdb -a</span><br><span class="line">smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-9-amd64] (<span class="built_in">local</span> build)</span><br><span class="line">Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org</span><br><span class="line"></span><br><span class="line">=== START OF INFORMATION SECTION ===</span><br><span class="line">Model Family:     Seagate Barracuda 7200.14 (AF)</span><br><span class="line">Device Model:     ST500DM002-1BD142</span><br><span class="line">Serial Number:    W2AYVPQG</span><br><span class="line">LU WWN Device Id: 5 000c50 06add6856</span><br><span class="line">Firmware Version: KC65</span><br><span class="line">User Capacity:    500,107,862,016 bytes [500 GB]</span><br><span class="line">Sector Sizes:     512 bytes logical, 4096 bytes physical</span><br><span class="line">Rotation Rate:    7200 rpm</span><br><span class="line">Device is:        In smartctl database [<span class="keyword">for</span> details use: -P show]</span><br><span class="line">ATA Version is:   ATA8-ACS T13/1699-D revision 4</span><br><span class="line">SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)</span><br><span class="line">Local Time is:    Fri Nov 26 12:32:11 2021 CST</span><br><span class="line">SMART support is: Available - device has SMART capability.</span><br><span class="line">SMART support is: Enabled</span><br><span class="line"></span><br><span class="line">=== START OF READ SMART DATA SECTION ===</span><br><span class="line">SMART overall-health self-assessment <span class="built_in">test</span> result: PASSED</span><br><span class="line">See vendor-specific Attribute list <span class="keyword">for</span> marginal Attributes.</span><br><span class="line"></span><br><span class="line">General SMART Values:</span><br><span class="line">Offline data collection status:  (0x82)	Offline data collection activity</span><br><span class="line">					was completed without error.</span><br><span class="line">					Auto Offline Data Collection: Enabled.</span><br><span class="line">Self-test execution status:      (   0)	The previous self-test routine completed</span><br><span class="line">					without error or no self-test has ever </span><br><span class="line">					been run.</span><br><span class="line">Total time to complete Offline </span><br><span class="line">data collection: 		(  592) seconds.</span><br><span class="line">Offline data collection</span><br><span class="line">capabilities: 			 (0x7b) SMART execute Offline immediate.</span><br><span class="line">					Auto Offline data collection on/off support.</span><br><span class="line">					Suspend Offline collection upon new</span><br><span class="line">					<span class="built_in">command</span>.</span><br><span class="line">					Offline surface scan supported.</span><br><span class="line">					Self-test supported.</span><br><span class="line">					Conveyance Self-test supported.</span><br><span class="line">					Selective Self-test supported.</span><br><span class="line">SMART capabilities:            (0x0003)	Saves SMART data before entering</span><br><span class="line">					power-saving mode.</span><br><span class="line">					Supports SMART auto save timer.</span><br><span class="line">Error logging capability:        (0x01)	Error logging supported.</span><br><span class="line">					General Purpose Logging supported.</span><br><span class="line">Short self-test routine </span><br><span class="line">recommended polling time: 	 (   1) minutes.</span><br><span class="line">Extended self-test routine</span><br><span class="line">recommended polling time: 	 (  79) minutes.</span><br><span class="line">Conveyance self-test routine</span><br><span class="line">recommended polling time: 	 (   2) minutes.</span><br><span class="line">SCT capabilities: 	       (0x303f)	SCT Status supported.</span><br><span class="line">					SCT Error Recovery Control supported.</span><br><span class="line">					SCT Feature Control supported.</span><br><span class="line">					SCT Data Table supported.</span><br><span class="line"></span><br><span class="line">SMART Attributes Data Structure revision number: 10</span><br><span class="line">Vendor Specific SMART Attributes with Thresholds:</span><br><span class="line">ID<span class="comment"># ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE</span></span><br><span class="line">  1 Raw_Read_Error_Rate     0x000f   101   099   006    Pre-fail  Always       -       353256</span><br><span class="line">  3 Spin_Up_Time            0x0003   100   100   000    Pre-fail  Always       -       0</span><br><span class="line">  4 Start_Stop_Count        0x0032   098   098   020    Old_age   Always       -       2889</span><br><span class="line">  5 Reallocated_Sector_Ct   0x0033   100   100   036    Pre-fail  Always       -       0</span><br><span class="line">  7 Seek_Error_Rate         0x000f   087   060   030    Pre-fail  Always       -       611100360</span><br><span class="line">  9 Power_On_Hours          0x0032   091   091   000    Old_age   Always       -       7963</span><br><span class="line"> 10 Spin_Retry_Count        0x0013   100   100   097    Pre-fail  Always       -       0</span><br><span class="line"> 12 Power_Cycle_Count       0x0032   098   098   020    Old_age   Always       -       2870</span><br><span class="line">183 Runtime_Bad_Block       0x0032   100   100   000    Old_age   Always       -       0</span><br><span class="line">184 End-to-End_Error        0x0032   100   100   099    Old_age   Always       -       0</span><br><span class="line">187 Reported_Uncorrect      0x0032   098   098   000    Old_age   Always       -       2</span><br><span class="line">188 Command_Timeout         0x0032   100   100   000    Old_age   Always       -       0 0 0</span><br><span class="line">189 High_Fly_Writes         0x003a   100   100   000    Old_age   Always       -       0</span><br><span class="line">190 Airflow_Temperature_Cel 0x0022   062   044   045    Old_age   Always   In_the_past 38 (0 59 38 13 0)</span><br><span class="line">194 Temperature_Celsius     0x0022   038   056   000    Old_age   Always       -       38 (0 8 0 0 0)</span><br><span class="line">195 Hardware_ECC_Recovered  0x001a   034   026   000    Old_age   Always       -       353256</span><br><span class="line">197 Current_Pending_Sector  0x0012   100   100   000    Old_age   Always       -       0</span><br><span class="line">198 Offline_Uncorrectable   0x0010   100   100   000    Old_age   Offline      -       0</span><br><span class="line">199 UDMA_CRC_Error_Count    0x003e   200   200   000    Old_age   Always       -       0</span><br><span class="line">240 Head_Flying_Hours       0x0000   100   253   000    Old_age   Offline      -       7949h+37m+36.458s</span><br><span class="line">241 Total_LBAs_Written      0x0000   100   253   000    Old_age   Offline      -       1573025949</span><br><span class="line">242 Total_LBAs_Read         0x0000   100   253   000    Old_age   Offline      -       3066682191</span><br><span class="line"></span><br><span class="line">SMART Error Log Version: 1</span><br><span class="line">No Errors Logged</span><br><span class="line"></span><br><span class="line">SMART Self-test <span class="built_in">log</span> structure revision number 1</span><br><span class="line">No self-tests have been logged.  [To run self-tests, use: smartctl -t]</span><br><span class="line"></span><br><span class="line">SMART Selective self-test <span class="built_in">log</span> data structure revision number 1</span><br><span class="line"> SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS</span><br><span class="line">    1        0        0  Not_testing</span><br><span class="line">    2        0        0  Not_testing</span><br><span class="line">    3        0        0  Not_testing</span><br><span class="line">    4        0        0  Not_testing</span><br><span class="line">    5        0        0  Not_testing</span><br><span class="line">Selective self-test flags (0x0):</span><br><span class="line">  After scanning selected spans, <span class="keyword">do</span> NOT read-scan remainder of disk.</span><br><span class="line">If Selective self-test is pending on power-up, resume after 0 minute delay.</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://owenyk.github.io/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/" title="Linux检测磁盘坏道">https://owenyk.github.io/2021/11/26/Linux检测磁盘坏道/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Badblocks/" rel="tag"># Badblocks</a>
+              <a href="/tags/Smartmontools/" rel="tag"># Smartmontools</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/22/Debian%E4%B8%AD%E5%85%81%E8%AE%B8%E5%85%8D%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4/" rel="prev" title="Debian中允许免输入密码使用超级用户运行命令">
+                  <i class="fa fa-chevron-left"></i> Debian中允许免输入密码使用超级用户运行命令
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/28/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85PHP8.1.0%E7%89%88/" rel="next" title="Debian11编译安装PHP8.1.0版">
+                  Debian11编译安装PHP8.1.0版 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81MjMwNC8yODc4Mg=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">318k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; 
+var translateDelay = 0; 
+var cookieDomain = "https://kaisky.xyz/"; 
+var msgToTraditionalChinese = "繁体"; 
+var msgToSimplifiedChinese = "简体"; 
+var translateButtonId = "translateLink"; 
+translateInitilization();
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2021/11/26/Linux%E6%A3%80%E6%B5%8B%E7%A3%81%E7%9B%98%E5%9D%8F%E9%81%93/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '32px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

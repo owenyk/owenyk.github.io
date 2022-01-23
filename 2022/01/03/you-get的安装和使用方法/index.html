@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="you-get的安装和使用方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="you-get的安装和使用">
+<meta property="og:url" content="https://owenyk.github.io/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="K&#39;s Life">
+<meta property="og:description" content="you-get的安装和使用方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-03T04:25:50.000Z">
+<meta property="article:modified_time" content="2022-01-04T12:13:56.597Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="You-get">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://owenyk.github.io/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://owenyk.github.io/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/","path":"2022/01/03/you-get的安装和使用方法/","title":"you-get的安装和使用"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>you-get的安装和使用 | K's Life</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">K's Life</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85you-get"><span class="nav-number">1.</span> <span class="nav-text">安装you-get</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#you-get%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">you-get的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E8%A7%86%E9%A2%91%E6%89%80%E6%9C%89%E6%A0%BC%E5%BC%8F%E5%92%8C%E6%B8%85%E6%99%B0%E5%BA%A6%E7%AD%89%E4%BF%A1%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text">查询视频所有格式和清晰度等信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%8C%87%E5%AE%9A%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">下载指定格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95%E5%B9%B6%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-number">2.2.1.</span> <span class="nav-text">下载到指定目录并重命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.2.2.</span> <span class="nav-text">列表下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E4%BB%A3%E7%90%86%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.2.3.</span> <span class="nav-text">带代理下载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD"><span class="nav-number">4.</span> <span class="nav-text">python批量下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#os%E6%A8%A1%E5%9D%97"><span class="nav-number">4.1.</span> <span class="nav-text">os模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#you-get%E6%A8%A1%E5%9D%97"><span class="nav-number">4.2.</span> <span class="nav-text">you-get模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85you-get%E6%A8%A1%E5%9D%97"><span class="nav-number">4.2.1.</span> <span class="nav-text">安装you-get模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%88%E5%9C%A8linux%E7%BB%88%E7%AB%AF%E4%B8%8A%E6%B5%8B%E8%AF%95%E4%B8%8D%E6%88%90%E5%8A%9F%EF%BC%89"><span class="nav-number">4.2.2.</span> <span class="nav-text">实例（在linux终端上测试不成功）</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description">日常的一些记录，留作备忘！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+
+
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+            <h7 class="widget-title">Tag Cloud</h7>
+            <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="260" height="260" id="resCanvas" style="width=100%">
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access/" rel="tag">Access</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache2/" rel="tag">Apache2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt/" rel="tag">Apt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt-key/" rel="tag">Apt-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aria2/" rel="tag">Aria2</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Asp/" rel="tag">Asp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Badblocks/" rel="tag">Badblocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connector/" rel="tag">Connector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/" rel="tag">C语言环境</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/" rel="tag">Debian</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian10/" rel="tag">Debian10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fedora/" rel="tag">Fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ffmpeg/" rel="tag">Ffmpeg</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flowchart/" rel="tag">Flowchart</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Genymotion/" rel="tag">Genymotion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gpg/" rel="tag">Gpg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grep/" rel="tag">Grep</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iconv/" rel="tag">Iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MariaDB/" rel="tag">MariaDB</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongosh/" rel="tag">Mongosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MsSQL/" rel="tag">MsSQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nvm/" rel="tag">Nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Request/" rel="tag">Request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Service/" rel="tag">Service</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smartmontools/" rel="tag">Smartmontools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smbshare/" rel="tag">Smbshare</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Statistics/" rel="tag">Statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText3/" rel="tag">SublimeText3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemctl/" rel="tag">Systemctl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TrackersList/" rel="tag">TrackersList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UCanAccess/" rel="tag">UCanAccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ventoy/" rel="tag">Ventoy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WePE/" rel="tag">WePE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdav/" rel="tag">Webdav</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows10/" rel="tag">Windows10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wine/" rel="tag">Wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xargs/" rel="tag">Xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-get/" rel="tag">You-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Youtube-dl/" rel="tag">Youtube-dl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gvfs/" rel="tag">gvfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iconv/" rel="tag">iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mdbtools/" rel="tag">mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odbc-mdbtools/" rel="tag">odbc-mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/" rel="tag">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unixODBC/" rel="tag">unixODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2/" rel="tag">公农历转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag">启动服务</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag">启动盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E4%BB%B6%E7%BC%BA%E5%A4%B1/" rel="tag">固件缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" rel="tag">备份和恢复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/" rel="tag">字体缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="tag">安卓模拟器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/" rel="tag">数据导出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" rel="tag">文字识别</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag">设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%91%BD%E5%90%8D/" rel="tag">重命名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" rel="tag">错误解决</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">问题解决</a><span class="tag-list-count">2</span></li></ul>
+                </canvas>
+            </div>
+        </div>
+      
+      
+
+      
+
+
+      </div>
+
+      
+       <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>-->
+        
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js
+            server="netease"
+            type="playlist"
+            id="641900597" 
+            mini="false"
+            fixed="false"
+            list-folded="true"
+            autoplay="false"
+            volume="0.8"
+            theme="#95DA99"
+            order="random"
+            loop="all"
+            preload="auto"
+            mutex="true">
+          </meting-js> 
+       
+
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owenyk.github.io/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="K's Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          you-get的安装和使用
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-03 12:25:50" itemprop="dateCreated datePublished" datetime="2022-01-03T12:25:50+08:00">2022-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-04 20:13:56" itemprop="dateModified" datetime="2022-01-04T20:13:56+08:00">2022-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件应用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/you-get/" itemprop="url" rel="index"><span itemprop="name">you-get</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-xid="/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="you-get的安装和使用" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>14 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">you-get的安装和使用方法</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="安装you-get"><a href="#安装you-get" class="headerlink" title="安装you-get"></a>安装<code>you-get</code></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install you-get</span><br><span class="line"><span class="comment"># 最好安装ffmpeg依赖，否则很多网站视频是获取不了，目前最新稳定版是4.4</span></span><br><span class="line">sudo apt install ffmpeg</span><br></pre></td></tr></table></figure>
+<h1 id="you-get的基本使用"><a href="#you-get的基本使用" class="headerlink" title="you-get的基本使用"></a><code>you-get</code>的基本使用</h1><h2 id="查询视频所有格式和清晰度等信息"><a href="#查询视频所有格式和清晰度等信息" class="headerlink" title="查询视频所有格式和清晰度等信息"></a>查询视频所有格式和清晰度等信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line">you-get -i 视频网址</span><br><span class="line"><span class="comment"># 比如：</span></span><br><span class="line">you-get  -x 127.0.0.1:7890  -i https://www.youtube.com/watch\?v=省略</span><br><span class="line"></span><br><span class="line">site:                YouTube</span><br><span class="line">title:               ......Relaxing Relax Music,Study music</span><br><span class="line">streams:             <span class="comment"># Available quality and codecs</span></span><br><span class="line">    [ DASH ] ____________________________________</span><br><span class="line">    - itag:          247</span><br><span class="line">      container:     webm</span><br><span class="line">      quality:       1280x720 (720p)</span><br><span class="line">      size:          1565.2 MiB (1641238562 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=247 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          136</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       1280x720 (720p)</span><br><span class="line">      size:          1397.6 MiB (1465484796 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=136 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          398</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       1280x720 (720p)</span><br><span class="line">      size:          1353.9 MiB (1419679674 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=398 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          244</span><br><span class="line">      container:     webm</span><br><span class="line">      quality:       854x480 (480p)</span><br><span class="line">      size:          862.5 MiB (904344987 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=244 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          135</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       854x480 (480p)</span><br><span class="line">      size:          800.1 MiB (838937810 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=135 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          397</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       854x480 (480p)</span><br><span class="line">      size:          737.8 MiB (773592988 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=397 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          243</span><br><span class="line">      container:     webm</span><br><span class="line">      quality:       640x360 (360p)</span><br><span class="line">      size:          599.1 MiB (628161660 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=243 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          396</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       640x360 (360p)</span><br><span class="line">      size:          513.1 MiB (538023785 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=396 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          134</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       640x360 (360p)</span><br><span class="line">      size:          485.7 MiB (509248710 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=134 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          242</span><br><span class="line">      container:     webm</span><br><span class="line">      quality:       426x240 (240p)</span><br><span class="line">      size:          418.4 MiB (438695050 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=242 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          278</span><br><span class="line">      container:     webm</span><br><span class="line">      quality:       256x144 (144p)</span><br><span class="line">      size:          402.5 MiB (422045631 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=278 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          133</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       426x240 (240p)</span><br><span class="line">      size:          376.9 MiB (395192598 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=133 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          395</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       426x240 (240p)</span><br><span class="line">      size:          369.4 MiB (387382024 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=395 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          394</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       256x144 (144p)</span><br><span class="line">      size:          322.8 MiB (338492890 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=394 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          160</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       256x144 (144p)</span><br><span class="line">      size:          276.3 MiB (289669585 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=160 [URL]</span></span><br><span class="line"></span><br><span class="line">    [ DEFAULT ] _________________________________</span><br><span class="line">    - itag:          22</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       hd720</span><br><span class="line">      size:          1396.8 MiB (1464679967 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=22 [URL]</span></span><br><span class="line"></span><br><span class="line">    - itag:          18</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       medium</span><br><span class="line">    <span class="comment"># download-with: you-get --itag=18 [URL]</span></span><br></pre></td></tr></table></figure>
+<p>注意下面提示的下载方法.<strong><code>download-with: you-get --itag=18 [URL]</code></strong></p>
+<h2 id="下载指定格式"><a href="#下载指定格式" class="headerlink" title="下载指定格式"></a>下载指定格式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 比如 B站</span></span><br><span class="line"><span class="comment"># 查询</span></span><br><span class="line">you-get -i https://www.bilibili.com/video/xxxxxxxxx    </span><br><span class="line">you-get: This is a multipart video. (use --playlist to download all parts.)</span><br><span class="line">site:                Bilibili</span><br><span class="line">title:               XXXXXXXXX</span><br><span class="line">streams:             <span class="comment"># Available quality and codecs</span></span><br><span class="line">    [ DASH ] ____________________________________</span><br><span class="line">    - format:        dash-flv720</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       高清 720P</span><br><span class="line">      size:          495.5 MiB (519523605 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=dash-flv720 [URL]</span></span><br><span class="line"></span><br><span class="line">    - format:        dash-flv</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       高清 1080P</span><br><span class="line">      size:          495.4 MiB (519418344 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=dash-flv [URL]</span></span><br><span class="line"></span><br><span class="line">    - format:        dash-flv480</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       清晰 480P</span><br><span class="line">      size:          270.7 MiB (283870193 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=dash-flv480 [URL]</span></span><br><span class="line"></span><br><span class="line">    - format:        dash-flv360</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       流畅 360P</span><br><span class="line">      size:          102.5 MiB (107469058 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=dash-flv360 [URL]</span></span><br><span class="line"></span><br><span class="line">    [ DEFAULT ] _________________________________</span><br><span class="line">    - format:        flv</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       高清 1080P</span><br><span class="line">      size:          497.1 MiB (521198741 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=flv [URL]</span></span><br><span class="line"></span><br><span class="line">    - format:        flv720</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       高清 720P</span><br><span class="line">      size:          497.2 MiB (521304002 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=flv720 [URL]</span></span><br><span class="line"></span><br><span class="line">    - format:        flv480</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       清晰 480P</span><br><span class="line">      size:          226.9 MiB (237943337 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=flv480 [URL]</span></span><br><span class="line"></span><br><span class="line">    - format:        flv360</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       流畅 360P</span><br><span class="line">      size:          103.1 MiB (108137452 bytes)</span><br><span class="line">    <span class="comment"># download-with: you-get --format=flv360 [URL]</span></span><br><span class="line"><span class="comment"># 下载flv 1080p的视频 </span></span><br><span class="line">you-get -F=flv 视频网址</span><br><span class="line"><span class="comment"># 其中 -F和--format可互换</span></span><br></pre></td></tr></table></figure>
+<h3 id="下载到指定目录并重命名"><a href="#下载到指定目录并重命名" class="headerlink" title="下载到指定目录并重命名"></a>下载到指定目录并重命名</h3><p>下载不指定名称和保存路径的话，<code>you-get</code>会以查到的名称来命名，并保存到当前路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">you-get -o 保存的路径  -O 保存的名称 -F=视频格式 视频网址</span><br><span class="line"><span class="comment"># -O 等同于 --output-filename；-o 等同于 --output-dir；-F等同于--format</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="列表下载"><a href="#列表下载" class="headerlink" title="列表下载"></a>列表下载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">you-get -o 保存的路径  -O 保存的名称 -F=视频格式 -l  视频网址</span><br><span class="line"><span class="comment"># 其中</span></span><br><span class="line"><span class="comment"># -l等同于--playlist</span></span><br></pre></td></tr></table></figure>
+<h3 id="带代理下载"><a href="#带代理下载" class="headerlink" title="带代理下载"></a>带代理下载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">you-get  -x 代理ip：端口 -o 保存的路径  -O 保存的名称 -F=根据个人选择 视频网址</span><br></pre></td></tr></table></figure>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>可以用命令查看帮助信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">you-get -h</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">you-get --<span class="built_in">help</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="python批量下载"><a href="#python批量下载" class="headerlink" title="python批量下载"></a><code>python</code>批量下载</h1><h2 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a><code>os</code>模块</h2><p>下面以下载B站视频为例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># os 模块 ##</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">66</span>,<span class="number">68</span>):</span><br><span class="line">  save_path = <span class="string">r&#x27;/save/video/path&#x27;</span></span><br><span class="line">  v_format = <span class="string">&#x27;flv&#x27;</span></span><br><span class="line">  v_url = <span class="string">f&#x27;https://www.bilibili.com/video/xxxxxxxxxx\?p\=<span class="subst">&#123;i&#125;</span>&#x27;</span></span><br><span class="line">  os.system(<span class="string">f&quot;you-get -o &#x27;<span class="subst">&#123;save_path&#125;</span>&#x27; -F=<span class="subst">&#123;v_format&#125;</span> <span class="subst">&#123;v_url&#125;</span>&quot;</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">f&#x27;第 <span class="subst">&#123;i&#125;</span> 下载成功&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="you-get模块"><a href="#you-get模块" class="headerlink" title="you-get模块"></a><code>you-get</code>模块</h2><h3 id="安装you-get模块"><a href="#安装you-get模块" class="headerlink" title="安装you-get模块"></a>安装<code>you-get</code>模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install you-get</span><br></pre></td></tr></table></figure>
+<h3 id="实例（在linux终端上测试不成功）"><a href="#实例（在linux终端上测试不成功）" class="headerlink" title="实例（在linux终端上测试不成功）"></a>实例（在<code>linux</code>终端上测试不成功）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> you_get <span class="keyword">import</span> common <span class="keyword">as</span> you_get</span><br><span class="line"></span><br><span class="line"><span class="comment"># sys.argv=[&#x27;you-get&#x27;,&#x27;-h&#x27;]</span></span><br><span class="line"><span class="comment"># you_get.main()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># you_get 模块 ##</span></span><br><span class="line"><span class="comment"># for i in range(1,11):</span></span><br><span class="line"><span class="comment">#   save_path = r&#x27;/save/video/path&#x27;</span></span><br><span class="line"><span class="comment">#   v_url = f&#x27;https://www.bilibili.com/video/###########\?p\=&#123;i&#125;&#x27;</span></span><br><span class="line"><span class="comment">#   v_format = &#x27;flv&#x27;</span></span><br><span class="line"><span class="comment">#   you_get.any_download(url=v_url,stream_id=v_format,info_only=False,output_dir=save_path,merge=True)</span></span><br><span class="line"><span class="comment">#   print(f&#x27;第 &#123;i&#125; 下载成功&#x27;)</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\20\Debian11用Python3和JDBC操作ACCESS\" rel="bookmark">Debian11用Python3和JDBC操作ACCESS</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\21\Debian11用Python3和ODBC操作ACCESS\" rel="bookmark">Debian11用Python和ODBC操作ACCESS</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\21\Python3中import pandas后提示错误\" rel="bookmark">Python3中import pandas后提示错误</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2019\03\25\Python合并PDF\" rel="bookmark">Python合并PDF</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\07\04\Python将PDF文件转成图片\" rel="bookmark">Python将PDF文件转成图片</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://owenyk.github.io/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" title="you-get的安装和使用">https://owenyk.github.io/2022/01/03/you-get的安装和使用方法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/You-get/" rel="tag"># You-get</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/03/zsh%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" rel="prev" title="zsh配置和使用">
+                  <i class="fa fa-chevron-left"></i> zsh配置和使用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/06/%E7%BB%99kali%E7%B3%BB%E7%BB%9F%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%90%8E%E6%B7%BB%E5%8A%A0%E6%97%B6%E9%97%B4%E6%88%B3/" rel="next" title="给kali系统终端命令后面添加时间戳">
+                  给kali系统终端命令后面添加时间戳 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81MjMwNC8yODc4Mg=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">318k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; 
+var translateDelay = 0; 
+var cookieDomain = "https://kaisky.xyz/"; 
+var msgToTraditionalChinese = "繁体"; 
+var msgToSimplifiedChinese = "简体"; 
+var translateButtonId = "translateLink"; 
+translateInitilization();
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2022/01/03/you-get%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '32px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

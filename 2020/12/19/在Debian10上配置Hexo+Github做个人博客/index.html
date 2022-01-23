@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="在debian10上配置Hexo+Github做个人博客及导出wordpress文章到博客方法介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Debian10上配置Hexo+Github做个人博客">
+<meta property="og:url" content="https://owenyk.github.io/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="K&#39;s Life">
+<meta property="og:description" content="在debian10上配置Hexo+Github做个人博客及导出wordpress文章到博客方法介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-19T01:14:58.000Z">
+<meta property="article:modified_time" content="2021-12-31T11:22:25.850Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Next">
+<meta property="article:tag" content="Nvm">
+<meta property="article:tag" content="Debian10">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://owenyk.github.io/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://owenyk.github.io/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/","path":"2020/12/19/在Debian10上配置Hexo+Github做个人博客/","title":"在Debian10上配置Hexo+Github做个人博客"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在Debian10上配置Hexo+Github做个人博客 | K's Life</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">K's Life</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81nvm%E5%AE%89%E8%A3%85node"><span class="nav-number">1.</span> <span class="nav-text">一、nvm安装node</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85nvm"><span class="nav-number">1.1.</span> <span class="nav-text">安装nvm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3nvm%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%E5%90%8E%EF%BC%8C%E4%BD%86%E5%91%BD%E4%BB%A4%E4%B8%8D%E5%8F%AF%E7%94%A8-command-not-found"><span class="nav-number">1.1.1.</span> <span class="nav-text">解决nvm安装成功后，但命令不可用(command not found)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3node-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">解决node: 没有那个文件或目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85node"><span class="nav-number">1.2.</span> <span class="nav-text">安装node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8F%AF%E5%AE%89%E8%A3%85%E7%89%88%E6%9C%AC%EF%BC%9A"><span class="nav-number">1.2.1.</span> <span class="nav-text">查看可安装版本：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85node-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E5%AE%89%E8%A3%85node"><span class="nav-number">1.2.3.</span> <span class="nav-text">查看已安装node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9F%90%E4%B8%AA%E5%B7%B2%E5%AE%89%E8%A3%85node%E7%89%88%E6%9C%AC"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用某个已安装node版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bnpm%E7%89%88%E6%9C%AC"><span class="nav-number">1.3.</span> <span class="nav-text">查看npm版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8D%87%E7%BA%A7nodejs%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">其他升级nodejs方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E7%94%A8n%E5%8D%87%E7%BA%A7nodejs"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">（1）用n升级nodejs</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">1.5.</span> <span class="nav-text">安装git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85Next%E4%B8%BB%E9%A2%98%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github%E3%80%90%E5%90%AB%E4%BB%8Ewordpress%E4%B8%AD%E5%AF%BC%E5%87%BA%E3%80%91"><span class="nav-number">2.</span> <span class="nav-text">二、安装Next主题并部署到github【含从wordpress中导出】</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%8C%89%E7%85%A7Github%E6%8F%90%E7%A4%BA%EF%BC%8C%E5%88%9B%E5%BB%BASSH%E7%A7%98%E9%92%A5%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">1、按照Github提示，创建SSH秘钥：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85hexo"><span class="nav-number">2.2.</span> <span class="nav-text">2、安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%88%9B%E5%BB%BA%E5%AD%98%E6%94%BE%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">2.3.</span> <span class="nav-text">3、创建存放博客的文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%AE%89%E8%A3%85Next%E4%B8%BB%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">4、安装Next主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E5%BC%80%E5%90%AF%E6%A0%87%E7%AD%BE%E4%BA%91%EF%BC%9A"><span class="nav-number">2.5.</span> <span class="nav-text">5、开启标签云：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E4%BB%8E-Wordpress-%E8%BF%81%E7%A7%BB%EF%BC%88%E6%B2%A1%E6%9C%89%E7%94%A8wordpress%E5%BB%BA%E7%AB%99%E5%8F%AF%E6%97%A0%E9%A1%BB%E6%AD%A4%E6%AD%A5%EF%BC%89"><span class="nav-number">2.6.</span> <span class="nav-text">6、从 Wordpress 迁移（没有用wordpress建站可无须此步）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E6%8F%90%E4%BA%A4%E5%88%B0github"><span class="nav-number">2.7.</span> <span class="nav-text">7、提交到github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">2.7.1.</span> <span class="nav-text">一些问题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81%E6%8D%A2%E6%9C%BA%E6%93%8D%E4%BD%9C"><span class="nav-number">2.8.</span> <span class="nav-text">8、换机操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E3%80%81%E5%9C%A8%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2Repository%E4%B8%AD%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAhexo%E5%88%86%E6%94%AF%EF%BC%8C%E5%90%8D%E5%AD%97%E8%87%AA%E5%AE%9A%EF%BC%9A"><span class="nav-number">2.8.1.</span> <span class="nav-text">(1)、在你的博客Repository中新建一个hexo分支，名字自定：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E3%80%81%E7%84%B6%E5%90%8E%E5%9C%A8setting%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF%E4%B8%BAhexo%EF%BC%8C%E4%BE%BF%E4%BA%8E%E6%8E%A8%E9%80%81%EF%BC%9A"><span class="nav-number">2.8.2.</span> <span class="nav-text">(2)、然后在setting中设置默认分支为hexo，便于推送：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E3%80%81%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%9C%A8%E7%9B%AE%E5%BD%95%E4%B8%8B%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">2.8.3.</span> <span class="nav-text">(3)、新建目录，在目录下运行命令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E3%80%81%E6%8A%8A%E9%99%A4%E4%BA%86-git-%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%96%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E9%83%BD%E5%88%A0%E6%8E%89%EF%BC%88%E8%BF%99%E4%BA%9B%E6%98%AF%E7%BC%96%E8%AF%91%E5%90%8E%E7%9A%84%E7%BD%91%E9%A1%B5%E6%96%87%E4%BB%B6%EF%BC%89"><span class="nav-number">2.8.4.</span> <span class="nav-text">(4)、把除了.git 文件夹外的所有文件都删掉（这些是编译后的网页文件）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E3%80%81%E6%8A%8A%E4%B9%8B%E5%89%8D%E6%88%91%E4%BB%AC%E5%86%99%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%BA%90%E6%96%87%E4%BB%B6%E5%85%A8%E9%83%A8%E5%A4%8D%E5%88%B6%E8%BF%87%E6%9D%A5%EF%BC%8C%E9%99%A4%E4%BA%86-deploy-git%EF%BC%88%E7%BC%96%E8%AF%91%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%EF%BC%89%E3%80%82"><span class="nav-number">2.8.5.</span> <span class="nav-text">(5)、把之前我们写的博客源文件全部复制过来，除了.deploy_git（编译后的文件目录）。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9%E3%80%81%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E5%B8%B8%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">2.9.</span> <span class="nav-text">9、数学公式显示不正常问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A-%E4%BD%BF%E7%94%A8Kramed%E4%BB%A3%E6%9B%BFMarked"><span class="nav-number">2.9.1.</span> <span class="nav-text">第一步： 使用Kramed代替Marked</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E5%81%9C%E6%AD%A2%E4%BD%BF%E7%94%A8-hexo-math"><span class="nav-number">2.9.2.</span> <span class="nav-text">第二步: 停止使用 hexo-math</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E6%9B%B4%E6%96%B0-Mathjax-%E7%9A%84-CDN-%E9%93%BE%E6%8E%A5"><span class="nav-number">2.9.3.</span> <span class="nav-text">第三步: 更新 Mathjax 的 CDN 链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%BD%AC%E4%B9%89%E8%A7%84%E5%88%99"><span class="nav-number">2.9.4.</span> <span class="nav-text">第四步: 更改默认转义规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E5%BC%80%E5%90%AFmathjax"><span class="nav-number">2.9.5.</span> <span class="nav-text">第五步: 开启mathjax</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10%E3%80%81%E6%94%B9%E5%8F%98tag%E5%9B%A0%E4%B8%BA%E5%A4%A7%E5%B0%8F%E5%86%99%E9%97%AE%E9%A2%98%E8%80%8C404%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.10.</span> <span class="nav-text">10、改变tag因为大小写问题而404的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11%E3%80%81Windows%E4%B8%8A%E9%83%A8%E7%BD%B2%E6%97%B6%E5%87%BA%E7%8E%B0warning-LF-will-be-replaced-by-CRLF-in-xxxxxx%E7%9A%84%E8%AD%A6%E5%91%8A%E9%97%AE%E9%A2%98"><span class="nav-number">2.11.</span> <span class="nav-text">11、Windows上部署时出现warning: LF will be replaced by CRLF in xxxxxx的警告问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%EF%BC%9A"><span class="nav-number">2.12.</span> <span class="nav-text">参考资料：</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description">日常的一些记录，留作备忘！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+
+
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+            <h7 class="widget-title">Tag Cloud</h7>
+            <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="260" height="260" id="resCanvas" style="width=100%">
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access/" rel="tag">Access</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache2/" rel="tag">Apache2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt/" rel="tag">Apt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt-key/" rel="tag">Apt-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aria2/" rel="tag">Aria2</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Asp/" rel="tag">Asp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Badblocks/" rel="tag">Badblocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connector/" rel="tag">Connector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/" rel="tag">C语言环境</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/" rel="tag">Debian</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian10/" rel="tag">Debian10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fedora/" rel="tag">Fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ffmpeg/" rel="tag">Ffmpeg</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flowchart/" rel="tag">Flowchart</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Genymotion/" rel="tag">Genymotion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gpg/" rel="tag">Gpg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grep/" rel="tag">Grep</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iconv/" rel="tag">Iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MariaDB/" rel="tag">MariaDB</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongosh/" rel="tag">Mongosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MsSQL/" rel="tag">MsSQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nvm/" rel="tag">Nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Request/" rel="tag">Request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Service/" rel="tag">Service</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smartmontools/" rel="tag">Smartmontools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smbshare/" rel="tag">Smbshare</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Statistics/" rel="tag">Statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText3/" rel="tag">SublimeText3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemctl/" rel="tag">Systemctl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TrackersList/" rel="tag">TrackersList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UCanAccess/" rel="tag">UCanAccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ventoy/" rel="tag">Ventoy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WePE/" rel="tag">WePE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdav/" rel="tag">Webdav</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows10/" rel="tag">Windows10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wine/" rel="tag">Wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xargs/" rel="tag">Xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-get/" rel="tag">You-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Youtube-dl/" rel="tag">Youtube-dl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gvfs/" rel="tag">gvfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iconv/" rel="tag">iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mdbtools/" rel="tag">mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odbc-mdbtools/" rel="tag">odbc-mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/" rel="tag">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unixODBC/" rel="tag">unixODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2/" rel="tag">公农历转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag">启动服务</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag">启动盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E4%BB%B6%E7%BC%BA%E5%A4%B1/" rel="tag">固件缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" rel="tag">备份和恢复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/" rel="tag">字体缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="tag">安卓模拟器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/" rel="tag">数据导出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" rel="tag">文字识别</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag">设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%91%BD%E5%90%8D/" rel="tag">重命名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" rel="tag">错误解决</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">问题解决</a><span class="tag-list-count">2</span></li></ul>
+                </canvas>
+            </div>
+        </div>
+      
+      
+
+      
+
+
+      </div>
+
+      
+       <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>-->
+        
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js
+            server="netease"
+            type="playlist"
+            id="641900597" 
+            mini="false"
+            fixed="false"
+            list-folded="true"
+            autoplay="false"
+            volume="0.8"
+            theme="#95DA99"
+            order="random"
+            loop="all"
+            preload="auto"
+            mutex="true">
+          </meting-js> 
+       
+
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owenyk.github.io/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="K's Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在Debian10上配置Hexo+Github做个人博客
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-19 09:14:58" itemprop="dateCreated datePublished" datetime="2020-12-19T09:14:58+08:00">2020-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-31 19:22:25" itemprop="dateModified" datetime="2021-12-31T19:22:25+08:00">2021-12-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件应用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Next%E4%B8%BB%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">Next主题</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-xid="/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-meta-item leancloud_visitors" data-flag-title="在Debian10上配置Hexo+Github做个人博客" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>23 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">在debian10上配置Hexo+Github做个人博客及导出wordpress文章到博客方法介绍</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在<code>Debian10</code>上配置<code>Hexo+Github</code>做个人博客  </p>
+<h1 id="一、nvm安装node"><a href="#一、nvm安装node" class="headerlink" title="一、nvm安装node"></a>一、<code>nvm</code>安装<code>node</code></h1><h2 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装<code>nvm</code></h2><p>命令：<br><code>cURL</code>:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure><br>或者<code>wget</code>:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决nvm安装成功后，但命令不可用-command-not-found"><a href="#解决nvm安装成功后，但命令不可用-command-not-found" class="headerlink" title="解决nvm安装成功后，但命令不可用(command not found)"></a>解决<code>nvm</code>安装成功后，但命令不可用(<code>command not found</code>)</h3><p>运行以下命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure><br>输入以下内容：<br><del>```bash</del><br><del>export NVM_DIR=”$HOME/.nvm”</del><br><del>[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh”</del><br><del><code>~~
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">&quot;<span class="variable">$HOME</span>/.nvm&quot;</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span>  <span class="comment"># This loads nvm</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/bash_completion&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/bash_completion&quot;</span>  <span class="comment"># This loads nvm bash_completion</span></span><br></pre></td></tr></table></figure>
+查看输入内容：
+~~</code>sh</del><br><del>user@user-pc:~/.nvm$ cat .bash_profile</del><br><del>export NVM_DIR=”$HOME/.nvm”</del><br><del>[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh”</del><br><del>```</del><br>加载环境变量，使其生效。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决node-没有那个文件或目录"><a href="#解决node-没有那个文件或目录" class="headerlink" title="解决node: 没有那个文件或目录"></a>解决<code>node: 没有那个文件或目录</code></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo npm install -g hexo-cli</span><br><span class="line"><span class="comment">##/usr/bin/env: “node”: 没有那个文件或目录</span></span><br></pre></td></tr></table></figure>
+<p>用<code>ln -s</code>命令设置一个软链接<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s ~/.nvm/versions/node/v14.15.2/bin/node /usr/bin/node</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装<code>node</code></h2><h3 id="查看可安装版本："><a href="#查看可安装版本：" class="headerlink" title="查看可安装版本："></a>查看可安装版本：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls-remote</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">      v16.13.0   (LTS: Gallium)</span><br><span class="line">       v16.13.1   (Latest LTS: Gallium)</span><br><span class="line">        v17.0.0</span><br><span class="line">        v17.0.1</span><br><span class="line">        v17.1.0</span><br><span class="line">        v17.2.0</span><br></pre></td></tr></table></figure>
+<h3 id="安装node-1"><a href="#安装node-1" class="headerlink" title="安装node"></a>安装<code>node</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nvm install 16.13.1</span><br><span class="line">Downloading and installing node v16.13.1...</span><br><span class="line">Downloading https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz...</span><br><span class="line"><span class="comment">######################################################################### 100.0%</span></span><br><span class="line">Computing checksum with sha256sum</span><br><span class="line">Checksums matched!</span><br><span class="line">Now using node v16.13.1 (npm v8.1.2)</span><br><span class="line">Creating default <span class="built_in">alias</span>: default -&gt; 16.13.1 (-&gt; v16.13.1)</span><br></pre></td></tr></table></figure>
+<h3 id="查看已安装node"><a href="#查看已安装node" class="headerlink" title="查看已安装node"></a>查看已安装<code>node</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ nvm list</span><br><span class="line">-&gt;     v16.13.1</span><br><span class="line">default -&gt; 16.13.1 (-&gt; v16.13.1)</span><br></pre></td></tr></table></figure>
+<h3 id="使用某个已安装node版本"><a href="#使用某个已安装node版本" class="headerlink" title="使用某个已安装node版本"></a>使用某个已安装<code>node</code>版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm use 14.18.2</span><br></pre></td></tr></table></figure>
+<h2 id="查看npm版本"><a href="#查看npm版本" class="headerlink" title="查看npm版本"></a>查看<code>npm</code>版本</h2><p>node已经附带安装npm，无需单独安装,查看其版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br><span class="line">8.1.2</span><br></pre></td></tr></table></figure><br>如果不是最新版本，运行指令<br><code>npm install -g npm</code><br>如果想更新到指定版本，运行指令<br><code>npm -g install npm@6.8.0</code>  </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm"><code>nvm</code>开源项目地址</a></p>
+<h2 id="其他升级nodejs方法："><a href="#其他升级nodejs方法：" class="headerlink" title="其他升级nodejs方法："></a>其他升级<code>nodejs</code>方法：</h2><h4 id="（1）用n升级nodejs"><a href="#（1）用n升级nodejs" class="headerlink" title="（1）用n升级nodejs"></a>（1）用<code>n</code>升级<code>nodejs</code></h4><p> 全局安装n<br><code>npm install -g n</code><br> 升级到最新稳定版<br><code>n stable</code><br> 升级到最新版<br><code>n latest</code><br> 升级到定制版<br><code>n v7.10.0</code><br> 切换使用版本<br><code>n 7.10.0 (ENTER)</code><br> 删除制定版本<br><code>n rm 7.10.0</code><br>用制定的版本执行脚本<br><code>n use 7.10.0 some.js</code>  </p>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装<code>git</code></h2><p>命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/.nvm$ npm install --lts  <span class="comment">##长期支持版本</span></span><br></pre></td></tr></table></figure><br>将<code>Debian10.1</code>中默认的<code>node</code>更改文件名：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /usr/bin/node /usr/bin/node10</span><br></pre></td></tr></table></figure><br>在<code>/etc/profile</code>,添加新的<code>node</code>路径 <code>/usr/local/bin</code></p>
+<p><code>export PATH=$PATH:/usr/local/bin</code></p>
+<h1 id="二、安装Next主题并部署到github【含从wordpress中导出】"><a href="#二、安装Next主题并部署到github【含从wordpress中导出】" class="headerlink" title="二、安装Next主题并部署到github【含从wordpress中导出】"></a>二、安装<code>Next</code>主题并部署到<code>github</code>【含从<code>wordpress</code>中导出】</h1><h2 id="1、按照Github提示，创建SSH秘钥："><a href="#1、按照Github提示，创建SSH秘钥：" class="headerlink" title="1、按照Github提示，创建SSH秘钥："></a>1、按照<code>Github</code>提示，创建<code>SSH秘钥</code>：</h2><p>（1）命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh</span><br><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">user@user-pc:~/.ssh$ ssh-keygen -t rsa -C <span class="string">&quot;邮箱地址&quot;</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/用户名/.ssh/id_rsa): </span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/用户名/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/用户名/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:0NY9YEJ+aCViuJzyv**juiZ8 邮箱地址</span><br><span class="line">The key<span class="string">&#x27;s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 2048]----+</span></span><br><span class="line"><span class="string">|     .o.*o++.    |</span></span><br><span class="line"><span class="string">|    .. * B=o     |</span></span><br><span class="line"><span class="string">|  o. o      o    |</span></span><br><span class="line"><span class="string">| ..o+o *     .   |</span></span><br><span class="line"><span class="string">|   o*.o So .     |</span></span><br><span class="line"><span class="string">| . =.o. .        |</span></span><br><span class="line"><span class="string">|  * .... . .     |</span></span><br><span class="line"><span class="string">| oo.o..          |</span></span><br><span class="line"><span class="string">| .o=             |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br><span class="line"><span class="string">user@user-pc:~/.ssh$ ls -a</span></span><br><span class="line"><span class="string">.  ..  id_rsa  id_rsa.pub</span></span><br><span class="line"><span class="string">user@user-pc:~/.ssh$ cat id_rsa.pub</span></span><br><span class="line"><span class="string">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXoLe6b+9fvDT/L8hcz***************eh+GK4vVv+1dyv9 注册github的邮箱</span></span><br></pre></td></tr></table></figure></p>
+<p>（2）打开<code>https://github.com/settings/keys</code>，点击<code>New SSH key</code>新增 <code>SSH KEY</code>，tittle<code>debian10</code>内容如上<br>（3）新建并配置<code>github</code>仓库<br>  ①打开<code>https://github.com/</code>登录后，在右上角点击<code>+</code>==&gt;<code>New repository</code>==&gt;<code>Repository name</code>输入：<code>XXX.github.io</code>==&gt;<code>Create repository</code><br>  ②进入新仓库，<code>Add file</code>==&gt;文件名<code>CNAME</code>,内容<code>你的域名</code>（域名需自己注册，没域名就直接用<code>XXX.github.io</code>访问网页）。<br>  ③点击仓库右边<code>Settins</code>==&gt;网页下方<code>pages</code>==&gt;<code>Source</code>选择<code>master</code>(因为网页文件上传是传到<code>master</code>分支)==&gt;<code>Custom domain</code>根据上面<code>你的域名</code>填写。  </p>
+<p>关于域名解析在主机运营商处填写，比如<code>WWW</code>或者<code>@</code>等，记录值填写<code>XXX.github.io</code>.  </p>
+<p>（4）在电脑上配置<code>git</code><br>在<code>debian</code>终端输入命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;注册github的用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;注册github的邮箱&quot;</span></span><br></pre></td></tr></table></figure><br>其他命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --list  查看git配置</span><br><span class="line">ssh -T git@github.com 查看与git的连接</span><br><span class="line">[sudo] yk 的密码：</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br></pre></td></tr></table></figure><br>连接提示错误解决方法：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/.ssh$ sudo vim config</span><br></pre></td></tr></table></figure><br>输入以下内容：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User 注册github的邮箱</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure><br>设置和取消代理:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 你的代理地址</span><br><span class="line">git config --global https.proxy 你的代理地址</span><br></pre></td></tr></table></figure><br><strong><code>http://</code>也可以改成<code>sockets5://</code>,但是区别在于：<code>socks5</code>不支持通过<code>pubkey</code>免密登录<code>github</code>，每次提交代码只能输入用户名和密码,<code>http</code>可以支持免密登录。</strong><br>取消代理：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy </span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy </span><br></pre></td></tr></table></figure></p>
+<h2 id="2、安装hexo"><a href="#2、安装hexo" class="headerlink" title="2、安装hexo"></a>2、安装<code>hexo</code></h2><p>命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br><span class="line">npm WARN deprecated fsevents@2.1.3: Please update to v 2.2.x</span><br><span class="line">/usr/<span class="built_in">local</span>/bin/hexo -&gt; /usr/<span class="built_in">local</span>/lib/node_modules/hexo-cli/bin/hexo</span><br></pre></td></tr></table></figure></p>
+<h2 id="3、创建存放博客的文件夹"><a href="#3、创建存放博客的文件夹" class="headerlink" title="3、创建存放博客的文件夹"></a>3、创建存放博客的文件夹</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web$ sudo mkdir gitblog</span><br><span class="line">user@user-pc:~/www/html/php-web$ <span class="built_in">cd</span> gitblog</span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo hexo init   <span class="comment">##初始化hexo设置</span></span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo npm install</span><br><span class="line"></span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install urix</span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install resolve-url</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>文件夹出现<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml     #配置文件</span><br><span class="line">├── package.json    #应用程序数据</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source          #网站内容</span><br><span class="line">|   ├── _drafts     #草稿</span><br><span class="line">|   └── _posts      #文章</span><br><span class="line">└── themes          #主题</span><br></pre></td></tr></table></figure></p>
+<h2 id="4、安装Next主题"><a href="#4、安装Next主题" class="headerlink" title="4、安装Next主题"></a>4、安装<code>Next</code>主题</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/gitblogs$ sudo git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>安装一些必备插件：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// user@user-pc:~/www/html/php-web/gitblog$ sudo npm i hexo-renderer-multi-markdown-it --save --ignore-scripts <span class="comment"># 安装必备插件,`--ignore-scripts` 解决安装依赖失败问题,  </span></span><br><span class="line">//但是安装此插件会出现数学公式重复解析  </span><br><span class="line"></span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo npm i hexo-autoprefixer --save</span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo npm i hexo-algoliasearch --save</span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo npm i hexo-symbols-count-time --save</span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo npm i hexo-feed --save</span><br><span class="line"></span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm uninstall hexo-renderer-marked --save</span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install hexo-renderer-kramed --save</span><br><span class="line"></span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm uninstall hexo-math --save  <span class="comment">#停止使用 hexo-math</span></span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install hexo-renderer-mathjax --save  <span class="comment">#然后安装 hexo-renderer-mathjax 包：</span></span><br><span class="line"></span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install hexo-generator-search --save</span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install hexo-generator-searchdb --save  <span class="comment"># 本地搜索 #</span></span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install hexo-tag-cloud@^2.1.* --save   <span class="comment">##标签云</span></span><br><span class="line">user@user-pc:~/www/gitblogs$ sudo npm install eslint --save  <span class="comment">##阅读时长依赖</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="5、开启标签云："><a href="#5、开启标签云：" class="headerlink" title="5、开启标签云："></a>5、开启标签云：</h2><p><code>swig</code> 用户 (<code>Next</code>主题在列)  </p>
+<p>在主题文件夹找到文件 <code>theme/next/layout/_macro/sidebar.swig</code>, 然后添加如下代码：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if site.tags.length &gt; 1 %&#125;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcloud.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcanvas.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;div class=&quot;widget-wrap&quot;&gt;</span><br><span class="line">    &lt;h3 class=&quot;widget-title&quot;&gt;Tag Cloud&lt;/h3&gt;</span><br><span class="line">    &lt;div id=&quot;myCanvasContainer&quot; class=&quot;widget tagcloud&quot;&gt;</span><br><span class="line">        &lt;canvas width=&quot;260&quot; height=&quot;280&quot; id=&quot;resCanvas&quot; style=&quot;width=100%&quot;&gt;</span><br><span class="line">            &#123;&#123; list_tags() &#125;&#125;</span><br><span class="line">        &lt;/canvas&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="6、从-Wordpress-迁移（没有用wordpress建站可无须此步）"><a href="#6、从-Wordpress-迁移（没有用wordpress建站可无须此步）" class="headerlink" title="6、从 Wordpress 迁移（没有用wordpress建站可无须此步）"></a>6、从 <code>Wordpress</code> 迁移（没有用<code>wordpress</code>建站可无须此步）</h2><p>（1）首先安装 <code>hexo-migrator-wordpress</code> 插件：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo npm install hexo-migrator-wordpress --save</span><br></pre></td></tr></table></figure><br>登录<code>Wordpress</code> 后台，在<code>工具</code>-<code>导出</code>中导出所有记录。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ user@user-pc:~/www/html/php-web/gitblog$ sudo hexo migrate wordpress &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></table></figure><br><code>source</code> 是 <code>Wordpress</code> 导出文件的存放目录：<code>/media/yk/文档/BackUp/数据备份/Linux相关/Debian网站文章备份/lifeinpieces.WordPress.2020-12-16.xml</code>。  </p>
+<p>文章导入到<code>_posts</code> 目录中了！  </p>
+<h2 id="7、提交到github"><a href="#7、提交到github" class="headerlink" title="7、提交到github"></a>7、提交到<code>github</code></h2><p>安装支持：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog/owenyk.github.io$ sudo npm install hexo-deployer-git --unsafe-perm</span><br></pre></td></tr></table></figure><br>提交命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo hexo generate</span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo hexo deploy</span><br></pre></td></tr></table></figure></p>
+<h3 id="一些问题："><a href="#一些问题：" class="headerlink" title="一些问题："></a>一些问题：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog$  git remote add origin git@github.com:<span class="comment">#####/#####.github.io.git</span></span><br><span class="line">fatal: 不是一个 git 仓库（或者直至挂载点 / 的任何父目录）</span><br><span class="line">停止在文件系统边界（未设置 GIT_DISCOVERY_ACROSS_FILESYSTEM）</span><br></pre></td></tr></table></figure>
+<p>解决：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo git init</span><br><span class="line">已初始化空的 Git 仓库于 /home/yk/www/html/php-web/gitblog/.git/</span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo git remote add origin git@github.com:<span class="comment">###/###.github.io.git</span></span><br><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo git remote -v</span><br><span class="line">origin	git@github.com:<span class="comment">###/###.github.io.git (fetch)</span></span><br><span class="line">origin	git@github.com:<span class="comment">###/###.github.io.git (push)</span></span><br></pre></td></tr></table></figure></p>
+<p>提示：<code>This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@0. I&#39;ll try to do my best with it!</code><br>解决：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/gitblogs$ sudo rm -rf node_modules package-lock.json &amp;&amp; npm install</span><br></pre></td></tr></table></figure></p>
+<h2 id="8、换机操作"><a href="#8、换机操作" class="headerlink" title="8、换机操作"></a>8、换机操作</h2><h3 id="1-、在你的博客Repository中新建一个hexo分支，名字自定："><a href="#1-、在你的博客Repository中新建一个hexo分支，名字自定：" class="headerlink" title="(1)、在你的博客Repository中新建一个hexo分支，名字自定："></a>(1)、在你的博客<code>Repository</code>中新建一个<code>hexo</code>分支，名字自定：</h3><h3 id="2-、然后在setting中设置默认分支为hexo，便于推送："><a href="#2-、然后在setting中设置默认分支为hexo，便于推送：" class="headerlink" title="(2)、然后在setting中设置默认分支为hexo，便于推送："></a>(2)、然后在<code>setting</code>中设置默认分支为<code>hexo</code>，便于推送：</h3><h3 id="3-、新建目录，在目录下运行命令："><a href="#3-、新建目录，在目录下运行命令：" class="headerlink" title="(3)、新建目录，在目录下运行命令："></a>(3)、新建目录，在目录下运行命令：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog$ sudo git <span class="built_in">clone</span> https://github.com/owenyk/owenyk.github.io.git</span><br></pre></td></tr></table></figure>
+<h3 id="4-、把除了-git-文件夹外的所有文件都删掉（这些是编译后的网页文件）"><a href="#4-、把除了-git-文件夹外的所有文件都删掉（这些是编译后的网页文件）" class="headerlink" title="(4)、把除了.git 文件夹外的所有文件都删掉（这些是编译后的网页文件）"></a>(4)、把除了<code>.git</code> 文件夹外的所有文件都删掉（这些是编译后的网页文件）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@user-pc:~/www/html/php-web/gitblog/owenyk.github.io$ sudo rm -rf [^.]*</span><br></pre></td></tr></table></figure>
+<h3 id="5-、把之前我们写的博客源文件全部复制过来，除了-deploy-git（编译后的文件目录）。"><a href="#5-、把之前我们写的博客源文件全部复制过来，除了-deploy-git（编译后的文件目录）。" class="headerlink" title="(5)、把之前我们写的博客源文件全部复制过来，除了.deploy_git（编译后的文件目录）。"></a>(5)、把之前我们写的博客源文件全部复制过来，除了<code>.deploy_git</code>（编译后的文件目录）。</h3><p>其中，<code>.gitignore</code>（设置不需要<code>git</code>的文件或目录）文件中中需要设置部分不需要上传的目录：<br>删除题中有一个<code>.git</code>目录<br>命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo git commit –m <span class="string">&#x27;add branch&#x27;</span></span><br><span class="line"></span><br><span class="line">sudo git checkout -b hexo_backup --track origin / hexo_backup</span><br></pre></td></tr></table></figure></p>
+<h2 id="9、数学公式显示不正常问题："><a href="#9、数学公式显示不正常问题：" class="headerlink" title="9、数学公式显示不正常问题："></a>9、数学公式显示不正常问题：</h2><h3 id="第一步：-使用Kramed代替Marked"><a href="#第一步：-使用Kramed代替Marked" class="headerlink" title="第一步： 使用Kramed代替Marked"></a>第一步： 使用<code>Kramed</code>代替<code>Marked</code></h3><p><code>hexo</code> 默认的渲染引擎是 <code>marked</code>，但是 <code>marked</code> 不支持 <code>mathjax</code>。 <code>kramed</code> 是在 <code>marked</code> 的基础上进行修改。我们在工程目录下执行以下命令来安装 <code>kramed</code>.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure><br>然后，更改<code>&lt;your-project-dir&gt;/node_modules/hexo-renderer-kramed/lib/renderer.js</code>，更改：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Change inline math rule</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatText</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Fit kramed&#x27;s rule: $$ + \1 + $$</span></span><br><span class="line">    <span class="keyword">return</span> text.replace(<span class="regexp">/`\$(.*?)\$`/g</span>, <span class="string">&#x27;$$$$$1$$$$&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>为：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Change inline math rule</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatText</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二步-停止使用-hexo-math"><a href="#第二步-停止使用-hexo-math" class="headerlink" title="第二步: 停止使用 hexo-math"></a>第二步: 停止使用 <code>hexo-math</code></h3><p>首先，如果你已经安装 <code>hexo-math</code>, 请卸载它：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-math --save`</span><br></pre></td></tr></table></figure><br>然后安装 <code>hexo-renderer-mathjax</code> 包：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure></p>
+<h3 id="第三步-更新-Mathjax-的-CDN-链接"><a href="#第三步-更新-Mathjax-的-CDN-链接" class="headerlink" title="第三步: 更新 Mathjax 的 CDN 链接"></a>第三步: 更新 <code>Mathjax</code> 的 <code>CDN</code> 链接</h3><p>首先，打开<code>&lt;path-to-your-project&gt;/node_modules/hexo-renderer-mathjax/mathjax.html</code></p>
+<p>然后，把<code>&lt;script&gt;</code>更改为：<br><code>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;</code></p>
+<h3 id="第四步-更改默认转义规则"><a href="#第四步-更改默认转义规则" class="headerlink" title="第四步: 更改默认转义规则"></a>第四步: 更改默认转义规则</h3><p>因为 <code>hexo</code> 默认的转义规则会将一些字符进行转义，比如 <code>_</code>转为 <code>&lt;em&gt;</code>, 所以我们需要对默认的规则进行修改.<br>首先， 打开<code>&lt;path-to-your-project/node_modules/kramed/lib/rules/inline.js</code>,</p>
+<p>然后，把:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/</span>,</span><br></pre></td></tr></table></figure><br>更改为:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()# +\-.!_&gt;])/</span>,</span><br><span class="line"><span class="string">``</span><span class="string">``</span></span><br><span class="line">把</span><br><span class="line"><span class="string">``</span><span class="string">`js</span></span><br><span class="line"><span class="string">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure><br>更改为:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure></p>
+<h3 id="第五步-开启mathjax"><a href="#第五步-开启mathjax" class="headerlink" title="第五步: 开启mathjax"></a>第五步: 开启<code>mathjax</code></h3><p>在主题<code>_config.yml</code> 中开启 <code>Mathjax</code>， 找到 <code>mathjax</code> 字段添加如下代码：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>这一步可选，在博客中开启 <code>Mathjax</code>，， 添加以下内容：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Testing</span> <span class="string">Mathjax</span> <span class="string">with</span> <span class="string">Hexo</span>  </span><br><span class="line"><span class="attr">category:</span> <span class="string">Uncategorized</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="string">/05/03</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></p>
+<p>通过以上步骤，我们就可以在 <code>hexo</code> 中使用 <code>Mathjax</code> 来书写数学公式。</p>
+<h2 id="10、改变tag因为大小写问题而404的问题"><a href="#10、改变tag因为大小写问题而404的问题" class="headerlink" title="10、改变tag因为大小写问题而404的问题"></a>10、改变<code>tag</code>因为大小写问题而<code>404</code>的问题</h2><p>在博客根目录下的<code>.deploy_git/.git/config</code>文件配置中忽略大小写选项<code>ignorecase = true</code>改成<code>ignorecase = false</code>（注意：<code>.git</code>是隐藏文件夹，记得调一下显示隐藏文件夹）。</p>
+<h2 id="11、Windows上部署时出现warning-LF-will-be-replaced-by-CRLF-in-xxxxxx的警告问题"><a href="#11、Windows上部署时出现warning-LF-will-be-replaced-by-CRLF-in-xxxxxx的警告问题" class="headerlink" title="11、Windows上部署时出现warning: LF will be replaced by CRLF in xxxxxx的警告问题"></a>11、<code>Windows</code>上部署时出现<code>warning: LF will be replaced by CRLF in xxxxxx</code>的警告问题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6a29f5243ab4">换终端更新hexo博客：</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/nightwishh/article/details/99647545">git报错ssh: connect to host github.com port 22: Connection timed out:</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/149575559">Hexo博客建立标签云及效果展示:</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/jomes_wang/article/details/111628334">hexo博客本地搜索失效，一直转圈:</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e8d433a2c5b7">如何在 hexo 中支持 Mathjax？：</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\03\在Windows10上配置Hexo+Github做个人博客\" rel="bookmark">在Windows10上配置Hexo+Github做个人博客</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\11\15\在Debian上安装LANMP及在Win10下安装MariaDB的zip版本\" rel="bookmark">在Debian上安装LANMP及在Win0下安装MariaDB的zip版本</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://owenyk.github.io/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="在Debian10上配置Hexo+Github做个人博客">https://owenyk.github.io/2020/12/19/在Debian10上配置Hexo+Github做个人博客/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Next/" rel="tag"># Next</a>
+              <a href="/tags/Nvm/" rel="tag"># Nvm</a>
+              <a href="/tags/Debian10/" rel="tag"># Debian10</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/22/%E5%88%A0%E9%99%A4%E9%9D%9E%E6%96%87%E4%BB%B6%E5%A4%B9%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" rel="prev" title="删除当前目录下非文件夹文件命令">
+                  <i class="fa fa-chevron-left"></i> 删除当前目录下非文件夹文件命令
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/12/20/Python%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D/" rel="next" title="Python批量重命名">
+                  Python批量重命名 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81MjMwNC8yODc4Mg=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">318k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; 
+var translateDelay = 0; 
+var cookieDomain = "https://kaisky.xyz/"; 
+var msgToTraditionalChinese = "繁体"; 
+var msgToSimplifiedChinese = "简体"; 
+var translateButtonId = "translateLink"; 
+translateInitilization();
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2020/12/19/%E5%9C%A8Debian10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '32px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

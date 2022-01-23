@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="在Debian上安装LA(N)MP(含在win下安装MariaDB的zip版本)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Debian上安装LANMP及在Win0下安装MariaDB的zip版本">
+<meta property="og:url" content="https://owenyk.github.io/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/index.html">
+<meta property="og:site_name" content="K&#39;s Life">
+<meta property="og:description" content="在Debian上安装LA(N)MP(含在win下安装MariaDB的zip版本)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-15T03:16:58.000Z">
+<meta property="article:modified_time" content="2021-12-17T02:01:09.411Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Nginx">
+<meta property="article:tag" content="MariaDB">
+<meta property="article:tag" content="Debian10">
+<meta property="article:tag" content="Apache2">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://owenyk.github.io/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://owenyk.github.io/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/","path":"2020/11/15/在Debian上安装LANMP及在Win10下安装MariaDB的zip版本/","title":"在Debian上安装LANMP及在Win0下安装MariaDB的zip版本"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在Debian上安装LANMP及在Win0下安装MariaDB的zip版本 | K's Life</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">K's Life</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85Apache"><span class="nav-number">1.</span> <span class="nav-text">一、安装Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E3%80%81%E5%AE%89%E8%A3%85apache%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">(一)、安装apache命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E3%80%81%E4%BF%AE%E6%94%B9apache%E7%BD%91%E7%AB%99%E6%9C%8D%E5%8A%A1%E8%B7%AF%E5%BE%84%E4%B8%BA%E8%87%AA%E5%B7%B1%E7%BD%91%E7%AB%99%E7%9B%AE%E5%BD%95"><span class="nav-number">1.2.</span> <span class="nav-text">（二）、修改apache网站服务路径为自己网站目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E4%BF%AE%E6%94%B9-etc-apache2-sites-available-000-default-conf"><span class="nav-number">1.2.1.</span> <span class="nav-text">（1）修改 &#x2F;etc&#x2F;apache2&#x2F;sites-available&#x2F;000-default.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89-%E4%BF%AE%E6%94%B9-etc-apache2-apache2-conf"><span class="nav-number">1.2.2.</span> <span class="nav-text">（2）###修改 &#x2F;etc&#x2F;apache2&#x2F;apache2.conf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%8B%E5%9C%A8ports-conf%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%A2%9E%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1》在ports.conf添加新增监听端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%8B%E6%96%B0%E5%BB%BA%E7%BD%91%E7%AB%99%E7%9A%84%E6%97%A5%E5%AD%90%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9A"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2》新建网站的日子文件夹：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%8B%E5%90%AF%E7%94%A8%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">3》启用配置：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%AE%89%E8%A3%85libapache2-mod-fastcgi%E6%A8%A1%E5%9D%97%E5%90%AF%E7%94%A8php-fpm%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">（三）安装libapache2-mod-fastcgi模块启用php-fpm管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%B7%BB%E5%8A%A0%E5%AE%89%E8%A3%85%E6%BA%90%EF%BC%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">（1）添加安装源：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%AE%89%E8%A3%85fastcgi%E6%A8%A1%E5%9D%97%E5%92%8Cphp7-4%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9D%97"><span class="nav-number">1.3.2.</span> <span class="nav-text">（2）安装fastcgi模块和php7.4支持模块:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%8B%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%E5%8F%8A%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E6%94%AF%E6%8C%81%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">1》安装模块及添加模块支持命令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%8B%E6%A3%80%E6%9F%A5%E7%94%A8%E6%88%B7%E7%BB%84"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">2》检查用户组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E9%AA%8C%E8%AF%81%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">（四）验证配置:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%94%EF%BC%89%E9%87%8D%E5%90%AFapache%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.5.</span> <span class="nav-text">（五）重启apache服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85nginx%E5%AE%98%E7%BD%91%E7%A8%B3%E5%AE%9A%E7%89%88-nginx1-16-1-%E5%B9%B6%E9%85%8D%E7%BD%AE%E5%92%8Capache2%E5%85%B1%E5%AD%98"><span class="nav-number">2.</span> <span class="nav-text">二、安装nginx官网稳定版[nginx1.16.1]并配置和apache2共存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E6%9B%B4%E6%96%B0%E6%BA%90%E5%B9%B6%E5%AE%89%E8%A3%85nginx"><span class="nav-number">2.1.</span> <span class="nav-text">（一）更新源并安装nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">2.1.1.</span> <span class="nav-text">命令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%A080%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%85%88%E5%AE%89%E8%A3%85%E7%9A%84apache2%E5%8D%A0%E7%94%A8%EF%BC%8C%E5%AE%89%E8%A3%85%E5%AE%8C%E5%90%AF%E5%8A%A8%E4%BC%9A%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF%EF%BC%8C"><span class="nav-number">2.1.2.</span> <span class="nav-text">因80端口被先安装的apache2占用，安装完启动会提示错误，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9nginx%E7%9B%AE%E5%BD%95%E4%B8%8Bnginx-conf"><span class="nav-number">2.1.3.</span> <span class="nav-text">修改nginx目录下nginx.conf</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">（二）添加网站配置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.3.</span> <span class="nav-text">（三）重启服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95Nginx%E5%AE%89%E8%A3%85%E7%BB%93%E6%9E%9C"><span class="nav-number">2.3.1.</span> <span class="nav-text">测试Nginx安装结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95PHP%E7%BD%91%E9%A1%B5"><span class="nav-number">2.3.2.</span> <span class="nav-text">测试PHP网页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx%E5%8A%A0%E5%85%A5%E5%88%B0systemctl%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%A1%8C"><span class="nav-number">2.3.3.</span> <span class="nav-text">nginx加入到systemctl服务运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%83%BD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%85%E5%86%B5"><span class="nav-number">2.3.4.</span> <span class="nav-text">可能的一些情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85PHP"><span class="nav-number">3.</span> <span class="nav-text">三、安装PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E5%B0%86%E5%BD%93%E5%89%8D%E5%8C%85%E5%8D%87%E7%BA%A7%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E3%80%82"><span class="nav-number">3.1.</span> <span class="nav-text">（一）运行以下命令将当前包升级到最新版本。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%9C%A8Debian10%E4%B8%8A%E8%AE%BE%E7%BD%AEPPA"><span class="nav-number">3.2.</span> <span class="nav-text">（二）在Debian10上设置PPA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%9C%A8Debian10%E4%B8%8A%E5%AE%89%E8%A3%85%E7%A8%B3%E5%AE%9A%E7%89%88PHP7-4"><span class="nav-number">3.3.</span> <span class="nav-text">（三）在Debian10上安装稳定版PHP7.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E5%88%87%E6%8D%A2php%E7%89%88%E6%9C%AC%E4%B8%BA%E9%BB%98%E8%AE%A4%E7%94%A8%E4%BA%8EApache%E5%92%8C%E5%91%BD%E4%BB%A4%E8%A1%8C%EF%BC%88%E5%8F%AF%E5%A4%9A%E7%89%88%E6%9C%ACPHP%E5%85%B1%E5%AD%98%EF%BC%89"><span class="nav-number">3.4.</span> <span class="nav-text">（四）切换php版本为默认用于Apache和命令行（可多版本PHP共存）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%94%EF%BC%89%E5%AE%89%E8%A3%85imagick"><span class="nav-number">3.5.</span> <span class="nav-text">（五）安装imagick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BE%9D%E6%AC%A1%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="nav-number">3.5.1.</span> <span class="nav-text">1. 依次运行以下命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85C%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-number">3.5.2.</span> <span class="nav-text">2. 安装C语言编译器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85imagick"><span class="nav-number">3.5.3.</span> <span class="nav-text">3. 安装imagick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%8A%A0%E8%BD%BDimagick%E5%88%B0php"><span class="nav-number">3.5.4.</span> <span class="nav-text">4. 加载imagick到php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%87%8D%E5%90%AFservice-httpd-restart"><span class="nav-number">3.5.5.</span> <span class="nav-text">5. 重启service httpd restart</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%9F%A5%E7%9C%8B%E5%AE%89%E8%A3%85%E7%BB%93%E6%9E%9C"><span class="nav-number">3.5.6.</span> <span class="nav-text">6. 查看安装结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%9C%A8Debian-10%E4%B8%8A%E5%AE%89%E8%A3%85MariaDB"><span class="nav-number">4.</span> <span class="nav-text">四、在Debian 10上安装MariaDB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E8%A6%81%E5%AE%89%E8%A3%85MariaDB%EF%BC%8C%E8%AF%B7%E4%BD%BF%E7%94%A8Debian%E7%9A%84apt%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E3%80%82"><span class="nav-number">4.1.</span> <span class="nav-text">（一）要安装MariaDB，请使用Debian的apt包管理器。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%89%E8%A3%85MariaDB%E5%90%8E%EF%BC%8C%E5%BB%BA%E8%AE%AE%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%AE%89%E5%85%A8%E8%84%9A%E6%9C%AC%EF%BC%8C"><span class="nav-number">4.2.</span> <span class="nav-text">（二）安装MariaDB后，建议运行以下安全脚本，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%A6%82%E6%9E%9C%E8%A6%81%E5%88%9B%E5%BB%BA%E5%90%8D%E4%B8%BAwpDB%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E5%9D%87%E4%B8%BAwpadmin%E4%B8%94%E5%85%B7%E6%9C%89%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E5%85%A8%E6%9D%83%E9%99%90%E7%9A%84%E7%94%A8%E6%88%B7%EF%BC%8C%E8%AF%B7%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E3%80%82"><span class="nav-number">4.3.</span> <span class="nav-text">（三）如果要创建名为wpDB的数据库和用户名和密码均为wpadmin且具有数据库完全权限的用户，请运行以下命令。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85madiadb%E6%95%B0%E6%8D%AE%E5%BA%93zip%E7%89%88%E6%9C%AC"><span class="nav-number">5.</span> <span class="nav-text">五、在windows下安装madiadb数据库zip版本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BD"><span class="nav-number">5.1.</span> <span class="nav-text">1. 下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%A7%A3%E5%8E%8B"><span class="nav-number">5.2.</span> <span class="nav-text">2. 解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85"><span class="nav-number">5.3.</span> <span class="nav-text">3. 服务安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B3%A8%E6%84%8F%EF%BC%9A%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">5.4.</span> <span class="nav-text">4. 注意：可以修改端口的方式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%AE%89%E8%A3%85wordpress"><span class="nav-number">6.</span> <span class="nav-text">六、安装wordpress</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E4%B8%8B%E8%BD%BD"><span class="nav-number">6.1.</span> <span class="nav-text">（一）下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%89%E8%A3%85"><span class="nav-number">6.2.</span> <span class="nav-text">（二）安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E8%8B%A5%E6%9B%B4%E6%8D%A2%E7%AB%AF%E5%8F%A3%E9%9C%80%E6%9B%B4%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADwp-options%E4%B8%AD%E7%9A%84%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE"><span class="nav-number">6.3.</span> <span class="nav-text">（三）若更换端口需更改数据库中wp_options中的端口配置</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description">日常的一些记录，留作备忘！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+
+
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+            <h7 class="widget-title">Tag Cloud</h7>
+            <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="260" height="260" id="resCanvas" style="width=100%">
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access/" rel="tag">Access</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache2/" rel="tag">Apache2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt/" rel="tag">Apt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt-key/" rel="tag">Apt-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aria2/" rel="tag">Aria2</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Asp/" rel="tag">Asp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Badblocks/" rel="tag">Badblocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connector/" rel="tag">Connector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/" rel="tag">C语言环境</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/" rel="tag">Debian</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian10/" rel="tag">Debian10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fedora/" rel="tag">Fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ffmpeg/" rel="tag">Ffmpeg</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flowchart/" rel="tag">Flowchart</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Genymotion/" rel="tag">Genymotion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gpg/" rel="tag">Gpg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grep/" rel="tag">Grep</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iconv/" rel="tag">Iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MariaDB/" rel="tag">MariaDB</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongosh/" rel="tag">Mongosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MsSQL/" rel="tag">MsSQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nvm/" rel="tag">Nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Request/" rel="tag">Request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Service/" rel="tag">Service</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smartmontools/" rel="tag">Smartmontools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smbshare/" rel="tag">Smbshare</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Statistics/" rel="tag">Statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText3/" rel="tag">SublimeText3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemctl/" rel="tag">Systemctl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TrackersList/" rel="tag">TrackersList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UCanAccess/" rel="tag">UCanAccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ventoy/" rel="tag">Ventoy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WePE/" rel="tag">WePE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdav/" rel="tag">Webdav</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows10/" rel="tag">Windows10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wine/" rel="tag">Wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xargs/" rel="tag">Xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-get/" rel="tag">You-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Youtube-dl/" rel="tag">Youtube-dl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gvfs/" rel="tag">gvfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iconv/" rel="tag">iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mdbtools/" rel="tag">mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odbc-mdbtools/" rel="tag">odbc-mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/" rel="tag">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unixODBC/" rel="tag">unixODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2/" rel="tag">公农历转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag">启动服务</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag">启动盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E4%BB%B6%E7%BC%BA%E5%A4%B1/" rel="tag">固件缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" rel="tag">备份和恢复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/" rel="tag">字体缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="tag">安卓模拟器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/" rel="tag">数据导出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" rel="tag">文字识别</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag">设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%91%BD%E5%90%8D/" rel="tag">重命名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" rel="tag">错误解决</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">问题解决</a><span class="tag-list-count">2</span></li></ul>
+                </canvas>
+            </div>
+        </div>
+      
+      
+
+      
+
+
+      </div>
+
+      
+       <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>-->
+        
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js
+            server="netease"
+            type="playlist"
+            id="641900597" 
+            mini="false"
+            fixed="false"
+            list-folded="true"
+            autoplay="false"
+            volume="0.8"
+            theme="#95DA99"
+            order="random"
+            loop="all"
+            preload="auto"
+            mutex="true">
+          </meting-js> 
+       
+
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owenyk.github.io/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="K's Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在Debian上安装LANMP及在Win0下安装MariaDB的zip版本
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-11-15 11:16:58" itemprop="dateCreated datePublished" datetime="2020-11-15T11:16:58+08:00">2020-11-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-17 10:01:09" itemprop="dateModified" datetime="2021-12-17T10:01:09+08:00">2021-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件应用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MariaDB/" itemprop="url" rel="index"><span itemprop="name">MariaDB</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Nginx/" itemprop="url" rel="index"><span itemprop="name">Nginx</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Apache2/" itemprop="url" rel="index"><span itemprop="name">Apache2</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Wordpress/" itemprop="url" rel="index"><span itemprop="name">Wordpress</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/" data-xid="/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/" class="post-meta-item leancloud_visitors" data-flag-title="在Debian上安装LANMP及在Win0下安装MariaDB的zip版本" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>25 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">在Debian上安装LA(N)MP(含在win下安装MariaDB的zip版本)</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、安装Apache"><a href="#一、安装Apache" class="headerlink" title="一、安装Apache"></a>一、安装<code>Apache</code></h1><h2 id="一-、安装apache命令："><a href="#一-、安装apache命令：" class="headerlink" title="(一)、安装apache命令："></a>(一)、安装<code>apache</code>命令：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apache2`   </span><br></pre></td></tr></table></figure>
+<p><code>Apache</code>安装完成后，安装程序将立即触发<code>systemd</code>系统和服务管理器启动<code>Apache2</code>服务，并使其在系统引导时自动启动。<br>要检查<code>Apache</code>服务是否已启动并正常运行，请运行以下<code>systemctl</code>命令。<br><code># systemctl status apache2</code><br>其他常用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl start apache2.service</span></span><br><span class="line"><span class="comment"># systemctl restart apache2.service</span></span><br><span class="line"><span class="comment"># systemctl stop apache2.service</span></span><br><span class="line"><span class="comment"># systemctl reload apache2.service</span></span><br><span class="line"><span class="comment"># systemctl status apache2.service</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="（二）、修改apache网站服务路径为自己网站目录"><a href="#（二）、修改apache网站服务路径为自己网站目录" class="headerlink" title="（二）、修改apache网站服务路径为自己网站目录"></a>（二）、修改<code>apache</code>网站服务路径为自己网站目录</h2><h3 id="（1）修改-etc-apache2-sites-available-000-default-conf"><a href="#（1）修改-etc-apache2-sites-available-000-default-conf" class="headerlink" title="（1）修改 /etc/apache2/sites-available/000-default.conf"></a>（1）修改 <code>/etc/apache2/sites-available/000-default.conf</code></h3><p><strong>不建议直接修改</strong>,而是新建网站配置文件并监听<code>8080</code>端口：<br>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/sites-available/wpweb.conf</span><br><span class="line">```      </span><br><span class="line">添加以下内容：  </span><br><span class="line">```yaml</span><br><span class="line">    &lt;VirtualHost *:8080&gt;  </span><br><span class="line">      <span class="comment">#ServerName www.example.com  </span></span><br><span class="line">      ServerAdmin webmaster@localhost  </span><br><span class="line">      DocumentRoot ~/www/html/php-web/  </span><br><span class="line">      ErrorLog ~/www/html/php-web/wordpress/logs/error.log  </span><br><span class="line">      CustomLog ~/www/html/php-web/wordpress/logs/access.log combined  </span><br><span class="line">    &lt;/VirtualHost&gt;  </span><br></pre></td></tr></table></figure><br>可以将网站配置命名为：<code>网站名.conf</code></p>
+<h3 id="（2）-修改-etc-apache2-apache2-conf"><a href="#（2）-修改-etc-apache2-apache2-conf" class="headerlink" title="（2）###修改 /etc/apache2/apache2.conf"></a>（2）###修改 <code>/etc/apache2/apache2.conf</code></h3><p>[不建议直接修改]<br>将 <code>&lt;Directory /var/www/&gt;</code> 改为 <code>&lt;Directory 你的路径&gt;</code><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">####&lt;Directory /var/www/&gt;</span></span><br><span class="line"><span class="comment">#####Options Indexes FollowSymLinks</span></span><br><span class="line"><span class="comment">#####AllowOverride None</span></span><br><span class="line"><span class="comment">#####Require all granted</span></span><br><span class="line"><span class="comment">######&lt;/Directory&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="1》在ports-conf添加新增监听端口"><a href="#1》在ports-conf添加新增监听端口" class="headerlink" title="1》在ports.conf添加新增监听端口"></a>1》在<code>ports.conf</code>添加新增监听端口</h4><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/ports.conf</span><br></pre></td></tr></table></figure><br>在<code>Linsten</code>下添加以下内容：<br><code>Listen 8080</code>  </p>
+<h4 id="2》新建网站的日子文件夹："><a href="#2》新建网站的日子文件夹：" class="headerlink" title="2》新建网站的日子文件夹："></a>2》新建网站的日子文件夹：</h4><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p ~/www/html/php-web/wordpress/logs/</span><br></pre></td></tr></table></figure></p>
+<h4 id="3》启用配置："><a href="#3》启用配置：" class="headerlink" title="3》启用配置："></a>3》启用配置：</h4><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2ensite wpweb.conf</span><br></pre></td></tr></table></figure></p>
+<h2 id="（三）安装libapache2-mod-fastcgi模块启用php-fpm管理"><a href="#（三）安装libapache2-mod-fastcgi模块启用php-fpm管理" class="headerlink" title="（三）安装libapache2-mod-fastcgi模块启用php-fpm管理"></a>（三）安装<code>libapache2-mod-fastcgi</code>模块启用<code>php-fpm</code>管理</h2><p><a target="_blank" rel="noopener" href="https://packages.debian.org/jessie/i386/libapache2-mod-fastcgi/download">模块源地址下载</a></p>
+<h3 id="（1）添加安装源："><a href="#（1）添加安装源：" class="headerlink" title="（1）添加安装源："></a>（1）添加安装源：</h3><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure><br>添加源地址：<code>deb http://ftp.cn.debian.org/debian buster main non-free</code><br>根据速度可以选择网页各地区地址。</p>
+<h3 id="（2）安装fastcgi模块和php7-4支持模块"><a href="#（2）安装fastcgi模块和php7-4支持模块" class="headerlink" title="（2）安装fastcgi模块和php7.4支持模块:"></a>（2）安装<code>fastcgi模块</code>和<code>php7.4支持模块</code>:</h3><h4 id="1》安装模块及添加模块支持命令："><a href="#1》安装模块及添加模块支持命令：" class="headerlink" title="1》安装模块及添加模块支持命令："></a>1》安装模块及添加模块支持命令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install libapache2-mod-fastcgi php7.4-fpm    <span class="comment">#安装模块</span></span><br><span class="line">sudo a2enmod actions    <span class="comment">#启用模块操作</span></span><br><span class="line">sudo vim /etc/apache2/conf-available/php7.4-fpm.conf    <span class="comment">#添加支持</span></span><br></pre></td></tr></table></figure>
+<p>添加以下内容：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;IfModule</span> <span class="string">mod_fastcgi.c&gt;</span></span><br><span class="line">   <span class="string">AddHandler</span> <span class="string">php7.4-fcgi</span> <span class="string">.php</span></span><br><span class="line">   <span class="string">Action</span> <span class="string">php7.4-fcgi</span> <span class="string">/php7.4-fcgi</span></span><br><span class="line">   <span class="string">Alias</span> <span class="string">/php7.4-fcgi</span> <span class="string">/usr/lib/cgi-bin/php7.4-fcgi</span></span><br><span class="line">   <span class="string">FastCgiExternalServer</span> <span class="string">/usr/lib/cgi-bin/php7.4-fcgi</span> <span class="string">-socket</span> <span class="string">/var/run/php/php7.4-fpm.sock</span> <span class="string">-pass-header</span> <span class="string">Authorization</span></span><br><span class="line"><span class="string">&lt;/IfModule&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="2》检查用户组"><a href="#2》检查用户组" class="headerlink" title="2》检查用户组"></a>2》检查用户组</h4><p>查看<code>/etc/php/7.4/fpm/pool.d/www.conf</code> 文件中用户和用户组是否为<code>www-data</code>。<br>不是就改为该用户名和用户组，否则可能会出现权限问题。</p>
+<h2 id="（四）验证配置"><a href="#（四）验证配置" class="headerlink" title="（四）验证配置:"></a>（四）验证配置:</h2><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apache2ctl configtest</span><br><span class="line">Syntax OK</span><br></pre></td></tr></table></figure></p>
+<h2 id="（五）重启apache服务器"><a href="#（五）重启apache服务器" class="headerlink" title="（五）重启apache服务器"></a>（五）重启<code>apache</code>服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">sudo systemctl restart apache2</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">### 可能的问题：</span></span><br><span class="line">`403 Forbiden` 或者 `You don<span class="string">&#x27;t have permission to access / on this server`  </span></span><br><span class="line"><span class="string">修改你的路径目录权限为可读写   </span></span><br><span class="line"><span class="string">（1）`chown -R www-data:www-data  网站目录名`  </span></span><br><span class="line"><span class="string">（2）修改`apache2.conf`配置文件；将 `&lt;Directory /&gt; `中的&quot;`Require all denied`&quot;修改成&quot;`Require all granted`&quot;；  </span></span><br><span class="line"><span class="string">最后重启`apache2`  </span></span><br><span class="line"><span class="string">常用命令:</span></span><br><span class="line"><span class="string">```bash</span></span><br><span class="line"><span class="string">sudo chown www-data:www-data ~/www/html/php-web/ -R #修改网站根目录所有权限改为Apache进程用户</span></span><br><span class="line"><span class="string">sudo apache2ctl configtest #测试Apache2配置</span></span><br><span class="line"><span class="string">sudo a2ensite wordpress.conf #启用配置</span></span><br><span class="line"><span class="string">sudo a2dissite wordpress.conf #取消配置</span></span><br><span class="line"><span class="string">a2enmod rewrite  #启用伪静态重写url功能</span></span><br></pre></td></tr></table></figure>
+<p>[关于为静态可能出现无反映或读取<code>.htaccess</code>的问题]<br><code>sudo vim /etc/apache2/apache2.conf</code><br>将其中的：<br><code>AllowOverride None</code><br>修改为：<br><code>AllowOverride All</code><br>上面的 <code>/etc/apache2/sites-enabled/000-default</code> 实则为 <code>/etc/apache2/sites-available/default</code> 的连接。<br>而 <code>AllowwOverride None</code> 则会完全忽略 <code>.htaccess</code> 文件，自然其中所定义的 <code>rewrite</code> 规则也就不能生效了。  </p>
+<p>其他内容可参考：<br><a target="_blank" rel="noopener" href="https://www.linode.com/docs/web-servers/apache/install-php-fpm-and-apache-on-debian-8/">Install PHP-FPM and Apache on Debian 8</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/z_qifa/article/details/74202771">debian下为apache启用rewrite模块</a></p>
+<h1 id="二、安装nginx官网稳定版-nginx1-16-1-并配置和apache2共存"><a href="#二、安装nginx官网稳定版-nginx1-16-1-并配置和apache2共存" class="headerlink" title="二、安装nginx官网稳定版[nginx1.16.1]并配置和apache2共存"></a>二、安装<code>nginx官网稳定版[nginx1.16.1]</code>并配置和<code>apache2</code>共存</h1><h2 id="（一）更新源并安装nginx"><a href="#（一）更新源并安装nginx" class="headerlink" title="（一）更新源并安装nginx"></a>（一）更新源并安装<code>nginx</code></h2><h3 id="命令："><a href="#命令：" class="headerlink" title="命令："></a>命令：</h3><p><code>sudo apt install curl gnupg2 ca-certificates lsb-release   #安装必要的支持包</code><br>打开安装源列表:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure><br>添加以下内容：<br><code>deb http://nginx.org/packages/debian/ buster nginx #安装稳定版本</code><br>或者有安装直接输入以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">echo</span> <span class="string">&quot;deb http://nginx.org/packages/debian `lsb_release -cs` nginx&quot;</span> \ | sudo tee /etc/apt/sources.list.d/nginx.list</span><br><span class="line">```  </span><br><span class="line">上述命令将直接在`/etc/apt/sources.list.d`下新建`nginx`安装源</span><br><span class="line">```bash</span><br><span class="line">sudo curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -   <span class="comment">#添加nginx的key到系统</span></span><br><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure></p>
+<h3 id="因80端口被先安装的apache2占用，安装完启动会提示错误，"><a href="#因80端口被先安装的apache2占用，安装完启动会提示错误，" class="headerlink" title="因80端口被先安装的apache2占用，安装完启动会提示错误，"></a>因<code>80</code>端口被先安装的<code>apache2</code>占用，安装完启动会提示错误，</h3><p>修改<code>/etc/nginx/nginx/conf.d/default.conf</code>的默认端口<br>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/nginx/conf.d/default.conf</span><br></pre></td></tr></table></figure><br>修改：<code>listen 80 default_server;</code>为：<br><code>listen 8090 default_server;</code></p>
+<h3 id="修改nginx目录下nginx-conf"><a href="#修改nginx目录下nginx-conf" class="headerlink" title="修改nginx目录下nginx.conf"></a>修改<code>nginx</code>目录下<code>nginx.conf</code></h3><p>第二行<br><code>user  nginx;</code>改为：<br><code>user  www-data;</code><br>因为前面<code>apache2</code>的设置中<code>php7.4-fpm</code>的用户和用户组为<code>www-data</code>。<br>文件位于：<code>/etc/php/7.4/fpm/pool.d/www.conf</code>件中用户和用户组为<code>www-data</code>。   </p>
+<h2 id="（二）添加网站配置："><a href="#（二）添加网站配置：" class="headerlink" title="（二）添加网站配置："></a>（二）添加网站配置：</h2><p>拷贝一份配置到<code>conf.d</code>文件夹：<br>命令:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/nginx/nginx.conf /etc/nginx/conf.d/nginxsite1.conf</span><br></pre></td></tr></table></figure><br>修改<code>nginxsite1.conf</code>的配置：<br>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/nginx/conf.d/nginxsite1.conf</span><br></pre></td></tr></table></figure><br>删除全部内容，替换为以下内容：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">server</span> &#123;</span><br><span class="line">    <span class="string">listen</span>       <span class="number">8091</span><span class="string">;</span></span><br><span class="line">    <span class="string">server_name</span>  <span class="string">localhost;</span></span><br><span class="line">    <span class="comment">#charset koi8-r;</span></span><br><span class="line">    <span class="comment">#access_log  /var/log/nginx/host.access.log  main;</span></span><br><span class="line">    <span class="string">location</span> <span class="string">/</span> &#123;</span><br><span class="line">        <span class="string">root</span>   <span class="string">~/www/html/nginx-web;</span></span><br><span class="line">        <span class="string">index</span>  <span class="string">index.html</span> <span class="string">index.htm;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line">    <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="string">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  <span class="string">/50x.html;</span></span><br><span class="line">    <span class="string">location</span> <span class="string">=</span> <span class="string">/50x.html</span> &#123;</span><br><span class="line">        <span class="string">root</span>   <span class="string">/usr/share/nginx/html;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">    <span class="comment">#    proxy_pass   http://127.0.0.1;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="string">location</span> <span class="string">~</span> <span class="string">\.php$</span> &#123;</span><br><span class="line">        <span class="string">root</span>           <span class="string">~/www/html/nginx-web/;</span></span><br><span class="line">        <span class="string">fastcgi_index</span>  <span class="string">index.php;</span></span><br><span class="line">        <span class="string">fastcgi_param</span>  <span class="string">SCRIPT_FILENAME</span>  <span class="string">$document_root$fastcgi_script_name;</span></span><br><span class="line">        <span class="string">include</span>        <span class="string">fastcgi_params;</span></span><br><span class="line">    <span class="comment">#   # With php-fpm (or other unix sockets):</span></span><br><span class="line">        <span class="string">fastcgi_pass</span> <span class="string">unix:/run/php/php7.4-fpm.sock;</span>  </span><br><span class="line">    <span class="comment">#   # With php-cgi (or other tcp sockets):</span></span><br><span class="line">    <span class="comment">#    fastcgi_pass 127.0.0.1:9000;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># deny access to .htaccess files, if Apache&#x27;s document root</span></span><br><span class="line">    <span class="comment"># concurs with nginx&#x27;s one</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ /\.ht &#123;</span></span><br><span class="line">    <span class="comment">#    deny  all;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="（三）重启服务器"><a href="#（三）重启服务器" class="headerlink" title="（三）重启服务器"></a>（三）重启服务器</h2><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t <span class="comment">#测试配置是否正确</span></span><br><span class="line">sudosystemctl start/restart nginx  <span class="comment">#启动/重启服务器</span></span><br><span class="line">sudosystemctl stop/status nginx  <span class="comment">#停止服务器/查看服务器状态</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="测试Nginx安装结果"><a href="#测试Nginx安装结果" class="headerlink" title="测试Nginx安装结果"></a>测试<code>Nginx</code>安装结果</h3><p>打开浏览器，输入 ：<code>http://localhost:8090/index.nginx-debian.html</code><br>其中<code>index.nginx-debian.html</code>为<code>nginx</code>在<code>debian</code>的默认首页<br>出现：“<code>Welcome to nginx!</code>”则安装成功。</p>
+<h3 id="测试PHP网页"><a href="#测试PHP网页" class="headerlink" title="测试PHP网页"></a>测试<code>PHP</code>网页</h3><p>新建<code>php</code>网页，输入如下内容：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">phpinfo();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><br>保存并命名为：<code>info.php</code><br>打开浏览器，输入 ：<code>http://localhost:8091/info.php</code><br>出现<code>php</code>信息页面，则安装完成。</p>
+<h3 id="nginx加入到systemctl服务运行"><a href="#nginx加入到systemctl服务运行" class="headerlink" title="nginx加入到systemctl服务运行"></a><code>nginx</code>加入到<code>systemctl</code>服务运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /usr/lib/systemd/system/nginx.service</span><br></pre></td></tr></table></figure>
+<p>输入以下内容并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx</span><br><span class="line">After=network.target</span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">PIDFile=/etc/nginx/logs/nginx.pid</span><br><span class="line">ExecStart=/etc/nginx/sbin/nginx</span><br><span class="line">ExecReload=/etc/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=/etc/nginx/sbin/nginx -s stop</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><br>重新加载服务配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload  <span class="comment"># 重新加载服务配置文件</span></span><br><span class="line">sudo systemctl start/stop/reload nginx <span class="comment">#开启、停止、重新加载nginx</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="可能的一些情况"><a href="#可能的一些情况" class="headerlink" title="可能的一些情况"></a>可能的一些情况</h3><p>1、若因为因为安装源造成版本升级错误：<br>如出现：<code>dpkg-deb: 子进程 粘贴 被信号(断开的管道) 终止了 导致无法继续安装</code>,这个问题可以使用<code>dpkg</code>强制覆盖解决。<br>找到安装包位置 <code>cd /var/cache/apt/archives</code> 之后强制安装 <code>dpkg -i --force-overwrite xxx.deb</code>即可。<br>2、若出现打开<code>php</code>页面空白，请检查配置(<code>nginxsite1.conf</code>)中网站路径是否正确。<br>3、一些命令[在<code>nginx1.16.1</code>中未用到]<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /etc/nginx/sites-available/nginxsite1 /etc/nginx/sites-enabled/nginxsite1  <span class="comment">#建立软链接</span></span><br><span class="line">sudo dpkg --get-selections | grep nginx   // 查看剩余的与nginx相关的软件包</span><br><span class="line">sudo apt　--purge remove nginx           // 卸载nginx(不保留配置文件)</span><br><span class="line">sudo apt autoremove                     // 卸载自动安装的软件包</span><br><span class="line">sudo apt install net-tools               //安装网络配置工具</span><br><span class="line">sudo netstat -nlp |grep 端口号           //查询端口占用情况</span><br></pre></td></tr></table></figure></p>
+<p>更多内容参考：<a target="_blank" rel="noopener" href="http://nginx.org/en/linux_packages.html#Debian">Installation instructions for debian</a></p>
+<h1 id="三、安装PHP"><a href="#三、安装PHP" class="headerlink" title="三、安装PHP"></a>三、安装<code>PHP</code></h1><p><strong>安装首要条件</strong><br>使用<code>shell</code>访问权限登录<code>Debian10</code>系统，对于远程系统，使用<code>SSH</code>连接。<code>Windows</code>用户可以使用<code>Putty</code>或其他替代应用程序进行<code>SSH</code>连接。</p>
+<h2 id="（一）运行以下命令将当前包升级到最新版本。"><a href="#（一）运行以下命令将当前包升级到最新版本。" class="headerlink" title="（一）运行以下命令将当前包升级到最新版本。"></a>（一）运行以下命令将当前包升级到最新版本。</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br></pre></td></tr></table></figure>
+<h2 id="（二）在Debian10上设置PPA"><a href="#（二）在Debian10上设置PPA" class="headerlink" title="（二）在Debian10上设置PPA"></a>（二）在<code>Debian10</code>上设置<code>PPA</code></h2><p>分别执行以下命令，首先在系统上安装所需的软件包。然后导入包签名密钥。之后，为系统上的<code>PHP</code>包配置<code>PPA</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo apt -y install software-properties-common apt-transport-https lsb-release ca-certificates</span><br><span class="line">wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -</span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">&quot;deb https://packages.sury.org/php/ buster main&quot;</span> | tee /etc/apt/sources.list.d/php.list</span><br><span class="line">sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://mirror.xtom.com.hk/sury/php/apt.gpg</span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">&quot;deb https://mirror.xtom.com.hk/sury/php/ buster main&quot;</span> | tee /etc/apt/sources.list.d/php.list</span><br><span class="line">```  </span><br><span class="line">&#123;[若提示`tee: /etc/apt/sources.list.d/php.list: 权限不够`</span><br><span class="line">```yaml</span><br><span class="line">deb https://packages.sury.org/php/ buster main`</span><br><span class="line">deb https://mirror.xtom.com.hk/sury/php/ buster main</span><br></pre></td></tr></table></figure><br>可用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list.d/php.list</span><br></pre></td></tr></table></figure><br>手动创建添加<code>php安装源</code>：“<code>deb https://packages.sury.org/php/ buster main</code>”]}<br><code>Debian10</code>系统已经准备好安装<code>PHP</code>了。</p>
+<h2 id="（三）在Debian10上安装稳定版PHP7-4"><a href="#（三）在Debian10上安装稳定版PHP7-4" class="headerlink" title="（三）在Debian10上安装稳定版PHP7.4"></a>（三）在<code>Debian10</code>上安装稳定版<code>PHP7.4</code></h2><p>还可以在系统上安装稳定的<code>PHP</code>版本。运行以下命令在<code>Debian10</code>安装<code>php7.4</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install php7.4</span><br></pre></td></tr></table></figure><br>同时安装所需的<code>PHP</code>模块。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install php7.4-cli php7.4-common php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-mysql php7.4-xml</span><br></pre></td></tr></table></figure><br>安装后，使用以下命令验证已安装和运行的<code>PHP</code>版本<br>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -v</span><br></pre></td></tr></table></figure></p>
+<h2 id="（四）切换php版本为默认用于Apache和命令行（可多版本PHP共存）"><a href="#（四）切换php版本为默认用于Apache和命令行（可多版本PHP共存）" class="headerlink" title="（四）切换php版本为默认用于Apache和命令行（可多版本PHP共存）"></a>（四）切换<code>php</code>版本为默认用于<code>Apache</code>和命令行（可多版本<code>PHP</code>共存）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo a2dismod php7.3</span><br><span class="line">sudo a2enmod php7.4        <span class="comment">##以上两命令用于配置apache的一个模块,禁用/启用</span></span><br><span class="line">sudo update-alternatives --<span class="built_in">set</span> php /usr/bin/php7.4  <span class="comment">##该命令用于处理 Linux 系统中软件版本的切换</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>PHP</code>最新版<code>PHP8.1.0</code>已经于2021年11月25日发布，源安装可参照如上方法，注意对应版本号，其编译安装可参考：</strong><br><a href="../../../../2021/11/28/Debian11编译安装PHP8.1.0版/">Debian11编译安装PHP8.1.0版</a></p>
+<h2 id="（五）安装imagick"><a href="#（五）安装imagick" class="headerlink" title="（五）安装imagick"></a>（五）安装<code>imagick</code></h2><h3 id="1-依次运行以下命令"><a href="#1-依次运行以下命令" class="headerlink" title="1. 依次运行以下命令"></a>1. 依次运行以下命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install imagemagick</span><br><span class="line">sudo apt install libmagickcore-dev libmagickwand-dev     <span class="comment">##失效sudo apt install imagemagick-devel </span></span><br><span class="line">sudo apt install pkg-config</span><br><span class="line">sudo apt install php-pear </span><br><span class="line">sudo pecl channel-update pecl.php.net  <span class="comment">#更新pecl</span></span><br></pre></td></tr></table></figure>
+<p>安装<code>php-pear</code>是为了使用<code>pecl</code> 中的 <code>phpize</code><br><code>sudo apt install php7.4-dev</code></p>
+<h3 id="2-安装C语言编译器"><a href="#2-安装C语言编译器" class="headerlink" title="2. 安装C语言编译器"></a>2. 安装<code>C语言编译器</code></h3><p><code>sudo apt install gcc</code><br>如果装不了gcc就用这个命令：<br><code>sudo apt install gcc gcc- c++ autoconf automake</code></p>
+<h3 id="3-安装imagick"><a href="#3-安装imagick" class="headerlink" title="3. 安装imagick"></a>3. 安装<code>imagick</code></h3><p><code>sudo pecl install imagick</code></p>
+<h3 id="4-加载imagick到php"><a href="#4-加载imagick到php" class="headerlink" title="4. 加载imagick到php"></a>4. 加载<code>imagick</code>到<code>php</code></h3><p>在<code>/etc/php/7.4/apache2/php.ini</code> 加上<code>extension=imagick.so</code>  </p>
+<h3 id="5-重启service-httpd-restart"><a href="#5-重启service-httpd-restart" class="headerlink" title="5. 重启service httpd restart"></a>5. 重启<code>service httpd restart</code></h3><h3 id="6-查看安装结果"><a href="#6-查看安装结果" class="headerlink" title="6. 查看安装结果"></a>6. 查看安装结果</h3><p>使用 <code>phpinfo()</code> 或运行 <code>php -m | grep imagick</code> 来查看是否安装成功</p>
+<p>其他操作：<br>停止<code>PHP</code>：<code>sudo pkill php-fpm</code><br>查看<code>9000</code>端口：<code>netstat -lnt | grep 9000</code>  </p>
+<p>启动<code>PHP</code>：如果修改过配置文件，一定要重新加载配置文件才行<br><code>/usr/sbin/php-fpm7.4 -c /etc/php/7.4/apache2/php.ini</code><br>查看<code>9000</code>端口：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 9000</span><br><span class="line">tcp        0      0 127.0.0.1:9000              0.0.0.0:*                   LISTEN</span><br></pre></td></tr></table></figure></p>
+<p>参考网站：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/i6010/articles/10974575.html">linux下 安装 ImageMagick 及其 php imagick扩展</a><br>其他安装源：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.dotdeb.org/dotdeb.gpg</span><br><span class="line">sudo apt-key add dotdeb.gpg</span><br></pre></td></tr></table></figure><br>源：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">deb</span> <span class="string">http://packages.dotdeb.org</span> <span class="string">buster</span> <span class="string">all</span></span><br><span class="line"><span class="string">deb-src</span> <span class="string">http://packages.dotdeb.org</span> <span class="string">buster</span> <span class="string">all</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="四、在Debian-10上安装MariaDB"><a href="#四、在Debian-10上安装MariaDB" class="headerlink" title="四、在Debian 10上安装MariaDB"></a>四、在<code>Debian 10</code>上安装<code>MariaDB</code></h1><p><code>Apache Web</code>服务器启动并运行后，您需要安装数据库系统才能保留和管理您网站的数据。</p>
+<h2 id="（一）要安装MariaDB，请使用Debian的apt包管理器。"><a href="#（一）要安装MariaDB，请使用Debian的apt包管理器。" class="headerlink" title="（一）要安装MariaDB，请使用Debian的apt包管理器。"></a>（一）要安装<code>MariaDB</code>，请使用<code>Debian</code>的<code>apt</code>包管理器。</h2><p><code>sudo apt install mariadb-server</code></p>
+<h2 id="（二）安装MariaDB后，建议运行以下安全脚本，"><a href="#（二）安装MariaDB后，建议运行以下安全脚本，" class="headerlink" title="（二）安装MariaDB后，建议运行以下安全脚本，"></a>（二）安装<code>MariaDB</code>后，建议运行以下安全脚本，</h2><p>该脚本将删除一些不安全的默认设置并禁用对数据库系统的访问。<br>命令：<br><code>sudo mysql_secure_installation</code><br>上述安全脚本将引导您完成以下一系列问题，您可以在其中对<code>MariaDB</code>设置进行一些更改。<br>均选择：<code>y</code><br>若提示：<code>ERROR 1698 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39;</code><br>请用管理员权限重新运行上述命令。</p>
+<h2 id="（三）如果要创建名为wpDB的数据库和用户名和密码均为wpadmin且具有数据库完全权限的用户，请运行以下命令。"><a href="#（三）如果要创建名为wpDB的数据库和用户名和密码均为wpadmin且具有数据库完全权限的用户，请运行以下命令。" class="headerlink" title="（三）如果要创建名为wpDB的数据库和用户名和密码均为wpadmin且具有数据库完全权限的用户，请运行以下命令。"></a>（三）如果要创建名为<code>wpDB</code>的数据库和用户名和密码均为<code>wpadmin</code>且具有数据库完全权限的用户，请运行以下命令。</h2><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p××××××</span><br><span class="line">  MariaDB [(none)]&gt; CREATE DATABASE wpDB;</span><br><span class="line">  MariaDB [(none)]&gt; grant all on wpDB.* to <span class="string">&#x27;wpadmin&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;wpadmin&#x27;</span> with grant option;</span><br><span class="line">  MariaDB [(none)]&gt; FLUSH PRIVILEGES;</span><br><span class="line">  MariaDB [(none)]&gt; <span class="built_in">exit</span>;</span><br></pre></td></tr></table></figure><br>您可以通过使用用户凭据登录<code>MariaDB</code>来确认新用户是否具有数据库的完全权限，如下所示。<br>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -uwpadmin -pwpadmin</span><br><span class="line">  MariaDB [(none)]&gt; SHOW DATABASES;</span><br></pre></td></tr></table></figure></p>
+<h1 id="五、在windows下安装madiadb数据库zip版本"><a href="#五、在windows下安装madiadb数据库zip版本" class="headerlink" title="五、在windows下安装madiadb数据库zip版本"></a>五、在<code>windows</code>下安装<code>madiadb</code>数据库<code>zip</code>版本</h1><h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h2><p><a target="_blank" rel="noopener" href="https://mariadb.org/download/">mariadb下载地址：</a> 选择<code>windows</code>和<code>zip</code></p>
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2. 解压"></a>2. 解压</h2><p>比如：解压到<code>D:\mariadb</code>。</p>
+<h2 id="3-服务安装"><a href="#3-服务安装" class="headerlink" title="3. 服务安装"></a>3. 服务安装</h2><p>需要在<code>windows</code>中的安装一个名字为<code>MariaDB</code>的服务：<br>在<code>d盘</code>下新建一个<code>data</code>的文件夹。<br>用户管理员身份启动<code>powershell</code>。<br>键入如下命令：<br><code>D:\mariadb\bin&gt; .\mysql_install_db.exe --datadir=D:\data --service=MariaDB --password=123</code></p>
+<p>【<code>tip: --datadir= 如果指定不同的路径，配合my.ini文件设置不同的端口，即可以完成多个MariaDB的服务实例。</code>】<br>服务启动：<br>方法一：<code>win+R</code>—&gt;运行<code>services.msc</code>，然后在服务列表中找到<code>MariaDB</code>，点击运行。<br>方法二：在《管理员的<code>POWERSHELL</code>》中，运行<code>net start MariaDB</code><br>客户端接入：<br> <code>.\mariadb.exe -uroot -P3306 -p</code></p>
+<h2 id="4-注意：可以修改端口的方式："><a href="#4-注意：可以修改端口的方式：" class="headerlink" title="4. 注意：可以修改端口的方式："></a>4. 注意：可以修改端口的方式：</h2><p>在<code>D:\data\my.ini</code>文件中,加入<code>port=xxxx</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=D:/data</span><br><span class="line">port=3306</span><br><span class="line">[client]</span><br><span class="line">plugin-dir=D:/mariadb/lib/plugin</span><br></pre></td></tr></table></figure><br>作者：JohnYuCN<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/68aac1d2f304|">win10中MariaDB的zip压缩版的安装和使用（多服务实例）</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h1 id="六、安装wordpress"><a href="#六、安装wordpress" class="headerlink" title="六、安装wordpress"></a>六、安装<code>wordpress</code></h1><p>[需科学工具，否则打开网页可能会出现：<code>429 Too Many Requests</code>错误]</p>
+<h2 id="（一）下载"><a href="#（一）下载" class="headerlink" title="（一）下载"></a>（一）下载</h2><p><a target="_blank" rel="noopener" href="https://wordpress.org/latest.tar.gz">下载地址：</a><br>下载后解压到网站目录</p>
+<h2 id="（二）安装"><a href="#（二）安装" class="headerlink" title="（二）安装"></a>（二）安装</h2><p>在数据库中建立网站数据库，后面依照安装指引填写就可以了。<br>注意事项：<br>1、若安装为英文版后要切换中文版需要在：<code>wp-config.php</code>文件中添加以下内容：<br> 在设置中切换为中文<br><code>define(&#39;WPLANG&#39;,&#39;zh_CN&#39;);</code><br>取消切换为中文后升级后本地网站需要填写FTP信息提示<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">define(&quot;FS_METHOD&quot;,&quot;direct&quot;);</span></span><br><span class="line"><span class="string">define(&quot;FS_CHMOD_DIR&quot;,</span> <span class="number">0777</span><span class="string">);</span></span><br><span class="line"><span class="string">define(&quot;FS_CHMOD_FILE&quot;,</span> <span class="number">0777</span><span class="string">);</span></span><br></pre></td></tr></table></figure><br>2、升级中若出现无法写入目录文件，则需要对网站目录授权[<code>apache2</code>运行的<code>www-data</code>用户权限]：<br>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R www-data:www-data  网站目录名</span><br></pre></td></tr></table></figure><br>[授予该权限也能解决需要FTP信息的提示]<br>3、解决更新提示另一更新存在的问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u wpadmin -pwpadmin</span><br><span class="line">MariaDB [(none)]&gt; show databases</span><br><span class="line">MariaDB [(none)]&gt; use wpDB;</span><br><span class="line">MariaDB [wpDB]&gt; delete from wp_options <span class="built_in">where</span> option_name=<span class="string">&#x27;core_updater.lock&#x27;</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="（三）若更换端口需更改数据库中wp-options中的端口配置"><a href="#（三）若更换端口需更改数据库中wp-options中的端口配置" class="headerlink" title="（三）若更换端口需更改数据库中wp_options中的端口配置"></a>（三）若更换端口需更改数据库中<code>wp_options</code>中的端口配置</h2><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [wpDBtest]&gt; update wp_options <span class="built_in">set</span> option_value= <span class="string">&quot;http://localhost:8090/wordpress&quot;</span> <span class="built_in">where</span> option_name <span class="keyword">in</span>(<span class="string">&quot;siteurl&quot;</span>,<span class="string">&quot;home&quot;</span>);</span><br><span class="line">MariaDB [wpDBtest]&gt; select * from wp_options <span class="built_in">where</span> option_name <span class="keyword">in</span>(<span class="string">&quot;siteurl&quot;</span>,<span class="string">&quot;home&quot;</span>);  //查看修改情况</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\11\15\Mariadb10.6版本基本使用\" rel="bookmark">Mariadb10.6版本基本使用</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\11\28\Debian11编译安装PHP8.1.0版\" rel="bookmark">Debian11编译安装PHP8.1.0版</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\01\Access数据导出到MySQL\" rel="bookmark">Access数据导出到MySQL</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\11\05\Asp操作MsSQL数据库\" rel="bookmark">Asp操作MsSQL数据库</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\08\申请免费的MongoDB云数据库\" rel="bookmark">申请免费的MongoDB云数据库</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://owenyk.github.io/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/" title="在Debian上安装LANMP及在Win0下安装MariaDB的zip版本">https://owenyk.github.io/2020/11/15/在Debian上安装LANMP及在Win10下安装MariaDB的zip版本/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+              <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+              <a href="/tags/MariaDB/" rel="tag"># MariaDB</a>
+              <a href="/tags/Debian10/" rel="tag"># Debian10</a>
+              <a href="/tags/Apache2/" rel="tag"># Apache2</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/05/Aria2%E5%9C%A8window10%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/" rel="prev" title="Aria2在window10下的配置">
+                  <i class="fa fa-chevron-left"></i> Aria2在window10下的配置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/11/22/%E5%88%A0%E9%99%A4%E9%9D%9E%E6%96%87%E4%BB%B6%E5%A4%B9%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" rel="next" title="删除当前目录下非文件夹文件命令">
+                  删除当前目录下非文件夹文件命令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81MjMwNC8yODc4Mg=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">318k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; 
+var translateDelay = 0; 
+var cookieDomain = "https://kaisky.xyz/"; 
+var msgToTraditionalChinese = "繁体"; 
+var msgToSimplifiedChinese = "简体"; 
+var translateButtonId = "translateLink"; 
+translateInitilization();
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2020/11/15/%E5%9C%A8Debian%E4%B8%8A%E5%AE%89%E8%A3%85LANMP%E5%8F%8A%E5%9C%A8Win10%E4%B8%8B%E5%AE%89%E8%A3%85MariaDB%E7%9A%84zip%E7%89%88%E6%9C%AC/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '32px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="申请免费的MongoDB云数据库的一些记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="申请免费的MongoDB云数据库">
+<meta property="og:url" content="https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="K&#39;s Life">
+<meta property="og:description" content="申请免费的MongoDB云数据库的一些记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-1.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-1.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-2.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-3.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-4.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-5.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-5-1.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-6.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-2-7.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-mongosh.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-mongosh-1.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-python.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-python-1.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-navicat.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-navicat-插入数据.jpg">
+<meta property="og:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-navicat-查询数据.jpg">
+<meta property="article:published_time" content="2021-12-08T00:51:12.000Z">
+<meta property="article:modified_time" content="2021-12-14T06:39:35.381Z">
+<meta property="article:author" content="Kai">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Mongosh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://owenyk.github.io/pic/2021/12/MongoDB/MongoDB-1.jpg">
+
+
+<link rel="canonical" href="https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/","path":"2021/12/08/申请免费的MongoDB云数据库/","title":"申请免费的MongoDB云数据库"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>申请免费的MongoDB云数据库 | K's Life</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">K's Life</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">1、注册登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E9%80%89%E6%8B%A9%E5%B9%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">2、选择并配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E8%AE%BE%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B4%A6%E5%8F%B7%E5%92%8C%E5%AF%86%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">3、设置数据库账号和密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E8%AE%BE%E7%BD%AE%E8%BF%9B%E8%A1%8C%E7%99%BB%E5%BD%95%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E7%9A%84IP%E5%9C%B0%E5%9D%80"><span class="nav-number">4.</span> <span class="nav-text">4、设置进行登录数据库操作的IP地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E5%90%8E%E7%BB%AD%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">5、后续操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Mongosh%E5%9C%A8win10%E4%B8%8A%E8%BF%9E%E6%8E%A5%E5%92%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">5.1.</span> <span class="nav-text">(1)Mongosh在win10上连接和操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0%E7%99%BB%E5%BD%95%E3%80%81%E6%8F%92%E5%85%A5%E3%80%81%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.1.1.</span> <span class="nav-text">①登录、插入、查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1%E7%99%BB%E5%BD%95%E3%80%81%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.1.2.</span> <span class="nav-text">②登录、查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Mongosh%E5%9C%A8Debian11%E4%B8%8A%E8%BF%9E%E6%8E%A5%E5%92%8C%E6%93%8D%E4%BD%9C%E5%8F%82%E6%95%B0"><span class="nav-number">5.2.</span> <span class="nav-text">(2)Mongosh在Debian11上连接和操作参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A2%E4%BF%AE%E6%94%B9"><span class="nav-number">5.2.1.</span> <span class="nav-text">③修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BA%94%E7%94%A8%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9C"><span class="nav-number">5.3.</span> <span class="nav-text">(2)应用连接操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python%E8%BF%9E%E6%8E%A5%E5%9C%A8window10%E4%B8%8A%E6%93%8D%E4%BD%9C"><span class="nav-number">5.3.1.</span> <span class="nav-text">Python连接在window10上操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A0%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="nav-number">5.3.1.1.</span> <span class="nav-text">①安装模块：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1%E7%94%A8python%E6%93%8D%E4%BD%9Cmongodb%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">5.3.1.2.</span> <span class="nav-text">②用python操作mongodb数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python%E8%BF%9E%E6%8E%A5%E5%9C%A8Debian11%E4%B8%8A%E6%93%8D%E4%BD%9C"><span class="nav-number">5.3.1.3.</span> <span class="nav-text">Python连接在Debian11上操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.3.1.4.</span> <span class="nav-text">其他事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9C"><span class="nav-number">5.3.2.</span> <span class="nav-text">nodejs连接操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9D%97"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">安装支持模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nodejs%E8%BF%9E%E6%8E%A5%E5%B9%B6%E6%89%A7%E8%A1%8C%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.3.2.2.</span> <span class="nav-text">nodejs连接并执行查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Navicat%E8%BF%9E%E6%8E%A5%E5%92%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">5.4.</span> <span class="nav-text">(3)Navicat连接和操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BB%E5%BD%95"><span class="nav-number">5.4.1.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5"><span class="nav-number">5.4.2.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.4.3.</span> <span class="nav-text">查询</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kai</p>
+  <div class="site-description" itemprop="description">日常的一些记录，留作备忘！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+
+
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+            <h7 class="widget-title">Tag Cloud</h7>
+            <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="260" height="260" id="resCanvas" style="width=100%">
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access/" rel="tag">Access</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache2/" rel="tag">Apache2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt/" rel="tag">Apt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apt-key/" rel="tag">Apt-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aria2/" rel="tag">Aria2</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Asp/" rel="tag">Asp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Badblocks/" rel="tag">Badblocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Connector/" rel="tag">Connector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83/" rel="tag">C语言环境</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/" rel="tag">Debian</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian10/" rel="tag">Debian10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian11/" rel="tag">Debian11</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fedora/" rel="tag">Fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ffmpeg/" rel="tag">Ffmpeg</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flowchart/" rel="tag">Flowchart</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Genymotion/" rel="tag">Genymotion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gpg/" rel="tag">Gpg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grep/" rel="tag">Grep</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Iconv/" rel="tag">Iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MariaDB/" rel="tag">MariaDB</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongosh/" rel="tag">Mongosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MsSQL/" rel="tag">MsSQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nvm/" rel="tag">Nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Request/" rel="tag">Request</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Service/" rel="tag">Service</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smartmontools/" rel="tag">Smartmontools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smbshare/" rel="tag">Smbshare</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Statistics/" rel="tag">Statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText3/" rel="tag">SublimeText3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemctl/" rel="tag">Systemctl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TrackersList/" rel="tag">TrackersList</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UCanAccess/" rel="tag">UCanAccess</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ventoy/" rel="tag">Ventoy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WePE/" rel="tag">WePE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webdav/" rel="tag">Webdav</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows10/" rel="tag">Windows10</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wine/" rel="tag">Wine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xargs/" rel="tag">Xargs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-get/" rel="tag">You-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Youtube-dl/" rel="tag">Youtube-dl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gvfs/" rel="tag">gvfs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iconv/" rel="tag">iconv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mdbtools/" rel="tag">mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odbc-mdbtools/" rel="tag">odbc-mdbtools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/" rel="tag">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unixODBC/" rel="tag">unixODBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2/" rel="tag">公农历转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag">启动服务</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/" rel="tag">启动盘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BA%E4%BB%B6%E7%BC%BA%E5%A4%B1/" rel="tag">固件缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD/" rel="tag">备份</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" rel="tag">备份和恢复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/" rel="tag">字体缺失</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="tag">安卓模拟器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA/" rel="tag">数据导出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" rel="tag">文字识别</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag">设置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%91%BD%E5%90%8D/" rel="tag">重命名</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" rel="tag">错误解决</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">问题解决</a><span class="tag-list-count">2</span></li></ul>
+                </canvas>
+            </div>
+        </div>
+      
+      
+
+      
+
+
+      </div>
+
+      
+       <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>-->
+        
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+          <meting-js
+            server="netease"
+            type="playlist"
+            id="641900597" 
+            mini="false"
+            fixed="false"
+            list-folded="true"
+            autoplay="false"
+            volume="0.8"
+            theme="#95DA99"
+            order="random"
+            loop="all"
+            preload="auto"
+            mutex="true">
+          </meting-js> 
+       
+
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="K's Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          申请免费的MongoDB云数据库
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-08 08:51:12" itemprop="dateCreated datePublished" datetime="2021-12-08T08:51:12+08:00">2021-12-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-14 14:39:35" itemprop="dateModified" datetime="2021-12-14T14:39:35+08:00">2021-12-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/" itemprop="url" rel="index"><span itemprop="name">MongoDB</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" data-xid="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-meta-item leancloud_visitors" data-flag-title="申请免费的MongoDB云数据库" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>18 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">申请免费的MongoDB云数据库的一些记录</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="1、注册登录"><a href="#1、注册登录" class="headerlink" title="1、注册登录"></a>1、注册登录</h1><p>打开<a target="_blank" rel="noopener" href="https://cloud.mongodb.com">mongodb官网</a>并注册登录，免费的MongoDB云数据库有512MB大小。</p>
+<h1 id="2、选择并配置"><a href="#2、选择并配置" class="headerlink" title="2、选择并配置"></a>2、选择并配置</h1><p>在项目页面点击<code>Create a New Cluster</code>按钮<br>如图：<br><img src="/pic/2021/12/MongoDB/MongoDB-1.jpg" alt="MongoDB-1"></p>
+<p>可参照下图进行配置，如下列图示：<br><img src="/pic/2021/12/MongoDB/MongoDB-2.jpg" alt="MongoDB-2"><br><code>MongoDB</code>提供三种云存储方案，分别如下：<br><code>亚马逊</code><br><img src="/pic/2021/12/MongoDB/MongoDB-2-1.jpg" alt="MongoDB-2-1"><br><code>谷歌</code><br><img src="/pic/2021/12/MongoDB/MongoDB-2-2.jpg" alt="MongoDB-2-2"><br><code>微软</code><br><img src="/pic/2021/12/MongoDB/MongoDB-2-3.jpg" alt="MongoDB-2-3"><br>根据实际情况自己选择（本例选择<code>Google--&gt;taiwan</code>）</p>
+<p>点击<code>Create Cluster</code>即可.</p>
+<h1 id="3、设置数据库账号和密码"><a href="#3、设置数据库账号和密码" class="headerlink" title="3、设置数据库账号和密码"></a>3、设置<code>数据库账号</code>和<code>密码</code></h1><p>如下图：<br><img src="/pic/2021/12/MongoDB/MongoDB-2-4.jpg" alt="MongoDB-2-4"></p>
+<p>也可选选择<code>Certificate</code>，具体可参照提示执行。带证书的操作方式可参照[<code>Python</code>连接操作]中的<a href="#solve">问题解决</a>。</p>
+<h1 id="4、设置进行登录数据库操作的IP地址"><a href="#4、设置进行登录数据库操作的IP地址" class="headerlink" title="4、设置进行登录数据库操作的IP地址"></a>4、设置进行登录数据库操作的<code>IP地址</code></h1><p>点击红框所示，会自动添加本机<code>ip地址</code><br><img src="/pic/2021/12/MongoDB/MongoDB-2-5.jpg" alt="MongoDB-2-5"><br>若要设置任意<code>IP</code>可登录操作可设置为<code>0.0.0.0/0</code>,<code>Description</code>根据所好随便填写。<br><img src="/pic/2021/12/MongoDB/MongoDB-2-5-1.jpg" alt="MongoDB-2-5-1"></p>
+<h1 id="5、后续操作数据库"><a href="#5、后续操作数据库" class="headerlink" title="5、后续操作数据库"></a>5、后续操作数据库</h1><p>配置完成后，点击项目页面左侧的<code>Databases</code>，会出现配置上线的数据库。<br>可以点击右边<code>Connect</code>，根据提示选择相应的连接数据库方式。<br><img src="/pic/2021/12/MongoDB/MongoDB-2-6.jpg" alt="MongoDB-2-6"><br>比如<code>mongosh</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongosh <span class="string">&quot;mongodb+srv://主机地址/数据库名&quot;</span> --username 你的数据库用户名</span><br></pre></td></tr></table></figure><br><img src="/pic/2021/12/MongoDB/MongoDB-2-7.jpg" alt="MongoDB-2-7"></p>
+<p>各种方式连接如下列图：</p>
+<h2 id="1-Mongosh在win10上连接和操作"><a href="#1-Mongosh在win10上连接和操作" class="headerlink" title="(1)Mongosh在win10上连接和操作"></a>(1)<code>Mongosh</code>在<code>win10</code>上连接和操作</h2><h3 id="①登录、插入、查询"><a href="#①登录、插入、查询" class="headerlink" title="①登录、插入、查询"></a>①登录、插入、查询</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-mongosh.jpg" alt="MongoDB-mongosh"></p>
+<h3 id="②登录、查询"><a href="#②登录、查询" class="headerlink" title="②登录、查询"></a>②登录、查询</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-mongosh-1.jpg" alt="MongoDB-mongosh-1"></p>
+<h2 id="2-Mongosh在Debian11上连接和操作参数"><a href="#2-Mongosh在Debian11上连接和操作参数" class="headerlink" title="(2)Mongosh在Debian11上连接和操作参数"></a>(2)<code>Mongosh</code>在<code>Debian11</code>上连接和操作参数</h2><p>按<code>win10</code>系统的参数连接会报错：<code>pymongo.errors.ConfigurationError:The DNS operation timed out after XXXXX</code><br>解决参考方法如下【选择<code>pymongo</code>低版本连接参数】：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 mongosh</span></span><br><span class="line">wget -qO mongodb-mongosh.deb https://downloads.mongodb.com/compass/mongodb-mongosh_1.1.6_amd64.deb</span><br><span class="line">sudo dpkg -i mongodb-mongosh.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 登录</span></span><br><span class="line"></span><br><span class="line">$ mongosh <span class="string">&#x27;mongodb://主机00.mongodb.net:27017,主机01.mongodb.net:27017,主机02.mongodb.net:27017/数据库名称?ssl=true&amp;replicaSet=atlas-hkayl1-shard-0&amp;authSource=admin&amp;retryWrites=true&amp;w=majority&#x27;</span> --username 数据库用户名</span><br><span class="line">Enter password: *********</span><br><span class="line">Current Mongosh Log ID: XXXXXX</span><br><span class="line">Connecting to:   mongodb://主机00.mongodb.net:27017,主机01.mongodb.net:27017,主机02.mongodb.net:27017/数据库名称?ssl=<span class="literal">true</span>&amp;replicaSet=atlas-hkayl1-shard-0&amp;authSource=admin&amp;retryWrites=<span class="literal">true</span>&amp;w=majority</span><br><span class="line">Using MongoDB:      4.4.10</span><br><span class="line">Using Mongosh:      1.1.6</span><br></pre></td></tr></table></figure></p>
+<h3 id="③修改"><a href="#③修改" class="headerlink" title="③修改"></a>③修改</h3><p>命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.test.find()</span><br><span class="line">[</span><br><span class="line">  &#123; _id: 0, name: <span class="string">&#x27;zs&#x27;</span>, age: 39, high: 172 &#125;,</span><br><span class="line">  &#123; _id: 2, name: <span class="string">&#x27;ww&#x27;</span>, age: 32, high: 172 &#125;,</span><br><span class="line">  &#123; _id: 1, name: <span class="string">&#x27;ls&#x27;</span>, age: 29, high: 175 &#125;,</span><br><span class="line">  &#123; _id: 3, name: <span class="string">&#x27;赵六&#x27;</span>, age: 39, high: 175 &#125;,</span><br><span class="line">  &#123; _id: 5, name: <span class="string">&#x27;孙八&#x27;</span>, age: 19, high: 165 &#125;,</span><br><span class="line">  &#123; _id: 6, name: <span class="string">&#x27;周公&#x27;</span>, age: 38, high: 172 &#125;,</span><br><span class="line">  &#123; _id: 4, name: <span class="string">&#x27;钱七&#x27;</span>, age: 39, high: 172 &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    _id: 7,</span><br><span class="line">    name: <span class="string">&#x27;吴七&#x27;</span>,</span><br><span class="line">    age: 38,</span><br><span class="line">    high: 178,</span><br><span class="line">    comment: <span class="string">&#x27;更新于身高高于175的一条记录&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    _id: ObjectId(<span class="string">&quot;61b80df04e8e73c1813dada4&quot;</span>),</span><br><span class="line">    name: <span class="string">&#x27;重八&#x27;</span>,</span><br><span class="line">    age: 29,</span><br><span class="line">    high: 176</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    _id: ObjectId(<span class="string">&quot;61b80e014e8e73c1813dada5&quot;</span>),</span><br><span class="line">    name: <span class="string">&#x27;老九&#x27;</span>,</span><br><span class="line">    age: 32,</span><br><span class="line">    high: 169</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line">&gt; db.test.updateOne(&#123;_id:ObjectId(<span class="string">&quot;61b80e014e8e73c1813dada5&quot;</span>)&#125;,&#123;<span class="variable">$set</span>:&#123;high:168&#125;&#125;)</span><br><span class="line">&#123;</span><br><span class="line">  acknowledged: <span class="literal">true</span>,</span><br><span class="line">  insertedId: null,</span><br><span class="line">  matchedCount: 1,</span><br><span class="line">  modifiedCount: 1,</span><br><span class="line">  upsertedCount: 0</span><br><span class="line">&#125;</span><br><span class="line">&gt; db.test.find()</span><br><span class="line">[</span><br><span class="line">  &#123; _id: 0, name: <span class="string">&#x27;zs&#x27;</span>, age: 39, high: 172 &#125;,</span><br><span class="line">  &#123; _id: 2, name: <span class="string">&#x27;ww&#x27;</span>, age: 32, high: 172 &#125;,</span><br><span class="line">  &#123; _id: 1, name: <span class="string">&#x27;ls&#x27;</span>, age: 29, high: 175 &#125;,</span><br><span class="line">  &#123; _id: 3, name: <span class="string">&#x27;赵六&#x27;</span>, age: 39, high: 175 &#125;,</span><br><span class="line">  &#123; _id: 5, name: <span class="string">&#x27;孙八&#x27;</span>, age: 19, high: 165 &#125;,</span><br><span class="line">  &#123; _id: 6, name: <span class="string">&#x27;周公&#x27;</span>, age: 38, high: 172 &#125;,</span><br><span class="line">  &#123; _id: 4, name: <span class="string">&#x27;钱七&#x27;</span>, age: 39, high: 172 &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    _id: 7,</span><br><span class="line">    name: <span class="string">&#x27;吴七&#x27;</span>,</span><br><span class="line">    age: 38,</span><br><span class="line">    high: 178,</span><br><span class="line">    comment: <span class="string">&#x27;更新于身高高于175的一条记录&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    _id: ObjectId(<span class="string">&quot;61b80df04e8e73c1813dada4&quot;</span>),</span><br><span class="line">    name: <span class="string">&#x27;重八&#x27;</span>,</span><br><span class="line">    age: 29,</span><br><span class="line">    high: 176</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    _id: ObjectId(<span class="string">&quot;61b80e014e8e73c1813dada5&quot;</span>),</span><br><span class="line">    name: <span class="string">&#x27;老九&#x27;</span>,</span><br><span class="line">    age: 32,</span><br><span class="line">    high: 168</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-应用连接操作"><a href="#2-应用连接操作" class="headerlink" title="(2)应用连接操作"></a>(2)应用连接操作</h2><h3 id="Python连接在window10上操作"><a href="#Python连接在window10上操作" class="headerlink" title="Python连接在window10上操作"></a><code>Python</code>连接在<code>window10</code>上操作</h3><p><del>(但是实际测试不成功，一直报错)待解决。</del>  <font color='red'>已经解决</font>，参照：<a href="#solve">解决方式</a></p>
+<p><img src="/pic/2021/12/MongoDB/MongoDB-python.jpg" alt="MongoDB-python"><br><strong>以下<code>python</code>连接参数版本针对<code>python3.10</code>&amp;<code>pymongo-3.12.3</code></strong> 参考：<a href="#pymongo4">问题解决</a><br>查询<code>python</code>及<code>pymongo</code>版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python -V</span><br><span class="line">pip show pymongo</span><br></pre></td></tr></table></figure><br>版本驱动对应关系：<a target="_blank" rel="noopener" href="https://docs.mongodb.com/drivers/pymongo/">MongoDB Drivers</a></p>
+<h4 id="①安装模块："><a href="#①安装模块：" class="headerlink" title="①安装模块："></a>①安装模块：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install pymongo</span><br><span class="line">python -m pip install --upgrade pip</span><br><span class="line">python -m pip install <span class="string">&quot;pymongo[srv]&quot;</span></span><br><span class="line">python -m pip install <span class="string">&quot;pymongo[tls]&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="②用python操作mongodb数据库"><a href="#②用python操作mongodb数据库" class="headerlink" title="②用python操作mongodb数据库"></a>②用<code>python</code>操作<code>mongodb</code>数据库</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line"><span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</span><br><span class="line"><span class="comment"># import datetime</span></span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">host = <span class="string">&quot;主机地址&quot;</span></span><br><span class="line">user = <span class="string">&quot;数据库用户名&quot;</span></span><br><span class="line">passwd = <span class="string">&quot;数据库用户密码&quot;</span></span><br><span class="line">db_name = <span class="string">&quot;要操作的数据库名&quot;</span></span><br><span class="line">set_name = <span class="string">&quot;集合名&quot;</span></span><br><span class="line"></span><br><span class="line">uri = <span class="string">&#x27;mongodb+srv://&#x27;</span>+user+<span class="string">&#x27;:&#x27;</span>+passwd+<span class="string">&#x27;@&#x27;</span>+host+<span class="string">&#x27;/&#x27;</span>+db_name+<span class="string">&#x27;?retryWrites=true&amp;w=majority&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>: </span><br><span class="line">    client = MongoClient(uri, serverSelectionTimeoutMS=<span class="number">5000</span>)</span><br><span class="line">    <span class="built_in">print</span>(client)</span><br><span class="line">    <span class="built_in">print</span>(client.list_database_names())</span><br><span class="line">    <span class="comment"># dbs = client[&quot;要操作的数据库名&quot;]</span></span><br><span class="line">    <span class="comment"># mydbs = dbs[&quot;test&quot;]</span></span><br><span class="line">    <span class="comment"># print(&quot;集合名&quot;)</span></span><br><span class="line">    <span class="comment"># for mydb in mydbs.find():</span></span><br><span class="line">    <span class="comment">#     print(mydb)</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;连接失败：&quot;</span>,e)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    client.close()</span><br></pre></td></tr></table></figure>
+<p>但是报错如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">连接失败： 主机地址:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)以下省略。。。</span><br></pre></td></tr></table></figure></p>
+<p><a name="solve"></a></p>
+<p><strong>解决方式</strong>：<br>在文件头加上<code>import certifi, ssl</code>,在连接参数里面加上<code>ssl_cert_reqs=ssl.CERT_NONE</code>,代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</span><br><span class="line"><span class="comment"># import datetime</span></span><br><span class="line"><span class="keyword">import</span> certifi, ssl</span><br><span class="line"></span><br><span class="line"><span class="comment">########### </span></span><br><span class="line"><span class="comment"># 使用X.509证书连接</span></span><br><span class="line"><span class="comment">###########</span></span><br><span class="line"></span><br><span class="line">certPath = certifi.where().replace(<span class="string">&quot;\\&quot;</span>,<span class="string">&quot;/&quot;</span>)  <span class="comment"># 查询ssl证书路径，下面参数`ssl=True`时需要验证证书路径</span></span><br><span class="line">uri = <span class="string">&quot;mongodb+srv://主机地址/数据库名?authSource=%24external&amp;authMechanism=MONGODB-X509&amp;retryWrites=true&amp;w=majority&quot;</span></span><br><span class="line"><span class="comment">## 带ssl证书参数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;------要求ssl证书验证------&quot;</span>)</span><br><span class="line">client = MongoClient(uri,</span><br><span class="line">                     ssl=<span class="literal">True</span>,</span><br><span class="line">                     ssl_ca_certs=certPath,</span><br><span class="line">                     tls=<span class="literal">True</span>,</span><br><span class="line">                     tlsCertificateKeyFile=<span class="string">r&#x27;X509-cert-路径\证书名.pem&#x27;</span>)</span><br><span class="line"><span class="comment">## 不要求验证ssl证书</span></span><br><span class="line"><span class="comment"># print(&quot;------不要求ssl证书验证------&quot;)</span></span><br><span class="line"><span class="comment"># client = MongoClient(uri,</span></span><br><span class="line"><span class="comment">#                      ssl_cert_reqs=ssl.CERT_NONE,       </span></span><br><span class="line"><span class="comment">#                      tls=True,</span></span><br><span class="line"><span class="comment">#                      tlsCertificateKeyFile=r&#x27;X509-cert-路径\证书名.pem&#x27;)</span></span><br><span class="line"></span><br><span class="line">db = client[<span class="string">&#x27;要操作的数据库名&#x27;</span>]</span><br><span class="line">collection = db[<span class="string">&#x27;要操作的数据库下的数据集&#x27;</span>]</span><br><span class="line">doc_count = collection.count_documents(&#123;&#125;)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;在该数据集下共有：&quot;</span>,doc_count,<span class="string">&quot;条数据&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">########### </span></span><br><span class="line"><span class="comment"># 使用账号和密码连接</span></span><br><span class="line"><span class="comment">###########</span></span><br><span class="line"></span><br><span class="line">host = <span class="string">&quot;主机地址&quot;</span></span><br><span class="line">user = <span class="string">&quot;数据库用户名&quot;</span></span><br><span class="line">passwd = <span class="string">&quot;数据库用户密码&quot;</span></span><br><span class="line">db_name = <span class="string">&quot;要操作的数据库名&quot;</span></span><br><span class="line">set_name = <span class="string">&quot;集合名&quot;</span></span><br><span class="line"></span><br><span class="line">uri = <span class="string">&#x27;mongodb+srv://&#x27;</span>+user+<span class="string">&#x27;:&#x27;</span>+passwd+<span class="string">&#x27;@&#x27;</span>+host+<span class="string">&#x27;/&#x27;</span>+db_name+<span class="string">&#x27;?retryWrites=true&amp;w=majority&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment">## 设置连接超时5秒</span></span><br><span class="line">    <span class="comment">## 添加ssl证书路径参数，`print(certifi.where())`可输出ssl证书路径</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;------要求ssl证书验证------&quot;</span>)</span><br><span class="line">    client = MongoClient(uri, ssl_ca_certs= certPath, serverSelectionTimeoutMS=<span class="number">5000</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">## 不请求验证证书</span></span><br><span class="line">    <span class="comment">#print(&quot;------不要求ssl证书验证------&quot;)</span></span><br><span class="line">    <span class="comment"># client = MongoClient(uri, ssl_cert_reqs=ssl.CERT_NONE, serverSelectionTimeoutMS=5000)</span></span><br><span class="line">    <span class="comment"># print(client)</span></span><br><span class="line">    <span class="comment"># print(&quot;所存在的数据库有：&quot;, client.list_database_names())</span></span><br><span class="line">    dbs = client[<span class="string">&quot;数据库名&quot;</span>]</span><br><span class="line">    mydbs = dbs[<span class="string">&quot;数据集名&quot;</span>]</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;数据库连接成功&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> mydb <span class="keyword">in</span> mydbs.find():</span><br><span class="line">        <span class="built_in">print</span>(mydb)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;连接失败：&quot;</span>,e)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    client.close()</span><br></pre></td></tr></table></figure><br>最终结果如图：<br><img src="/pic/2021/12/MongoDB/MongoDB-python-1.jpg" alt="MongoDB-python-1"></p>
+<h4 id="Python连接在Debian11上操作"><a href="#Python连接在Debian11上操作" class="headerlink" title="Python连接在Debian11上操作"></a><code>Python</code>连接在<code>Debian11</code>上操作</h4><p>== python FOR debian==<br>按<code>win10</code>系统的参数连接会报错：<code>pymongo.errors.ConfigurationError:The DNS operation timed out after XXXXX</code><br>解决办法，更改驱动版本连接参数：<br><code>pymongo</code>驱动程序版本<code>3.4+</code>链接字符串【参数在<code>MongoDB网站</code>项目数据库连接选项里可查到】大体如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uri = <span class="string">&#x27;mongodb://数据库用户名:数据库用户密码@主机00.mongodb.net:27017,主机01.mongodb.net:27017,主机02.mongodb.net:27017/数据库名称?ssl=true&amp;replicaSet=atlas-hkayl1-shard-0&amp;authSource=admin&amp;retryWrites=true&amp;w=majority&#x27;</span></span><br><span class="line"><span class="comment"># print(uri)</span></span><br></pre></td></tr></table></figure><br><a name="pymongo4"></a></p>
+<h4 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h4><p>如果升级<code>pymongo</code>到最新4.0.1版本会提示：<code>mongoengine 0.23.1 requires pymongo&lt;4.0,&gt;=3.4, but you have pymongo 4.0.1 which is incompatible.</code><br>用<code>python</code>接数据库会提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">连接失败： Unknown option ssl_cert_reqs</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;XXXX.py&quot;</span>, line 79, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    client.close()</span><br><span class="line">NameError: name <span class="string">&#x27;client&#x27;</span> is not defined`</span><br></pre></td></tr></table></figure><br>将pymongo降级到3.12.3即可：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U pymongo==<span class="number">3.12</span><span class="number">.3</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="nodejs连接操作"><a href="#nodejs连接操作" class="headerlink" title="nodejs连接操作"></a><code>nodejs</code>连接操作</h3><h4 id="安装支持模块"><a href="#安装支持模块" class="headerlink" title="安装支持模块"></a>安装支持模块</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i mongodb</span><br></pre></td></tr></table></figure>
+<h4 id="nodejs连接并执行查询"><a href="#nodejs连接并执行查询" class="headerlink" title="nodejs连接并执行查询"></a><code>nodejs</code>连接并执行查询</h4><p>新建<code>node-conn.js</code>文件,代码内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接并查询</span></span><br><span class="line"><span class="keyword">const</span> mongoclient = <span class="built_in">require</span>(<span class="string">&quot;mongodb&quot;</span>).MongoClient;</span><br><span class="line"><span class="keyword">const</span> uri = <span class="string">&quot;mongodb+srv://数据库名:数据库用户密码@主机地址/数据库名?retryWrites=true&amp;w=majority&quot;</span>;</span><br><span class="line">mongoclient.connect(url, <span class="function"><span class="keyword">function</span> (<span class="params">err, client</span>) </span>&#123;</span><br><span class="line">    client.db(<span class="string">&quot;blog&quot;</span>).collection(<span class="string">&quot;test&quot;</span>).find(&#123;&#125;).toArray().then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        result.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value,index,arr</span>) </span>&#123;       </span><br><span class="line">            <span class="comment">// console.log(value); //第一个参数是 遍历数组的元素，</span></span><br><span class="line">            <span class="comment">// console.log(index); // 第二个参数是 元素的位置，</span></span><br><span class="line">            <span class="comment">// console.log(arr);  // 第三个参数是 整个数组的值。</span></span><br><span class="line">            <span class="built_in">console</span>.log(value._id,value.name,value.age,value.high,value.comment);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err.message);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>输入命令<code>node node-conn.js</code>执行查询，结果如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">node node-conn.js</span><br><span class="line">0 zs 39 172 undefined</span><br><span class="line">1 ls 29 175 undefined</span><br><span class="line">2 ww 32 172 undefined</span><br><span class="line">3 赵六 39 175 undefined</span><br><span class="line">4 钱七 39 172 undefined</span><br><span class="line">5 孙八 19 165 undefined</span><br><span class="line">6 周公 38 172 undefined</span><br><span class="line">7 吴七 38 178 更新于身高高于175的一条记录</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Navicat连接和操作"><a href="#3-Navicat连接和操作" class="headerlink" title="(3)Navicat连接和操作"></a>(3)<code>Navicat</code>连接和操作</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-navicat.jpg" alt="MongoDB-navicat"></p>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-navicat-插入数据.jpg" alt="MongoDB-navicat-插入数据"></p>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-navicat-查询数据.jpg" alt="MongoDB-navicat-查询数据"></p>
+<p>一些参考资料：<br>1、<a target="_blank" rel="noopener" href="https://docs.mongodb.com/drivers/pymongo/">MongoDB驱动程序的应用程序</a><br>2、<a target="_blank" rel="noopener" href="https://api.mongodb.com/python/3.4.0/examples/tls.html">TLS/SSL and PyMongo</a><br>3、<a target="_blank" rel="noopener" href="https://docs.mongodb.com/php-library/master/tutorial/install-php-library/">安装 MongoDB PHP 库</a><br>4、<a target="_blank" rel="noopener" href="https://docs.mongodb.com/drivers/php">驱动版本兼容性</a><br>5、<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/mongoose">mongoose模块</a><br>6、<a target="_blank" rel="noopener" href="https://docs.mongodb.com/drivers/node/current/quick-start/">node.js Quick Start</a><br>7、<a target="_blank" rel="noopener" href="https://pypi.org/project/pymongo/">pymongo 4.0.1</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\01\Access数据导出到MySQL\" rel="bookmark">Access数据导出到MySQL</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\11\05\Asp操作MsSQL数据库\" rel="bookmark">Asp操作MsSQL数据库</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\11\15\Mariadb10.6版本基本使用\" rel="bookmark">Mariadb10.6版本基本使用</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\11\15\在Debian上安装LANMP及在Win10下安装MariaDB的zip版本\" rel="bookmark">在Debian上安装LANMP及在Win0下安装MariaDB的zip版本</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\12\20\Debian11用Python3和JDBC操作ACCESS\" rel="bookmark">Debian11用Python3和JDBC操作ACCESS</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Kai
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" title="申请免费的MongoDB云数据库">https://owenyk.github.io/2021/12/08/申请免费的MongoDB云数据库/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Mongosh/" rel="tag"># Mongosh</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/12/03/%E5%9C%A8Windows10%E4%B8%8A%E9%85%8D%E7%BD%AEHexo+Github%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="在Windows10上配置Hexo+Github做个人博客">
+                  <i class="fa fa-chevron-left"></i> 在Windows10上配置Hexo+Github做个人博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85go%E7%8E%AF%E5%A2%83/" rel="next" title="在Debian11上安装go环境">
+                  在Debian11上安装go环境 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-utterances">utterances</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81MjMwNC8yODc4Mg=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">318k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; 
+var translateDelay = 0; 
+var cookieDomain = "https://kaisky.xyz/"; 
+var msgToTraditionalChinese = "繁体"; 
+var msgToSimplifiedChinese = "简体"; 
+var translateButtonId = "translateLink"; 
+translateInitilization();
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '32px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
