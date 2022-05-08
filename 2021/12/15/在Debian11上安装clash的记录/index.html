@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="在Debian11上安装clash的记录">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在Debian11上安装clash的记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Debian11上安装clash">
 <meta property="og:url" content="https://owenyk.github.io/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/index.html">
@@ -47,6 +47,7 @@
 
 
 
+
 <link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -54,7 +55,7 @@
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 <link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -89,12 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -269,11 +265,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="日常的一些记录，留作备忘！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="K's Life">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="在Debian11上安装clash | K's Life">
+      <meta itemprop="description" content="在Debian11上安装clash的记录">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -327,19 +328,11 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/" data-xid="/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    <a title="waline" href="/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  
-    <span id="/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="在Debian11上安装clash" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -347,7 +340,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -367,12 +360,12 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="安装go环境"><a href="#安装go环境" class="headerlink" title="安装go环境"></a>安装<code>go</code>环境</h1><p>参见<a href="../../../../2021/12/15/在Debian11上安装go环境/">在Debian11上安装go环境</a></p>
-<h1 id="为依赖包设置代理"><a href="#为依赖包设置代理" class="headerlink" title="为依赖包设置代理"></a>为依赖包设置代理</h1><p>终端窗口输入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其用Go Modules功能</span></span><br><span class="line">go env -w GO111MODULE=on</span><br><span class="line"><span class="comment"># 配置 GOPROXY 环境变量</span></span><br><span class="line">go env -w GOPROXY=https://goproxy.cn</span><br></pre></td></tr></table></figure></p>
+<h1 id="为依赖包设置代理"><a href="#为依赖包设置代理" class="headerlink" title="为依赖包设置代理"></a>为依赖包设置代理</h1><p>终端窗口输入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其用Go Modules功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"><span class="comment"># 配置 GOPROXY 环境变量</span></span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://goproxy.cn</span><br></pre></td></tr></table></figure></p>
 <h1 id="安装clash"><a href="#安装clash" class="headerlink" title="安装clash"></a>安装<code>clash</code></h1><p>终端窗口输入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go install github.com/Dreamacro/clash@latest</span><br></pre></td></tr></table></figure></p>
 <h1 id="修改clash配置"><a href="#修改clash配置" class="headerlink" title="修改clash配置"></a>修改<code>clash</code>配置</h1><p>默认配置目录是 <code>$HOME/.config/clash</code>，下载订阅配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O config.yaml https://你得到的订阅网址/Clash.yml</span><br></pre></td></tr></table></figure><br>配置文件的名称是<code>config.yaml</code>，如果要使用其他目录，可以使用 <code>-d</code> 控制配置目录。<br>例如，您可以使用当前目录作为配置目录，命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash -d .  <span class="comment"># 注意“.”</span></span><br></pre></td></tr></table></figure><br>在默认配置目录启动命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clash</span><br></pre></td></tr></table></figure></p>
 <h1 id="下载-mmdb"><a href="#下载-mmdb" class="headerlink" title="下载.mmdb"></a>下载<code>.mmdb</code></h1><p><code>Country.mmdb</code>为全球IP库，可以实现各个国家的IP信息解析和地理定位，没有这个文件<code>clash</code>是无法运行的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb</span><br></pre></td></tr></table></figure></p>
 <p>附<code>config.yaml</code>的<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml">订阅地址：</a></p>
-<h1 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h1><h2 id="移动clash到-usr-bin-文件夹下并赋予可执行权限"><a href="#移动clash到-usr-bin-文件夹下并赋予可执行权限" class="headerlink" title="移动clash到/usr/bin/文件夹下并赋予可执行权限"></a>移动<code>clash</code>到<code>/usr/bin/</code>文件夹下并赋予可执行权限</h2><p>也可以不移动，但是注意设置程序路径为<code>clash</code>所在路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv ~/gopath/bin/clash /usr/bin/</span><br><span class="line">sudo chmod +x /usr/bin/clash</span><br></pre></td></tr></table></figure></p>
+<h1 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h1><h2 id="移动clash到-usr-bin-文件夹下并赋予可执行权限"><a href="#移动clash到-usr-bin-文件夹下并赋予可执行权限" class="headerlink" title="移动clash到/usr/bin/文件夹下并赋予可执行权限"></a>移动<code>clash</code>到<code>/usr/bin/</code>文件夹下并赋予可执行权限</h2><p>也可以不移动，但是注意设置程序路径为<code>clash</code>所在路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mv</span> ~/gopath/bin/clash /usr/bin/</span><br><span class="line">sudo <span class="built_in">chmod</span> +x /usr/bin/clash</span><br></pre></td></tr></table></figure></p>
 <h2 id="创建clash-service文件"><a href="#创建clash-service文件" class="headerlink" title="创建clash@.service文件"></a>创建<code>clash@.service</code>文件</h2><p>在<code>/lib/systemd/system/</code>目录下创建<code>clash@.service</code>文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /lib/systemd/system/clash@.service</span><br></pre></td></tr></table></figure></p>
 <p>写入以下内容(不用修改)并保存:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=A rule based proxy in Go for %i.</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=%i</span><br><span class="line">Restart=on-abort</span><br><span class="line">ExecStart=/usr/bin/clash</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
 <h2 id="重新加载systemd模块"><a href="#重新加载systemd模块" class="headerlink" title="重新加载systemd模块"></a>重新加载<code>systemd</code>模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
@@ -386,24 +379,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\11\02\Debian11下Genymotion安装记录\" rel="bookmark">Debian11下Genymothion安装记录</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\10\06\Debian11下SMBShare安装\" rel="bookmark">Debian11下SMBShare安装</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\11\09\Debian11下Sublime Text 3配置C语言环境\" rel="bookmark">Debian11下SublimeText3配置C语言环境</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\12\20\Debian11用Python3和JDBC操作ACCESS\" rel="bookmark">Debian11用Python3和JDBC操作ACCESS</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\01\27\Debian11系统中用update-alternatives进行版本管理\" rel="bookmark">Debian11系统中用update-alternatives版本管理</a></div>
-    </li>
-  </ul>
 
 
     <footer class="post-footer">
@@ -460,7 +435,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane waline" id="comment-waline">
-              <div class="comments" id="waline-comments"></div>
+              <div class="comments" id="waline"></div>
             </div>
             <div class="tab-pane utterances" id="comment-utterances">
               <div class="comments utterances-container"></div>
@@ -490,13 +465,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">340k</span>
+    <span title="站点总字数">296k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:49</span>
+    <span title="站点阅读时长">10:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -564,16 +539,18 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"el":"#waline","comment":true,"path":"/2021/12/15/%E5%9C%A8Debian11%E4%B8%8A%E5%AE%89%E8%A3%85clash%E7%9A%84%E8%AE%B0%E5%BD%95/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
     NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
-</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {

@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="MariaDB&#x2F;MySQL数据库的增删改查及备份和恢复操作记录">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="MariaDB&#x2F;MySQL数据库的增删改查及备份和恢复操作记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MariaDB&amp;MySQL数据库的增删改查及备份和恢复">
 <meta property="og:url" content="https://owenyk.github.io/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/index.html">
@@ -48,6 +48,7 @@
 
 
 
+
 <link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -55,7 +56,7 @@
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 <link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -90,12 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -270,11 +266,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="日常的一些记录，留作备忘！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="K's Life">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MariaDB&MySQL数据库的增删改查及备份和恢复 | K's Life">
+      <meta itemprop="description" content="MariaDB/MySQL数据库的增删改查及备份和恢复操作记录">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -340,19 +341,11 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/" data-xid="/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/" itemprop="commentCount"></span>
+    <a title="waline" href="/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  
-    <span id="/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/" class="post-meta-item leancloud_visitors" data-flag-title="MariaDB&MySQL数据库的增删改查及备份和恢复" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -360,14 +353,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>19k</span>
+      <span>15k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>39 分钟</span>
+      <span>32 分钟</span>
     </span>
 </div>
 
@@ -404,7 +397,7 @@
 <h2 id="（2）锁表备份步骤："><a href="#（2）锁表备份步骤：" class="headerlink" title="（2）锁表备份步骤："></a>（2）锁表备份步骤：</h2><p>1)锁表并且给只读权限<br><code>flush tables with read lock;</code><br>2)滚动日志<br><code>flush logs;</code><br>3)查看二进制日志信息<br><code>show master status;</code><br>4)使用<code>mysqldump</code>进行数据备份<br><code>mysqldump --databases wpDBtest &gt;/tmp/wpDBtest.sql</code><br>5)备份完成之后则需解锁<br><code>unlock tables;</code><br>命令行备份实例如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -p --databases wpDBtest --lock-all-tables --flush-logs &gt;/tmp/testdb2.sql   </span><br><span class="line">mysqldump -p --databases wpDBtest --single-trasaction --flush-logs &gt;/tmp/testdb3.sql  </span><br><span class="line">mysqldump -p --databases wpDBtest --lock-all-tables --flush-logs --master-data=2 &gt;/tmp/testdb4.sql</span><br><span class="line">```  </span><br><span class="line"><span class="comment">## （3）查看恢复的数据</span></span><br><span class="line">```bash</span><br><span class="line">$ sudo mysql -uroot  //进入数据库`   </span><br><span class="line">$ use wpDBtest;   //选择查看数据库`  </span><br><span class="line">  MariaDB [wpDBtest]&gt; select * from wp_options <span class="built_in">where</span> option_name <span class="keyword">in</span>(<span class="string">&quot;siteurl&quot;</span>,<span class="string">&quot;home&quot;</span>); <span class="comment"># 查看恢复信息</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="（4）用二进制日志恢复命令："><a href="#（4）用二进制日志恢复命令：" class="headerlink" title="（4）用二进制日志恢复命令："></a>（4）用二进制日志恢复命令：</h2><h3 id="1》修改my-cnf配置文件-开启binlog"><a href="#1》修改my-cnf配置文件-开启binlog" class="headerlink" title="1》修改my.cnf配置文件,开启binlog"></a>1》修改<code>my.cnf</code>配置文件,开启<code>binlog</code></h3><p><code>$ sudo vim /etc/alternatives/my.cnf</code> //添加如下内容，开启<code>binlog</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">log_bin=mysql-bin</span><br><span class="line">binlog_format=ROW</span><br><span class="line">expire_logs_days=7 <span class="comment">#7天滚动</span></span><br><span class="line">max_binlog_size=100M <span class="comment">#每个日志最大100M</span></span><br><span class="line">binlog_cache_size=4M</span><br><span class="line">max_binlog_cache_size=256M <span class="comment">#binlog最大缓存</span></span><br></pre></td></tr></table></figure><br>添加完后重启。  </p>
 <h3 id="2》查看log-bin是否开启"><a href="#2》查看log-bin是否开启" class="headerlink" title="2》查看log_bin是否开启"></a>2》查看<code>log_bin</code>是否开启</h3><p><code>MariaDB [(none)]&gt;  show variables like &#39;log_bin&#39;;</code><br>查看二进制log<br><code>$ sudo mysqlbinlog --no-defaults /var/lib/mysql/mysql-bin.000001;</code><br><code>--no-defaults</code>避免出现字符问题错误<br>默认二进制文件存于<code>/var/lib/mysql/</code>下，文件名为一系列<code>mysql-bin.00000*</code>。  </p>
-<h3 id="3》测试过程"><a href="#3》测试过程" class="headerlink" title="3》测试过程"></a>3》测试过程</h3><p>1、创建测试数据库并新增表和记录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [wpDBtest]&gt; create database testDB;</span><br><span class="line">MariaDB [testDB]&gt; create table testtable (id int null, name varchar(255) null);</span><br><span class="line">MariaDB [(none)]&gt; <span class="built_in">source</span> ~/wpDBtest-re.sql</span><br><span class="line">MariaDB [testDB]&gt; insert into testtable values(1,<span class="string">&quot;xiaoming&quot;</span>);</span><br><span class="line">MariaDB [testDB]&gt; insert into testtable values(2,<span class="string">&quot;wang&quot;</span>);</span><br><span class="line">MariaDB [testDB]&gt; insert into testtable values(3,<span class="string">&quot;王&quot;</span>);</span><br></pre></td></tr></table></figure><br>2、删除一条测试数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [testDB]&gt; delete from testtable <span class="built_in">where</span> id =2;`</span><br><span class="line"><span class="comment">##MariaDB [testDB]&gt; delete from testtable;</span></span><br><span class="line">  <span class="comment">##Query OK, 5 rows affected (0.027 sec)</span></span><br></pre></td></tr></table></figure><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [testDB]&gt; select * from testtable;</span><br><span class="line">+------+----------+</span><br><span class="line">| id   | name     |</span><br><span class="line">+------+----------+</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">+------+----------+</span><br><span class="line">2 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.001 sec)</span><br></pre></td></tr></table></figure><br>3、导出二进制<code>log</code>为<code>sql</code>,<code>--database=testDB</code> 指定导出数据库<code>testDB</code>的数据<br><code>$ sudo  mysqlbinlog --no-defaults --database=testDB /var/lib/mysql/mysql-bin.000001&gt;~/testDB.sql;</code><br>4、进入<code>~/</code>文件夹，复制原数据并另存<code>testDB-re.sql</code><br><code>$ cp testDB.sql testDB-re.sql</code><br><code>$ sudo vim testDB-re.sql</code>  //打开<code>sql</code>文件，删除其中“<code>delete from testtable where id =2</code>”语句<br>5、进入<code>mariadb</code>，恢复数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [testDB]&gt; <span class="built_in">source</span> ~/testDB-re.sql</span><br><span class="line">MariaDB [testDB]&gt; select * from testtable;</span><br><span class="line">+------+----------+</span><br><span class="line">| id   | name     |</span><br><span class="line">+------+----------+</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    2 | wang     |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">+------+----------+</span><br><span class="line">5 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.001 sec)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3》测试过程"><a href="#3》测试过程" class="headerlink" title="3》测试过程"></a>3》测试过程</h3><p>1、创建测试数据库并新增表和记录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [wpDBtest]&gt; create database testDB;</span><br><span class="line">MariaDB [testDB]&gt; create table testtable (<span class="built_in">id</span> int null, name varchar(255) null);</span><br><span class="line">MariaDB [(none)]&gt; <span class="built_in">source</span> ~/wpDBtest-re.sql</span><br><span class="line">MariaDB [testDB]&gt; insert into testtable values(1,<span class="string">&quot;xiaoming&quot;</span>);</span><br><span class="line">MariaDB [testDB]&gt; insert into testtable values(2,<span class="string">&quot;wang&quot;</span>);</span><br><span class="line">MariaDB [testDB]&gt; insert into testtable values(3,<span class="string">&quot;王&quot;</span>);</span><br></pre></td></tr></table></figure><br>2、删除一条测试数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [testDB]&gt; delete from testtable <span class="built_in">where</span> <span class="built_in">id</span> =2;`</span><br><span class="line"><span class="comment">##MariaDB [testDB]&gt; delete from testtable;</span></span><br><span class="line">  <span class="comment">##Query OK, 5 rows affected (0.027 sec)</span></span><br></pre></td></tr></table></figure><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [testDB]&gt; select * from testtable;</span><br><span class="line">+------+----------+</span><br><span class="line">| <span class="built_in">id</span>   | name     |</span><br><span class="line">+------+----------+</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">+------+----------+</span><br><span class="line">2 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.001 sec)</span><br></pre></td></tr></table></figure><br>3、导出二进制<code>log</code>为<code>sql</code>,<code>--database=testDB</code> 指定导出数据库<code>testDB</code>的数据<br><code>$ sudo  mysqlbinlog --no-defaults --database=testDB /var/lib/mysql/mysql-bin.000001&gt;~/testDB.sql;</code><br>4、进入<code>~/</code>文件夹，复制原数据并另存<code>testDB-re.sql</code><br><code>$ cp testDB.sql testDB-re.sql</code><br><code>$ sudo vim testDB-re.sql</code>  //打开<code>sql</code>文件，删除其中“<code>delete from testtable where id =2</code>”语句<br>5、进入<code>mariadb</code>，恢复数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [testDB]&gt; <span class="built_in">source</span> ~/testDB-re.sql</span><br><span class="line">MariaDB [testDB]&gt; select * from testtable;</span><br><span class="line">+------+----------+</span><br><span class="line">| <span class="built_in">id</span>   | name     |</span><br><span class="line">+------+----------+</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    2 | wang     |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">+------+----------+</span><br><span class="line">5 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.001 sec)</span><br></pre></td></tr></table></figure></p>
 <p><strong><em><code>mysqldump</code>其他常用命令</em></strong><br>①备份多个数据库结构和数据(<code>--databases</code>或者<code>-B</code>)<br><code>$ mysqldump -uyk -p --databases study_test study_db &gt; /media/yk/文档1/Backup/Debian11_study_db_study_test_UTF8.dump</code>  </p>
 <p>②备份所有数据库结构(<code>-d</code>)<br><code>$ mysqldump -uyk -p -A-d &gt; /media/yk/文档1/Backup/Debian11_db.dump</code>  </p>
 <p>③备份所有数据库数据(<code>-t</code>)<br><code>$ mysqldump -uyk -p -A-t &gt; /media/yk/文档1/Backup/Debian11_db.dump</code><br>恢复<code>XXX.dump</code>见<a href="#div9">9、备份与恢复数据库</a>  </p>
@@ -419,24 +412,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\12\01\Access数据导出到MySQL\" rel="bookmark">Access数据导出到MySQL</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2019\12\29\Debian10备份与恢复MariaDB数据库\" rel="bookmark">Debian10备份与恢复MariaDB数据库</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\11\28\Debian11编译安装PHP8.1.0版\" rel="bookmark">Debian11编译安装PHP8.1.0版</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\11\15\Mariadb10.6版本基本使用\" rel="bookmark">Mariadb10.6版本基本使用</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\11\15\在Debian上安装LANMP及在Win10下安装MariaDB的zip版本\" rel="bookmark">在Debian上安装LANMP及在Win0下安装MariaDB的zip版本</a></div>
-    </li>
-  </ul>
 
 
     <footer class="post-footer">
@@ -494,7 +469,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane waline" id="comment-waline">
-              <div class="comments" id="waline-comments"></div>
+              <div class="comments" id="waline"></div>
             </div>
             <div class="tab-pane utterances" id="comment-utterances">
               <div class="comments utterances-container"></div>
@@ -524,13 +499,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">340k</span>
+    <span title="站点总字数">296k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:49</span>
+    <span title="站点阅读时长">10:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -598,16 +573,18 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"el":"#waline","comment":true,"path":"/2021/08/17/MariaDB&MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%94%B9%E3%80%81%E6%9F%A5%E3%80%81%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
     NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
-</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {

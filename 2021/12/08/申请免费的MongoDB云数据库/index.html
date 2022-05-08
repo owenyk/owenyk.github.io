@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="申请免费的MongoDB云数据库的一些记录">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="申请免费的MongoDB云数据库的一些记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="申请免费的MongoDB云数据库">
 <meta property="og:url" content="https://owenyk.github.io/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
@@ -66,6 +66,7 @@
 
 
 
+
 <link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -73,7 +74,7 @@
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 <link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -108,12 +109,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -288,11 +284,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="日常的一些记录，留作备忘！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="K's Life">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="申请免费的MongoDB云数据库 | K's Life">
+      <meta itemprop="description" content="申请免费的MongoDB云数据库的一些记录">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -346,19 +347,11 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" data-xid="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="commentCount"></span>
+    <a title="waline" href="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  
-    <span id="/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-meta-item leancloud_visitors" data-flag-title="申请免费的MongoDB云数据库" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -366,14 +359,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>8.9k</span>
+      <span>7.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>18 分钟</span>
+      <span>16 分钟</span>
     </span>
 </div>
 
@@ -408,7 +401,7 @@
 <h4 id="Python连接在Debian11上操作"><a href="#Python连接在Debian11上操作" class="headerlink" title="Python连接在Debian11上操作"></a><code>Python</code>连接在<code>Debian11</code>上操作</h4><p>== python FOR debian==<br>按<code>win10</code>系统的参数连接会报错：<code>pymongo.errors.ConfigurationError:The DNS operation timed out after XXXXX</code><br>解决办法，更改驱动版本连接参数：<br><code>pymongo</code>驱动程序版本<code>3.4+</code>链接字符串【参数在<code>MongoDB网站</code>项目数据库连接选项里可查到】大体如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uri = <span class="string">&#x27;mongodb://数据库用户名:数据库用户密码@主机00.mongodb.net:27017,主机01.mongodb.net:27017,主机02.mongodb.net:27017/数据库名称?ssl=true&amp;replicaSet=atlas-hkayl1-shard-0&amp;authSource=admin&amp;retryWrites=true&amp;w=majority&#x27;</span></span><br><span class="line"><span class="comment"># print(uri)</span></span><br></pre></td></tr></table></figure><br><a name="pymongo4"></a></p>
 <h4 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h4><p>如果升级<code>pymongo</code>到最新4.0.1版本会提示：<code>mongoengine 0.23.1 requires pymongo&lt;4.0,&gt;=3.4, but you have pymongo 4.0.1 which is incompatible.</code><br>用<code>python</code>接数据库会提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">连接失败： Unknown option ssl_cert_reqs</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;XXXX.py&quot;</span>, line 79, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    client.close()</span><br><span class="line">NameError: name <span class="string">&#x27;client&#x27;</span> is not defined`</span><br></pre></td></tr></table></figure><br>将pymongo降级到3.12.3即可：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U pymongo==<span class="number">3.12</span><span class="number">.3</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="nodejs连接操作"><a href="#nodejs连接操作" class="headerlink" title="nodejs连接操作"></a><code>nodejs</code>连接操作</h3><h4 id="安装支持模块"><a href="#安装支持模块" class="headerlink" title="安装支持模块"></a>安装支持模块</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i mongodb</span><br></pre></td></tr></table></figure>
-<h4 id="nodejs连接并执行查询"><a href="#nodejs连接并执行查询" class="headerlink" title="nodejs连接并执行查询"></a><code>nodejs</code>连接并执行查询</h4><p>新建<code>node-conn.js</code>文件,代码内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接并查询</span></span><br><span class="line"><span class="keyword">const</span> mongoclient = <span class="built_in">require</span>(<span class="string">&quot;mongodb&quot;</span>).MongoClient;</span><br><span class="line"><span class="keyword">const</span> uri = <span class="string">&quot;mongodb+srv://数据库名:数据库用户密码@主机地址/数据库名?retryWrites=true&amp;w=majority&quot;</span>;</span><br><span class="line">mongoclient.connect(url, <span class="function"><span class="keyword">function</span> (<span class="params">err, client</span>) </span>&#123;</span><br><span class="line">    client.db(<span class="string">&quot;blog&quot;</span>).collection(<span class="string">&quot;test&quot;</span>).find(&#123;&#125;).toArray().then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        result.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value,index,arr</span>) </span>&#123;       </span><br><span class="line">            <span class="comment">// console.log(value); //第一个参数是 遍历数组的元素，</span></span><br><span class="line">            <span class="comment">// console.log(index); // 第二个参数是 元素的位置，</span></span><br><span class="line">            <span class="comment">// console.log(arr);  // 第三个参数是 整个数组的值。</span></span><br><span class="line">            <span class="built_in">console</span>.log(value._id,value.name,value.age,value.high,value.comment);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err.message);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>输入命令<code>node node-conn.js</code>执行查询，结果如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">node node-conn.js</span><br><span class="line">0 zs 39 172 undefined</span><br><span class="line">1 ls 29 175 undefined</span><br><span class="line">2 ww 32 172 undefined</span><br><span class="line">3 赵六 39 175 undefined</span><br><span class="line">4 钱七 39 172 undefined</span><br><span class="line">5 孙八 19 165 undefined</span><br><span class="line">6 周公 38 172 undefined</span><br><span class="line">7 吴七 38 178 更新于身高高于175的一条记录</span><br></pre></td></tr></table></figure></p>
+<h4 id="nodejs连接并执行查询"><a href="#nodejs连接并执行查询" class="headerlink" title="nodejs连接并执行查询"></a><code>nodejs</code>连接并执行查询</h4><p>新建<code>node-conn.js</code>文件,代码内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接并查询</span></span><br><span class="line"><span class="keyword">const</span> mongoclient = <span class="built_in">require</span>(<span class="string">&quot;mongodb&quot;</span>).<span class="property">MongoClient</span>;</span><br><span class="line"><span class="keyword">const</span> uri = <span class="string">&quot;mongodb+srv://数据库名:数据库用户密码@主机地址/数据库名?retryWrites=true&amp;w=majority&quot;</span>;</span><br><span class="line">mongoclient.<span class="title function_">connect</span>(url, <span class="keyword">function</span> (<span class="params">err, client</span>) &#123;</span><br><span class="line">    client.<span class="title function_">db</span>(<span class="string">&quot;blog&quot;</span>).<span class="title function_">collection</span>(<span class="string">&quot;test&quot;</span>).<span class="title function_">find</span>(&#123;&#125;).<span class="title function_">toArray</span>().<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">        result.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">value,index,arr</span>) &#123;       </span><br><span class="line">            <span class="comment">// console.log(value); //第一个参数是 遍历数组的元素，</span></span><br><span class="line">            <span class="comment">// console.log(index); // 第二个参数是 元素的位置，</span></span><br><span class="line">            <span class="comment">// console.log(arr);  // 第三个参数是 整个数组的值。</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(value.<span class="property">_id</span>,value.<span class="property">name</span>,value.<span class="property">age</span>,value.<span class="property">high</span>,value.<span class="property">comment</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;, <span class="keyword">function</span> (<span class="params">err</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>输入命令<code>node node-conn.js</code>执行查询，结果如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">node node-conn.js</span><br><span class="line">0 zs 39 172 undefined</span><br><span class="line">1 <span class="built_in">ls</span> 29 175 undefined</span><br><span class="line">2 ww 32 172 undefined</span><br><span class="line">3 赵六 39 175 undefined</span><br><span class="line">4 钱七 39 172 undefined</span><br><span class="line">5 孙八 19 165 undefined</span><br><span class="line">6 周公 38 172 undefined</span><br><span class="line">7 吴七 38 178 更新于身高高于175的一条记录</span><br></pre></td></tr></table></figure></p>
 <h2 id="3-Navicat连接和操作"><a href="#3-Navicat连接和操作" class="headerlink" title="(3)Navicat连接和操作"></a>(3)<code>Navicat</code>连接和操作</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-navicat.jpg" alt="MongoDB-navicat"></p>
 <h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-navicat-插入数据.jpg" alt="MongoDB-navicat-插入数据"></p>
 <h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p><img src="/pic/2021/12/MongoDB/MongoDB-navicat-查询数据.jpg" alt="MongoDB-navicat-查询数据"></p>
@@ -420,24 +413,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\12\01\Access数据导出到MySQL\" rel="bookmark">Access数据导出到MySQL</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\11\05\Asp操作MsSQL数据库\" rel="bookmark">Asp操作MsSQL数据库</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\11\15\Mariadb10.6版本基本使用\" rel="bookmark">Mariadb10.6版本基本使用</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\11\15\在Debian上安装LANMP及在Win10下安装MariaDB的zip版本\" rel="bookmark">在Debian上安装LANMP及在Win0下安装MariaDB的zip版本</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\12\20\Debian11用Python3和JDBC操作ACCESS\" rel="bookmark">Debian11用Python3和JDBC操作ACCESS</a></div>
-    </li>
-  </ul>
 
 
     <footer class="post-footer">
@@ -495,7 +470,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane waline" id="comment-waline">
-              <div class="comments" id="waline-comments"></div>
+              <div class="comments" id="waline"></div>
             </div>
             <div class="tab-pane utterances" id="comment-utterances">
               <div class="comments utterances-container"></div>
@@ -525,13 +500,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">340k</span>
+    <span title="站点总字数">296k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:49</span>
+    <span title="站点阅读时长">10:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -599,16 +574,18 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"el":"#waline","comment":true,"path":"/2021/12/08/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E7%9A%84MongoDB%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
     NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
-</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {

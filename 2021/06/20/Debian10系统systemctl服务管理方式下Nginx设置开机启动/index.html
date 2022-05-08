@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Debian10系统systemctl服务管理方式下Nginx设置开机启动的一些操作记录">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Debian10系统systemctl服务管理方式下Nginx设置开机启动的一些操作记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Debian10系统systemctl服务管理方式下Nginx设置开机启动">
 <meta property="og:url" content="https://owenyk.github.io/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/index.html">
@@ -32,8 +32,8 @@
 <meta property="article:author" content="Kai">
 <meta property="article:tag" content="Debian">
 <meta property="article:tag" content="Nginx">
-<meta property="article:tag" content="Systemctl">
 <meta property="article:tag" content="启动服务">
+<meta property="article:tag" content="Systemctl">
 <meta name="twitter:card" content="summary">
 
 
@@ -49,6 +49,7 @@
 
 
 
+
 <link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -56,7 +57,7 @@
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 <link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -91,12 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -271,11 +267,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="日常的一些记录，留作备忘！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="K's Life">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Debian10系统systemctl服务管理方式下Nginx设置开机启动 | K's Life">
+      <meta itemprop="description" content="Debian10系统systemctl服务管理方式下Nginx设置开机启动的一些操作记录">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -333,19 +334,11 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" data-xid="/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" itemprop="commentCount"></span>
+    <a title="waline" href="/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  
-    <span id="/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" class="post-meta-item leancloud_visitors" data-flag-title="Debian10系统systemctl服务管理方式下Nginx设置开机启动" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -353,7 +346,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -373,8 +366,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>linux服务目前主要有service和systemctl两种管理方式，systemd是Linux系统最新的初始化系统(init),作用是提高系统的启动速度，尽可能启动较少的进程，尽可能更多进程并发启动，对应的进程管理命令是systemctl。  </p>
-<h1 id="1-建立服务文件"><a href="#1-建立服务文件" class="headerlink" title="1. 建立服务文件"></a>1. 建立服务文件</h1><p>命令 <code>sudo vim /usr/lib/systemd/system/nginx.service</code>，进入文件，将以下代码复制进去保存即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx  </span><br><span class="line">After=network.target  </span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/<span class="built_in">local</span>/nginx/sbin/nginx</span><br><span class="line">ExecReload=/bin/<span class="built_in">kill</span> -s reload</span><br><span class="line">ExecStop=/bin/<span class="built_in">kill</span> -s stop</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><br>参数说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]:服务的说明</span><br><span class="line">Description=:描述服务</span><br><span class="line">After=:描述服务类别</span><br><span class="line"></span><br><span class="line">[Service]服务运行参数的设置</span><br><span class="line">Type=forking是后台运行的形式</span><br><span class="line">ExecStart=为服务的具体运行命令所在路径</span><br><span class="line">ExecReload=为重启命令</span><br><span class="line">ExecStop=为停止命令</span><br><span class="line">PrivateTmp=True表示给服务分配独立的临时空间</span><br><span class="line">注意：启动、重启、停止命令全部要求使用绝对路径</span><br><span class="line"></span><br><span class="line">[Install]服务安装的相关设置，可设置为多用户</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
-<h1 id="2-设置文件权限并使文件生效"><a href="#2-设置文件权限并使文件生效" class="headerlink" title="2. 设置文件权限并使文件生效"></a>2. 设置文件权限并使文件生效</h1><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 755 /usr/lib/systemd/system/nginx.service</span><br><span class="line">sudo systemctl daemon-reload</span><br></pre></td></tr></table></figure></p>
+<h1 id="1-建立服务文件"><a href="#1-建立服务文件" class="headerlink" title="1. 建立服务文件"></a>1. 建立服务文件</h1><p>命令 <code>sudo vim /usr/lib/systemd/system/nginx.service</code>，进入文件，将以下代码复制进去保存即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx  </span><br><span class="line">After=network.target  </span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/nginx/sbin/nginx</span><br><span class="line">ExecReload=/bin/kill -s reload</span><br><span class="line">ExecStop=/bin/kill -s stop</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><br>参数说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]:服务的说明</span><br><span class="line">Description=:描述服务</span><br><span class="line">After=:描述服务类别</span><br><span class="line"></span><br><span class="line">[Service]服务运行参数的设置</span><br><span class="line">Type=forking是后台运行的形式</span><br><span class="line">ExecStart=为服务的具体运行命令所在路径</span><br><span class="line">ExecReload=为重启命令</span><br><span class="line">ExecStop=为停止命令</span><br><span class="line">PrivateTmp=True表示给服务分配独立的临时空间</span><br><span class="line">注意：启动、重启、停止命令全部要求使用绝对路径</span><br><span class="line"></span><br><span class="line">[Install]服务安装的相关设置，可设置为多用户</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-设置文件权限并使文件生效"><a href="#2-设置文件权限并使文件生效" class="headerlink" title="2. 设置文件权限并使文件生效"></a>2. 设置文件权限并使文件生效</h1><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 755 /usr/lib/systemd/system/nginx.service</span><br><span class="line">sudo systemctl daemon-reload</span><br></pre></td></tr></table></figure></p>
 <h1 id="3-设置开机启动"><a href="#3-设置开机启动" class="headerlink" title="3.设置开机启动"></a>3.设置开机启动</h1><p>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> nginx.service</span><br></pre></td></tr></table></figure><br>只有返回类似 <code>Created symlink from /etc/systemd/system/multi-user.target.wants/nginx.service → /etc/systemd/system/nginx.service</code>提示才能够确定设置成功。如果不是请检查上面的文件.  </p>
 <h1 id="4-其他命令"><a href="#4-其他命令" class="headerlink" title="4. 其他命令"></a>4. 其他命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">systemctl is-enabled *.service <span class="comment">#查询服务是否开机启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> *.service <span class="comment">#开机运行服务</span></span><br><span class="line">systemctl <span class="built_in">disable</span> *.service <span class="comment">#取消开机运行</span></span><br><span class="line">systemctl start *.service <span class="comment">#启动服务</span></span><br><span class="line">systemctl stop *.service <span class="comment">#停止服务</span></span><br><span class="line">systemctl restart *.service <span class="comment">#重启服务</span></span><br><span class="line">systemctl reload *.service <span class="comment">#重新加载服务配置文件</span></span><br><span class="line">systemctl status *.service <span class="comment">#查询服务运行状态</span></span><br><span class="line">systemctl --failed <span class="comment">#显示启动失败的服务</span></span><br></pre></td></tr></table></figure>
 <p><code>*</code>指所设置的程序名称 比如：<code>nginx.service</code>   </p>
@@ -387,24 +380,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\06\21\Linux系统service服务管理方式下Nginx设置开机启动\" rel="bookmark">Linux系统service服务管理方式下Nginx设置开机启动</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\06\22\systemctl管理方式下设置aria2开机启动\" rel="bookmark">systemctl管理方式下设置aria2开机启动</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\08\25\Aria2在Debian11下的配置\" rel="bookmark">Aria2在Debian11下的配置</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2019\12\29\Debian10备份与恢复MariaDB数据库\" rel="bookmark">Debian10备份与恢复MariaDB数据库</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\01\01\Debian更新源时出现签名无法进行验证\" rel="bookmark">Debian更新源时出现签名无法进行验证</a></div>
-    </li>
-  </ul>
 
 
     <footer class="post-footer">
@@ -428,8 +403,8 @@
           <div class="post-tags">
               <a href="/tags/Debian/" rel="tag"># Debian</a>
               <a href="/tags/Nginx/" rel="tag"># Nginx</a>
-              <a href="/tags/Systemctl/" rel="tag"># Systemctl</a>
               <a href="/tags/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/" rel="tag"># 启动服务</a>
+              <a href="/tags/Systemctl/" rel="tag"># Systemctl</a>
           </div>
 
         
@@ -463,7 +438,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane waline" id="comment-waline">
-              <div class="comments" id="waline-comments"></div>
+              <div class="comments" id="waline"></div>
             </div>
             <div class="tab-pane utterances" id="comment-utterances">
               <div class="comments utterances-container"></div>
@@ -493,13 +468,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">340k</span>
+    <span title="站点总字数">296k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:49</span>
+    <span title="站点阅读时长">10:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -567,16 +542,18 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"el":"#waline","comment":true,"path":"/2021/06/20/Debian10%E7%B3%BB%E7%BB%9Fsystemctl%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%8BNginx%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
     NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
-</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {

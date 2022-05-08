@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="记录下Debian11编译安装升级Python310">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="记录下Debian11编译安装升级Python310">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Debian11编译安装升级Python310">
 <meta property="og:url" content="https://owenyk.github.io/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/index.html">
@@ -47,6 +47,7 @@
 
 
 
+
 <link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -54,7 +55,7 @@
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 <link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -89,12 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -269,11 +265,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="日常的一些记录，留作备忘！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="K's Life">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Debian11编译安装升级Python310 | K's Life">
+      <meta itemprop="description" content="记录下Debian11编译安装升级Python310">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -331,19 +332,11 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/" data-xid="/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/" itemprop="commentCount"></span>
+    <a title="waline" href="/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  
-    <span id="/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/" class="post-meta-item leancloud_visitors" data-flag-title="Debian11编译安装升级Python310" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -351,14 +344,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.4k</span>
+      <span>3.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -374,9 +367,9 @@
 <h1 id="2、下载并解压python310"><a href="#2、下载并解压python310" class="headerlink" title="2、下载并解压python310"></a>2、下载并解压python310</h1><h2 id="①下载"><a href="#①下载" class="headerlink" title="①下载"></a>①下载</h2><p><a target="_blank" rel="noopener" href="https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tar.xz">Python3.10.0 XZ compressed source tarball下载网址</a></p>
 <h2 id="②解压并编译安装"><a href="#②解压并编译安装" class="headerlink" title="②解压并编译安装"></a>②解压并编译安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ xz -dk Python-3.10.0.tar.xz  // -k保留原压缩包</span><br><span class="line">$ tar -xvf Python-3.10.0.tar</span><br><span class="line">$ <span class="built_in">cd</span> Python-3.10.0</span><br><span class="line">$ ./configure --enable-optimizations</span><br><span class="line">$ sudo make &amp;&amp; sudo make altinstall </span><br></pre></td></tr></table></figure>
 <p><code>--enable-optimizations 启用优化</code><br><code>// 注意，这里要用sudo，把python3.9安装到了/usr/local/lib下面，可执行文件在/usr/local/bin下面。</code><br><code>// 如果不用altinstall，就会安装到/usr/bin/下面，可能会直接覆盖系统原来的文件。</code><br>在当前最新的<code>python3.10</code>版中，用<code>make install</code>也是会安装在<code>/usr/local/bin/</code>下。</p>
-<h1 id="3、update-alternatives版本管理"><a href="#3、update-alternatives版本管理" class="headerlink" title="3、update-alternatives版本管理"></a>3、<code>update-alternatives</code>版本管理</h1><h2 id="①为系统自带python2-7创建软连接"><a href="#①为系统自带python2-7创建软连接" class="headerlink" title="①为系统自带python2.7创建软连接"></a>①为系统自带python2.7创建软连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">```  </span><br><span class="line">`// --install 选项使用了多个参数用于创建符号链接。`</span><br><span class="line"></span><br><span class="line">`update-alternatives`: 使用 /usr/bin/python2.7 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">```bash</span><br><span class="line">$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.9 2</span><br><span class="line">update-alternatives: 使用 /usr/bin/python3.9 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ whereis python3.10</span><br><span class="line">python3: /usr/bin/python3.9 /usr/bin/python3 /usr/lib/python3.9 /usr/lib/python3 /etc/python3.9 /etc/python3 /usr/<span class="built_in">local</span>/bin/python3 /usr/<span class="built_in">local</span>/bin/python3.10-config /usr/<span class="built_in">local</span>/bin/python3.10 /usr/<span class="built_in">local</span>/lib/python3.9 /usr/<span class="built_in">local</span>/lib/python3.10 /usr/share/python3 /usr/share/man/man1/python3.1.gz</span><br><span class="line">$ sudo update-alternatives --install /usr/bin/python python /usr/<span class="built_in">local</span>/bin/python3.10 3</span><br><span class="line">update-alternatives: 使用 /usr/<span class="built_in">local</span>/bin/python3.10 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ sudo update-alternatives --list python</span><br><span class="line">/usr/bin/python2.7</span><br><span class="line">/usr/bin/python3.9</span><br><span class="line">/usr/<span class="built_in">local</span>/bin/python3.10</span><br><span class="line">$ sudo update-alternatives --config python</span><br><span class="line">有 3 个候选项可用于替换 python (提供 /usr/bin/python)。</span><br><span class="line"></span><br><span class="line">  选择       路径                     优先级  状态</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">* 0            /usr/<span class="built_in">local</span>/bin/python3.10   3         自动模式</span><br><span class="line">  1            /usr/bin/python2.7          1         手动模式</span><br><span class="line">  2            /usr/bin/python3.9          2         手动模式</span><br><span class="line">  3            /usr/<span class="built_in">local</span>/bin/python3.10   3         手动模式</span><br><span class="line"></span><br><span class="line">要维持当前值[*]请按&lt;回车键&gt;，或者键入选择的编号：</span><br></pre></td></tr></table></figure>
-<h2 id="②以下为切换3-9及切换为3-10实例："><a href="#②以下为切换3-9及切换为3-10实例：" class="headerlink" title="②以下为切换3.9及切换为3.10实例："></a>②以下为切换3.9及切换为3.10实例：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --config python</span><br><span class="line">有 3 个候选项可用于替换 python (提供 /usr/bin/python)。</span><br><span class="line"></span><br><span class="line">  选择       路径                     优先级  状态</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">* 0            /usr/<span class="built_in">local</span>/bin/python3.10   3         自动模式</span><br><span class="line">  1            /usr/bin/python2.7          1         手动模式</span><br><span class="line">  2            /usr/bin/python3.9          2         手动模式</span><br><span class="line">  3            /usr/<span class="built_in">local</span>/bin/python3.10   3         手动模式</span><br><span class="line"></span><br><span class="line">要维持当前值[*]请按&lt;回车键&gt;，或者键入选择的编号：2</span><br><span class="line">update-alternatives: 使用 /usr/bin/python3.9 来在手动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ python</span><br><span class="line">Python 3.9.2 (default, Feb 28 2021, 17:03:44) </span><br><span class="line">[GCC 10.2.1 20210110] on linux</span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line">[6]+  已停止               python</span><br><span class="line">$ sudo update-alternatives --config python</span><br><span class="line">有 3 个候选项可用于替换 python (提供 /usr/bin/python)。</span><br><span class="line"></span><br><span class="line">  选择       路径                     优先级  状态</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">  0            /usr/<span class="built_in">local</span>/bin/python3.10   3         自动模式</span><br><span class="line">  1            /usr/bin/python2.7          1         手动模式</span><br><span class="line">* 2            /usr/bin/python3.9          2         手动模式</span><br><span class="line">  3            /usr/<span class="built_in">local</span>/bin/python3.10   3         手动模式</span><br><span class="line"></span><br><span class="line">要维持当前值[*]请按&lt;回车键&gt;，或者键入选择的编号：0</span><br><span class="line">update-alternatives: 使用 /usr/<span class="built_in">local</span>/bin/python3.10 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ python</span><br><span class="line">Python 3.10.0 (default, Oct 17 2021, 10:46:43) [GCC 10.2.1 20210110] on linux</span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; ^Z</span><br><span class="line">[7]+  已停止               python</span><br><span class="line"></span><br><span class="line">$ sudo vim pip</span><br><span class="line">	修改：<span class="comment">#!/usr/local/bin/python2.7</span></span><br><span class="line">	为： <span class="comment">#!/usr/local/bin/python3.10</span></span><br><span class="line">$ pip -V</span><br><span class="line">pip 21.3 from /home/yk/.<span class="built_in">local</span>/lib/python3.10/site-packages/pip (python 3.10)</span><br></pre></td></tr></table></figure>
-<h2 id="③其他命令"><a href="#③其他命令" class="headerlink" title="③其他命令"></a>③其他命令</h2><h3 id="更换pip源"><a href="#更换pip源" class="headerlink" title="更换pip源"></a>更换pip源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/.pip</span><br><span class="line">$ vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
+<h1 id="3、update-alternatives版本管理"><a href="#3、update-alternatives版本管理" class="headerlink" title="3、update-alternatives版本管理"></a>3、<code>update-alternatives</code>版本管理</h1><h2 id="①为系统自带python2-7创建软连接"><a href="#①为系统自带python2-7创建软连接" class="headerlink" title="①为系统自带python2.7创建软连接"></a>①为系统自带python2.7创建软连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">```  </span><br><span class="line">`// --install 选项使用了多个参数用于创建符号链接。`</span><br><span class="line"></span><br><span class="line">`update-alternatives`: 使用 /usr/bin/python2.7 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">```bash</span><br><span class="line">$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.9 2</span><br><span class="line">update-alternatives: 使用 /usr/bin/python3.9 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ whereis python3.10</span><br><span class="line">python3: /usr/bin/python3.9 /usr/bin/python3 /usr/lib/python3.9 /usr/lib/python3 /etc/python3.9 /etc/python3 /usr/local/bin/python3 /usr/local/bin/python3.10-config /usr/local/bin/python3.10 /usr/local/lib/python3.9 /usr/local/lib/python3.10 /usr/share/python3 /usr/share/man/man1/python3.1.gz</span><br><span class="line">$ sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 3</span><br><span class="line">update-alternatives: 使用 /usr/local/bin/python3.10 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ sudo update-alternatives --list python</span><br><span class="line">/usr/bin/python2.7</span><br><span class="line">/usr/bin/python3.9</span><br><span class="line">/usr/local/bin/python3.10</span><br><span class="line">$ sudo update-alternatives --config python</span><br><span class="line">有 3 个候选项可用于替换 python (提供 /usr/bin/python)。</span><br><span class="line"></span><br><span class="line">  选择       路径                     优先级  状态</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">* 0            /usr/local/bin/python3.10   3         自动模式</span><br><span class="line">  1            /usr/bin/python2.7          1         手动模式</span><br><span class="line">  2            /usr/bin/python3.9          2         手动模式</span><br><span class="line">  3            /usr/local/bin/python3.10   3         手动模式</span><br><span class="line"></span><br><span class="line">要维持当前值[*]请按&lt;回车键&gt;，或者键入选择的编号：</span><br></pre></td></tr></table></figure>
+<h2 id="②以下为切换3-9及切换为3-10实例："><a href="#②以下为切换3-9及切换为3-10实例：" class="headerlink" title="②以下为切换3.9及切换为3.10实例："></a>②以下为切换3.9及切换为3.10实例：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --config python</span><br><span class="line">有 3 个候选项可用于替换 python (提供 /usr/bin/python)。</span><br><span class="line"></span><br><span class="line">  选择       路径                     优先级  状态</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">* 0            /usr/local/bin/python3.10   3         自动模式</span><br><span class="line">  1            /usr/bin/python2.7          1         手动模式</span><br><span class="line">  2            /usr/bin/python3.9          2         手动模式</span><br><span class="line">  3            /usr/local/bin/python3.10   3         手动模式</span><br><span class="line"></span><br><span class="line">要维持当前值[*]请按&lt;回车键&gt;，或者键入选择的编号：2</span><br><span class="line">update-alternatives: 使用 /usr/bin/python3.9 来在手动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ python</span><br><span class="line">Python 3.9.2 (default, Feb 28 2021, 17:03:44) </span><br><span class="line">[GCC 10.2.1 20210110] on linux</span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line">[6]+  已停止               python</span><br><span class="line">$ sudo update-alternatives --config python</span><br><span class="line">有 3 个候选项可用于替换 python (提供 /usr/bin/python)。</span><br><span class="line"></span><br><span class="line">  选择       路径                     优先级  状态</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">  0            /usr/local/bin/python3.10   3         自动模式</span><br><span class="line">  1            /usr/bin/python2.7          1         手动模式</span><br><span class="line">* 2            /usr/bin/python3.9          2         手动模式</span><br><span class="line">  3            /usr/local/bin/python3.10   3         手动模式</span><br><span class="line"></span><br><span class="line">要维持当前值[*]请按&lt;回车键&gt;，或者键入选择的编号：0</span><br><span class="line">update-alternatives: 使用 /usr/local/bin/python3.10 来在自动模式中提供 /usr/bin/python (python)</span><br><span class="line">$ python</span><br><span class="line">Python 3.10.0 (default, Oct 17 2021, 10:46:43) [GCC 10.2.1 20210110] on linux</span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; ^Z</span><br><span class="line">[7]+  已停止               python</span><br><span class="line"></span><br><span class="line">$ sudo vim pip</span><br><span class="line">	修改：<span class="comment">#!/usr/local/bin/python2.7</span></span><br><span class="line">	为： <span class="comment">#!/usr/local/bin/python3.10</span></span><br><span class="line">$ pip -V</span><br><span class="line">pip 21.3 from /home/yk/.local/lib/python3.10/site-packages/pip (python 3.10)</span><br></pre></td></tr></table></figure>
+<h2 id="③其他命令"><a href="#③其他命令" class="headerlink" title="③其他命令"></a>③其他命令</h2><h3 id="更换pip源"><a href="#更换pip源" class="headerlink" title="更换pip源"></a>更换pip源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> ~/.pip</span><br><span class="line">$ vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
 <p>添加如下内容：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host = pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure></p>
 <p>临时使用安装源命令： <code>pip install wheel -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
 <h3 id="移除版本命令"><a href="#移除版本命令" class="headerlink" title="移除版本命令"></a>移除版本命令</h3><p><code>sudo update-alternatives --remove python /usr/bin/python2.7</code></p>
@@ -389,24 +382,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\12\20\Debian11用Python3和JDBC操作ACCESS\" rel="bookmark">Debian11用Python3和JDBC操作ACCESS</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\11\02\Debian11下Genymotion安装记录\" rel="bookmark">Debian11下Genymothion安装记录</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\10\06\Debian11下SMBShare安装\" rel="bookmark">Debian11下SMBShare安装</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\11\09\Debian11下Sublime Text 3配置C语言环境\" rel="bookmark">Debian11下SublimeText3配置C语言环境</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\01\27\Debian11系统中用update-alternatives进行版本管理\" rel="bookmark">Debian11系统中用update-alternatives版本管理</a></div>
-    </li>
-  </ul>
 
 
     <footer class="post-footer">
@@ -463,7 +438,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane waline" id="comment-waline">
-              <div class="comments" id="waline-comments"></div>
+              <div class="comments" id="waline"></div>
             </div>
             <div class="tab-pane utterances" id="comment-utterances">
               <div class="comments utterances-container"></div>
@@ -493,13 +468,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">340k</span>
+    <span title="站点总字数">296k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:49</span>
+    <span title="站点阅读时长">10:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -567,16 +542,18 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"el":"#waline","comment":true,"path":"/2021/10/10/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7Python310/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
     NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
-</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {

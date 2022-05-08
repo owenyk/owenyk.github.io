@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="debian11安装wine">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="debian11安装wine">
 <meta property="og:type" content="article">
 <meta property="og:title" content="debian11安装wine">
 <meta property="og:url" content="https://owenyk.github.io/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/index.html">
@@ -46,6 +46,7 @@
 
 
 
+
 <link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -53,7 +54,7 @@
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 <link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -88,12 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -268,11 +264,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="日常的一些记录，留作备忘！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="K's Life">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="debian11安装wine | K's Life">
+      <meta itemprop="description" content="debian11安装wine">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -330,19 +331,11 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/" data-xid="/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/" itemprop="commentCount"></span>
+    <a title="waline" href="/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  
-    <span id="/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/" class="post-meta-item leancloud_visitors" data-flag-title="debian11安装wine" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -350,14 +343,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.6k</span>
+      <span>4.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>10 分钟</span>
+      <span>9 分钟</span>
     </span>
 </div>
 
@@ -375,14 +368,14 @@
 <h1 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winecfg</span><br></pre></td></tr></table></figure>
 <h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine uninstaller</span><br></pre></td></tr></table></figure>
 <p>附注：卸载<code>wine</code>则用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt --purge autoremove --install-recommends winehq-stable</span><br></pre></td></tr></table></figure></p>
-<h1 id="安装微信"><a href="#安装微信" class="headerlink" title="安装微信"></a>安装微信</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir Wine</span><br><span class="line"><span class="built_in">cd</span> Wine</span><br></pre></td></tr></table></figure>
+<h1 id="安装微信"><a href="#安装微信" class="headerlink" title="安装微信"></a>安装微信</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> Wine</span><br><span class="line"><span class="built_in">cd</span> Wine</span><br></pre></td></tr></table></figure>
 <p>初始化<code>wine bottle config</code></p>
 <p><strong>以下<code>/path/to</code></strong>即为用户目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WINARCH=win32 WINEPREFIX=/path/to/Wine/WeChat winecfg</span><br></pre></td></tr></table></figure>
 <h2 id="通过winetricks添加依赖项目"><a href="#通过winetricks添加依赖项目" class="headerlink" title="通过winetricks添加依赖项目"></a>通过<code>winetricks</code>添加依赖项目</h2><h3 id="安装winetricks的gui界面"><a href="#安装winetricks的gui界面" class="headerlink" title="安装winetricks的gui界面"></a>安装<code>winetricks</code>的<code>gui界面</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zenity</span><br><span class="line"><span class="comment"># 配置微信数据目录</span></span><br><span class="line">WINARCH=win32 WINEPREFIX=/path/to/Wine/WeChat winetricks</span><br></pre></td></tr></table></figure>
 <p>选择默认的<code>Wine容器</code> -&gt; <code>OK</code> -&gt; <code>安装Windows DLL组件</code> -&gt;<code>OK</code> -&gt; <code>勾选riched20.dll（以及riched32.dll）</code>-&gt; <code>OK</code> -&gt; <code>等待安装即可</code>。</p>
 <h3 id="安装微信-1"><a href="#安装微信-1" class="headerlink" title="安装微信"></a>安装微信</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WINARCH=win32 WINEPREFIX=/path/to/Wine/WeChat wine WeChatSetup.exe</span><br></pre></td></tr></table></figure>
-<h1 id="解决输入框文字输入问题"><a href="#解决输入框文字输入问题" class="headerlink" title="解决输入框文字输入问题"></a>解决输入框文字输入问题</h1><h2 id="安装winetricks"><a href="#安装winetricks" class="headerlink" title="安装winetricks"></a>安装<code>winetricks</code></h2><p><a target="_blank" rel="noopener" href="https://packages.debian.org/bullseye/winetricks">下载地址：</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i <span class="string">&quot;winetricks_0.0+20210206-2_all.deb&quot;</span></span><br><span class="line">winetricks riched20</span><br><span class="line">cat: /tmp/winetricks.nTVgvhUR/stdout.tmp: 没有那个文件或目录</span><br><span class="line">rm: 无法删除 <span class="string">&#x27;/tmp/winetricks.nTVgvhUR/stdout.tmp&#x27;</span>: 没有那个文件或目录</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: Github 提供的下载？ 似乎不是个有效的版本号。</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Executing mkdir -p /path/to</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: You are using a 64-bit WINEPREFIX. Note that many verbs only install 32-bit versions of packages. If you encounter problems, please retest <span class="keyword">in</span> a clean 32-bit WINEPREFIX before reporting a bug.</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Using winetricks 20210206-next - sha256sum: 7cc2f1a44854b8449270cb46890d6cf3c9dff190ac40729ae4eb817b290df8f5 with wine-6.0.1 and WINEARCH=win64</span><br><span class="line">Executing w_do_call riched20</span><br><span class="line">Executing mkdir -p /path/to</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: You are using a 64-bit WINEPREFIX. Note that many verbs only install 32-bit versions of packages. If you encounter problems, please retest <span class="keyword">in</span> a clean 32-bit WINEPREFIX before reporting a bug.</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Executing load_riched20 </span><br><span class="line">Executing mkdir -p /path/to/.cache/winetricks/win2ksp4</span><br><span class="line">Executing <span class="built_in">cd</span> /path/to/.cache/winetricks/win2ksp4</span><br><span class="line">Downloading http://x3270.bgp.nu/download/specials/W2KSP4_EN.EXE to /path/to/.cache/winetricks/win2ksp4</span><br><span class="line"></span><br><span class="line">09/22 18:31:09 [NOTICE] Downloading 1 item(s)</span><br><span class="line">[<span class="comment">#fcb5f1 127MiB/129MiB(98%) CN:1 DL:10MiB]               </span></span><br><span class="line">09/22 18:31:23 [NOTICE] 下载已完成：/path/to/.cache/winetricks/win2ksp4/W2KSP4_EN.EXE</span><br><span class="line"></span><br><span class="line">下载结果：</span><br><span class="line">gid   |<span class="built_in">stat</span>|avg speed  |path/URI</span><br><span class="line">======+====+===========+=======================================================</span><br><span class="line">fcb5f1|OK  |   9.6MiB/s|/path/to/.cache/winetricks/win2ksp4/W2KSP4_EN.EXE</span><br><span class="line"></span><br><span class="line">状态标识：</span><br><span class="line">(OK)：下载已完成。</span><br><span class="line">Executing <span class="built_in">cd</span> /path/to/下载/winetricks</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: Cannot find cabextract.  Please install it (e.g. <span class="string">&#x27;sudo apt-get install cabextract&#x27;</span> or <span class="string">&#x27;sudo yum install cabextract&#x27;</span>).</span><br><span class="line">------------------------------------------------------</span><br></pre></td></tr></table></figure><br>按照提示输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cabextract</span><br></pre></td></tr></table></figure><br>如果下载不成功，可以多试几次，也可以直接下载以上两个文件：<br>1、<a target="_blank" rel="noopener" href="http://x3270.bgp.nu/download/specials/W2KSP4_EN.EXE]">W2KSP4_EN.EXE</a><br>2、<a target="_blank" rel="noopener" href="https://web.archive.org/web/2000/https://ftp.hp.com/pub/softlib/software/msi/InstMsiW.exe">InstMsiW.exe</a><br>放到<code>/path/to/.cache/winetricks/win2ksp4/</code>和<code>/path/to/.cache/winetricks/msls31/</code>路径下</p>
+<h1 id="解决输入框文字输入问题"><a href="#解决输入框文字输入问题" class="headerlink" title="解决输入框文字输入问题"></a>解决输入框文字输入问题</h1><h2 id="安装winetricks"><a href="#安装winetricks" class="headerlink" title="安装winetricks"></a>安装<code>winetricks</code></h2><p><a target="_blank" rel="noopener" href="https://packages.debian.org/bullseye/winetricks">下载地址：</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i <span class="string">&quot;winetricks_0.0+20210206-2_all.deb&quot;</span></span><br><span class="line">winetricks riched20</span><br><span class="line"><span class="built_in">cat</span>: /tmp/winetricks.nTVgvhUR/stdout.tmp: 没有那个文件或目录</span><br><span class="line"><span class="built_in">rm</span>: 无法删除 <span class="string">&#x27;/tmp/winetricks.nTVgvhUR/stdout.tmp&#x27;</span>: 没有那个文件或目录</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: Github 提供的下载？ 似乎不是个有效的版本号。</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Executing <span class="built_in">mkdir</span> -p /path/to</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: You are using a 64-bit WINEPREFIX. Note that many verbs only install 32-bit versions of packages. If you encounter problems, please retest <span class="keyword">in</span> a clean 32-bit WINEPREFIX before reporting a bug.</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Using winetricks 20210206-next - <span class="built_in">sha256sum</span>: 7cc2f1a44854b8449270cb46890d6cf3c9dff190ac40729ae4eb817b290df8f5 with wine-6.0.1 and WINEARCH=win64</span><br><span class="line">Executing w_do_call riched20</span><br><span class="line">Executing <span class="built_in">mkdir</span> -p /path/to</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: You are using a 64-bit WINEPREFIX. Note that many verbs only install 32-bit versions of packages. If you encounter problems, please retest <span class="keyword">in</span> a clean 32-bit WINEPREFIX before reporting a bug.</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Executing load_riched20 </span><br><span class="line">Executing <span class="built_in">mkdir</span> -p /path/to/.cache/winetricks/win2ksp4</span><br><span class="line">Executing <span class="built_in">cd</span> /path/to/.cache/winetricks/win2ksp4</span><br><span class="line">Downloading http://x3270.bgp.nu/download/specials/W2KSP4_EN.EXE to /path/to/.cache/winetricks/win2ksp4</span><br><span class="line"></span><br><span class="line">09/22 18:31:09 [NOTICE] Downloading 1 item(s)</span><br><span class="line">[<span class="comment">#fcb5f1 127MiB/129MiB(98%) CN:1 DL:10MiB]               </span></span><br><span class="line">09/22 18:31:23 [NOTICE] 下载已完成：/path/to/.cache/winetricks/win2ksp4/W2KSP4_EN.EXE</span><br><span class="line"></span><br><span class="line">下载结果：</span><br><span class="line">gid   |<span class="built_in">stat</span>|avg speed  |path/URI</span><br><span class="line">======+====+===========+=======================================================</span><br><span class="line">fcb5f1|OK  |   9.6MiB/s|/path/to/.cache/winetricks/win2ksp4/W2KSP4_EN.EXE</span><br><span class="line"></span><br><span class="line">状态标识：</span><br><span class="line">(OK)：下载已完成。</span><br><span class="line">Executing <span class="built_in">cd</span> /path/to/下载/winetricks</span><br><span class="line">------------------------------------------------------</span><br><span class="line">warning: Cannot find cabextract.  Please install it (e.g. <span class="string">&#x27;sudo apt-get install cabextract&#x27;</span> or <span class="string">&#x27;sudo yum install cabextract&#x27;</span>).</span><br><span class="line">------------------------------------------------------</span><br></pre></td></tr></table></figure><br>按照提示输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cabextract</span><br></pre></td></tr></table></figure><br>如果下载不成功，可以多试几次，也可以直接下载以上两个文件：<br>1、<a target="_blank" rel="noopener" href="http://x3270.bgp.nu/download/specials/W2KSP4_EN.EXE]">W2KSP4_EN.EXE</a><br>2、<a target="_blank" rel="noopener" href="https://web.archive.org/web/2000/https://ftp.hp.com/pub/softlib/software/msi/InstMsiW.exe">InstMsiW.exe</a><br>放到<code>/path/to/.cache/winetricks/win2ksp4/</code>和<code>/path/to/.cache/winetricks/msls31/</code>路径下</p>
 <p>参考 :<br>1、<a target="_blank" rel="noopener" href="https://wiki.winehq.org/Debian">winehq官网For Debian</a><br>2、<a target="_blank" rel="noopener" href="https://wiki.winehq.org/Winetricks">Winetricks介绍</a><br>3、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76331687">Linux下通过Wine安装微信</a><br>4、<a target="_blank" rel="noopener" href="https://www.freesion.com/article/6055985563/">解决微信等有输入框的无法输入问题</a><br>5、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/pengdonglin137/p/3784137.html">安装字体参考{解决输入中文出现方框}</a></p>
 
     </div>
@@ -446,7 +439,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane waline" id="comment-waline">
-              <div class="comments" id="waline-comments"></div>
+              <div class="comments" id="waline"></div>
             </div>
             <div class="tab-pane utterances" id="comment-utterances">
               <div class="comments utterances-container"></div>
@@ -476,13 +469,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">340k</span>
+    <span title="站点总字数">296k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:49</span>
+    <span title="站点阅读时长">10:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -550,16 +543,18 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"el":"#waline","comment":true,"path":"/2022/01/02/debian11%E5%AE%89%E8%A3%85wine/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
     NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
-</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {

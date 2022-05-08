@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,11 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Debian更新源时出现签名无法进行验证(GPG error)的解决办法">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"owenyk.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":true,"nav":{"waline":{"order":-3},"utterances":{"order":-2},"livere":{"text":"livere","order":-1}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Debian更新源时出现签名无法进行验证(GPG error)的解决办法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Debian更新源时出现签名无法进行验证">
 <meta property="og:url" content="https://owenyk.github.io/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/index.html">
@@ -49,6 +49,7 @@
 
 
 
+
 <link rel="dns-prefetch" href="https://gitblog-waline.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -56,7 +57,7 @@
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 <link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -91,12 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -271,11 +267,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="日常的一些记录，留作备忘！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="K's Life">
+      <meta itemprop="description" content="日常的一些记录，留作备忘！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Debian更新源时出现签名无法进行验证 | K's Life">
+      <meta itemprop="description" content="Debian更新源时出现签名无法进行验证(GPG error)的解决办法">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -325,19 +326,11 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/" data-xid="/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/" itemprop="commentCount"></span>
+    <a title="waline" href="/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  
-    <span id="/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/" class="post-meta-item leancloud_visitors" data-flag-title="Debian更新源时出现签名无法进行验证" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -345,7 +338,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.1k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -365,9 +358,9 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>有些时候在添加软件源，更新软件源后，会提示所添加的软件源公钥无法验证，造成更新失败。<br>比如添加<code>deb https://www.deb-multimedia.org bullseye main non-free</code>源，如果不用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install deb-multimedia-keyring</span><br></pre></td></tr></table></figure><br>安装密钥，那么更新源后会提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">W: 校验数字签名时出错。此仓库未被更新，所以仍然使用此前的索引文件。GPG 错误：https://www.deb-multimedia.org bullseye InRelease: 由于没有公钥，无法验证下列签名： NO_PUBKEY 5C808C2B65558117</span><br><span class="line">W: 无法下载 https://www.deb-multimedia.org/dists/bullseye/InRelease  由于没有公钥，无法验证下列签名： NO_PUBKEY 5C808C2B65558117</span><br><span class="line">W: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。</span><br></pre></td></tr></table></figure></p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p><strong>[推荐方法]</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 keyring.debian.org 下载公钥，导入密钥</span></span><br><span class="line">curl -s https://www.deb-multimedia.org | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/deb-multimedia.gpg --import</span><br><span class="line">sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/deb-multimedia.gpg --keyserver keyring.debian.org --recv 5C808C2B65558117</span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">gpg: 密钥 5C808C2B65558117：公钥 “Christian Marillat &lt;marillat@debian.org&gt;” 已导入</span><br><span class="line">gpg: 处理的总数：1</span><br><span class="line">gpg:               已导入：1</span><br><span class="line"><span class="comment"># 确保运行以下命令以设置正确的文件权限</span></span><br><span class="line">sudo chmod 644 /etc/apt/trusted.gpg.d/deb-multimedia.gpg</span><br><span class="line"><span class="comment"># 其中`5C808C2B65558117`为更新源后提示无法验证的公钥字符。</span></span><br></pre></td></tr></table></figure><br>采用以下即将弃用的方法会提示警告。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">sudo  gpg --keyserver keyring.debian.org --recv-keys 5C808C2B65558117</span><br><span class="line">gpg: /root/.gnupg/trustdb.gpg：建立了信任度数据库</span><br><span class="line">gpg: 密钥 5C808C2B65558117：公钥 “Christian Marillat &lt;marillat@debian.org&gt;” 已导入</span><br><span class="line">gpg: 处理的总数：1</span><br><span class="line">gpg:               已导入：1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到`root`用户，把下载的key添加到本地trusted数据库中。</span></span><br><span class="line"><span class="comment"># 输出65558117用户的公钥,armor参数可以将其转换为ASCII码显示</span></span><br><span class="line">su</span><br><span class="line">密码：</span><br><span class="line">sudo gpg --armor --<span class="built_in">export</span> 65558117 | apt-key add - </span><br><span class="line">Warning: apt-key is deprecated. Manage keyring files <span class="keyword">in</span> trusted.gpg.d instead (see apt-key(8)).</span><br><span class="line">OK</span><br><span class="line"><span class="comment"># 其中 65558117 为更新源后提示无法验证的公钥后八位字符。</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>附</strong>：如果您已经知道所需公钥的 <code>URL</code>，请使用 <code>wget</code> 或 <code>curl</code> 下载并导入它。请记住将文件权限从 <code>600</code> 更新到 <code>644</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -s https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/earth.gpg --import</span><br><span class="line">sudo chmod 644 /etc/apt/trusted.gpg.d/earth.gpg</span><br></pre></td></tr></table></figure></p>
-<p>查询已安装的<code>key</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gpg --list-keys --keyring /etc/apt/trusted.gpg.d/deb-multimedia.gpg</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">apt-key list</span><br></pre></td></tr></table></figure><br>删除安装的<code>key</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key del 65558117</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">cd</span> /etc/apt/trusted.gpg.d/</span><br><span class="line">sudo rm deb-multimedia.gpg</span><br></pre></td></tr></table></figure></p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p><strong>[推荐方法]</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 keyring.debian.org 下载公钥，导入密钥</span></span><br><span class="line">curl -s https://www.deb-multimedia.org | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/deb-multimedia.gpg --import</span><br><span class="line">sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/deb-multimedia.gpg --keyserver keyring.debian.org --recv 5C808C2B65558117</span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">gpg: 密钥 5C808C2B65558117：公钥 “Christian Marillat &lt;marillat@debian.org&gt;” 已导入</span><br><span class="line">gpg: 处理的总数：1</span><br><span class="line">gpg:               已导入：1</span><br><span class="line"><span class="comment"># 确保运行以下命令以设置正确的文件权限</span></span><br><span class="line">sudo <span class="built_in">chmod</span> 644 /etc/apt/trusted.gpg.d/deb-multimedia.gpg</span><br><span class="line"><span class="comment"># 其中`5C808C2B65558117`为更新源后提示无法验证的公钥字符。</span></span><br></pre></td></tr></table></figure><br>采用以下即将弃用的方法会提示警告。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">sudo  gpg --keyserver keyring.debian.org --recv-keys 5C808C2B65558117</span><br><span class="line">gpg: /root/.gnupg/trustdb.gpg：建立了信任度数据库</span><br><span class="line">gpg: 密钥 5C808C2B65558117：公钥 “Christian Marillat &lt;marillat@debian.org&gt;” 已导入</span><br><span class="line">gpg: 处理的总数：1</span><br><span class="line">gpg:               已导入：1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到`root`用户，把下载的key添加到本地trusted数据库中。</span></span><br><span class="line"><span class="comment"># 输出65558117用户的公钥,armor参数可以将其转换为ASCII码显示</span></span><br><span class="line">su</span><br><span class="line">密码：</span><br><span class="line">sudo gpg --armor --<span class="built_in">export</span> 65558117 | apt-key add - </span><br><span class="line">Warning: apt-key is deprecated. Manage keyring files <span class="keyword">in</span> trusted.gpg.d instead (see apt-key(8)).</span><br><span class="line">OK</span><br><span class="line"><span class="comment"># 其中 65558117 为更新源后提示无法验证的公钥后八位字符。</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>附</strong>：如果您已经知道所需公钥的 <code>URL</code>，请使用 <code>wget</code> 或 <code>curl</code> 下载并导入它。请记住将文件权限从 <code>600</code> 更新到 <code>644</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -s https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/earth.gpg --import</span><br><span class="line">sudo <span class="built_in">chmod</span> 644 /etc/apt/trusted.gpg.d/earth.gpg</span><br></pre></td></tr></table></figure></p>
+<p>查询已安装的<code>key</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gpg --list-keys --keyring /etc/apt/trusted.gpg.d/deb-multimedia.gpg</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">apt-key list</span><br></pre></td></tr></table></figure><br>删除安装的<code>key</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key del 65558117</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">cd</span> /etc/apt/trusted.gpg.d/</span><br><span class="line">sudo <span class="built_in">rm</span> deb-multimedia.gpg</span><br></pre></td></tr></table></figure></p>
 <h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><p>再更新安装源就不会出现错误了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br></pre></td></tr></table></figure></p>
 <p>参考资料<br>1、<a target="_blank" rel="noopener" href="https://ulyc.github.io/2021/01/26/2021%E5%B9%B4-%E7%94%A8%E6%9B%B4%E7%8E%B0%E4%BB%A3%E7%9A%84%E6%96%B9%E6%B3%95%E4%BD%BF%E7%94%A8PGP-%E4%B8%8B/">2021年-用更现代的方法使用PGP-下</a><br>2、<a target="_blank" rel="noopener" href="https://suay.site/?p=526">警告：apt 键已弃用</a></p>
 
@@ -377,21 +370,6 @@
     
     
       
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\08\25\Aria2在Debian11下的配置\" rel="bookmark">Aria2在Debian11下的配置</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2019\12\29\Debian10备份与恢复MariaDB数据库\" rel="bookmark">Debian10备份与恢复MariaDB数据库</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\06\20\Debian10系统systemctl服务管理方式下Nginx设置开机启动\" rel="bookmark">Debian10系统systemctl服务管理方式下Nginx设置开机启动</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\01\05\文件管理器因gvfs不能浏览网络等问题\" rel="bookmark">文件管理器因gvfs不能浏览网络等问题</a></div>
-    </li>
-  </ul>
 
 
     <footer class="post-footer">
@@ -450,7 +428,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane waline" id="comment-waline">
-              <div class="comments" id="waline-comments"></div>
+              <div class="comments" id="waline"></div>
             </div>
             <div class="tab-pane utterances" id="comment-utterances">
               <div class="comments utterances-container"></div>
@@ -480,13 +458,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">340k</span>
+    <span title="站点总字数">296k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:49</span>
+    <span title="站点阅读时长">10:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -554,16 +532,18 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","el":"#waline-comments","path":"/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://gitblog-waline.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"dark":"body.darkmode--activated","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"el":"#waline","comment":true,"path":"/2022/01/01/Debian%E6%9B%B4%E6%96%B0%E6%BA%90%E6%97%B6%E5%87%BA%E7%8E%B0%E7%AD%BE%E5%90%8D%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8C%E9%AA%8C%E8%AF%81/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
     NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
-</script><script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
 var options = {
