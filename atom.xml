@@ -94,7 +94,7 @@
     <link href="https://owenyk.github.io/2022/03/07/scoop%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
     <id>https://owenyk.github.io/2022/03/07/scoop%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
     <published>2022-03-07T02:35:50.000Z</published>
-    <updated>2022-05-09T06:41:04.865Z</updated>
+    <updated>2022-05-09T07:07:06.143Z</updated>
     
     
     <summary type="html">在Windows10上安装scoop并进行配置</summary>
@@ -106,7 +106,7 @@
     <category term="Windows" scheme="https://owenyk.github.io/categories/Windows/"/>
     
     
-    <category term="scoop" scheme="https://owenyk.github.io/tags/scoop/"/>
+    <category term="Scoop" scheme="https://owenyk.github.io/tags/Scoop/"/>
     
   </entry>
   
@@ -140,7 +140,7 @@
     <link href="https://owenyk.github.io/2022/01/27/Debian11%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%94%A8update-alternatives%E8%BF%9B%E8%A1%8C%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
     <id>https://owenyk.github.io/2022/01/27/Debian11%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%94%A8update-alternatives%E8%BF%9B%E8%A1%8C%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</id>
     <published>2022-01-27T02:48:36.000Z</published>
-    <updated>2022-01-27T08:37:51.155Z</updated>
+    <updated>2022-05-09T07:08:07.639Z</updated>
     
     
     <summary type="html">记录下Debian11编译安装python3.10.1后与系统原python3.9及2.7用update-alternatives进行版本管理</summary>
@@ -152,7 +152,7 @@
     
     <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
     
-    <category term="update-alternatives" scheme="https://owenyk.github.io/tags/update-alternatives/"/>
+    <category term="Update-alternatives" scheme="https://owenyk.github.io/tags/Update-alternatives/"/>
     
   </entry>
   
@@ -161,7 +161,7 @@
     <link href="https://owenyk.github.io/2022/01/27/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85aria2%E5%8F%8A%E7%BC%96%E8%AF%91%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/"/>
     <id>https://owenyk.github.io/2022/01/27/Debian11%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85aria2%E5%8F%8A%E7%BC%96%E8%AF%91%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/</id>
     <published>2022-01-27T00:51:14.000Z</published>
-    <updated>2022-01-28T01:47:18.207Z</updated>
+    <updated>2022-05-09T07:04:56.019Z</updated>
     
     
     <summary type="html">linux编译安装aria2及出现checking whether the C compiler works... no错误提示解决方法</summary>
@@ -171,7 +171,7 @@
     <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
     
     
-    <category term="aria2" scheme="https://owenyk.github.io/tags/aria2/"/>
+    <category term="Aria2" scheme="https://owenyk.github.io/tags/Aria2/"/>
     
   </entry>
   
@@ -180,7 +180,7 @@
     <link href="https://owenyk.github.io/2022/01/25/linux%E8%AF%AF%E5%88%A0libc-bin%E5%87%BA%E7%8E%B0dpkg%20warning%20ldconfig%20not%20found/"/>
     <id>https://owenyk.github.io/2022/01/25/linux%E8%AF%AF%E5%88%A0libc-bin%E5%87%BA%E7%8E%B0dpkg%20warning%20ldconfig%20not%20found/</id>
     <published>2022-01-25T00:51:14.000Z</published>
-    <updated>2022-01-27T04:50:11.664Z</updated>
+    <updated>2022-05-09T07:07:26.220Z</updated>
     
     
     <summary type="html">inux误删libc-bin出现dpkg warning &#39;ldconfig&#39; not found in PATH or not executable的解决办法</summary>
@@ -190,9 +190,9 @@
     <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
     
     
-    <category term="libc" scheme="https://owenyk.github.io/tags/libc/"/>
+    <category term="Libc" scheme="https://owenyk.github.io/tags/Libc/"/>
     
-    <category term="ldconfig" scheme="https://owenyk.github.io/tags/ldconfig/"/>
+    <category term="Ldconfig" scheme="https://owenyk.github.io/tags/Ldconfig/"/>
     
   </entry>
   
@@ -201,7 +201,7 @@
     <link href="https://owenyk.github.io/2022/01/22/ffmpeg%E5%9C%A8debian%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
     <id>https://owenyk.github.io/2022/01/22/ffmpeg%E5%9C%A8debian%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</id>
     <published>2022-01-22T02:00:00.000Z</published>
-    <updated>2022-01-29T07:19:24.961Z</updated>
+    <updated>2022-05-09T07:07:52.089Z</updated>
     
     
     <summary type="html">ffmpeg在linux下编译安装</summary>
@@ -217,11 +217,11 @@
     <category term="软件安装" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
+    <category term="Iconv" scheme="https://owenyk.github.io/tags/Iconv/"/>
+    
     <category term="Ffmpeg" scheme="https://owenyk.github.io/tags/Ffmpeg/"/>
     
     <category term="字体缺失" scheme="https://owenyk.github.io/tags/%E5%AD%97%E4%BD%93%E7%BC%BA%E5%A4%B1/"/>
-    
-    <category term="iconv" scheme="https://owenyk.github.io/tags/iconv/"/>
     
   </entry>
   
@@ -230,7 +230,7 @@
     <link href="https://owenyk.github.io/2022/01/06/%E4%B8%AD%E5%B7%9E%E9%9F%BB%E8%BC%B8%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
     <id>https://owenyk.github.io/2022/01/06/%E4%B8%AD%E5%B7%9E%E9%9F%BB%E8%BC%B8%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</id>
     <published>2022-01-06T02:35:50.000Z</published>
-    <updated>2022-05-08T05:47:13.058Z</updated>
+    <updated>2022-05-09T07:06:52.126Z</updated>
     
     
     <summary type="html">中州韻輸入法的安装、配置和使用</summary>
@@ -244,7 +244,7 @@
     
     <category term="輸入法" scheme="https://owenyk.github.io/tags/%E8%BC%B8%E5%85%A5%E6%B3%95/"/>
     
-    <category term="rime" scheme="https://owenyk.github.io/tags/rime/"/>
+    <category term="Rime" scheme="https://owenyk.github.io/tags/Rime/"/>
     
   </entry>
   
@@ -253,7 +253,7 @@
     <link href="https://owenyk.github.io/2022/01/06/%E7%BB%99kali%E7%B3%BB%E7%BB%9F%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%90%8E%E6%B7%BB%E5%8A%A0%E6%97%B6%E9%97%B4%E6%88%B3/"/>
     <id>https://owenyk.github.io/2022/01/06/%E7%BB%99kali%E7%B3%BB%E7%BB%9F%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%90%8E%E6%B7%BB%E5%8A%A0%E6%97%B6%E9%97%B4%E6%88%B3/</id>
     <published>2022-01-06T02:25:50.000Z</published>
-    <updated>2022-01-06T07:10:24.813Z</updated>
+    <updated>2022-05-09T07:06:31.939Z</updated>
     
     
     <summary type="html">给kali系统终端命令后面添加时间戳的方法记录</summary>
@@ -263,9 +263,9 @@
     <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
     
     
-    <category term="zsh" scheme="https://owenyk.github.io/tags/zsh/"/>
+    <category term="Zsh" scheme="https://owenyk.github.io/tags/Zsh/"/>
     
-    <category term="kali" scheme="https://owenyk.github.io/tags/kali/"/>
+    <category term="Kali" scheme="https://owenyk.github.io/tags/Kali/"/>
     
   </entry>
   
@@ -301,7 +301,7 @@
     <link href="https://owenyk.github.io/2022/01/03/zsh%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
     <id>https://owenyk.github.io/2022/01/03/zsh%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</id>
     <published>2022-01-03T02:25:50.000Z</published>
-    <updated>2022-01-27T05:04:36.254Z</updated>
+    <updated>2022-05-09T07:06:43.019Z</updated>
     
     
     <summary type="html">zsh配置和使用</summary>
@@ -311,7 +311,7 @@
     <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
     
     
-    <category term="zsh" scheme="https://owenyk.github.io/tags/zsh/"/>
+    <category term="Zsh" scheme="https://owenyk.github.io/tags/Zsh/"/>
     
   </entry>
   
@@ -368,7 +368,7 @@
     <link href="https://owenyk.github.io/2021/12/30/tar%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D%E6%93%8D%E4%BD%9C/"/>
     <id>https://owenyk.github.io/2021/12/30/tar%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D%E6%93%8D%E4%BD%9C/</id>
     <published>2021-12-30T02:39:32.000Z</published>
-    <updated>2021-12-31T09:01:49.448Z</updated>
+    <updated>2022-05-09T07:08:57.341Z</updated>
     
     
     <summary type="html">测试tar进行文件备份和恢复操作的方法</summary>
@@ -384,7 +384,7 @@
     
     <category term="备份和恢复" scheme="https://owenyk.github.io/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/"/>
     
-    <category term="tar" scheme="https://owenyk.github.io/tags/tar/"/>
+    <category term="Tar" scheme="https://owenyk.github.io/tags/Tar/"/>
     
   </entry>
   
@@ -457,7 +457,7 @@
     <link href="https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
     <id>https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/</id>
     <published>2021-12-21T02:39:32.000Z</published>
-    <updated>2021-12-31T11:20:31.658Z</updated>
+    <updated>2022-05-09T07:02:39.074Z</updated>
     
     
     <summary type="html">在Debian11下ODBC方案用Python3操作ACCESS的方法</summary>
@@ -473,13 +473,13 @@
     <category term="ODBC" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/ODBC/"/>
     
     
+    <category term="MySQL" scheme="https://owenyk.github.io/tags/MySQL/"/>
+    
     <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
     
     <category term="ODBC" scheme="https://owenyk.github.io/tags/ODBC/"/>
     
     <category term="Connector" scheme="https://owenyk.github.io/tags/Connector/"/>
-    
-    <category term="Mysql" scheme="https://owenyk.github.io/tags/Mysql/"/>
     
   </entry>
   
