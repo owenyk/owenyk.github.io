@@ -44,7 +44,7 @@
     <link href="https://owenyk.github.io/2022/04/25/python%E8%AF%BB%E5%8F%96xml%E6%96%87%E4%BB%B6/"/>
     <id>https://owenyk.github.io/2022/04/25/python%E8%AF%BB%E5%8F%96xml%E6%96%87%E4%BB%B6/</id>
     <published>2022-04-25T02:20:58.000Z</published>
-    <updated>2022-05-08T08:13:12.510Z</updated>
+    <updated>2022-05-09T06:35:29.815Z</updated>
     
     
     <summary type="html">python用法dom方法和etree方法读取xml文件</summary>
@@ -67,7 +67,7 @@
     <link href="https://owenyk.github.io/2022/03/22/MsSQL%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
     <id>https://owenyk.github.io/2022/03/22/MsSQL%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
     <published>2022-03-22T02:00:00.000Z</published>
-    <updated>2022-05-09T04:20:31.917Z</updated>
+    <updated>2022-05-09T06:31:57.337Z</updated>
     
     
     <summary type="html">MsSQL简单用法</summary>
@@ -83,7 +83,7 @@
     <category term="MsSQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MsSQL/"/>
     
     
-    <category term="Mssql" scheme="https://owenyk.github.io/tags/Mssql/"/>
+    <category term="MsSQL" scheme="https://owenyk.github.io/tags/MsSQL/"/>
     
     <category term="Sql Server" scheme="https://owenyk.github.io/tags/Sql-Server/"/>
     
@@ -94,7 +94,7 @@
     <link href="https://owenyk.github.io/2022/03/07/scoop%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
     <id>https://owenyk.github.io/2022/03/07/scoop%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
     <published>2022-03-07T02:35:50.000Z</published>
-    <updated>2022-05-08T05:54:06.745Z</updated>
+    <updated>2022-05-09T06:41:04.865Z</updated>
     
     
     <summary type="html">在Windows10上安装scoop并进行配置</summary>
@@ -115,7 +115,7 @@
     <link href="https://owenyk.github.io/2022/03/05/%E5%9C%A8Windows10%E4%B8%8A%E4%B8%BApowershell%E9%85%8D%E7%BD%AEoh-my-posh/"/>
     <id>https://owenyk.github.io/2022/03/05/%E5%9C%A8Windows10%E4%B8%8A%E4%B8%BApowershell%E9%85%8D%E7%BD%AEoh-my-posh/</id>
     <published>2022-03-05T02:35:50.000Z</published>
-    <updated>2022-05-08T07:50:29.939Z</updated>
+    <updated>2022-05-09T06:39:31.537Z</updated>
     
     
     <summary type="html">在Windows10上为powershell配置oh-my-posh</summary>
@@ -129,7 +129,7 @@
     <category term="终端" scheme="https://owenyk.github.io/categories/Windows/%E7%BB%88%E7%AB%AF/"/>
     
     
-    <category term="powershell" scheme="https://owenyk.github.io/tags/powershell/"/>
+    <category term="Powershell" scheme="https://owenyk.github.io/tags/Powershell/"/>
     
     <category term="Windows terminal" scheme="https://owenyk.github.io/tags/Windows-terminal/"/>
     
@@ -442,13 +442,13 @@
     
     <category term="Access" scheme="https://owenyk.github.io/tags/Access/"/>
     
+    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
+    
     <category term="odbc-mdbtools" scheme="https://owenyk.github.io/tags/odbc-mdbtools/"/>
     
     <category term="mdbtools" scheme="https://owenyk.github.io/tags/mdbtools/"/>
     
     <category term="unixODBC" scheme="https://owenyk.github.io/tags/unixODBC/"/>
-    
-    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
     
   </entry>
   
@@ -501,18 +501,18 @@
     
     <category term="Access" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Access/"/>
     
-    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
-    
     <category term="UCanAccess" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/UCanAccess/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
     
     
     <category term="Access" scheme="https://owenyk.github.io/tags/Access/"/>
     
     <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
     
-    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
-    
     <category term="UCanAccess" scheme="https://owenyk.github.io/tags/UCanAccess/"/>
+    
+    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
     
   </entry>
   
