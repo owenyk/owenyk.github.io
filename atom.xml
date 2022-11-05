@@ -6,7 +6,7 @@
   <link href="https://owenyk.github.io/atom.xml" rel="self"/>
   
   <link href="https://owenyk.github.io/"/>
-  <updated>2022-05-12T08:39:26.641Z</updated>
+  <updated>2022-11-02T08:06:01.089Z</updated>
   <id>https://owenyk.github.io/</id>
   
   <author>
@@ -17,11 +17,97 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Php连接Mariadb数据库及简单查、插、更、删</title>
+    <link href="https://owenyk.github.io/2022/10/29/PHP8.1%E8%BF%9E%E6%8E%A5Mariadb10%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%8A%E7%AE%80%E5%8D%95%E6%9F%A5%E3%80%81%E6%8F%92%E3%80%81%E6%9B%B4%E3%80%81%E5%88%A0/"/>
+    <id>https://owenyk.github.io/2022/10/29/PHP8.1%E8%BF%9E%E6%8E%A5Mariadb10%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%8A%E7%AE%80%E5%8D%95%E6%9F%A5%E3%80%81%E6%8F%92%E3%80%81%E6%9B%B4%E3%80%81%E5%88%A0/</id>
+    <published>2022-10-29T02:35:50.000Z</published>
+    <updated>2022-11-02T08:06:01.089Z</updated>
+    
+    
+    <summary type="html">Php连接Mariadb数据库及简单查、插、更、删</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="数据库" scheme="https://owenyk.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="PHP" scheme="https://owenyk.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://owenyk.github.io/2022/07/10/pic/2020/12/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC.png%202/"/>
+    <id>https://owenyk.github.io/2022/07/10/pic/2020/12/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC.png%202/</id>
+    <published>2022-07-10T10:45:39.584Z</published>
+    <updated>2022-07-10T10:45:39.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://owenyk.github.io/2022/07/10/pic/2020/12/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC.png%201/"/>
+    <id>https://owenyk.github.io/2022/07/10/pic/2020/12/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC.png%201/</id>
+    <published>2022-07-10T10:45:08.354Z</published>
+    <updated>2022-07-10T10:45:08.354Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://owenyk.github.io/2022/07/10/pic/2020/12/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC.png/"/>
+    <id>https://owenyk.github.io/2022/07/10/pic/2020/12/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E7%9A%84%E7%AE%97%E6%9C%AF%E6%8E%A8%E5%AF%BC.png/</id>
+    <published>2022-07-10T10:41:36.540Z</published>
+    <updated>2022-07-10T10:41:36.540Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Excel一些函数的简单使用</title>
     <link href="https://owenyk.github.io/2022/05/10/Excel%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
     <id>https://owenyk.github.io/2022/05/10/Excel%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
     <published>2022-05-10T02:00:00.000Z</published>
-    <updated>2022-05-12T08:39:26.641Z</updated>
+    <updated>2022-05-12T09:16:02.454Z</updated>
     
     
     <summary type="html">Excel一些函数的简单使用记录</summary>
@@ -302,9 +388,9 @@
     
     
     
-    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
-    
     <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
     
     <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
     
@@ -348,9 +434,9 @@
     
     
     
-    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
-    
     <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
+    
+    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
     
     <category term="Wine" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Wine/"/>
     
@@ -381,126 +467,6 @@
     <category term="Gpg" scheme="https://owenyk.github.io/tags/Gpg/"/>
     
     <category term="Apt-key" scheme="https://owenyk.github.io/tags/Apt-key/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tar进行文件备份和恢复操作</title>
-    <link href="https://owenyk.github.io/2021/12/30/tar%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D%E6%93%8D%E4%BD%9C/"/>
-    <id>https://owenyk.github.io/2021/12/30/tar%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D%E6%93%8D%E4%BD%9C/</id>
-    <published>2021-12-30T02:39:32.000Z</published>
-    <updated>2022-05-09T07:08:57.341Z</updated>
-    
-    
-    <summary type="html">测试tar进行文件备份和恢复操作的方法</summary>
-    
-    
-    
-    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
-    
-    <category term="备份和恢复" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/"/>
-    
-    
-    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
-    
-    <category term="备份和恢复" scheme="https://owenyk.github.io/tags/%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/"/>
-    
-    <category term="Tar" scheme="https://owenyk.github.io/tags/Tar/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3中import pandas后提示错误</title>
-    <link href="https://owenyk.github.io/2021/12/21/Python3%E4%B8%ADimport%20pandas%E5%90%8E%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF/"/>
-    <id>https://owenyk.github.io/2021/12/21/Python3%E4%B8%ADimport%20pandas%E5%90%8E%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF/</id>
-    <published>2021-12-21T04:39:32.000Z</published>
-    <updated>2021-12-30T06:03:45.146Z</updated>
-    
-    
-    <summary type="html">在Debian11下ODBC方案用Python3操作ACCESS的方法</summary>
-    
-    
-    
-    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
-    
-    <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
-    
-    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
-    
-    
-    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
-    
-    <category term="问题解决" scheme="https://owenyk.github.io/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Debian11用Python和ODBC操作ACCESS</title>
-    <link href="https://owenyk.github.io/2021/12/21/Debian11%E7%94%A8Python3%E5%92%8CODBC%E6%93%8D%E4%BD%9CACCESS/"/>
-    <id>https://owenyk.github.io/2021/12/21/Debian11%E7%94%A8Python3%E5%92%8CODBC%E6%93%8D%E4%BD%9CACCESS/</id>
-    <published>2021-12-21T02:39:32.000Z</published>
-    <updated>2021-12-31T09:09:23.491Z</updated>
-    
-    
-    <summary type="html">在Debian11下用Python和ODBC方案操作ACCESS的方法</summary>
-    
-    
-    
-    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
-    
-    <category term="Access" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Access/"/>
-    
-    <category term="odbc-mdbtools" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/odbc-mdbtools/"/>
-    
-    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
-    
-    <category term="mdbtools" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/mdbtools/"/>
-    
-    <category term="unixODBC" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/unixODBC/"/>
-    
-    
-    <category term="Access" scheme="https://owenyk.github.io/tags/Access/"/>
-    
-    <category term="odbc-mdbtools" scheme="https://owenyk.github.io/tags/odbc-mdbtools/"/>
-    
-    <category term="mdbtools" scheme="https://owenyk.github.io/tags/mdbtools/"/>
-    
-    <category term="unixODBC" scheme="https://owenyk.github.io/tags/unixODBC/"/>
-    
-    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Debian11系统MySQL Connector/ODBC下载及安装</title>
-    <link href="https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
-    <id>https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/</id>
-    <published>2021-12-21T02:39:32.000Z</published>
-    <updated>2022-05-09T07:02:39.074Z</updated>
-    
-    
-    <summary type="html">在Debian11下ODBC方案用Python3操作ACCESS的方法</summary>
-    
-    
-    
-    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
-    
-    <category term="MySQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
-    
-    <category term="ODBC" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/ODBC/"/>
-    
-    
-    <category term="MySQL" scheme="https://owenyk.github.io/tags/MySQL/"/>
-    
-    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
-    
-    <category term="ODBC" scheme="https://owenyk.github.io/tags/ODBC/"/>
-    
-    <category term="Connector" scheme="https://owenyk.github.io/tags/Connector/"/>
     
   </entry>
   
