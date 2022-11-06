@@ -44,7 +44,7 @@
     <link href="https://owenyk.github.io/2022/05/10/Excel%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
     <id>https://owenyk.github.io/2022/05/10/Excel%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
     <published>2022-05-10T02:00:00.000Z</published>
-    <updated>2022-11-05T10:45:04.160Z</updated>
+    <updated>2022-11-06T06:47:05.080Z</updated>
     
     
     <summary type="html">Excel一些函数的简单使用记录</summary>
@@ -118,13 +118,13 @@
     
     
     
-    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
     
-    <category term="Mssql" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Mssql/"/>
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     <category term="MsSQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MsSQL/"/>
+    
+    <category term="Mssql" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Mssql/"/>
     
     
     <category term="MsSQL" scheme="https://owenyk.github.io/tags/MsSQL/"/>
@@ -458,41 +458,33 @@
   </entry>
   
   <entry>
-    <title>Debian11用Python和ODBC操作ACCESS</title>
-    <link href="https://owenyk.github.io/2021/12/21/Debian11%E7%94%A8Python3%E5%92%8CODBC%E6%93%8D%E4%BD%9CACCESS/"/>
-    <id>https://owenyk.github.io/2021/12/21/Debian11%E7%94%A8Python3%E5%92%8CODBC%E6%93%8D%E4%BD%9CACCESS/</id>
+    <title>Debian11系统MySQL Connector/ODBC下载及安装</title>
+    <link href="https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
+    <id>https://owenyk.github.io/2021/12/21/MySQL%20ConnectorODBC%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/</id>
     <published>2021-12-21T02:39:32.000Z</published>
-    <updated>2021-12-31T09:09:23.491Z</updated>
+    <updated>2022-05-09T07:02:39.074Z</updated>
     
     
-    <summary type="html">在Debian11下用Python和ODBC方案操作ACCESS的方法</summary>
+    <summary type="html">在Debian11下ODBC方案用Python3操作ACCESS的方法</summary>
     
     
-    
-    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     <category term="软件应用" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/"/>
     
-    <category term="Access" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Access/"/>
+    <category term="数据库" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-    <category term="odbc-mdbtools" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/odbc-mdbtools/"/>
+    <category term="MySQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
     
-    <category term="Python" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/Python/"/>
-    
-    <category term="mdbtools" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/mdbtools/"/>
-    
-    <category term="unixODBC" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/unixODBC/"/>
+    <category term="ODBC" scheme="https://owenyk.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8/ODBC/"/>
     
     
-    <category term="Access" scheme="https://owenyk.github.io/tags/Access/"/>
+    <category term="MySQL" scheme="https://owenyk.github.io/tags/MySQL/"/>
     
-    <category term="Python" scheme="https://owenyk.github.io/tags/Python/"/>
+    <category term="Debian11" scheme="https://owenyk.github.io/tags/Debian11/"/>
     
-    <category term="odbc-mdbtools" scheme="https://owenyk.github.io/tags/odbc-mdbtools/"/>
+    <category term="ODBC" scheme="https://owenyk.github.io/tags/ODBC/"/>
     
-    <category term="mdbtools" scheme="https://owenyk.github.io/tags/mdbtools/"/>
-    
-    <category term="unixODBC" scheme="https://owenyk.github.io/tags/unixODBC/"/>
+    <category term="Connector" scheme="https://owenyk.github.io/tags/Connector/"/>
     
   </entry>
   
