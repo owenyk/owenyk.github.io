@@ -32,9 +32,9 @@
     
     <category term="Linux" scheme="https://owenyk.github.io/categories/Linux/"/>
     
-    <category term="MySQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
-    
     <category term="运维" scheme="https://owenyk.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="MySQL" scheme="https://owenyk.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
     
     
     <category term="数据库" scheme="https://owenyk.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
