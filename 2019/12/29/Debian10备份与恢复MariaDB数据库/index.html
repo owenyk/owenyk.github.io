@@ -27,7 +27,7 @@
 <meta property="og:description" content="Debian10备份与恢复mariaDB数据库的一些操作记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-29T12:05:32.000Z">
-<meta property="article:modified_time" content="2021-12-30T06:02:21.300Z">
+<meta property="article:modified_time" content="2022-12-14T05:48:18.637Z">
 <meta property="article:author" content="Kai">
 <meta property="article:tag" content="Debian">
 <meta property="article:tag" content="MariaDB">
@@ -55,8 +55,8 @@
   </noscript>
   <!--pjax：防止跳转页面音乐暂停-->
   <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style><link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="K's Life" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -297,7 +297,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-30 14:02:21" itemprop="dateModified" datetime="2021-12-30T14:02:21+08:00">2021-12-30</time>
+      <time title="修改时间：2022-12-14 13:48:18" itemprop="dateModified" datetime="2022-12-14T13:48:18+08:00">2022-12-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -404,7 +404,7 @@
 <h4 id="3、导出二进制log为sql-database-testDB-指定导出数据库testDB的数据"><a href="#3、导出二进制log为sql-database-testDB-指定导出数据库testDB的数据" class="headerlink" title="3、导出二进制log为sql,--database=testDB 指定导出数据库testDB的数据"></a>3、导出二进制<code>log</code>为<code>sql</code>,<code>--database=testDB</code> 指定导出数据库<code>testDB</code>的数据</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo  mysqlbinlog --no-defaults --database=testDB /var/lib/mysql/mysql-bin.000001&gt;~/testDB.sql;</span><br></pre></td></tr></table></figure>
 <h4 id="4、进入-文件夹，复制原数据并另存testDB-re-sql"><a href="#4、进入-文件夹，复制原数据并另存testDB-re-sql" class="headerlink" title="4、进入~/文件夹，复制原数据并另存testDB-re.sql"></a>4、进入<code>~/</code>文件夹，复制原数据并另存<code>testDB-re.sql</code></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cp testDB.sql testDB-re.sql</span><br><span class="line">$ sudo vim testDB-re.sql  //打开sql文件，删除其中“delete from testtable where id =2”语句</span><br></pre></td></tr></table></figure>
 <h4 id="5、进入mariadb，恢复数据"><a href="#5、进入mariadb，恢复数据" class="headerlink" title="5、进入mariadb，恢复数据"></a>5、进入<code>mariadb</code>，恢复数据</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [testDB]&gt; source ~/testDB-re.sql</span><br><span class="line">MariaDB [testDB]&gt; select * from testtable;</span><br><span class="line">+------+----------+</span><br><span class="line">| id   | name     |</span><br><span class="line">+------+----------+</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">|    1 | xiaoming |</span><br><span class="line">|    2 | wang     |</span><br><span class="line">|    3 | 王       |</span><br><span class="line">+------+----------+</span><br><span class="line">5 rows in set (0.001 sec)</span><br></pre></td></tr></table></figure>
-<p>关于<strong>前期基础介绍请参考</strong><br><a href="../../../../2021/08/17/Mariadb数据库增、删、改、查、备份及恢复/">Debian10下MariaDB/MySQL数据库增、删、改、查、备份及恢复</a></p>
+<p>关于<strong>前期基础介绍请参考</strong><br><a href="../../../../2021/08/17/MariaDB&amp;MySQL数据库增、删、改、查、备份及恢复/">Debian10下MariaDB/MySQL数据库增、删、改、查、备份及恢复</a></p>
 <p>参考资料：<br><a target="_blank" rel="noopener" href="https://blog.51cto.com/purify/1860516">mariadb二进制日志和备份恢复</a></p>
 
     </div>
@@ -515,13 +515,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">324k</span>
+    <span title="站点总字数">325k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11:15</span>
+    <span title="站点阅读时长">11:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -589,6 +589,17 @@ translateInitilization();
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://wg3e9f.deta.dev/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":true,"dark":"body.darkmode--activated","libUrl":"https://unpkg.com/@waline/client@v2/dist/waline.js","locale":{"placeholder":"Welcome to comment"},"emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://unpkg.com/@waline/emojis@1.0.1/alus","https://unpkg.com/@waline/emojis@1.0.1/bilibili","https://unpkg.com/@waline/emojis@1.0.1/qq","https://unpkg.com/@waline/emojis@1.0.1/tieba","https://unpkg.com/@waline/emojis@1.0.1/tw-emoji"],"meta":["nick","mail","link"],"requiredMeta":["nick"],"login":"enable","pageSize":10,"el":"#waline","comment":true,"path":"/2019/12/29/Debian10%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8DMariaDB%E6%95%B0%E6%8D%AE%E5%BA%93/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -608,17 +619,6 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
-</script>
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://wg3e9f.deta.dev/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":true,"dark":"body.darkmode--activated","libUrl":"https://unpkg.com/@waline/client@v2/dist/waline.js","locale":{"placeholder":"Welcome to comment"},"emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://unpkg.com/@waline/emojis@1.0.1/alus","https://unpkg.com/@waline/emojis@1.0.1/bilibili","https://unpkg.com/@waline/emojis@1.0.1/qq","https://unpkg.com/@waline/emojis@1.0.1/tieba","https://unpkg.com/@waline/emojis@1.0.1/tw-emoji"],"meta":["nick","mail","link"],"requiredMeta":["nick"],"login":"enable","pageSize":10,"el":"#waline","comment":true,"path":"/2019/12/29/Debian10%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8DMariaDB%E6%95%B0%E6%8D%AE%E5%BA%93/"}</script>
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => 
-    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
-  );
-});
 </script>
 <script src="/js/third-party/comments/livere.js"></script>
 <script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"owenyk/gitblog-comment","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
